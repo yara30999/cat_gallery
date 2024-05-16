@@ -72,6 +72,10 @@ flutter:
     - assets/svg/cat_logo.svg
     - assets/svg/cat_with_cup.svg
     - assets/svg/pink_cat.svg
+    - assets/json/cat_empty.json
+    - assets/json/cat_error.json
+    - assets/json/cat_loading.json
+    - assets/json/cat_success.json
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
