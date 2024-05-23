@@ -24,7 +24,7 @@ ThemeData getLightTheme() {
       color: ColorManager.primary,
       elevation: AppSize.s8,
       shadowColor: ColorManager.primary3,
-      titleTextStyle: Styles.textStyle16,
+      titleTextStyle: Styles.textStyle16En1,
     ),
 
     // button theme
@@ -40,14 +40,14 @@ ThemeData getLightTheme() {
       backgroundColor: ColorManager.primary1,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppSize.s12)),
-      textStyle: Styles.textStyle18,
+      textStyle: Styles.textStyle18En1,
     )),
 
     floatingActionButtonTheme: FloatingActionButtonThemeData(
       backgroundColor: ColorManager.grey,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppSize.s12)),
-      extendedTextStyle: Styles.textStyle18,
+      extendedTextStyle: Styles.textStyle18En1,
     ),
 
     // input decoration theme (text form field)
@@ -55,9 +55,9 @@ ThemeData getLightTheme() {
         // content padding
         contentPadding: const EdgeInsets.all(AppPadding.p8),
         // hint style
-        hintStyle: Styles.textStyle14.copyWith(color: ColorManager.grey),
-        labelStyle: Styles.textStyle14.copyWith(color: ColorManager.grey),
-        errorStyle: Styles.textStyle14.copyWith(color: ColorManager.red),
+        hintStyle: Styles.textStyle14En1.copyWith(color: ColorManager.grey),
+        labelStyle: Styles.textStyle14En1.copyWith(color: ColorManager.grey),
+        errorStyle: Styles.textStyle14En1.copyWith(color: ColorManager.red),
         // enabled border style
         enabledBorder: OutlineInputBorder(
             borderSide:
@@ -103,7 +103,7 @@ ThemeData getDarkTheme() {
       color: ColorManager.darkBrown,
       elevation: AppSize.s8,
       shadowColor: ColorManager.grey,
-      titleTextStyle: Styles.textStyle16,
+      titleTextStyle: Styles.textStyle16En1,
     ),
 
     // button theme
@@ -119,14 +119,14 @@ ThemeData getDarkTheme() {
       backgroundColor: ColorManager.brown2,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppSize.s12)),
-      textStyle: Styles.textStyle18,
+      textStyle: Styles.textStyle18En1,
     )),
 
     floatingActionButtonTheme: FloatingActionButtonThemeData(
       backgroundColor: ColorManager.grey,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppSize.s12)),
-      extendedTextStyle: Styles.textStyle18,
+      extendedTextStyle: Styles.textStyle18En1,
     ),
 
     // input decoration theme (text form field)
@@ -134,9 +134,9 @@ ThemeData getDarkTheme() {
         // content padding
         contentPadding: const EdgeInsets.all(AppPadding.p8),
         // hint style
-        hintStyle: Styles.textStyle14.copyWith(color: ColorManager.grey),
-        labelStyle: Styles.textStyle14.copyWith(color: ColorManager.grey),
-        errorStyle: Styles.textStyle14.copyWith(color: ColorManager.red),
+        hintStyle: Styles.textStyle14En1.copyWith(color: ColorManager.grey),
+        labelStyle: Styles.textStyle14En1.copyWith(color: ColorManager.grey),
+        errorStyle: Styles.textStyle14En1.copyWith(color: ColorManager.red),
         // enabled border style
         enabledBorder: OutlineInputBorder(
             borderSide:

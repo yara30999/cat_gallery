@@ -28,8 +28,8 @@ class _MyHomePageState extends State<HomeView> {
       ),
       body: const Center(
         child: Text(
-          'hi yara',
-          style: Styles.textStyle30,
+          'hi yara اهلا يارا ',
+          style: Styles.textStyle30En2Italic,
         ),
       ),
     );
