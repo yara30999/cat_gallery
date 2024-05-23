@@ -13,14 +13,6 @@ class HomeView extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<HomeView> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   void initState() {
     super.initState();
@@ -32,26 +24,13 @@ class _MyHomePageState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("hi yara jjjj"),
+        title: const Text("this is home page"),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You',
-            ),
-            Text(
-              '$_counter',
-              style: Styles.textStyle16,
-            ),
-          ],
+      body: const Center(
+        child: Text(
+          'hi yara',
+          style: Styles.textStyle30,
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }
