@@ -8,8 +8,10 @@ class ImageAssets {
   static const String pinkCat = "$imagePath/pink_cat.png";
   static const String logoP = "$imagePath/logo_primary.png";
   static const String logoS = "$imagePath/logo_secondry.png";
+  static const String logoW = "$imagePath/logo_white.png";
   static const String logoWithTextP = "$imagePath/logo_with_text_primary.png";
   static const String logoWithTextS = "$imagePath/logo_with_text_secondry.png";
+  static const String logoWithTextW = "$imagePath/logo_with_text_white.png";
 }
 
 class JsonAssets {
@@ -27,6 +29,8 @@ class SvgAssets {
   static const String pinkCat = "$svgPath/pink_cat.svg";
   static const String logoP = "$svgPath/logo_primary.svg";
   static const String logoS = "$svgPath/logo_secondry.svg";
+  static const String logoW = "$svgPath/assets/svg/logo_white.svg";
   static const String logoWithTextP = "$svgPath/logo_with_text_primary.svg";
   static const String logoWithTextS = "$svgPath/logo_with_text_secondry.svg";
+  static const String logoWithTextW = "$svgPath/logo_with_text_white.svg";
 }

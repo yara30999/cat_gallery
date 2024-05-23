@@ -69,8 +69,10 @@ flutter:
     - assets/images/pink_cat.png
     - assets/images/logo_primary.png
     - assets/images/logo_secondry.png
+    - assets/images/logo_white.png
     - assets/images/logo_with_text_primary.png
     - assets/images/logo_with_text_secondry.png
+    - assets/images/logo_with_text_white.png
     - assets/svg/cat_in_yello_circle_2.svg
     - assets/svg/cat_in_yello_circle.svg
     - assets/svg/cat_logo.svg
@@ -78,8 +80,10 @@ flutter:
     - assets/svg/pink_cat.svg
     - assets/svg/logo_primary.svg
     - assets/svg/logo_secondry.svg
+    - assets/svg/logo_white.svg
     - assets/svg/logo_with_text_primary.svg
     - assets/svg/logo_with_text_secondry.svg
+    - assets/svg/logo_with_text_white.svg
     - assets/json/cat_empty.json
     - assets/json/cat_error.json
     - assets/json/cat_loading.json
