@@ -24,12 +24,15 @@ class _MyHomePageState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("this is home page"),
+        title: Text(
+          "this is home page",
+          style: Styles.textStyle30En2(context),
+        ),
       ),
-      body: const Center(
+      body: Center(
         child: Text(
           'hi yara اهلا يارا ',
-          style: Styles.textStyle30En2Italic,
+          style: Styles.textStyle30En2Italic(context),
         ),
       ),
     );

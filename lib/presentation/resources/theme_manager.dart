@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'styles_manager.dart';
 import 'values_manager.dart';
 import 'color_manager.dart';
 
@@ -24,7 +23,7 @@ ThemeData getLightTheme() {
       color: ColorManager.primary1,
       elevation: AppSize.s8,
       shadowColor: ColorManager.primary4,
-      titleTextStyle: Styles.textStyle16En1,
+      // titleTextStyle: Styles.textStyle16En1,
     ),
 
     // button theme
@@ -40,14 +39,14 @@ ThemeData getLightTheme() {
       backgroundColor: ColorManager.primary2,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppSize.s12)),
-      textStyle: Styles.textStyle18En1,
+      // textStyle: Styles.textStyle18En1,
     )),
 
     floatingActionButtonTheme: FloatingActionButtonThemeData(
       backgroundColor: ColorManager.brown1,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppSize.s12)),
-      extendedTextStyle: Styles.textStyle18En1,
+      // extendedTextStyle: Styles.textStyle18En1,
     ),
 
     // input decoration theme (text form field)
@@ -55,9 +54,9 @@ ThemeData getLightTheme() {
         // content padding
         contentPadding: const EdgeInsets.all(AppPadding.p8),
         // hint style
-        hintStyle: Styles.textStyle14En1.copyWith(color: ColorManager.brown1),
-        labelStyle: Styles.textStyle14En1.copyWith(color: ColorManager.brown1),
-        errorStyle: Styles.textStyle14En1.copyWith(color: ColorManager.red),
+        // hintStyle: Styles.textStyle14En1.copyWith(color: ColorManager.brown1),
+        // labelStyle: Styles.textStyle14En1.copyWith(color: ColorManager.brown1),
+        // errorStyle: Styles.textStyle14En1.copyWith(color: ColorManager.red),
         // enabled border style
         enabledBorder: OutlineInputBorder(
             borderSide:
@@ -103,7 +102,7 @@ ThemeData getDarkTheme() {
       color: ColorManager.orange1,
       elevation: AppSize.s8,
       shadowColor: ColorManager.brown1,
-      titleTextStyle: Styles.textStyle16En1,
+      // titleTextStyle: Styles.textStyle16En1,
     ),
 
     // button theme
@@ -119,14 +118,14 @@ ThemeData getDarkTheme() {
       backgroundColor: ColorManager.orange3,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppSize.s12)),
-      textStyle: Styles.textStyle18En1,
+      // textStyle: Styles.textStyle18En1,
     )),
 
     floatingActionButtonTheme: FloatingActionButtonThemeData(
       backgroundColor: ColorManager.brown1,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppSize.s12)),
-      extendedTextStyle: Styles.textStyle18En1,
+      // extendedTextStyle: Styles.textStyle18En1,
     ),
 
     // input decoration theme (text form field)
@@ -134,9 +133,9 @@ ThemeData getDarkTheme() {
         // content padding
         contentPadding: const EdgeInsets.all(AppPadding.p8),
         // hint style
-        hintStyle: Styles.textStyle14En1.copyWith(color: ColorManager.brown1),
-        labelStyle: Styles.textStyle14En1.copyWith(color: ColorManager.brown1),
-        errorStyle: Styles.textStyle14En1.copyWith(color: ColorManager.red),
+        // hintStyle: Styles.textStyle14En1.copyWith(color: ColorManager.brown1),
+        // labelStyle: Styles.textStyle14En1.copyWith(color: ColorManager.brown1),
+        // errorStyle: Styles.textStyle14En1.copyWith(color: ColorManager.red),
         // enabled border style
         enabledBorder: OutlineInputBorder(
             borderSide:
