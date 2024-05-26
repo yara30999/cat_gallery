@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
-import '../../resources/conistants_manager.dart';
 import '../../resources/styles_manager.dart';
 
 class HomeView extends StatefulWidget {
@@ -13,13 +11,6 @@ class HomeView extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<HomeView> {
-  @override
-  void initState() {
-    super.initState();
-    Future.delayed(const Duration(seconds: AppConstants.splashDelay))
-        .then((value) => {FlutterNativeSplash.remove()});
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

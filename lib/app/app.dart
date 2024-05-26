@@ -16,7 +16,7 @@ class _MyAppState extends State<MyApp> {
       title: 'Flutter cat information app',
       debugShowCheckedModeBanner: false,
       onGenerateRoute: RouteGenerator.getRoute,
-      initialRoute: Routes.homeRoute,
+      initialRoute: Routes.loginRoute,
       themeMode: ThemeMode.system,
       theme: getLightTheme(),
       darkTheme: getDarkTheme(),
