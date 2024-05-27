@@ -33,4 +33,6 @@ class SvgAssets {
   static const String logoWithTextP = "$svgPath/logo_with_text_primary.svg";
   static const String logoWithTextS = "$svgPath/logo_with_text_secondry.svg";
   static const String logoWithTextW = "$svgPath/logo_with_text_white.svg";
+  static const String google = "$svgPath/google.svg";
+  static const String facebook = "$svgPath/facebook.svg";
 }

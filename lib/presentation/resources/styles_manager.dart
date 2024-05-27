@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'color_manager.dart';
 import 'font_manager.dart';
 
 abstract class Styles {
@@ -20,6 +21,7 @@ abstract class Styles {
     );
   }
 
+  /*.................. used in login screen*/
   static TextStyle textStyle18En1(BuildContext context) {
     return TextStyle(
       fontFamily: FontConstants.fontFamily1,
@@ -70,20 +72,52 @@ abstract class Styles {
     );
   }
 
+/*..................used in 
+  -login divider
+  */
   static TextStyle textStyle20En2(BuildContext context) {
     return TextStyle(
+        fontFamily: FontConstants.fontFamily2,
+        fontSize: getResponsiveFontSize(context, fontSize: FontSize.s20),
+        fontWeight: FontWeightManager.bold,
+        color: ColorManager.grey);
+  }
+
+  /*..................used in login form fields*/
+  static TextStyle textStyle26En2(BuildContext context) {
+    return TextStyle(
       fontFamily: FontConstants.fontFamily2,
-      fontSize: getResponsiveFontSize(context, fontSize: FontSize.s20),
+      fontSize: getResponsiveFontSize(context, fontSize: FontSize.s26),
       fontWeight: FontWeightManager.regular,
     );
   }
 
+  /*..................used in 
+  -login button
+  -the two texts in login screen
+  */
   static TextStyle textStyle30En2(BuildContext context) {
     return TextStyle(
+        fontFamily: FontConstants.fontFamily2,
+        fontSize: getResponsiveFontSize(context, fontSize: FontSize.s30),
+        fontWeight: FontWeightManager.bold,
+        letterSpacing: 1.4);
+  }
+
+  static TextStyle textStyle34En2(BuildContext context) {
+    return TextStyle(
       fontFamily: FontConstants.fontFamily2,
-      fontSize: getResponsiveFontSize(context, fontSize: FontSize.s30),
+      fontSize: getResponsiveFontSize(context, fontSize: FontSize.s34),
       fontWeight: FontWeightManager.bold,
     );
+  }
+
+  static TextStyle textStyle36En2(BuildContext context) {
+    return TextStyle(
+        fontFamily: FontConstants.fontFamily2,
+        fontSize: getResponsiveFontSize(context, fontSize: FontSize.s36),
+        fontWeight: FontWeightManager.bold,
+        color: ColorManager.primary1);
   }
 
   static TextStyle textStyle30En2Italic(BuildContext context) {
