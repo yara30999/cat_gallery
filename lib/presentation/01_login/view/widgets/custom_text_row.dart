@@ -28,7 +28,7 @@ class CusomTextRow extends StatelessWidget {
           child: Text(
             clickTxt,
             style: Styles.textStyle18En1(context)
-                .copyWith(color: ColorManager.bink1),
+                .copyWith(color: ColorManager.pink1),
           ),
         )
       ],

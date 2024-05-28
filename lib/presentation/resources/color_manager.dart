@@ -8,8 +8,8 @@ class ColorManager {
   static Color orange1 = const Color(0xFF642915);
   static Color orange2 = const Color(0xff963e20);
   static Color orange3 = const Color(0xffc75235);
-  static Color bink1 = const Color(0xffdd636e);
-  static Color bink2 = const Color(0xffaa8080);
+  static Color pink1 = const Color(0xffdd636e);
+  static Color pink2 = const Color(0xffaa8080);
   static Color brown1 = const Color(0xFF6A6240);
   static Color brown2 = const Color(0xffe5c185);
   static Color white = const Color(0xffFFFFFf);

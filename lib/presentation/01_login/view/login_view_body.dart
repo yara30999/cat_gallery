@@ -24,6 +24,14 @@ class _LoginViewBodyState extends State<LoginViewBody> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      padding: EdgeInsets.only(
+        /*we have to add padding in the bottom when the keybourd is Opened,
+        the padding must be the same size of the Keybourd,
+        this makes the SingleChildScrollView scrollable when the keyboard is opened,
+        we used this because in the scaffald we did "resizeToAvoidBottomInset: false"
+        hover on it to read the reason .*/
+        bottom: MediaQuery.of(context).viewInsets.bottom,
+      ),
       child: SizedBox(
         height: MediaQuery.sizeOf(context).height * 0.95,
         width: double.infinity,
@@ -93,7 +101,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                       child: Text(
                         'Forgot Your Password?',
                         style: Styles.textStyle18En1(context)
-                            .copyWith(color: ColorManager.bink1),
+                            .copyWith(color: ColorManager.pink1),
                       ),
                     ),
                   ),
