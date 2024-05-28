@@ -91,9 +91,6 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                           });
                         }),
                   ),
-                  const SizedBox(
-                    height: 10.0,
-                  ),
                   Align(
                     alignment: Alignment.centerRight,
                     child: TextButton(
@@ -104,9 +101,6 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                             .copyWith(color: ColorManager.pink1),
                       ),
                     ),
-                  ),
-                  const SizedBox(
-                    height: 10.0,
                   ),
                   //login button
                   SizedBox(

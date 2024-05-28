@@ -6,9 +6,14 @@ class BackgroundPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final paint = Paint();
     var path = Path();
-
     // upper shape
-    paint.color = ColorManager.primary4;
+    //paint.color = ColorManager.primary4;
+    paint.shader = LinearGradient(
+            colors: [ColorManager.primary2, ColorManager.primary4],
+            // begin: Alignment.topRight,
+            // end: Alignment.bottomLeft,
+            stops: const [0.0, 0.8]) //stops from left to right
+        .createShader(Rect.fromLTWH(0, 0, size.width, size.height));
     path.lineTo(0, size.height * 0.3);
     path.quadraticBezierTo(size.width * 0.01, size.height * 0.01,
         size.width * 0.4, size.height * 0.1);
@@ -17,8 +22,14 @@ class BackgroundPainter extends CustomPainter {
     canvas.drawPath(path, paint);
 
     // right shape
-
-    paint.color = ColorManager.pink1;
+    //paint.color = ColorManager.brown1;
+    paint.shader = LinearGradient(
+            colors: [ColorManager.brown2, ColorManager.brown1],
+            // begin: Alignment.topRight,
+            // end: Alignment.bottomLeft,
+            stops: const [0.2, 0.7]) //stops from left to right
+        .createShader(Rect.fromLTWH(
+            size.width * 0.37, size.height * 0.5, size.width, size.height));
     path = Path();
     path.moveTo(size.width * 0.55, size.height);
     path.quadraticBezierTo(size.width * 0.5, size.height * 0.95,
@@ -30,7 +41,14 @@ class BackgroundPainter extends CustomPainter {
     canvas.drawPath(path, paint);
 
     // middel shape
-    paint.color = ColorManager.pink2;
+    //paint.color = ColorManager.pink2;
+    paint.shader = LinearGradient(
+            colors: [ColorManager.pink1, ColorManager.brown2],
+            // begin: Alignment.centerLeft,
+            // end: Alignment.centerRight,
+            stops: const [0.2, 0.7]) //stops from left to right
+        .createShader(Rect.fromLTWH(size.width * 0.1, size.height * 0.82,
+            size.width * 0.5, size.height));
     path = Path();
     path.moveTo(size.width * 0.1, size.height);
     path.quadraticBezierTo(
@@ -39,7 +57,14 @@ class BackgroundPainter extends CustomPainter {
     canvas.drawPath(path, paint);
 
     // left shape
-    paint.color = ColorManager.brown1;
+    //paint.color = ColorManager.pink1;
+    paint.shader = LinearGradient(
+            colors: [ColorManager.orange3, ColorManager.orange4],
+            // begin: Alignment.center,
+            // end: Alignment.bottomLeft,
+            stops: const [0.0, 0.7]) //stops from left to right
+        .createShader(Rect.fromLTWH(
+            0, size.height * 0.8, size.width * 0.35, size.height));
     path = Path();
     path.moveTo(0, size.height * 0.8);
     path.quadraticBezierTo(size.width * 0.25, size.height * 0.79,
