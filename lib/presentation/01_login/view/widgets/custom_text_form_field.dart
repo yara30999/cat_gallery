@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../resources/color_manager.dart';
+import '../../../resources/strings_manager.dart';
 
 class CustomPasswordField extends StatelessWidget {
   final String? hint, label;
@@ -26,11 +27,11 @@ class CustomPasswordField extends StatelessWidget {
       keyboardType: TextInputType.visiblePassword,
       validator: (value) {
         if (value == null || value.isEmpty) {
-          return 'Field is required';
+          return AppStrings.emptyMsg;
         } else {
           return RegExp(r'^.{6,}$').hasMatch(value)
               ? null
-              : 'Password must be at least 6 characters long';
+              : AppStrings.passwordNotValid;
         }
       },
       onChanged: onChanged,
@@ -68,13 +69,13 @@ class CustomEmailField extends StatelessWidget {
       keyboardType: TextInputType.emailAddress,
       validator: (value) {
         if (value == null || value.isEmpty) {
-          return 'Field is required';
+          return AppStrings.emptyMsg;
         } else {
           return RegExp(
                       r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
                   .hasMatch(value)
               ? null
-              : 'Email not formatted well';
+              : AppStrings.emailNotValid;
         }
       },
       onChanged: onChanged,
