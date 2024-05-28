@@ -25,10 +25,13 @@ class CustomPasswordField extends StatelessWidget {
       obscureText: isVisible,
       keyboardType: TextInputType.visiblePassword,
       validator: (value) {
-        if (value!.isEmpty) {
-          return 'field is required ';
+        if (value == null || value.isEmpty) {
+          return 'Field is required';
+        } else {
+          return RegExp(r'^.{6,}$').hasMatch(value)
+              ? null
+              : 'Password must be at least 6 characters long';
         }
-        return null;
       },
       onChanged: onChanged,
       decoration: InputDecoration(
