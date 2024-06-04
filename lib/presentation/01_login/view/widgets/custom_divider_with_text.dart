@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import '../../../resources/language_manager.dart';
 import '../../../resources/values_manager.dart';
 
 class CustomDividerWithText extends StatelessWidget {
@@ -13,7 +13,7 @@ class CustomDividerWithText extends StatelessWidget {
       children: <Widget>[
         Expanded(
           child: CustomPaint(
-            painter: CustomDividerPainter(leftGradient: true),
+            painter: CustomDividerPainter(leftGradient: currentLocalIsEn()),
           ),
         ),
         Padding(
@@ -22,7 +22,7 @@ class CustomDividerWithText extends StatelessWidget {
         ),
         Expanded(
           child: CustomPaint(
-            painter: CustomDividerPainter(rightGradient: true),
+            painter: CustomDividerPainter(leftGradient: !currentLocalIsEn()),
           ),
         ),
       ],
@@ -31,12 +31,10 @@ class CustomDividerWithText extends StatelessWidget {
 }
 
 class CustomDividerPainter extends CustomPainter {
-  final bool? leftGradient;
-  final bool? rightGradient;
+  final bool leftGradient;
 
   CustomDividerPainter({
-    this.leftGradient = false,
-    this.rightGradient = false,
+    this.leftGradient = true,
     super.repaint,
   });
   @override
@@ -60,12 +58,12 @@ class CustomDividerPainter extends CustomPainter {
 
     // Define the gradient effect
     dynamic gradient;
-    if (leftGradient!) {
+    if (leftGradient) {
       gradient = const LinearGradient(
         colors: [Colors.transparent, Colors.grey],
         stops: [0.0, 1.0],
       );
-    } else if (rightGradient!) {
+    } else if (!leftGradient) {
       gradient = const LinearGradient(
         colors: [Colors.grey, Colors.transparent],
         stops: [0.0, 1.0],
