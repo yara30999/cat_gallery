@@ -58,29 +58,27 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                   const SizedBox(
                     height: 30.0,
                   ),
-                  CustomEmailField(
-                    label: AppStrings.emailLabel,
-                    onChanged: (data) {
+                  CustomTextField(
+                    label: "Email",
+                    inputType: TextInputType.emailAddress,
+                    onChanged: (value) {
                       setState(() {
-                        email = data;
+                        email = value;
                       });
                     },
-                    suffixIcon: Icon(
-                      Icons.email_sharp,
-                      color: ColorManager.brown2,
-                    ),
                   ),
                   const SizedBox(
                     height: 20.0,
                   ),
-                  CustomPasswordField(
-                    label: AppStrings.passwordLabel,
-                    onChanged: (data) {
+                  CustomTextField(
+                    label: "Password",
+                    inputType: TextInputType.visiblePassword,
+                    isObscure: isObscure,
+                    onChanged: (value) {
                       setState(() {
-                        password = data;
+                        password = value;
                       });
                     },
-                    isVisible: isObscure,
                     suffixIcon: IconButton(
                         icon: Icon(
                           isObscure ? Icons.visibility : Icons.visibility_off,
