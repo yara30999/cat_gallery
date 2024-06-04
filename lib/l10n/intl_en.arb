@@ -1,0 +1,16 @@
+{
+  "noRouteFound": "no_route_found",
+  "hello": "Hello!",
+  "loginTitle": "Sign into your Account.",
+  "emailLabel": "Email Id",
+  "passwordLabel": "Password",
+  "loginLabel": "Login",
+  "registerLabel": "Register",
+  "forgotYourPassword": "Forgot Your Password?",
+  "orContinueWith": "Or Continue With",
+  "notAMember": "Not a member? ",
+  "emptyMsg": "Field is required",
+  "passwordNotValid": "Password must be at least 6 characters long",
+  "emailNotValid": "Email not formatted well",
+  "appTitle": "Flutter cat information app"
+}

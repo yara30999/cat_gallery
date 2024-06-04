@@ -1,0 +1,16 @@
+{
+  "noRouteFound": "لم يتم العثور على المسار",
+  "hello": "مرحباً!",
+  "loginTitle": "تسجيل الدخول إلى حسابك.",
+  "emailLabel": "البريد الإلكتروني",
+  "passwordLabel": "كلمة المرور",
+  "loginLabel": "تسجيل الدخول",
+  "registerLabel": "تسجيل",
+  "forgotYourPassword": "هل نسيت كلمة المرور؟",
+  "orContinueWith": "أو تابع مع",
+  "notAMember": "لست عضوا؟ ",
+  "emptyMsg": "الحقل مطلوب",
+  "passwordNotValid": "يجب أن تكون كلمة المرور مكونة من 6 أحرف على الأقل",
+  "emailNotValid": "البريد الإلكتروني غير منسق بشكل جيد",
+  "appTitle": "تطبيق معلومات القطط باستخدام فلاتر"
+}

@@ -1,4 +1,4 @@
-import '../../presentation/resources/strings_manager.dart';
+import '../../generated/l10n.dart';
 
 abstract class IValidationService {
   String? validatePassword(String? value);
@@ -10,9 +10,9 @@ class ValidationServiceImpl implements IValidationService {
   @override
   String? validatePassword(String? value) {
     if (value == null || value.isEmpty) {
-      return AppStrings.emptyMsg;
+      return S.current.emptyMsg;
     } else if (!RegExp(r'^.{6,}$').hasMatch(value)) {
-      return AppStrings.passwordNotValid;
+      return S.current.passwordNotValid;
     }
     return null;
   }
@@ -20,17 +20,17 @@ class ValidationServiceImpl implements IValidationService {
   @override
   String? validateEmail(String? value) {
     if (value == null || value.isEmpty) {
-      return AppStrings.emptyMsg;
+      return S.current.emptyMsg;
     } else if (!RegExp(
             r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+$")
         .hasMatch(value)) {
-      return AppStrings.emailNotValid;
+      return S.current.emailNotValid;
     }
     return null;
   }
 
   @override
   String? validateNotEmpty(String? value) {
-    return value == null || value.isEmpty ? AppStrings.emptyMsg : null;
+    return value == null || value.isEmpty ? S.current.emptyMsg : null;
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../generated/l10n.dart';
 import '../01_login/view/login_view.dart';
-import 'strings_manager.dart';
 import '../02_home/view/home_view.dart';
 
 class Routes {
@@ -24,9 +24,9 @@ class RouteGenerator {
     return MaterialPageRoute(
         builder: (_) => Scaffold(
               appBar: AppBar(
-                title: const Text(AppStrings.noRouteFound),
+                title: Text(S.current.noRouteFound),
               ),
-              body: const Center(child: Text(AppStrings.noRouteFound)),
+              body: Center(child: Text(S.current.noRouteFound)),
             ));
   }
 }

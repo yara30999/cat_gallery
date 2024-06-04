@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import '../../../generated/l10n.dart';
 import '../../resources/assets_manager.dart';
 import '../../resources/color_manager.dart';
-import '../../resources/strings_manager.dart';
 import '../../resources/styles_manager.dart';
 import '../../resources/values_manager.dart';
 import 'widgets/custom_button.dart';
@@ -48,18 +48,18 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                     flex: 2,
                   ),
                   Text(
-                    AppStrings.hello,
+                    S.current.hello,
                     style: Styles.textStyle30En2(context),
                   ),
                   Text(
-                    AppStrings.loginTitle,
+                    S.current.loginTitle,
                     style: Styles.textStyle30En2(context),
                   ),
                   const SizedBox(
                     height: 30.0,
                   ),
                   CustomTextField(
-                    label: "Email",
+                    label: S.current.emailLabel,
                     inputType: TextInputType.emailAddress,
                     onChanged: (value) {
                       setState(() {
@@ -71,7 +71,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                     height: 20.0,
                   ),
                   CustomTextField(
-                    label: "Password",
+                    label: S.current.passwordLabel,
                     inputType: TextInputType.visiblePassword,
                     isObscure: isObscure,
                     onChanged: (value) {
@@ -95,7 +95,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                     child: TextButton(
                       onPressed: () => {},
                       child: Text(
-                        AppStrings.forgotYourPassword,
+                        S.current.forgotYourPassword,
                         style: Styles.textStyle18En1(context)
                             .copyWith(color: ColorManager.pink1),
                       ),
@@ -113,7 +113,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                       onTap: (_formKey.currentState?.validate() ?? false)
                           ? () {}
                           : null,
-                      btnTitle: AppStrings.loginLabel,
+                      btnTitle: S.current.loginLabel,
                     ),
                   ),
                   const SizedBox(
@@ -121,7 +121,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                   ),
                   CustomDividerWithText(
                     text: Text(
-                      AppStrings.orContinueWith,
+                      S.current.orContinueWith,
                       style: Styles.textStyle20En2(context),
                     ),
                   ),
@@ -150,8 +150,8 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                     height: 30.0,
                   ),
                   CusomTextRow(
-                    questionTxt: AppStrings.notAMember,
-                    clickTxt: AppStrings.registerLabel,
+                    questionTxt: S.current.notAMember,
+                    clickTxt: S.current.registerLabel,
                     onTap: () {},
                   ),
                   const Spacer(
