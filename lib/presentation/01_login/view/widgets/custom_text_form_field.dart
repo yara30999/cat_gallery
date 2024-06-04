@@ -4,30 +4,37 @@ import '../../../resources/strings_manager.dart';
 
 typedef ValidatorFunction = String? Function(String?);
 
-class Validators {
-  static String? validatePassword(String? value) {
+abstract class IValidationService {
+  String? validatePassword(String? value);
+  String? validateEmail(String? value);
+  String? validateNotEmpty(String? value);
+}
+
+class ValidationServiceImpl implements IValidationService {
+  @override
+  String? validatePassword(String? value) {
     if (value == null || value.isEmpty) {
       return AppStrings.emptyMsg;
-    } else {
-      return RegExp(r'^.{6,}$').hasMatch(value)
-          ? null
-          : AppStrings.passwordNotValid;
+    } else if (!RegExp(r'^.{6,}$').hasMatch(value)) {
+      return AppStrings.passwordNotValid;
     }
+    return null;
   }
 
-  static String? validateEmail(String? value) {
+  @override
+  String? validateEmail(String? value) {
     if (value == null || value.isEmpty) {
       return AppStrings.emptyMsg;
-    } else {
-      return RegExp(
-                  r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-              .hasMatch(value)
-          ? null
-          : AppStrings.emailNotValid;
+    } else if (!RegExp(
+            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+$")
+        .hasMatch(value)) {
+      return AppStrings.emailNotValid;
     }
+    return null;
   }
 
-  static String? validateNotEmpty(String? value) {
+  @override
+  String? validateNotEmpty(String? value) {
     return value == null || value.isEmpty ? AppStrings.emptyMsg : null;
   }
 }
@@ -40,6 +47,7 @@ class CustomTextField extends StatelessWidget {
   final bool? fillColor;
   final TextInputType inputType;
   final ValidatorFunction? customValidator;
+  final IValidationService validationService;
 
   const CustomTextField({
     super.key,
@@ -52,16 +60,21 @@ class CustomTextField extends StatelessWidget {
     this.suffixIcon,
     this.fillColor,
     this.customValidator,
+    required this.validationService,
   });
 
   ValidatorFunction get _defaultValidator {
+    /*
+    Directly assigns the appropriate function to the validator property
+    without needing an intermediate function call here.
+    */
     switch (inputType) {
       case TextInputType.visiblePassword:
-        return Validators.validatePassword;
+        return validationService.validatePassword;
       case TextInputType.emailAddress:
-        return Validators.validateEmail;
+        return validationService.validateEmail;
       default:
-        return Validators.validateNotEmpty;
+        return validationService.validateNotEmpty;
     }
   }
 

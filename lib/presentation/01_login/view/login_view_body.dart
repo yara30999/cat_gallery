@@ -18,6 +18,7 @@ class LoginViewBody extends StatefulWidget {
 }
 
 class _LoginViewBodyState extends State<LoginViewBody> {
+  final IValidationService validationService = ValidationServiceImpl();
   String? email;
   String? password;
   bool isObscure = true;
@@ -60,6 +61,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                   ),
                   CustomTextField(
                     label: "Email",
+                    validationService: validationService,
                     inputType: TextInputType.emailAddress,
                     onChanged: (value) {
                       setState(() {
@@ -72,6 +74,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                   ),
                   CustomTextField(
                     label: "Password",
+                    validationService: validationService,
                     inputType: TextInputType.visiblePassword,
                     isObscure: isObscure,
                     onChanged: (value) {
