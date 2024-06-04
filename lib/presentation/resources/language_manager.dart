@@ -3,15 +3,8 @@ import 'package:intl/intl.dart';
 
 enum LanguageType { english, arabic }
 
-/*
-Do not forget to use shared prefs on the localization 
-*/
-
 const String arabic = "ar";
 const String english = "en";
-
-const Locale arabicLocal = Locale("ar", "SA");
-const Locale englishLocal = Locale("en", "US");
 
 extension LanguageTypeExtension on LanguageType {
   String getValue() {
@@ -24,10 +17,18 @@ extension LanguageTypeExtension on LanguageType {
   }
 }
 
-bool currentLocalIsAr() {
-  return Intl.getCurrentLocale() == LanguageType.arabic.getValue();
-}
+/*
+Do not forget to use shared prefs on the localization 
+*/
+class LocalizationUtils {
+  static const Locale arabicLocal = Locale("ar", "SA");
+  static const Locale englishLocal = Locale("en", "US");
 
-bool currentLocalIsEn() {
-  return Intl.getCurrentLocale() == LanguageType.english.getValue();
+  static bool currentLocalIsAr() {
+    return Intl.getCurrentLocale() == LanguageType.arabic.getValue();
+  }
+
+  static bool currentLocalIsEn() {
+    return Intl.getCurrentLocale() == LanguageType.english.getValue();
+  }
 }
