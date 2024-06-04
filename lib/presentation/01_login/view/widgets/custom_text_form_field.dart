@@ -1,43 +1,8 @@
 import 'package:flutter/material.dart';
+import '../../../../app/di.dart';
+import '../../../../app/types_definitions.dart';
+import '../../../../data/special_sevices/validation_service.dart';
 import '../../../resources/color_manager.dart';
-import '../../../resources/strings_manager.dart';
-
-typedef ValidatorFunction = String? Function(String?);
-
-abstract class IValidationService {
-  String? validatePassword(String? value);
-  String? validateEmail(String? value);
-  String? validateNotEmpty(String? value);
-}
-
-class ValidationServiceImpl implements IValidationService {
-  @override
-  String? validatePassword(String? value) {
-    if (value == null || value.isEmpty) {
-      return AppStrings.emptyMsg;
-    } else if (!RegExp(r'^.{6,}$').hasMatch(value)) {
-      return AppStrings.passwordNotValid;
-    }
-    return null;
-  }
-
-  @override
-  String? validateEmail(String? value) {
-    if (value == null || value.isEmpty) {
-      return AppStrings.emptyMsg;
-    } else if (!RegExp(
-            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+$")
-        .hasMatch(value)) {
-      return AppStrings.emailNotValid;
-    }
-    return null;
-  }
-
-  @override
-  String? validateNotEmpty(String? value) {
-    return value == null || value.isEmpty ? AppStrings.emptyMsg : null;
-  }
-}
 
 class CustomTextField extends StatelessWidget {
   final String? hint, label;
@@ -47,7 +12,6 @@ class CustomTextField extends StatelessWidget {
   final bool? fillColor;
   final TextInputType inputType;
   final ValidatorFunction? customValidator;
-  final IValidationService validationService;
 
   const CustomTextField({
     super.key,
@@ -60,8 +24,9 @@ class CustomTextField extends StatelessWidget {
     this.suffixIcon,
     this.fillColor,
     this.customValidator,
-    required this.validationService,
   });
+
+  static final validationService = instance<IValidationService>();
 
   ValidatorFunction get _defaultValidator {
     /*
