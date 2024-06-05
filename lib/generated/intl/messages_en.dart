@@ -22,8 +22,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "alreadyHaveAnAccount":
+            MessageLookupByLibrary.simpleMessage("Already have an account?"),
         "appTitle":
             MessageLookupByLibrary.simpleMessage("Flutter cat information app"),
+        "createAccount": MessageLookupByLibrary.simpleMessage("Create Account"),
         "emailLabel": MessageLookupByLibrary.simpleMessage("Email Id"),
         "emailNotValid":
             MessageLookupByLibrary.simpleMessage("Email not formatted well"),
@@ -35,12 +38,23 @@ class MessageLookup extends MessageLookupByLibrary {
         "loginTitle":
             MessageLookupByLibrary.simpleMessage("Sign into your Account."),
         "noRouteFound": MessageLookupByLibrary.simpleMessage("no_route_found"),
-        "notAMember": MessageLookupByLibrary.simpleMessage("Not a member? "),
+        "notAMember": MessageLookupByLibrary.simpleMessage("Not a member?"),
         "orContinueWith":
             MessageLookupByLibrary.simpleMessage("Or Continue With"),
+        "passwordConfirmLabel":
+            MessageLookupByLibrary.simpleMessage("Confirm Password"),
         "passwordLabel": MessageLookupByLibrary.simpleMessage("Password"),
         "passwordNotValid": MessageLookupByLibrary.simpleMessage(
             "Password must be at least 6 characters long"),
-        "registerLabel": MessageLookupByLibrary.simpleMessage("Register")
+        "passwordsDoNotMatch":
+            MessageLookupByLibrary.simpleMessage("Passwords do not match"),
+        "registerLabel": MessageLookupByLibrary.simpleMessage("Register"),
+        "usernameLabel": MessageLookupByLibrary.simpleMessage("Username"),
+        "usernameNotValid":
+            MessageLookupByLibrary.simpleMessage("Username not valid"),
+        "usernameTooLong":
+            MessageLookupByLibrary.simpleMessage("Username too long"),
+        "usernameTooShort":
+            MessageLookupByLibrary.simpleMessage("Username too short")
       };
 }

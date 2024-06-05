@@ -22,8 +22,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "alreadyHaveAnAccount":
+            MessageLookupByLibrary.simpleMessage("لديك حساب؟"),
         "appTitle": MessageLookupByLibrary.simpleMessage(
             "تطبيق معلومات القطط باستخدام فلاتر"),
+        "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
         "emailLabel": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
         "emailNotValid": MessageLookupByLibrary.simpleMessage(
             "البريد الإلكتروني غير منسق بشكل جيد"),
@@ -36,11 +39,22 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تسجيل الدخول إلى حسابك."),
         "noRouteFound":
             MessageLookupByLibrary.simpleMessage("لم يتم العثور على المسار"),
-        "notAMember": MessageLookupByLibrary.simpleMessage("لست عضوا؟ "),
+        "notAMember": MessageLookupByLibrary.simpleMessage("لست عضوا؟"),
         "orContinueWith": MessageLookupByLibrary.simpleMessage("أو تابع مع"),
+        "passwordConfirmLabel":
+            MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
         "passwordLabel": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "passwordNotValid": MessageLookupByLibrary.simpleMessage(
             "يجب أن تكون كلمة المرور مكونة من 6 أحرف على الأقل"),
-        "registerLabel": MessageLookupByLibrary.simpleMessage("تسجيل")
+        "passwordsDoNotMatch":
+            MessageLookupByLibrary.simpleMessage("كلمة المرور غير مطابقة"),
+        "registerLabel": MessageLookupByLibrary.simpleMessage("تسجيل"),
+        "usernameLabel": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
+        "usernameNotValid":
+            MessageLookupByLibrary.simpleMessage("اسم المستخدم غير صالح"),
+        "usernameTooLong":
+            MessageLookupByLibrary.simpleMessage("اسم المستخدم طويل جدًا"),
+        "usernameTooShort":
+            MessageLookupByLibrary.simpleMessage("اسم المستخدم قصير جدًا")
       };
 }

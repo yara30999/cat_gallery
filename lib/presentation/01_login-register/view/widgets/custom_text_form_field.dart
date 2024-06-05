@@ -34,6 +34,8 @@ class CustomTextField extends StatelessWidget {
     without needing an intermediate function call here.
     */
     switch (inputType) {
+      case TextInputType.name:
+        return validationService.validateName;
       case TextInputType.visiblePassword:
         return validationService.validatePassword;
       case TextInputType.emailAddress:

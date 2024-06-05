@@ -70,6 +70,16 @@ class S {
     );
   }
 
+  /// `Create Account`
+  String get createAccount {
+    return Intl.message(
+      'Create Account',
+      name: 'createAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Sign into your Account.`
   String get loginTitle {
     return Intl.message(
@@ -95,6 +105,26 @@ class S {
     return Intl.message(
       'Password',
       name: 'passwordLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Username`
+  String get usernameLabel {
+    return Intl.message(
+      'Username',
+      name: 'usernameLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Password`
+  String get passwordConfirmLabel {
+    return Intl.message(
+      'Confirm Password',
+      name: 'passwordConfirmLabel',
       desc: '',
       args: [],
     );
@@ -140,11 +170,21 @@ class S {
     );
   }
 
-  /// `Not a member? `
+  /// `Not a member?`
   String get notAMember {
     return Intl.message(
-      'Not a member? ',
+      'Not a member?',
       name: 'notAMember',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Already have an account?`
+  String get alreadyHaveAnAccount {
+    return Intl.message(
+      'Already have an account?',
+      name: 'alreadyHaveAnAccount',
       desc: '',
       args: [],
     );
@@ -165,6 +205,46 @@ class S {
     return Intl.message(
       'Password must be at least 6 characters long',
       name: 'passwordNotValid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Passwords do not match`
+  String get passwordsDoNotMatch {
+    return Intl.message(
+      'Passwords do not match',
+      name: 'passwordsDoNotMatch',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Username too short`
+  String get usernameTooShort {
+    return Intl.message(
+      'Username too short',
+      name: 'usernameTooShort',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Username too long`
+  String get usernameTooLong {
+    return Intl.message(
+      'Username too long',
+      name: 'usernameTooLong',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Username not valid`
+  String get usernameNotValid {
+    return Intl.message(
+      'Username not valid',
+      name: 'usernameNotValid',
       desc: '',
       args: [],
     );
