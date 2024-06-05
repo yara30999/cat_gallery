@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../resources/font_manager.dart';
 import '../../../resources/styles_manager.dart';
 
 class CustomButton extends StatelessWidget {
@@ -17,7 +18,8 @@ class CustomButton extends StatelessWidget {
         onPressed: onTap,
         child: Text(
           btnTitle,
-          style: Styles.textStyle30En2(context),
+          style: Styles.style30Bold(context,
+              englishFontFamily: FontConstants.font2CormorantInfant),
         ));
   }
 }

@@ -7,7 +7,7 @@ const String arabic = "ar";
 const String english = "en";
 
 extension LanguageTypeExtension on LanguageType {
-  String getValue() {
+  String getCode() {
     switch (this) {
       case LanguageType.english:
         return english;
@@ -25,10 +25,10 @@ class LocalizationUtils {
   static const Locale englishLocal = Locale("en", "US");
 
   static bool currentLocalIsAr() {
-    return Intl.getCurrentLocale() == LanguageType.arabic.getValue();
+    return Intl.getCurrentLocale() == LanguageType.arabic.getCode();
   }
 
-  static bool currentLocalIsEn() {
-    return Intl.getCurrentLocale() == LanguageType.english.getValue();
-  }
+  // static bool currentLocalIsEn() {
+  //   return Intl.getCurrentLocale() == LanguageType.english.getValue();
+  // }
 }

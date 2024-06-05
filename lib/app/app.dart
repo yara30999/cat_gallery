@@ -22,7 +22,7 @@ class _MyAppState extends State<MyApp> {
       themeMode: ThemeMode.system,
       theme: getLightTheme(),
       darkTheme: getDarkTheme(),
-      locale: LocalizationUtils.englishLocal,
+      locale: LocalizationUtils.arabicLocal,
       localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,

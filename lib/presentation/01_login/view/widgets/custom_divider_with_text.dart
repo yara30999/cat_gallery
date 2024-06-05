@@ -14,7 +14,7 @@ class CustomDividerWithText extends StatelessWidget {
         Expanded(
           child: CustomPaint(
             painter: CustomDividerPainter(
-                leftGradient: LocalizationUtils.currentLocalIsEn()),
+                leftGradient: !LocalizationUtils.currentLocalIsAr()),
           ),
         ),
         Padding(
@@ -24,7 +24,7 @@ class CustomDividerWithText extends StatelessWidget {
         Expanded(
           child: CustomPaint(
             painter: CustomDividerPainter(
-                leftGradient: !LocalizationUtils.currentLocalIsEn()),
+                leftGradient: LocalizationUtils.currentLocalIsAr()),
           ),
         ),
       ],

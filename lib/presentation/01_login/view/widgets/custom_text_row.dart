@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../resources/color_manager.dart';
+import '../../../resources/font_manager.dart';
 import '../../../resources/styles_manager.dart';
 
 class CusomTextRow extends StatelessWidget {
@@ -20,15 +21,16 @@ class CusomTextRow extends StatelessWidget {
       children: [
         Text(
           questionTxt,
-          style:
-              Styles.textStyle18En1(context).copyWith(color: ColorManager.grey),
+          style: Styles.style18semiBold(context,
+                  englishFontFamily: FontConstants.font1Monserrat)
+              .copyWith(color: ColorManager.grey),
         ),
         GestureDetector(
           onTap: onTap,
           child: Text(
             clickTxt,
-            style: Styles.textStyle18En1(context)
-                .copyWith(color: ColorManager.pink1),
+            style: Styles.style18semiBold(context,
+                englishFontFamily: FontConstants.font1Monserrat),
           ),
         )
       ],

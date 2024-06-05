@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../generated/l10n.dart';
 import '../../resources/assets_manager.dart';
 import '../../resources/color_manager.dart';
+import '../../resources/font_manager.dart';
 import '../../resources/styles_manager.dart';
 import '../../resources/values_manager.dart';
 import 'widgets/custom_button.dart';
@@ -49,11 +50,13 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                   ),
                   Text(
                     S.current.hello,
-                    style: Styles.textStyle30En2(context),
+                    style: Styles.style30Bold(context,
+                        englishFontFamily: FontConstants.font2CormorantInfant),
                   ),
                   Text(
                     S.current.loginTitle,
-                    style: Styles.textStyle30En2(context),
+                    style: Styles.style30Bold(context,
+                        englishFontFamily: FontConstants.font2CormorantInfant),
                   ),
                   const SizedBox(
                     height: 30.0,
@@ -96,8 +99,8 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                       onPressed: () => {},
                       child: Text(
                         S.current.forgotYourPassword,
-                        style: Styles.textStyle18En1(context)
-                            .copyWith(color: ColorManager.pink1),
+                        style: Styles.style18semiBold(context,
+                            englishFontFamily: FontConstants.font1Monserrat),
                       ),
                     ),
                   ),
@@ -122,7 +125,9 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                   CustomDividerWithText(
                     text: Text(
                       S.current.orContinueWith,
-                      style: Styles.textStyle20En2(context),
+                      style: Styles.style20Bold(context,
+                          englishFontFamily:
+                              FontConstants.font2CormorantInfant),
                     ),
                   ),
                   const SizedBox(
