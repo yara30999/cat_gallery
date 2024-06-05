@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import '../../resources/conistants_manager.dart';
+import '../../../resources/conistants_manager.dart';
 import 'login_view_body.dart';
-import 'widgets/background_painter.dart';
+import '../widgets/background_painter.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});

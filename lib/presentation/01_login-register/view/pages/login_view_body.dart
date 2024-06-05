@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import '../../../generated/l10n.dart';
-import '../../resources/assets_manager.dart';
-import '../../resources/color_manager.dart';
-import '../../resources/font_manager.dart';
-import '../../resources/language_manager.dart';
-import '../../resources/styles_manager.dart';
-import '../../resources/values_manager.dart';
-import 'widgets/custom_button.dart';
-import 'widgets/custom_divider_with_text.dart';
-import 'widgets/custom_text_form_field.dart';
-import 'widgets/custom_text_row.dart';
-import 'widgets/social_componant.dart';
+import '../../../../generated/l10n.dart';
+import '../../../resources/assets_manager.dart';
+import '../../../resources/color_manager.dart';
+import '../../../resources/font_manager.dart';
+import '../../../resources/language_manager.dart';
+import '../../../resources/styles_manager.dart';
+import '../../../resources/values_manager.dart';
+import '../widgets/custom_button.dart';
+import '../widgets/custom_divider_with_text.dart';
+import '../widgets/custom_text_form_field.dart';
+import '../widgets/custom_text_row.dart';
+import '../widgets/social_componant.dart';
 
 class LoginViewBody extends StatefulWidget {
   const LoginViewBody({super.key});

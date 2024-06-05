@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../generated/l10n.dart';
-import '../01_login/view/login_view.dart';
+import '../01_login-register/view/pages/login_view.dart';
 import '../02_home/view/home_view.dart';
 
 class Routes {
