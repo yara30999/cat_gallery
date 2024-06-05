@@ -4,6 +4,7 @@ import '../../../resources/assets_manager.dart';
 import '../../../resources/color_manager.dart';
 import '../../../resources/font_manager.dart';
 import '../../../resources/language_manager.dart';
+import '../../../resources/routes_manager.dart';
 import '../../../resources/styles_manager.dart';
 import '../../../resources/values_manager.dart';
 import '../widgets/custom_button.dart';
@@ -160,7 +161,10 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                   CusomTextRow(
                     questionTxt: S.current.notAMember,
                     clickTxt: S.current.registerLabel,
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushReplacementNamed(
+                          context, Routes.registerRoute);
+                    },
                   ),
                   const Spacer(
                     flex: 2,
