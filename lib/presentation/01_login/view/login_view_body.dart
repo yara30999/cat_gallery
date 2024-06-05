@@ -3,6 +3,7 @@ import '../../../generated/l10n.dart';
 import '../../resources/assets_manager.dart';
 import '../../resources/color_manager.dart';
 import '../../resources/font_manager.dart';
+import '../../resources/language_manager.dart';
 import '../../resources/styles_manager.dart';
 import '../../resources/values_manager.dart';
 import 'widgets/custom_button.dart';
@@ -94,7 +95,9 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                         }),
                   ),
                   Align(
-                    alignment: Alignment.centerRight,
+                    alignment: LocalizationUtils.currentLocalIsAr()
+                        ? Alignment.bottomLeft
+                        : Alignment.centerRight,
                     child: TextButton(
                       onPressed: () => {},
                       child: Text(
