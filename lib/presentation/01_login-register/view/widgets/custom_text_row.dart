@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../resources/color_manager.dart';
 import '../../../resources/font_manager.dart';
 import '../../../resources/styles_manager.dart';
+import '../../../resources/values_manager.dart';
 
 class CusomTextRow extends StatelessWidget {
   final String questionTxt, clickTxt;
@@ -24,6 +25,9 @@ class CusomTextRow extends StatelessWidget {
           style: Styles.style18semiBold(context,
                   englishFontFamily: FontConstants.font1Monserrat)
               .copyWith(color: ColorManager.grey),
+        ),
+        const SizedBox(
+          width: AppSize.s5,
         ),
         GestureDetector(
           onTap: onTap,
