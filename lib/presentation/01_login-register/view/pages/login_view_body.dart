@@ -41,6 +41,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
           padding: const EdgeInsets.symmetric(horizontal: 15.0),
           child: Form(
             key: _formKey,
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -64,6 +65,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 CustomTextField(
                   label: S.current.emailLabel,
                   inputType: TextInputType.emailAddress,
+                  textDirection: TextDirection.ltr,
                   onChanged: (value) {
                     setState(() {
                       email = value;
@@ -76,6 +78,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 CustomTextField(
                   label: S.current.passwordLabel,
                   inputType: TextInputType.visiblePassword,
+                  textDirection: TextDirection.ltr,
                   isObscure: isObscure,
                   onChanged: (value) {
                     setState(() {

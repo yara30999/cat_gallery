@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:intl_phone_field/phone_number.dart' as intl_phone;
+import '../../../../app/constants.dart';
 import '../../../../app/di.dart';
 import '../../../../data/special_sevices/validation_service.dart';
 import '../../../../generated/l10n.dart';
@@ -8,6 +10,7 @@ import '../../../resources/routes_manager.dart';
 import '../../../resources/styles_manager.dart';
 import '../../../resources/values_manager.dart';
 import '../widgets/custom_button.dart';
+import '../widgets/custom_phone_form_field.dart';
 import '../widgets/custom_text_form_field.dart';
 import '../widgets/custom_text_row.dart';
 import '../widgets/or_continue_with.dart';
@@ -24,10 +27,47 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
   String? email;
   String? password;
   String? confirmPassword;
+  intl_phone.PhoneNumber? phoneNum;
+  String _countryCode = Constants.initialCountryCode;
+  String _countryISOCode = Constants.initialCountryISO;
+  late TextEditingController _phoneController;
+
   bool isObscurePassword = true;
   bool isObscureConfirmPassword = true;
   final _formKey = GlobalKey<FormState>();
   final _validationService = instance<IValidationService>();
+
+  @override
+  void initState() {
+    super.initState();
+    initPhoneController();
+  }
+
+  void initPhoneController() {
+    _phoneController = TextEditingController(text: _countryCode);
+    /* Listen to changes and control input
+        prevent the initial value in text field from being erased.
+    */
+    _phoneController.addListener(() {
+      final text = _phoneController.text;
+      if (!text.startsWith(_countryCode)) {
+        _phoneController.value = _phoneController.value.copyWith(
+          text: _countryCode,
+          selection: TextSelection.collapsed(offset: _countryCode.length),
+        );
+      } else if (_phoneController.selection.start < _countryCode.length) {
+        _phoneController.selection =
+            TextSelection.collapsed(offset: _countryCode.length);
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    _phoneController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -46,6 +86,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
           padding: const EdgeInsets.symmetric(horizontal: 15.0),
           child: Form(
             key: _formKey,
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -76,6 +117,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                 CustomTextField(
                   label: S.current.emailLabel,
                   inputType: TextInputType.emailAddress,
+                  textDirection: TextDirection.ltr,
                   onChanged: (value) {
                     setState(() {
                       email = value;
@@ -88,6 +130,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                 CustomTextField(
                   label: S.current.passwordLabel,
                   inputType: TextInputType.visiblePassword,
+                  textDirection: TextDirection.ltr,
                   isObscure: isObscurePassword,
                   onChanged: (value) {
                     setState(() {
@@ -113,6 +156,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                 CustomTextField(
                   label: S.current.passwordConfirmLabel,
                   inputType: TextInputType.visiblePassword,
+                  textDirection: TextDirection.ltr,
                   isObscure: isObscureConfirmPassword,
                   onChanged: (value) {
                     setState(() {
@@ -139,7 +183,38 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                 const SizedBox(
                   height: 20.0,
                 ),
-                //login button
+                /* from country_code_picker: ^3.0.0
+                 and Phone obj come from intl_phone_field: ^3.1.0 */
+                PhoneFormField(
+                  countryCode: _countryCode,
+                  countryISOCode: _countryISOCode,
+                  controller: _phoneController,
+                  onCountryChanged: (country) {
+                    setState(() {
+                      _countryCode = country.dialCode!;
+                      _countryISOCode = country.code!;
+                      _phoneController.text = _countryCode;
+                    });
+                  },
+                  onPhoneNumberChanged: (value) {
+                    setState(() {
+                      phoneNum = intl_phone.PhoneNumber(
+                        countryISOCode: _countryISOCode, //'EG' only 2 digits
+                        countryCode: _countryCode, // +20
+                        number: value
+                            .replaceFirstMapped(_countryCode, (m) => '')
+                            .trim(),
+                      );
+                    });
+                  },
+                  validator: (value) {
+                    return _validationService.validatePhoneNumber(phoneNum);
+                  },
+                ),
+                const SizedBox(
+                  height: 20.0,
+                ),
+                //register button
                 SizedBox(
                   height: MediaQuery.sizeOf(context).height * .06 < AppSize.s40
                       ? AppSize.s40

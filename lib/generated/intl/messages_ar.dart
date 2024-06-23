@@ -26,7 +26,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("لديك حساب؟"),
         "appTitle": MessageLookupByLibrary.simpleMessage(
             "تطبيق معلومات القطط باستخدام فلاتر"),
+        "country_number_length_not_found":
+            MessageLookupByLibrary.simpleMessage("بيانات البلد غير موجودة"),
         "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+        "do_not_type_country_code_again":
+            MessageLookupByLibrary.simpleMessage("لا تكتب رمز البلد مرة أخرى"),
         "emailLabel": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
         "emailNotValid": MessageLookupByLibrary.simpleMessage(
             "البريد الإلكتروني غير منسق بشكل جيد"),
@@ -48,7 +52,16 @@ class MessageLookup extends MessageLookupByLibrary {
             "يجب أن تكون كلمة المرور مكونة من 6 أحرف على الأقل"),
         "passwordsDoNotMatch":
             MessageLookupByLibrary.simpleMessage("كلمة المرور غير مطابقة"),
+        "phone_number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+        "phone_number_is_required":
+            MessageLookupByLibrary.simpleMessage("رقم الهاتف مطلوب"),
+        "phone_number_length_invalid":
+            MessageLookupByLibrary.simpleMessage("طول رقم الهاتف غير صحيح"),
+        "please_enter_a_valid_phone_number":
+            MessageLookupByLibrary.simpleMessage("يرجى إدخال رقم هاتف صالح"),
         "registerLabel": MessageLookupByLibrary.simpleMessage("تسجيل"),
+        "search_country":
+            MessageLookupByLibrary.simpleMessage("ابحث عن الدولة"),
         "usernameLabel": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
         "usernameNotValid":
             MessageLookupByLibrary.simpleMessage("اسم المستخدم غير صالح"),

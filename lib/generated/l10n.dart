@@ -269,6 +269,76 @@ class S {
       args: [],
     );
   }
+
+  /// `Search country`
+  String get search_country {
+    return Intl.message(
+      'Search country',
+      name: 'search_country',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone Number`
+  String get phone_number {
+    return Intl.message(
+      'Phone Number',
+      name: 'phone_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do not type the country code again`
+  String get do_not_type_country_code_again {
+    return Intl.message(
+      'Do not type the country code again',
+      name: 'do_not_type_country_code_again',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone number is required`
+  String get phone_number_is_required {
+    return Intl.message(
+      'Phone number is required',
+      name: 'phone_number_is_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid phone number`
+  String get please_enter_a_valid_phone_number {
+    return Intl.message(
+      'Please enter a valid phone number',
+      name: 'please_enter_a_valid_phone_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone number length is invalid`
+  String get phone_number_length_invalid {
+    return Intl.message(
+      'Phone number length is invalid',
+      name: 'phone_number_length_invalid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Country data not found`
+  String get country_number_length_not_found {
+    return Intl.message(
+      'Country data not found',
+      name: 'country_number_length_not_found',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

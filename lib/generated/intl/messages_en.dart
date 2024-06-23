@@ -26,7 +26,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
         "appTitle":
             MessageLookupByLibrary.simpleMessage("Flutter cat information app"),
+        "country_number_length_not_found":
+            MessageLookupByLibrary.simpleMessage("Country data not found"),
         "createAccount": MessageLookupByLibrary.simpleMessage("Create Account"),
+        "do_not_type_country_code_again": MessageLookupByLibrary.simpleMessage(
+            "Do not type the country code again"),
         "emailLabel": MessageLookupByLibrary.simpleMessage("Email Id"),
         "emailNotValid":
             MessageLookupByLibrary.simpleMessage("Email not formatted well"),
@@ -48,7 +52,17 @@ class MessageLookup extends MessageLookupByLibrary {
             "Password must be at least 6 characters long"),
         "passwordsDoNotMatch":
             MessageLookupByLibrary.simpleMessage("Passwords do not match"),
+        "phone_number": MessageLookupByLibrary.simpleMessage("Phone Number"),
+        "phone_number_is_required":
+            MessageLookupByLibrary.simpleMessage("Phone number is required"),
+        "phone_number_length_invalid": MessageLookupByLibrary.simpleMessage(
+            "Phone number length is invalid"),
+        "please_enter_a_valid_phone_number":
+            MessageLookupByLibrary.simpleMessage(
+                "Please enter a valid phone number"),
         "registerLabel": MessageLookupByLibrary.simpleMessage("Register"),
+        "search_country":
+            MessageLookupByLibrary.simpleMessage("Search country"),
         "usernameLabel": MessageLookupByLibrary.simpleMessage("Username"),
         "usernameNotValid":
             MessageLookupByLibrary.simpleMessage("Username not valid"),

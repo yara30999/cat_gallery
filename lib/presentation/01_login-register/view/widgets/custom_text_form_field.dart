@@ -12,19 +12,20 @@ class CustomTextField extends StatelessWidget {
   final bool? fillColor;
   final TextInputType inputType;
   final ValidatorFunction? customValidator;
+  final TextDirection? textDirection;
 
-  const CustomTextField({
-    super.key,
-    required this.label,
-    required this.inputType,
-    required this.onChanged,
-    this.isObscure = false,
-    this.hint,
-    this.prefixIcon,
-    this.suffixIcon,
-    this.fillColor,
-    this.customValidator,
-  });
+  const CustomTextField(
+      {super.key,
+      required this.label,
+      required this.inputType,
+      required this.onChanged,
+      this.isObscure = false,
+      this.hint,
+      this.prefixIcon,
+      this.suffixIcon,
+      this.fillColor,
+      this.customValidator,
+      this.textDirection});
 
   static final validationService = instance<IValidationService>();
 
@@ -50,6 +51,7 @@ class CustomTextField extends StatelessWidget {
     return TextFormField(
       obscureText: isObscure,
       keyboardType: inputType,
+      textDirection: textDirection,
       validator: customValidator ?? _defaultValidator,
       onChanged: onChanged,
       decoration: InputDecoration(
