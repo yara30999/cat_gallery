@@ -27,15 +27,21 @@ class _LoginViewBodyState extends State<LoginViewBody> {
   Widget build(BuildContext context) {
     return Center(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 15.0),
+        padding: EdgeInsets.only(
+          //top: 15.0,
+          right: 15.0,
+          left: 15.0,
+          //for the opening keyboard
+          bottom: MediaQuery.of(context).viewInsets.bottom,
+        ),
         child: Form(
           key: _formKey,
           autovalidateMode: AutovalidateMode.onUserInteraction,
           child: ListView(
             shrinkWrap: true,
             children: [
-              const SizedBox(
-                height: 30.0,
+              SizedBox(
+                height: MediaQuery.sizeOf(context).height * .03,
               ),
               Center(
                 child: Text(

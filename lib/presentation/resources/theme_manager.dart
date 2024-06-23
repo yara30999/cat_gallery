@@ -10,6 +10,7 @@ ThemeData getLightTheme() {
     primaryColorLight: ColorManager.primary3,
     primaryColorDark: ColorManager.primary1,
     disabledColor: ColorManager.primary4,
+    scaffoldBackgroundColor: ColorManager.white,
     // cardview theme
     cardTheme: CardTheme(
         color: ColorManager.white,
@@ -51,30 +52,34 @@ ThemeData getLightTheme() {
 
     // input decoration theme (text form field)
     inputDecorationTheme: InputDecorationTheme(
-        // content padding
-        contentPadding: const EdgeInsets.all(AppPadding.p16),
-        hintStyle: TextStyle(color: ColorManager.grey),
-        labelStyle: TextStyle(color: ColorManager.primary1),
-        errorStyle: TextStyle(color: ColorManager.red), // enabled border style
-        enabledBorder: OutlineInputBorder(
-            borderSide:
-                BorderSide(color: ColorManager.primary1, width: AppSize.s2),
-            borderRadius: const BorderRadius.all(Radius.circular(AppSize.s12))),
-        // focused border style
-        focusedBorder: OutlineInputBorder(
-            borderSide:
-                BorderSide(color: ColorManager.primary1, width: AppSize.s2),
-            borderRadius: const BorderRadius.all(Radius.circular(AppSize.s12))),
-        // error border style
-        errorBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: ColorManager.red, width: AppSize.s2),
-            borderRadius: const BorderRadius.all(Radius.circular(AppSize.s12))),
-        // focused border style
-        focusedErrorBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: ColorManager.red, width: AppSize.s2),
-            borderRadius:
-                const BorderRadius.all(Radius.circular(AppSize.s12)))),
-    // label style
+      // content padding
+      contentPadding: const EdgeInsets.all(AppPadding.p16),
+      hintStyle: TextStyle(color: ColorManager.grey),
+      labelStyle: TextStyle(color: ColorManager.primary1),
+      errorStyle: TextStyle(color: ColorManager.red), // enabled border style
+      enabledBorder: OutlineInputBorder(
+          borderSide:
+              BorderSide(color: ColorManager.primary1, width: AppSize.s2),
+          borderRadius: const BorderRadius.all(Radius.circular(AppSize.s12))),
+      // focused border style
+      focusedBorder: OutlineInputBorder(
+          borderSide:
+              BorderSide(color: ColorManager.primary1, width: AppSize.s2),
+          borderRadius: const BorderRadius.all(Radius.circular(AppSize.s12))),
+      // error border style
+      errorBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: ColorManager.red, width: AppSize.s2),
+          borderRadius: const BorderRadius.all(Radius.circular(AppSize.s12))),
+      // focused border style
+      focusedErrorBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: ColorManager.red, width: AppSize.s2),
+          borderRadius: const BorderRadius.all(Radius.circular(AppSize.s12))),
+    ),
+
+    //icon theme
+    iconTheme: IconThemeData(
+      color: ColorManager.primary1,
+    ),
   );
 }
 
@@ -86,6 +91,7 @@ ThemeData getDarkTheme() {
     primaryColorLight: ColorManager.primary3,
     primaryColorDark: ColorManager.primary1,
     disabledColor: ColorManager.primary4,
+    scaffoldBackgroundColor: ColorManager.black,
 
     // cardview theme
     cardTheme: CardTheme(
@@ -128,30 +134,34 @@ ThemeData getDarkTheme() {
 
     // input decoration theme (text form field)
     inputDecorationTheme: InputDecorationTheme(
-        // content padding
-        contentPadding: const EdgeInsets.all(AppPadding.p16),
-        hintStyle: TextStyle(color: ColorManager.grey),
-        labelStyle: TextStyle(color: ColorManager.orange3),
-        errorStyle: TextStyle(color: ColorManager.red),
-        // enabled border style
-        enabledBorder: OutlineInputBorder(
-            borderSide:
-                BorderSide(color: ColorManager.orange3, width: AppSize.s2),
-            borderRadius: const BorderRadius.all(Radius.circular(AppSize.s12))),
-        // focused border style
-        focusedBorder: OutlineInputBorder(
-            borderSide:
-                BorderSide(color: ColorManager.orange3, width: AppSize.s2),
-            borderRadius: const BorderRadius.all(Radius.circular(AppSize.s12))),
-        // error border style
-        errorBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: ColorManager.red, width: AppSize.s2),
-            borderRadius: const BorderRadius.all(Radius.circular(AppSize.s12))),
-        // focused border style
-        focusedErrorBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: ColorManager.red, width: AppSize.s2),
-            borderRadius:
-                const BorderRadius.all(Radius.circular(AppSize.s12)))),
-    // label style
+      // content padding
+      contentPadding: const EdgeInsets.all(AppPadding.p16),
+      hintStyle: TextStyle(color: ColorManager.grey),
+      labelStyle: TextStyle(color: ColorManager.orange3),
+      errorStyle: TextStyle(color: ColorManager.red),
+      // enabled border style
+      enabledBorder: OutlineInputBorder(
+          borderSide:
+              BorderSide(color: ColorManager.orange3, width: AppSize.s2),
+          borderRadius: const BorderRadius.all(Radius.circular(AppSize.s12))),
+      // focused border style
+      focusedBorder: OutlineInputBorder(
+          borderSide:
+              BorderSide(color: ColorManager.orange3, width: AppSize.s2),
+          borderRadius: const BorderRadius.all(Radius.circular(AppSize.s12))),
+      // error border style
+      errorBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: ColorManager.red, width: AppSize.s2),
+          borderRadius: const BorderRadius.all(Radius.circular(AppSize.s12))),
+      // focused border style
+      focusedErrorBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: ColorManager.red, width: AppSize.s2),
+          borderRadius: const BorderRadius.all(Radius.circular(AppSize.s12))),
+    ),
+
+    //icon theme
+    iconTheme: IconThemeData(
+      color: ColorManager.orange3,
+    ),
   );
 }

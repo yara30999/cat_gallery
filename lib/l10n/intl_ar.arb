@@ -27,5 +27,9 @@
   "phone_number_is_required": "رقم الهاتف مطلوب",
   "please_enter_a_valid_phone_number": "يرجى إدخال رقم هاتف صالح",
   "phone_number_length_invalid": "طول رقم الهاتف غير صحيح",
-  "country_number_length_not_found": "بيانات البلد غير موجودة"
+  "country_number_length_not_found": "بيانات البلد غير موجودة",
+  "male": "ذكر",
+  "female": "أنثى",
+  "genderRequired": "الحقل مطلوب",
+  "selectGender": "اختر الجنس"
 }

@@ -35,12 +35,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "emailNotValid": MessageLookupByLibrary.simpleMessage(
             "البريد الإلكتروني غير منسق بشكل جيد"),
         "emptyMsg": MessageLookupByLibrary.simpleMessage("الحقل مطلوب"),
+        "female": MessageLookupByLibrary.simpleMessage("أنثى"),
         "forgotYourPassword":
             MessageLookupByLibrary.simpleMessage("هل نسيت كلمة المرور؟"),
+        "genderRequired": MessageLookupByLibrary.simpleMessage("الحقل مطلوب"),
         "hello": MessageLookupByLibrary.simpleMessage("مرحباً!"),
         "loginLabel": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "loginTitle":
             MessageLookupByLibrary.simpleMessage("تسجيل الدخول إلى حسابك."),
+        "male": MessageLookupByLibrary.simpleMessage("ذكر"),
         "noRouteFound":
             MessageLookupByLibrary.simpleMessage("لم يتم العثور على المسار"),
         "notAMember": MessageLookupByLibrary.simpleMessage("لست عضوا؟"),
@@ -62,6 +65,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "registerLabel": MessageLookupByLibrary.simpleMessage("تسجيل"),
         "search_country":
             MessageLookupByLibrary.simpleMessage("ابحث عن الدولة"),
+        "selectGender": MessageLookupByLibrary.simpleMessage("اختر الجنس"),
         "usernameLabel": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
         "usernameNotValid":
             MessageLookupByLibrary.simpleMessage("اسم المستخدم غير صالح"),

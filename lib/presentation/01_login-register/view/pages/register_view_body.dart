@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl_phone_field/phone_number.dart' as intl_phone;
 import '../../../../app/constants.dart';
 import '../../../../app/di.dart';
+import '../../../../app/extensions.dart';
 import '../../../../data/special_sevices/validation_service.dart';
 import '../../../../generated/l10n.dart';
 import '../../../resources/color_manager.dart';
@@ -31,6 +32,28 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
   String _countryCode = Constants.initialCountryCode;
   String _countryISOCode = Constants.initialCountryISO;
   late TextEditingController _phoneController;
+
+  // Initial Selected Value
+  // String? dropdownvalue;
+
+  // // List of items in our dropdown menu
+  // var items = [
+  //   'Item 1',
+  //   'Item 2',
+  //   'Item 3',
+  //   'Item 4',
+  //   'Item 5',
+  // ];
+
+  Gender? selectedGender;
+
+  List<DropdownMenuItem<Gender>> genderItems =
+      Gender.values.map((Gender gender) {
+    return DropdownMenuItem<Gender>(
+      value: gender,
+      child: Text(gender.displayValue),
+    );
+  }).toList();
 
   bool isObscurePassword = true;
   bool isObscureConfirmPassword = true;
@@ -72,15 +95,21 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
   Widget build(BuildContext context) {
     return Center(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 15.0),
+        padding: EdgeInsets.only(
+          //top: 15.0,
+          right: 15.0,
+          left: 15.0,
+          //for the opening keyboard
+          bottom: MediaQuery.of(context).viewInsets.bottom,
+        ),
         child: Form(
           key: _formKey,
           autovalidateMode: AutovalidateMode.onUserInteraction,
           child: ListView(
             shrinkWrap: true,
             children: [
-              const SizedBox(
-                height: 30.0,
+              SizedBox(
+                height: MediaQuery.sizeOf(context).height * .03,
               ),
               Center(
                 child: Text(
@@ -199,6 +228,30 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                 },
                 validator: (value) {
                   return _validationService.validatePhoneNumber(phoneNum);
+                },
+              ),
+              const SizedBox(
+                height: 10.0,
+              ),
+              DropdownButtonFormField<Gender>(
+                value: selectedGender,
+                icon: Icon(
+                  Icons.keyboard_arrow_down,
+                  color: Theme.of(context).iconTheme.color,
+                ),
+                decoration: InputDecoration(
+                  labelText: S.current.selectGender,
+                ),
+                items: genderItems,
+                onChanged: (Gender? newValue) {
+                  if (newValue != null) {
+                    setState(() {
+                      selectedGender = newValue;
+                    });
+                  }
+                },
+                validator: (Gender? gender) {
+                  return _validationService.validateGenderSelection(gender);
                 },
               ),
               const SizedBox(

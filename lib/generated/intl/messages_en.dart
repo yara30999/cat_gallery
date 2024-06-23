@@ -35,12 +35,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "emailNotValid":
             MessageLookupByLibrary.simpleMessage("Email not formatted well"),
         "emptyMsg": MessageLookupByLibrary.simpleMessage("Field is required"),
+        "female": MessageLookupByLibrary.simpleMessage("Female"),
         "forgotYourPassword":
             MessageLookupByLibrary.simpleMessage("Forgot Your Password?"),
+        "genderRequired":
+            MessageLookupByLibrary.simpleMessage("Gender is required"),
         "hello": MessageLookupByLibrary.simpleMessage("Hello!"),
         "loginLabel": MessageLookupByLibrary.simpleMessage("Login"),
         "loginTitle":
             MessageLookupByLibrary.simpleMessage("Sign into your Account."),
+        "male": MessageLookupByLibrary.simpleMessage("Male"),
         "noRouteFound": MessageLookupByLibrary.simpleMessage("no_route_found"),
         "notAMember": MessageLookupByLibrary.simpleMessage("Not a member?"),
         "orContinueWith":
@@ -63,6 +67,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "registerLabel": MessageLookupByLibrary.simpleMessage("Register"),
         "search_country":
             MessageLookupByLibrary.simpleMessage("Search country"),
+        "selectGender": MessageLookupByLibrary.simpleMessage("Select Gender"),
         "usernameLabel": MessageLookupByLibrary.simpleMessage("Username"),
         "usernameNotValid":
             MessageLookupByLibrary.simpleMessage("Username not valid"),

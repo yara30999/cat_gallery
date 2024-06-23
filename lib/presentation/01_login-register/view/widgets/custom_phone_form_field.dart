@@ -4,7 +4,6 @@ import '../../../../app/constants.dart';
 import '../../../../app/di.dart';
 import '../../../../data/special_sevices/country_service.dart';
 import '../../../../generated/l10n.dart';
-import '../../../resources/color_manager.dart';
 import '../../../resources/language_manager.dart';
 
 class PhoneFormField extends StatelessWidget {
@@ -53,12 +52,14 @@ class PhoneFormField extends StatelessWidget {
             decoration: BoxDecoration(
               border: (LocalizationUtils.currentLocalIsAr())
                   ? Border(
-                      left:
-                          BorderSide(width: 2.0, color: ColorManager.primary1),
+                      left: BorderSide(
+                          width: 2.0,
+                          color: Theme.of(context).iconTheme.color!),
                     )
                   : Border(
-                      right:
-                          BorderSide(width: 2.0, color: ColorManager.primary1),
+                      right: BorderSide(
+                          width: 2.0,
+                          color: Theme.of(context).iconTheme.color!),
                     ),
             ),
             child: CountryCodePicker(
@@ -68,6 +69,7 @@ class PhoneFormField extends StatelessWidget {
               showCountryOnly: true,
               hideMainText: true,
               showOnlyCountryWhenClosed: false,
+              dialogBackgroundColor: Theme.of(context).scaffoldBackgroundColor,
             ),
           ),
         ),

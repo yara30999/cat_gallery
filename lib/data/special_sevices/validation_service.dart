@@ -1,5 +1,6 @@
 import 'package:intl_phone_field/phone_number.dart' as intl_phone;
 import '../../app/di.dart';
+import '../../app/extensions.dart';
 import '../../generated/l10n.dart';
 import 'country_service.dart';
 
@@ -10,6 +11,7 @@ abstract class IValidationService {
   String? validateEmail(String? value);
   String? validateNotEmpty(String? value);
   String? validatePhoneNumber(intl_phone.PhoneNumber? phone);
+  String? validateGenderSelection(Gender? gender);
 }
 
 class ValidationServiceImpl implements IValidationService {
@@ -90,5 +92,13 @@ class ValidationServiceImpl implements IValidationService {
       return S.current.country_number_length_not_found;
     }
     return null; // Return null if validation passes
+  }
+  
+  @override
+  String? validateGenderSelection(Gender? gender) {
+    if (gender == null) {
+      return S.current.genderRequired;
+    }
+    return null;
   }
 }
