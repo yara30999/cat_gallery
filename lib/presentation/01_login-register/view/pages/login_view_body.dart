@@ -115,7 +115,9 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 child: CustomButton(
                   //with null in onTap the button is disable
                   onTap: (_formKey.currentState?.validate() ?? false)
-                      ? () {}
+                      ? () {
+                          Navigator.pushNamed(context, Routes.homeRoute);
+                        }
                       : null,
                   btnTitle: S.current.loginLabel,
                 ),
