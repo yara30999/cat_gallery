@@ -26,6 +26,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
         "appTitle":
             MessageLookupByLibrary.simpleMessage("Flutter cat information app"),
+        "cat_gallery": MessageLookupByLibrary.simpleMessage("Cat Gallery"),
         "country_number_length_not_found":
             MessageLookupByLibrary.simpleMessage("Country data not found"),
         "createAccount": MessageLookupByLibrary.simpleMessage("Create Account"),

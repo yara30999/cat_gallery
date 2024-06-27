@@ -55,12 +55,12 @@ class PhoneFormField extends StatelessWidget {
                   ? Border(
                       left: BorderSide(
                           width: AppSize.s2,
-                          color: Theme.of(context).iconTheme.color!),
+                          color: Theme.of(context).primaryColorDark),
                     )
                   : Border(
                       right: BorderSide(
                           width: AppSize.s2,
-                          color: Theme.of(context).iconTheme.color!),
+                          color: Theme.of(context).primaryColorDark),
                     ),
             ),
             child: CountryCodePicker(

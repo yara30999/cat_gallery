@@ -8,11 +8,11 @@ class BackgroundPainter extends CustomPainter {
     var path = Path();
     // upper shape
     //paint.color = ColorManager.primary4;
-    paint.shader = LinearGradient(
+    paint.shader = const LinearGradient(
             colors: [ColorManager.primary2, ColorManager.primary4],
             // begin: Alignment.topRight,
             // end: Alignment.bottomLeft,
-            stops: const [0.0, 0.8]) //stops from left to right
+            stops: [0.0, 0.8]) //stops from left to right
         .createShader(Rect.fromLTWH(0, 0, size.width, size.height));
     path.lineTo(0, size.height * 0.3);
     path.quadraticBezierTo(size.width * 0.01, size.height * 0.01,
@@ -23,11 +23,11 @@ class BackgroundPainter extends CustomPainter {
 
     // right shape
     //paint.color = ColorManager.brown1;
-    paint.shader = LinearGradient(
+    paint.shader = const LinearGradient(
             colors: [ColorManager.brown2, ColorManager.brown1],
             // begin: Alignment.topRight,
             // end: Alignment.bottomLeft,
-            stops: const [0.2, 0.7]) //stops from left to right
+            stops: [0.2, 0.7]) //stops from left to right
         .createShader(Rect.fromLTWH(
             size.width * 0.37, size.height * 0.5, size.width, size.height));
     path = Path();
@@ -42,11 +42,11 @@ class BackgroundPainter extends CustomPainter {
 
     // middel shape
     //paint.color = ColorManager.pink2;
-    paint.shader = LinearGradient(
+    paint.shader = const LinearGradient(
             colors: [ColorManager.pink1, ColorManager.brown2],
             // begin: Alignment.centerLeft,
             // end: Alignment.centerRight,
-            stops: const [0.2, 0.7]) //stops from left to right
+            stops: [0.2, 0.7]) //stops from left to right
         .createShader(Rect.fromLTWH(size.width * 0.1, size.height * 0.82,
             size.width * 0.5, size.height));
     path = Path();
@@ -58,11 +58,11 @@ class BackgroundPainter extends CustomPainter {
 
     // left shape
     //paint.color = ColorManager.pink1;
-    paint.shader = LinearGradient(
+    paint.shader = const LinearGradient(
             colors: [ColorManager.orange3, ColorManager.orange4],
             // begin: Alignment.center,
             // end: Alignment.bottomLeft,
-            stops: const [0.0, 0.7]) //stops from left to right
+            stops: [0.0, 0.7]) //stops from left to right
         .createShader(Rect.fromLTWH(
             0, size.height * 0.8, size.width * 0.35, size.height));
     path = Path();

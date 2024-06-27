@@ -26,6 +26,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("لديك حساب؟"),
         "appTitle": MessageLookupByLibrary.simpleMessage(
             "تطبيق معلومات القطط باستخدام فلاتر"),
+        "cat_gallery": MessageLookupByLibrary.simpleMessage("معرض القطط"),
         "country_number_length_not_found":
             MessageLookupByLibrary.simpleMessage("بيانات البلد غير موجودة"),
         "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),

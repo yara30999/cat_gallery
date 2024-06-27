@@ -70,6 +70,24 @@ abstract class Styles {
             letterSpacing: 1.4);
     }
   }
+
+  static TextStyle style40Black(BuildContext context,
+      {required String englishFontFamily}) {
+    switch (Intl.getCurrentLocale()) {
+      case arabic:
+        return TextStyle(
+          fontFamily: FontConstants.fontArCairo,
+          fontSize: getResponsiveFontSize(context, fontSize: FontSize.s36),
+          fontWeight: FontWeightManager.medium,
+        );
+      default:
+        return TextStyle(
+            fontFamily: englishFontFamily,
+            fontSize: getResponsiveFontSize(context, fontSize: FontSize.s36),
+            fontWeight: FontWeightManager.black,
+            letterSpacing: 1.4);
+    }
+  }
 }
 
 // sacleFactor

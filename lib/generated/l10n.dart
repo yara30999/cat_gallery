@@ -60,6 +60,16 @@ class S {
     );
   }
 
+  /// `Cat Gallery`
+  String get cat_gallery {
+    return Intl.message(
+      'Cat Gallery',
+      name: 'cat_gallery',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Hello!`
   String get hello {
     return Intl.message(

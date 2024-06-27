@@ -224,7 +224,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                 value: selectedGender,
                 icon: Icon(
                   Icons.keyboard_arrow_down,
-                  color: Theme.of(context).iconTheme.color,
+                  color: Theme.of(context).primaryColorDark,
                 ),
                 decoration: InputDecoration(
                   labelText: S.current.selectGender,

@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 class FontConstants {
   static const String font1Monserrat = "Montserrat";
   static const String font2CormorantInfant = "CormorantInfant";
+  static const String font3DancingScript = "DancingScript";
   static const String fontArCairo = "Cairo";
 }
 
 class FontWeightManager {
   static const FontWeight thin = FontWeight.w100;
+  static const FontWeight extraLight = FontWeight.w200;
   static const FontWeight light = FontWeight.w300;
   static const FontWeight regular = FontWeight.w400;
   static const FontWeight medium = FontWeight.w500;

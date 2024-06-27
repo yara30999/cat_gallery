@@ -1,26 +1,15 @@
 import 'package:flutter/material.dart';
+import 'home_view_body.dart';
 
-class HomeView extends StatefulWidget {
+class HomeView extends StatelessWidget {
   const HomeView({
     super.key,
   });
 
   @override
-  State<HomeView> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<HomeView> {
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "this is home page",
-        ),
-      ),
-      body: const Center(
-        child: Text('hi yara اهلا يارا '),
-      ),
+    return const Scaffold(
+      body: HomeViewBody(),
     );
   }
 }
