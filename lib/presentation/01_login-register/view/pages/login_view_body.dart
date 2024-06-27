@@ -28,9 +28,8 @@ class _LoginViewBodyState extends State<LoginViewBody> {
     return Center(
       child: Padding(
         padding: EdgeInsets.only(
-          //top: 15.0,
-          right: 15.0,
-          left: 15.0,
+          right: AppPadding.p16,
+          left: AppPadding.p16,
           //for the opening keyboard
           bottom: MediaQuery.of(context).viewInsets.bottom,
         ),
@@ -58,7 +57,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 ),
               ),
               const SizedBox(
-                height: 30.0,
+                height: AppSize.s30,
               ),
               CustomTextField(
                 label: S.current.emailLabel,
@@ -71,7 +70,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 },
               ),
               const SizedBox(
-                height: 20.0,
+                height: AppSize.s20,
               ),
               CustomTextField(
                 label: S.current.passwordLabel,
@@ -122,16 +121,16 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 ),
               ),
               const SizedBox(
-                height: 30.0,
+                height: AppSize.s30,
               ),
               OrContinueWith(
                 googleOnTap: () {},
                 facebookOnTap: () {},
               ),
               const SizedBox(
-                height: 30.0,
+                height: AppSize.s30,
               ),
-              CusomTextRow(
+              CustomTextRow(
                 questionTxt: S.current.notAMember,
                 clickTxt: S.current.registerLabel,
                 onTap: () {
@@ -139,7 +138,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 },
               ),
               const SizedBox(
-                height: 30.0,
+                height: AppSize.s30,
               )
             ],
           ),

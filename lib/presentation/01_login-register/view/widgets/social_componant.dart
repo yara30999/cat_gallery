@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../../resources/color_manager.dart';
+import '../../../resources/values_manager.dart';
+
 class SocialComponant extends StatelessWidget {
   final String svgString;
   final void Function()? onTap;
@@ -19,10 +22,10 @@ class SocialComponant extends StatelessWidget {
       child: PhysicalModel(
         // The color behind the widget
         color: color,
-        elevation: 10.0,
+        elevation: AppSize.s10,
         borderRadius:
-            BorderRadius.circular(12.0), // Optional: Add border radius
-        shadowColor: Colors.black, // Optional: Customize the shadow color
+            BorderRadius.circular(AppSize.s12), // Optional: Add border radius
+        shadowColor: ColorManager.black, // Optional: Customize the shadow color
         child: GestureDetector(
           onTap: onTap,
           child: SvgPicture.asset(svgString),

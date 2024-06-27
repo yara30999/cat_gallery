@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../resources/values_manager.dart';
 import 'custom_divider_with_text.dart';
 import 'social_componant.dart';
 import '../../../../generated/l10n.dart';
@@ -33,7 +34,7 @@ class OrContinueWith extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: heightBetweenDividerAndComponants ?? 30.0,
+          height: heightBetweenDividerAndComponants ?? AppSize.s30,
         ),
         SizedBox(
           height: MediaQuery.sizeOf(context).height * 0.06,

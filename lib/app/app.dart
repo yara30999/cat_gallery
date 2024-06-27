@@ -21,7 +21,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       onGenerateRoute: RouteGenerator.getRoute,
       initialRoute: Routes.loginRoute,
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.light,
       theme: getLightTheme(),
       darkTheme: getDarkTheme(),
       locale: LocalizationUtils.englishLocal,

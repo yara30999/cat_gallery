@@ -58,7 +58,7 @@ class CustomTextField extends StatelessWidget {
         hintText: hint,
         labelText: label,
         filled: fillColor,
-        fillColor: ColorManager.brown2,
+        fillColor: ColorManager.offwhite,
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
       ),

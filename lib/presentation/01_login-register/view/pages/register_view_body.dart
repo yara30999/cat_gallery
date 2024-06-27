@@ -28,22 +28,12 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
   String? email;
   String? password;
   String? confirmPassword;
+  bool isObscurePassword = true;
+  bool isObscureConfirmPassword = true;
   intl_phone.PhoneNumber? phoneNum;
   String _countryCode = Constants.initialCountryCode;
   String _countryISOCode = Constants.initialCountryISO;
   late TextEditingController _phoneController;
-
-  // Initial Selected Value
-  // String? dropdownvalue;
-
-  // // List of items in our dropdown menu
-  // var items = [
-  //   'Item 1',
-  //   'Item 2',
-  //   'Item 3',
-  //   'Item 4',
-  //   'Item 5',
-  // ];
 
   Gender? selectedGender;
 
@@ -55,8 +45,6 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
     );
   }).toList();
 
-  bool isObscurePassword = true;
-  bool isObscureConfirmPassword = true;
   final _formKey = GlobalKey<FormState>();
   final _validationService = instance<IValidationService>();
 
@@ -96,9 +84,8 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
     return Center(
       child: Padding(
         padding: EdgeInsets.only(
-          //top: 15.0,
-          right: 15.0,
-          left: 15.0,
+          right: AppPadding.p16,
+          left: AppPadding.p16,
           //for the opening keyboard
           bottom: MediaQuery.of(context).viewInsets.bottom,
         ),
@@ -119,7 +106,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                 ),
               ),
               const SizedBox(
-                height: 30.0,
+                height: AppSize.s30,
               ),
               CustomTextField(
                 label: S.current.usernameLabel,
@@ -131,7 +118,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                 },
               ),
               const SizedBox(
-                height: 20.0,
+                height: AppSize.s20,
               ),
               CustomTextField(
                 label: S.current.emailLabel,
@@ -144,7 +131,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                 },
               ),
               const SizedBox(
-                height: 20.0,
+                height: AppSize.s20,
               ),
               CustomTextField(
                 label: S.current.passwordLabel,
@@ -170,7 +157,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                     }),
               ),
               const SizedBox(
-                height: 20.0,
+                height: AppSize.s20,
               ),
               CustomTextField(
                 label: S.current.passwordConfirmLabel,
@@ -200,7 +187,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                     }),
               ),
               const SizedBox(
-                height: 20.0,
+                height: AppSize.s20,
               ),
               /* from country_code_picker: ^3.0.0
                    and Phone obj come from intl_phone_field: ^3.1.0 */
@@ -231,7 +218,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                 },
               ),
               const SizedBox(
-                height: 10.0,
+                height: AppSize.s10,
               ),
               DropdownButtonFormField<Gender>(
                 value: selectedGender,
@@ -255,7 +242,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                 },
               ),
               const SizedBox(
-                height: 20.0,
+                height: AppSize.s20,
               ),
               //register button
               SizedBox(
@@ -272,16 +259,16 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                 ),
               ),
               const SizedBox(
-                height: 30.0,
+                height: AppSize.s30,
               ),
               OrContinueWith(
                 googleOnTap: () {},
                 facebookOnTap: () {},
               ),
               const SizedBox(
-                height: 30.0,
+                height: AppSize.s30,
               ),
-              CusomTextRow(
+              CustomTextRow(
                 questionTxt: S.current.alreadyHaveAnAccount,
                 clickTxt: S.current.loginLabel,
                 onTap: () {
@@ -289,7 +276,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                 },
               ),
               const SizedBox(
-                height: 30.0,
+                height: AppSize.s30,
               ),
             ],
           ),

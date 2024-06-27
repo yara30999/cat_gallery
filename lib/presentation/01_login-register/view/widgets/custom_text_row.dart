@@ -4,11 +4,11 @@ import '../../../resources/font_manager.dart';
 import '../../../resources/styles_manager.dart';
 import '../../../resources/values_manager.dart';
 
-class CusomTextRow extends StatelessWidget {
+class CustomTextRow extends StatelessWidget {
   final String questionTxt, clickTxt;
   final void Function()? onTap;
 
-  const CusomTextRow({
+  const CustomTextRow({
     super.key,
     required this.questionTxt,
     required this.clickTxt,

@@ -5,6 +5,7 @@ import '../../../../app/di.dart';
 import '../../../../data/special_sevices/country_service.dart';
 import '../../../../generated/l10n.dart';
 import '../../../resources/language_manager.dart';
+import '../../../resources/values_manager.dart';
 
 class PhoneFormField extends StatelessWidget {
   final String countryCode;
@@ -47,18 +48,18 @@ class PhoneFormField extends StatelessWidget {
         prefixIcon: Padding(
           padding: (LocalizationUtils.currentLocalIsAr())
               ? const EdgeInsets.only(right: 0)
-              : const EdgeInsets.only(right: 10),
+              : const EdgeInsets.only(right: AppPadding.p10),
           child: Container(
             decoration: BoxDecoration(
               border: (LocalizationUtils.currentLocalIsAr())
                   ? Border(
                       left: BorderSide(
-                          width: 2.0,
+                          width: AppSize.s2,
                           color: Theme.of(context).iconTheme.color!),
                     )
                   : Border(
                       right: BorderSide(
-                          width: 2.0,
+                          width: AppSize.s2,
                           color: Theme.of(context).iconTheme.color!),
                     ),
             ),
