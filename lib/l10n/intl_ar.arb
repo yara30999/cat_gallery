@@ -32,5 +32,9 @@
   "male": "ذكر",
   "female": "أنثى",
   "genderRequired": "الحقل مطلوب",
-  "selectGender": "اختر الجنس"
+  "selectGender": "اختر الجنس",
+  "Home": "الرئيسية",
+  "Favorites": "المفضلة",
+  "Uploads": "الملفات المرفوعة",
+  "Votes": "التصويتات"
 }

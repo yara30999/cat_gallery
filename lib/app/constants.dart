@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class Constants {
   static const String baseUrl = "https://zzzzz@qwerty.com/";
   static const String empty = "";
@@ -15,4 +17,5 @@ class Constants {
   ];
   static const String initialCountryISO = "EG";
   static const String initialCountryCode = "+20";
+  static const double appBarHeight = kToolbarHeight * 2;
 }

@@ -102,7 +102,7 @@ ThemeData getDarkTheme() {
     // app bar theme
     appBarTheme: const AppBarTheme(
       centerTitle: true,
-      color: ColorManager.orange1,
+      color: ColorManager.orange2,
       elevation: AppSize.s8,
       shadowColor: ColorManager.brown1,
       // titleTextStyle: Styles.textStyle16En1,

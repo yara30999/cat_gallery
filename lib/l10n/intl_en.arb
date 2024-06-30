@@ -1,6 +1,6 @@
 {
   "noRouteFound": "no_route_found",
-  "cat_gallery":"Cat Gallery",
+  "cat_gallery": "Cat Gallery",
   "hello": "Hello!",
   "createAccount": "Create Account",
   "loginTitle": "Sign into your Account.",
@@ -32,5 +32,9 @@
   "male": "Male",
   "female": "Female",
   "genderRequired": "Gender is required",
-  "selectGender": "Select Gender"
+  "selectGender": "Select Gender",
+  "Home": "Home",
+  "Favorites": "Favorites",
+  "Uploads": "Uploads",
+  "Votes": "Votes"
 }

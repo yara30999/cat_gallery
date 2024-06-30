@@ -126,8 +126,12 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 height: AppSize.s30,
               ),
               OrContinueWith(
-                googleOnTap: () {},
-                facebookOnTap: () {},
+                googleOnTap: () {
+                  Navigator.pushReplacementNamed(context, Routes.homeRoute);
+                },
+                facebookOnTap: () {
+                  Navigator.pushReplacementNamed(context, Routes.homeRoute);
+                },
               ),
               const SizedBox(
                 height: AppSize.s30,
