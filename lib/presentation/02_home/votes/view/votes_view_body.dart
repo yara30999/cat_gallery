@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import '../../../../app/constants.dart';
 import '../../../resources/font_manager.dart';
 import '../../../resources/styles_manager.dart';
 import '../../../resources/values_manager.dart';
@@ -20,14 +18,7 @@ class _VotesViewBodyState extends State<VotesViewBody> {
     return CustomScrollView(
       controller: widget.votesScreenScrollController,
       slivers: [
-        SliverPersistentHeader(
-          //floating: true,
-          pinned: true,
-          delegate: MySliverPersistentHeaderDelegate(
-              minHeight: Constants.appBarHeight,
-              maxHeight: Constants.appBarHeight,
-              child: const CustomAppBar()),
-        ),
+        const PersistentAppBar(),
         SliverToBoxAdapter(
           child: Padding(
             padding: const EdgeInsets.symmetric(

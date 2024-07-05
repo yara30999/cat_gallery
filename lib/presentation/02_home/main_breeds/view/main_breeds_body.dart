@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../../app/constants.dart';
 import '../../../resources/font_manager.dart';
 import '../../../resources/routes_manager.dart';
 import '../../../resources/styles_manager.dart';
@@ -23,14 +22,7 @@ class _MainBreedsBodyState extends State<MainBreedsBody> {
     return CustomScrollView(
       controller: widget.mainBreedsScreenScrollController,
       slivers: [
-        SliverPersistentHeader(
-          //floating: true,
-          pinned: true,
-          delegate: MySliverPersistentHeaderDelegate(
-              minHeight: Constants.appBarHeight,
-              maxHeight: Constants.appBarHeight,
-              child: const CustomAppBar()),
-        ),
+        const PersistentAppBar(),
         SliverToBoxAdapter(
           child: Padding(
             padding: const EdgeInsets.symmetric(

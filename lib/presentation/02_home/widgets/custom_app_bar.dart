@@ -1,8 +1,27 @@
 import 'package:flutter/material.dart';
+import '../../../app/constants.dart';
 import '../../../generated/l10n.dart';
 import '../../resources/color_manager.dart';
 import '../../resources/font_manager.dart';
 import '../../resources/styles_manager.dart';
+
+class PersistentAppBar extends StatelessWidget {
+  const PersistentAppBar({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SliverPersistentHeader(
+      //floating: true,
+      pinned: true,
+      delegate: MySliverPersistentHeaderDelegate(
+          minHeight: Constants.appBarHeight,
+          maxHeight: Constants.appBarHeight,
+          child: const CustomAppBar()),
+    );
+  }
+}
 
 class MySliverPersistentHeaderDelegate extends SliverPersistentHeaderDelegate {
   final double minHeight;

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import '../../app/constants.dart';
 import '../02_home/widgets/custom_app_bar.dart';
 import '../resources/font_manager.dart';
 import '../resources/styles_manager.dart';
@@ -23,14 +21,7 @@ class _SpecificBreedBodyState extends State<SpecificBreedBody> {
     return CustomScrollView(
       controller: widget.specificBreedScreenScrollController,
       slivers: [
-        SliverPersistentHeader(
-          //floating: true,
-          pinned: true,
-          delegate: MySliverPersistentHeaderDelegate(
-              minHeight: Constants.appBarHeight,
-              maxHeight: Constants.appBarHeight,
-              child: const CustomAppBar()),
-        ),
+        const PersistentAppBar(),
         SliverToBoxAdapter(
           child: Padding(
             padding: const EdgeInsets.symmetric(
