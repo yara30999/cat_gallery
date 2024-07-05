@@ -221,13 +221,21 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                 height: AppSize.s10,
               ),
               DropdownButtonFormField<Gender>(
+                style: Styles.style18Medium(context,
+                        englishFontFamily: FontConstants.fontArCairo)
+                    .copyWith(color: Theme.of(context).primaryColorDark),
                 value: selectedGender,
                 icon: Icon(
                   Icons.keyboard_arrow_down,
                   color: Theme.of(context).primaryColorDark,
                 ),
                 decoration: InputDecoration(
+                  contentPadding:
+                      const EdgeInsets.symmetric(horizontal: AppSize.s20),
                   labelText: S.current.selectGender,
+                  labelStyle: Styles.style18Medium(context,
+                          englishFontFamily: FontConstants.fontArCairo)
+                      .copyWith(color: Theme.of(context).primaryColorDark),
                 ),
                 items: genderItems,
                 onChanged: (Gender? newValue) {

@@ -3,6 +3,9 @@ import '../../../../app/di.dart';
 import '../../../../app/types_definitions.dart';
 import '../../../../data/special_sevices/validation_service.dart';
 import '../../../resources/color_manager.dart';
+import '../../../resources/font_manager.dart';
+import '../../../resources/styles_manager.dart';
+import '../../../resources/values_manager.dart';
 
 class CustomTextField extends StatelessWidget {
   final String? hint, label;
@@ -55,13 +58,18 @@ class CustomTextField extends StatelessWidget {
       validator: customValidator ?? _defaultValidator,
       onChanged: onChanged,
       decoration: InputDecoration(
-        hintText: hint,
-        labelText: label,
-        filled: fillColor,
-        fillColor: ColorManager.offwhite,
-        prefixIcon: prefixIcon,
-        suffixIcon: suffixIcon,
-      ),
+          contentPadding: const EdgeInsets.symmetric(horizontal: AppSize.s20),
+          hintText: hint,
+          labelText: label,
+          filled: fillColor,
+          fillColor: ColorManager.offwhite,
+          prefixIcon: prefixIcon,
+          suffixIcon: suffixIcon,
+          hintStyle: Styles.style18Medium(context,
+              englishFontFamily: FontConstants.fontArCairo),
+          labelStyle: Styles.style18Medium(context,
+                  englishFontFamily: FontConstants.fontArCairo)
+              .copyWith(color: Theme.of(context).primaryColorDark)),
     );
   }
 }

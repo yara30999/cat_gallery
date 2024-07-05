@@ -4,7 +4,9 @@ import '../../../../app/constants.dart';
 import '../../../../app/di.dart';
 import '../../../../data/special_sevices/country_service.dart';
 import '../../../../generated/l10n.dart';
+import '../../../resources/font_manager.dart';
 import '../../../resources/language_manager.dart';
+import '../../../resources/styles_manager.dart';
 import '../../../resources/values_manager.dart';
 
 class PhoneFormField extends StatelessWidget {
@@ -43,8 +45,14 @@ class PhoneFormField extends StatelessWidget {
       keyboardType: TextInputType.phone,
       onChanged: onPhoneNumberChanged,
       validator: validator,
+      style: Styles.style18Medium(context,
+          englishFontFamily: FontConstants.font1Monserrat),
       decoration: InputDecoration(
+        contentPadding: const EdgeInsets.symmetric(
+            horizontal: AppSize.s20, vertical: AppSize.s0),
         hintText: S.current.do_not_type_country_code_again,
+        hintStyle: Styles.style18Medium(context,
+            englishFontFamily: FontConstants.font1Monserrat),
         prefixIcon: Padding(
           padding: (LocalizationUtils.currentLocalIsAr())
               ? const EdgeInsets.only(right: 0)
