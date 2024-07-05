@@ -22,8 +22,13 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "Browse_random_images_of_all_breeds":
+            MessageLookupByLibrary.simpleMessage(
+                "Browse random images of all breeds."),
         "Favorites": MessageLookupByLibrary.simpleMessage("Favorites"),
         "Home": MessageLookupByLibrary.simpleMessage("Home"),
+        "Search_by_breed_name":
+            MessageLookupByLibrary.simpleMessage("Search by breed name..."),
         "Uploads": MessageLookupByLibrary.simpleMessage("Uploads"),
         "Votes": MessageLookupByLibrary.simpleMessage("Votes"),
         "alreadyHaveAnAccount":
@@ -49,6 +54,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "loginLabel": MessageLookupByLibrary.simpleMessage("Login"),
         "loginTitle":
             MessageLookupByLibrary.simpleMessage("Sign into your Account."),
+        "main_breed_paragraph": MessageLookupByLibrary.simpleMessage(
+            " Or choose a specific cat breed to browse images with."),
+        "main_breeds": MessageLookupByLibrary.simpleMessage("main breeds"),
         "male": MessageLookupByLibrary.simpleMessage("Male"),
         "noRouteFound": MessageLookupByLibrary.simpleMessage("no_route_found"),
         "notAMember": MessageLookupByLibrary.simpleMessage("Not a member?"),

@@ -36,5 +36,9 @@
   "Home": "Home",
   "Favorites": "Favorites",
   "Uploads": "Uploads",
-  "Votes": "Votes"
+  "Votes": "Votes",
+  "Search_by_breed_name": "Search by breed name...",
+  "main_breeds": "main breeds",
+  "Browse_random_images_of_all_breeds": "Browse random images of all breeds.",
+  "main_breed_paragraph": " Or choose a specific cat breed to browse images with."
 }

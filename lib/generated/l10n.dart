@@ -429,6 +429,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Search by breed name...`
+  String get Search_by_breed_name {
+    return Intl.message(
+      'Search by breed name...',
+      name: 'Search_by_breed_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `main breeds`
+  String get main_breeds {
+    return Intl.message(
+      'main breeds',
+      name: 'main_breeds',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Browse random images of all breeds.`
+  String get Browse_random_images_of_all_breeds {
+    return Intl.message(
+      'Browse random images of all breeds.',
+      name: 'Browse_random_images_of_all_breeds',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` Or choose a specific cat breed to browse images with.`
+  String get main_breed_paragraph {
+    return Intl.message(
+      ' Or choose a specific cat breed to browse images with.',
+      name: 'main_breed_paragraph',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

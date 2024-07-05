@@ -22,8 +22,13 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "Browse_random_images_of_all_breeds":
+            MessageLookupByLibrary.simpleMessage(
+                "تصفح الصور العشوائية لجميع السلالات."),
         "Favorites": MessageLookupByLibrary.simpleMessage("المفضلة"),
         "Home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
+        "Search_by_breed_name":
+            MessageLookupByLibrary.simpleMessage("إبحث حسب إسم السلاله ..."),
         "Uploads": MessageLookupByLibrary.simpleMessage("الملفات المرفوعة"),
         "Votes": MessageLookupByLibrary.simpleMessage("التصويتات"),
         "alreadyHaveAnAccount":
@@ -48,6 +53,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "loginLabel": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "loginTitle":
             MessageLookupByLibrary.simpleMessage("تسجيل الدخول إلى حسابك."),
+        "main_breed_paragraph": MessageLookupByLibrary.simpleMessage(
+            "أو اختر سلالة معينة من القطط لتصفح الصور بها."),
+        "main_breeds":
+            MessageLookupByLibrary.simpleMessage("السلالات الرئيسية"),
         "male": MessageLookupByLibrary.simpleMessage("ذكر"),
         "noRouteFound":
             MessageLookupByLibrary.simpleMessage("لم يتم العثور على المسار"),

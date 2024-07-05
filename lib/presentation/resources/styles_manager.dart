@@ -88,6 +88,24 @@ abstract class Styles {
             letterSpacing: 1.4);
     }
   }
+
+  static TextStyle style18Medium(BuildContext context,
+      {required String englishFontFamily}) {
+    switch (Intl.getCurrentLocale()) {
+      case arabic:
+        return TextStyle(
+          fontFamily: FontConstants.fontArCairo,
+          fontSize: getResponsiveFontSize(context, fontSize: FontSize.s18),
+          fontWeight: FontWeightManager.medium,
+        );
+      default:
+        return TextStyle(
+          fontFamily: englishFontFamily,
+          fontSize: getResponsiveFontSize(context, fontSize: FontSize.s18),
+          fontWeight: FontWeightManager.medium,
+        );
+    }
+  }
 }
 
 // sacleFactor
@@ -107,11 +125,11 @@ double getResponsiveFontSize(context, {required double fontSize}) {
 
 double getScaleFactor(context) {
   double width = MediaQuery.sizeOf(context).width;
-  const baseMobileWidth = 800;
-  const baseTabletWidth = 1200;
-  if (width < baseMobileWidth) {
+  const breakPointMobileTablet = 800;
+  const breakPointTabletLaptop = 1200;
+  if (width < breakPointMobileTablet) {
     return width / 550;
-  } else if (width < baseTabletWidth) {
+  } else if (width < breakPointTabletLaptop) {
     return width / 1000;
   } else {
     return width / 1920;
