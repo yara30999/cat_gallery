@@ -12,6 +12,8 @@ class ImageAssets {
   static const String logoWithTextP = "$imagePath/logo_with_text_primary.png";
   static const String logoWithTextS = "$imagePath/logo_with_text_secondry.png";
   static const String logoWithTextW = "$imagePath/logo_with_text_white.png";
+  static const String catWithoutBackground =
+      "$imagePath/cat_without_background.png";
 }
 
 class JsonAssets {

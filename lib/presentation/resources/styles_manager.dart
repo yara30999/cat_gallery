@@ -106,6 +106,24 @@ abstract class Styles {
         );
     }
   }
+
+  static TextStyle style18Bold(BuildContext context,
+      {required String englishFontFamily}) {
+    switch (Intl.getCurrentLocale()) {
+      case arabic:
+        return TextStyle(
+          fontFamily: FontConstants.fontArCairo,
+          fontSize: getResponsiveFontSize(context, fontSize: FontSize.s18),
+          fontWeight: FontWeightManager.bold,
+        );
+      default:
+        return TextStyle(
+          fontFamily: englishFontFamily,
+          fontSize: getResponsiveFontSize(context, fontSize: FontSize.s18),
+          fontWeight: FontWeightManager.bold,
+        );
+    }
+  }
 }
 
 // sacleFactor

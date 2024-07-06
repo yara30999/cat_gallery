@@ -9,7 +9,7 @@ ThemeData getLightTheme() {
     primaryColor: ColorManager.primary2,
     primaryColorLight: ColorManager.primary3,
     primaryColorDark: ColorManager.primary1,
-    disabledColor: ColorManager.primary4,
+    disabledColor: ColorManager.pink3,
     scaffoldBackgroundColor: ColorManager.white,
     // cardview theme
     cardTheme: const CardTheme(

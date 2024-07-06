@@ -23,12 +23,14 @@ class _HomeViewState extends State<HomeView> {
   final ScrollController _favoritesScrollController = ScrollController();
   final ScrollController _uploadsScrollController = ScrollController();
   final ScrollController _votesScrollController = ScrollController();
-  final List<BottomNavIcon> _navigationItems = [
-    BottomNavIcon(icon: Icons.home, label: S.current.Home),
-    BottomNavIcon(icon: Icons.favorite, label: S.current.Favorites),
-    BottomNavIcon(icon: Icons.drive_folder_upload, label: S.current.Uploads),
-    BottomNavIcon(icon: Icons.how_to_vote_outlined, label: S.current.Votes),
-  ];
+
+  List<BottomNavIcon> get _navigationItems => [
+        BottomNavIcon(icon: Icons.home, label: S.current.Home),
+        BottomNavIcon(icon: Icons.favorite, label: S.current.Favorites),
+        BottomNavIcon(
+            icon: Icons.drive_folder_upload, label: S.current.Uploads),
+        BottomNavIcon(icon: Icons.how_to_vote_outlined, label: S.current.Votes),
+      ];
 
   bool _isVisibleBottomNavBar = true;
 

@@ -1,6 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import '../../../../app/functions.dart';
+import '../../../../domain/entities/cat_breed_card_info.dart';
 import '../../../../generated/l10n.dart';
 import '../../../resources/color_manager.dart';
 import '../../../resources/font_manager.dart';
@@ -29,59 +31,220 @@ class _MainBreedsBodyState extends State<MainBreedsBody> {
       controller: widget.mainBreedsScreenScrollController,
       slivers: [
         const PersistentAppBar(),
-        SliverToBoxAdapter(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: AppPadding.p16,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(
-                  height: AppSize.s10,
-                ),
-                Text(
-                  S.current.main_breeds,
-                  style: Styles.style40Black(context,
-                      englishFontFamily: FontConstants.font3DancingScript),
-                ),
-                CustomSearchField(searchController: searchController),
-                const ParagraphStartsWithClickText(),
-                // Row(
-                //   children: [
-                //     ElevatedButton(
-                //       onPressed: () {
-                //         Navigator.pushNamed(
-                //           context,
-                //           Routes.specificBreedRoute,
-                //         ); // Navigate to specific breed route
-                //       },
-                //       child: const Text('specific breed screen '),
-                //     ),
-                //   ],
-                // ),
-                // ListView.separated(
-                //   // controller: _scrollController,
-                //   shrinkWrap: true,
-                //   physics: const NeverScrollableScrollPhysics(),
-                //   itemBuilder: (BuildContext context, int index) {
-                //     return const ListTile(
-                //       title: Text("I maybe a notification!"),
-                //       leading: Icon(Icons.notification_important),
-                //     );
-                //   },
-                //   separatorBuilder: (BuildContext context, int index) {
-                //     return const SizedBox(
-                //       height: 10,
-                //     );
-                //   },
-                //   itemCount: 50,
-                // ),
-              ],
-            ),
+        SliverPadding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: AppPadding.p16,
+          ),
+          sliver: SliverToBoxAdapter(
+            child: MainBreedsHeader(searchController: searchController),
           ),
         ),
+        const SliverPadding(
+          padding: EdgeInsets.symmetric(
+            horizontal: AppPadding.p16,
+            vertical: AppPadding.p20,
+          ),
+          sliver: MainBreedsGridBuilder(),
+        ),
       ],
+    );
+  }
+}
+
+class MainBreedsHeader extends StatelessWidget {
+  const MainBreedsHeader({
+    super.key,
+    required this.searchController,
+  });
+
+  final TextEditingController searchController;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const SizedBox(
+          height: AppSize.s10,
+        ),
+        Text(
+          S.current.main_breeds,
+          style: Styles.style40Black(context,
+              englishFontFamily: FontConstants.font3DancingScript),
+        ),
+        CustomSearchField(searchController: searchController),
+        const SizedBox(
+          height: AppSize.s10,
+        ),
+        const ParagraphStartsWithClickText(),
+      ],
+    );
+  }
+}
+
+class MainBreedsGridBuilder extends StatelessWidget {
+  const MainBreedsGridBuilder({
+    super.key,
+  });
+  // instead of doing (static final List<CatBreedCardInfo> items = [];)
+  List<CatBreedCardInfo> get items => [
+        const CatBreedCardInfo(
+            breedId: '',
+            breedName: 'Footstool',
+            referenceImgId: '',
+            referenceImgurl: 'assets/images/cat_1.png'),
+        const CatBreedCardInfo(
+            breedId: '',
+            breedName: 'Modern dresser',
+            referenceImgId: '',
+            referenceImgurl: 'assets/images/cat_2.png'),
+        const CatBreedCardInfo(
+            breedId: '',
+            breedName: 'Bedside cupboard',
+            referenceImgId: '',
+            referenceImgurl: 'assets/images/cat_3.png'),
+        const CatBreedCardInfo(
+            breedId: '',
+            breedName: 'Bedside cupboard',
+            referenceImgId: '',
+            referenceImgurl: 'assets/images/cat_4.png'),
+        const CatBreedCardInfo(
+            breedId: '',
+            breedName: 'Bedside cupboard',
+            referenceImgId: '',
+            referenceImgurl: 'assets/images/cat_5.png'),
+        const CatBreedCardInfo(
+            breedId: '',
+            breedName: 'Footstool',
+            referenceImgId: '',
+            referenceImgurl: 'assets/images/cat_6.png'),
+        const CatBreedCardInfo(
+            breedId: '',
+            breedName: 'Footstool',
+            referenceImgId: '',
+            referenceImgurl: 'assets/images/cat_7.png'),
+        const CatBreedCardInfo(
+            breedId: '',
+            breedName: 'Bedside cupboard',
+            referenceImgId: '',
+            referenceImgurl: 'assets/images/cat_8.png'),
+        const CatBreedCardInfo(
+            breedId: '',
+            breedName: 'Footstool',
+            referenceImgId: '',
+            referenceImgurl: 'assets/images/cat_9.png'),
+        const CatBreedCardInfo(
+            breedId: '',
+            breedName: 'Footstool',
+            referenceImgId: '',
+            referenceImgurl: 'assets/images/cat_10.png'),
+        const CatBreedCardInfo(
+            breedId: '',
+            breedName: 'Footstool',
+            referenceImgId: '',
+            referenceImgurl: 'assets/images/cat_1.png'),
+        const CatBreedCardInfo(
+            breedId: '',
+            breedName: 'Modern dresser',
+            referenceImgId: '',
+            referenceImgurl: 'assets/images/cat_2.png'),
+        const CatBreedCardInfo(
+            breedId: '',
+            breedName: 'Bedside cupboard',
+            referenceImgId: '',
+            referenceImgurl: 'assets/images/cat_3.png'),
+        const CatBreedCardInfo(
+            breedId: '',
+            breedName: 'Bedside cupboard',
+            referenceImgId: '',
+            referenceImgurl: 'assets/images/cat_4.png'),
+        const CatBreedCardInfo(
+            breedId: '',
+            breedName: 'Bedside cupboard',
+            referenceImgId: '',
+            referenceImgurl: 'assets/images/cat_5.png'),
+        const CatBreedCardInfo(
+            breedId: '',
+            breedName: 'Footstool',
+            referenceImgId: '',
+            referenceImgurl: 'assets/images/cat_6.png'),
+        const CatBreedCardInfo(
+            breedId: '',
+            breedName: 'Footstool',
+            referenceImgId: '',
+            referenceImgurl: 'assets/images/cat_7.png'),
+        const CatBreedCardInfo(
+            breedId: '',
+            breedName: 'Bedside cupboard',
+            referenceImgId: '',
+            referenceImgurl: 'assets/images/cat_8.png'),
+        const CatBreedCardInfo(
+            breedId: '',
+            breedName: 'Footstool',
+            referenceImgId: '',
+            referenceImgurl: 'assets/images/cat_9.png'),
+        const CatBreedCardInfo(
+            breedId: '',
+            breedName: 'Footstool',
+            referenceImgId: '',
+            referenceImgurl: 'assets/images/cat_10.png'),
+      ];
+
+  @override
+  Widget build(BuildContext context) {
+    return SliverMasonryGrid.count(
+      childCount: items.length,
+      mainAxisSpacing: AppPadding.p20,
+      crossAxisSpacing: AppPadding.p10,
+      crossAxisCount: 2,
+      itemBuilder: (context, index) {
+        return CatBreedNavigationItem(
+          catBreedCard: items[index],
+        );
+      },
+    );
+  }
+}
+
+class CatBreedNavigationItem extends StatelessWidget {
+  final CatBreedCardInfo catBreedCard;
+
+  const CatBreedNavigationItem({
+    super.key,
+    required this.catBreedCard,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(
+          context,
+          Routes.specificBreedRoute,
+        );
+      },
+      child: Material(
+        elevation: AppSize.s8,
+        borderRadius: BorderRadius.circular(AppSize.s28),
+        clipBehavior: Clip.antiAlias,
+        color: Theme.of(context).disabledColor,
+        child: Column(
+          children: [
+            Image.asset(
+              catBreedCard.referenceImgurl,
+              fit: BoxFit.cover,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(catBreedCard.breedName,
+                  textAlign: TextAlign.center,
+                  style: Styles.style18Bold(context,
+                          englishFontFamily: FontConstants.font2CormorantInfant)
+                      .copyWith(color: ColorManager.white)),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
