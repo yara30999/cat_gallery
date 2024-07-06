@@ -1,128 +1,89 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'color_manager.dart';
 import 'font_manager.dart';
-import 'language_manager.dart';
 
 abstract class Styles {
+  static TextStyle style12Medium(BuildContext context) {
+    return TextStyle(
+      fontFamily: FontConstants.fontMarhey,
+      fontSize: getResponsiveFontSize(context, fontSize: FontSize.s12),
+      fontWeight: FontWeightManager.medium,
+    );
+  }
+
+  static TextStyle style14Medium(BuildContext context) {
+    return TextStyle(
+      fontFamily: FontConstants.fontMarhey,
+      fontSize: getResponsiveFontSize(context, fontSize: FontSize.s14),
+      fontWeight: FontWeightManager.medium,
+    );
+  }
+
+  static TextStyle style16Medium(BuildContext context) {
+    return TextStyle(
+      fontFamily: FontConstants.fontMarhey,
+      fontSize: getResponsiveFontSize(context, fontSize: FontSize.s16),
+      fontWeight: FontWeightManager.medium,
+    );
+  }
+
+  static TextStyle style18Medium(BuildContext context) {
+    return TextStyle(
+      fontFamily: FontConstants.fontMarhey,
+      fontSize: getResponsiveFontSize(context, fontSize: FontSize.s18),
+      fontWeight: FontWeightManager.medium,
+    );
+  }
+
+  static TextStyle style18Bold(BuildContext context) {
+    return TextStyle(
+      fontFamily: FontConstants.fontMarhey,
+      fontSize: getResponsiveFontSize(context, fontSize: FontSize.s18),
+      fontWeight: FontWeightManager.bold,
+    );
+  }
+
   /*.................. used in 
   -login screen
   */
-  static TextStyle style18semiBold(BuildContext context,
-      {required String englishFontFamily}) {
-    switch (Intl.getCurrentLocale()) {
-      case arabic:
-        return TextStyle(
-          fontFamily: FontConstants.fontArCairo,
-          fontSize: getResponsiveFontSize(context, fontSize: FontSize.s18),
-          fontWeight: FontWeightManager.semiBold,
-          color: ColorManager.pink1,
-        );
-      default:
-        return TextStyle(
-          fontFamily: englishFontFamily,
-          fontSize: getResponsiveFontSize(context, fontSize: FontSize.s18),
-          fontWeight: FontWeightManager.semiBold,
-          color: ColorManager.pink1,
-        );
-    }
+  static TextStyle style18semiBold(BuildContext context) {
+    return TextStyle(
+      fontFamily: FontConstants.fontMarhey,
+      fontSize: getResponsiveFontSize(context, fontSize: FontSize.s18),
+      fontWeight: FontWeightManager.semiBold,
+      color: ColorManager.pink1,
+    );
   }
 
   /*..................used in 
   -login divider
   */
-  static TextStyle style20Bold(BuildContext context,
-      {required String englishFontFamily}) {
-    switch (Intl.getCurrentLocale()) {
-      case arabic:
-        return TextStyle(
-            fontFamily: FontConstants.fontArCairo,
-            fontSize: getResponsiveFontSize(context, fontSize: FontSize.s20),
-            fontWeight: FontWeightManager.regular,
-            color: ColorManager.grey);
-      default:
-        return TextStyle(
-            fontFamily: englishFontFamily,
-            fontSize: getResponsiveFontSize(context, fontSize: FontSize.s20),
-            fontWeight: FontWeightManager.bold,
-            color: ColorManager.grey);
-    }
+  static TextStyle style20Regular(BuildContext context) {
+    return TextStyle(
+        fontFamily: FontConstants.fontMarhey,
+        fontSize: getResponsiveFontSize(context, fontSize: FontSize.s20),
+        fontWeight: FontWeightManager.regular,
+        color: ColorManager.grey);
   }
 
   /*..................used in 
   -login button
   -the two texts in login screen
   */
-  static TextStyle style30Bold(BuildContext context,
-      {required String englishFontFamily}) {
-    switch (Intl.getCurrentLocale()) {
-      case arabic:
-        return TextStyle(
-            fontFamily: FontConstants.fontArCairo,
-            fontSize: getResponsiveFontSize(context, fontSize: FontSize.s30),
-            fontWeight: FontWeightManager.regular,
-            letterSpacing: 1.4);
-      default:
-        return TextStyle(
-            fontFamily: englishFontFamily,
-            fontSize: getResponsiveFontSize(context, fontSize: FontSize.s30),
-            fontWeight: FontWeightManager.bold,
-            letterSpacing: 1.4);
-    }
+  static TextStyle style30Bold(BuildContext context) {
+    return TextStyle(
+        fontFamily: FontConstants.fontMarhey,
+        fontSize: getResponsiveFontSize(context, fontSize: FontSize.s30),
+        fontWeight: FontWeightManager.bold,
+        letterSpacing: 1.4);
   }
 
-  static TextStyle style40Black(BuildContext context,
-      {required String englishFontFamily}) {
-    switch (Intl.getCurrentLocale()) {
-      case arabic:
-        return TextStyle(
-          fontFamily: FontConstants.fontArCairo,
-          fontSize: getResponsiveFontSize(context, fontSize: FontSize.s36),
-          fontWeight: FontWeightManager.medium,
-        );
-      default:
-        return TextStyle(
-            fontFamily: englishFontFamily,
-            fontSize: getResponsiveFontSize(context, fontSize: FontSize.s36),
-            fontWeight: FontWeightManager.black,
-            letterSpacing: 1.4);
-    }
-  }
-
-  static TextStyle style18Medium(BuildContext context,
-      {required String englishFontFamily}) {
-    switch (Intl.getCurrentLocale()) {
-      case arabic:
-        return TextStyle(
-          fontFamily: FontConstants.fontArCairo,
-          fontSize: getResponsiveFontSize(context, fontSize: FontSize.s18),
-          fontWeight: FontWeightManager.medium,
-        );
-      default:
-        return TextStyle(
-          fontFamily: englishFontFamily,
-          fontSize: getResponsiveFontSize(context, fontSize: FontSize.s18),
-          fontWeight: FontWeightManager.medium,
-        );
-    }
-  }
-
-  static TextStyle style18Bold(BuildContext context,
-      {required String englishFontFamily}) {
-    switch (Intl.getCurrentLocale()) {
-      case arabic:
-        return TextStyle(
-          fontFamily: FontConstants.fontArCairo,
-          fontSize: getResponsiveFontSize(context, fontSize: FontSize.s18),
-          fontWeight: FontWeightManager.bold,
-        );
-      default:
-        return TextStyle(
-          fontFamily: englishFontFamily,
-          fontSize: getResponsiveFontSize(context, fontSize: FontSize.s18),
-          fontWeight: FontWeightManager.bold,
-        );
-    }
+  static TextStyle style36Medium(BuildContext context) {
+    return TextStyle(
+      fontFamily: FontConstants.fontMarhey,
+      fontSize: getResponsiveFontSize(context, fontSize: FontSize.s36),
+      fontWeight: FontWeightManager.medium,
+    );
   }
 }
 

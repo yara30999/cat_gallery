@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../resources/font_manager.dart';
 import '../../../resources/styles_manager.dart';
 import '../../../resources/values_manager.dart';
 import '../../widgets/custom_app_bar.dart';
@@ -32,8 +31,7 @@ class _UploadsViewBodyState extends State<UploadsViewBody> {
                 ),
                 Text(
                   'upload screen ',
-                  style: Styles.style40Black(context,
-                      englishFontFamily: FontConstants.font3DancingScript),
+                  style: Styles.style36Medium(context),
                 ),
                 Center(
                   child: ElevatedButton(

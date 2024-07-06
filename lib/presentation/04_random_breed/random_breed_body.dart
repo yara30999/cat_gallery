@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../02_home/widgets/custom_app_bar.dart';
-import '../resources/font_manager.dart';
 import '../resources/styles_manager.dart';
 import '../resources/values_manager.dart';
 
@@ -34,8 +33,7 @@ class _RandomBreedBodyState extends State<RandomBreedBody> {
                 ),
                 Text(
                   "random breed body",
-                  style: Styles.style40Black(context,
-                      englishFontFamily: FontConstants.font3DancingScript),
+                  style: Styles.style36Medium(context),
                 ),
                 ListView.separated(
                   // controller: _scrollController,

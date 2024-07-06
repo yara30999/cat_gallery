@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../../generated/l10n.dart';
-import '../../resources/font_manager.dart';
 import '../../resources/styles_manager.dart';
 import '../../resources/values_manager.dart';
 
@@ -54,11 +53,11 @@ class _CustomSearchFieldState extends State<CustomSearchField> {
       onChanged: (value) {
         _searchValue(value);
       },
+      style: Styles.style18Medium(context),
       decoration: InputDecoration(
           contentPadding: const EdgeInsets.symmetric(horizontal: AppSize.s20),
           hintText: S.current.Search_by_breed_name,
-          hintStyle: Styles.style18Medium(context,
-              englishFontFamily: FontConstants.font1Monserrat),
+          hintStyle: Styles.style18Medium(context),
           suffixIcon: widget.searchController.value.text.isEmpty
               ? Icon(
                   Icons.search,

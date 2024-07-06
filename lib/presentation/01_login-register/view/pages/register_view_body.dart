@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/phone_number.dart' as intl_phone;
-import '../../../../app/constants.dart';
 import '../../../../app/di.dart';
 import '../../../../app/extensions.dart';
 import '../../../../data/special_sevices/validation_service.dart';
 import '../../../../generated/l10n.dart';
 import '../../../resources/color_manager.dart';
-import '../../../resources/font_manager.dart';
+import '../../../resources/conistants_manager.dart';
 import '../../../resources/routes_manager.dart';
 import '../../../resources/styles_manager.dart';
 import '../../../resources/values_manager.dart';
@@ -31,8 +30,8 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
   bool isObscurePassword = true;
   bool isObscureConfirmPassword = true;
   intl_phone.PhoneNumber? phoneNum;
-  String _countryCode = Constants.initialCountryCode;
-  String _countryISOCode = Constants.initialCountryISO;
+  String _countryCode = AppConstants.initialCountryCode;
+  String _countryISOCode = AppConstants.initialCountryISO;
   late TextEditingController _phoneController;
 
   Gender? selectedGender;
@@ -101,8 +100,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
               Center(
                 child: Text(
                   S.current.createAccount,
-                  style: Styles.style30Bold(context,
-                      englishFontFamily: FontConstants.font2CormorantInfant),
+                  style: Styles.style30Bold(context),
                 ),
               ),
               const SizedBox(
@@ -221,8 +219,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                 height: AppSize.s10,
               ),
               DropdownButtonFormField<Gender>(
-                style: Styles.style18Medium(context,
-                        englishFontFamily: FontConstants.fontArCairo)
+                style: Styles.style18Medium(context)
                     .copyWith(color: Theme.of(context).primaryColorDark),
                 value: selectedGender,
                 icon: Icon(
@@ -233,9 +230,10 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                   contentPadding:
                       const EdgeInsets.symmetric(horizontal: AppSize.s20),
                   labelText: S.current.selectGender,
-                  labelStyle: Styles.style18Medium(context,
-                          englishFontFamily: FontConstants.fontArCairo)
+                  labelStyle: Styles.style18Medium(context)
                       .copyWith(color: Theme.of(context).primaryColorDark),
+                  errorStyle: Styles.style14Medium(context)
+                      .copyWith(color: ColorManager.red),
                 ),
                 items: genderItems,
                 onChanged: (Gender? newValue) {

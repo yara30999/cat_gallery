@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../generated/l10n.dart';
 import '../../../resources/color_manager.dart';
-import '../../../resources/font_manager.dart';
 import '../../../resources/language_manager.dart';
 import '../../../resources/routes_manager.dart';
 import '../../../resources/styles_manager.dart';
@@ -45,15 +44,13 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               Center(
                 child: Text(
                   S.current.hello,
-                  style: Styles.style30Bold(context,
-                      englishFontFamily: FontConstants.font2CormorantInfant),
+                  style: Styles.style30Bold(context),
                 ),
               ),
               Center(
                 child: Text(
                   S.current.loginTitle,
-                  style: Styles.style30Bold(context,
-                      englishFontFamily: FontConstants.font2CormorantInfant),
+                  style: Styles.style30Bold(context),
                 ),
               ),
               const SizedBox(
@@ -101,8 +98,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                   onPressed: () => {},
                   child: Text(
                     S.current.forgotYourPassword,
-                    style: Styles.style18semiBold(context,
-                        englishFontFamily: FontConstants.font1Monserrat),
+                    style: Styles.style18semiBold(context),
                   ),
                 ),
               ),

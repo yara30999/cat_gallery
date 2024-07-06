@@ -5,7 +5,6 @@ import 'social_componant.dart';
 import '../../../../generated/l10n.dart';
 import '../../../resources/assets_manager.dart';
 import '../../../resources/color_manager.dart';
-import '../../../resources/font_manager.dart';
 import '../../../resources/styles_manager.dart';
 
 class OrContinueWith extends StatelessWidget {
@@ -29,8 +28,7 @@ class OrContinueWith extends StatelessWidget {
         CustomDividerWithText(
           text: Text(
             S.current.orContinueWith,
-            style: Styles.style20Bold(context,
-                englishFontFamily: FontConstants.font2CormorantInfant),
+            style: Styles.style20Regular(context),
           ),
         ),
         SizedBox(

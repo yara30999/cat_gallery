@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../../resources/color_manager.dart';
-import '../../../resources/font_manager.dart';
 import '../../../resources/styles_manager.dart';
 import '../../../resources/values_manager.dart';
 
@@ -22,8 +21,7 @@ class CustomTextRow extends StatelessWidget {
       children: [
         Text(
           questionTxt,
-          style: Styles.style18semiBold(context,
-                  englishFontFamily: FontConstants.font1Monserrat)
+          style: Styles.style18semiBold(context)
               .copyWith(color: ColorManager.grey),
         ),
         const SizedBox(
@@ -33,8 +31,7 @@ class CustomTextRow extends StatelessWidget {
           onTap: onTap,
           child: Text(
             clickTxt,
-            style: Styles.style18semiBold(context,
-                englishFontFamily: FontConstants.font1Monserrat),
+            style: Styles.style18semiBold(context),
           ),
         )
       ],

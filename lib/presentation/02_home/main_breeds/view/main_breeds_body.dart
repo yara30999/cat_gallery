@@ -5,7 +5,6 @@ import '../../../../app/functions.dart';
 import '../../../../domain/entities/cat_breed_card_info.dart';
 import '../../../../generated/l10n.dart';
 import '../../../resources/color_manager.dart';
-import '../../../resources/font_manager.dart';
 import '../../../resources/routes_manager.dart';
 import '../../../resources/styles_manager.dart';
 import '../../../resources/values_manager.dart';
@@ -69,8 +68,7 @@ class MainBreedsHeader extends StatelessWidget {
         ),
         Text(
           S.current.main_breeds,
-          style: Styles.style40Black(context,
-              englishFontFamily: FontConstants.font3DancingScript),
+          style: Styles.style36Medium(context),
         ),
         CustomSearchField(searchController: searchController),
         const SizedBox(
@@ -238,8 +236,7 @@ class CatBreedNavigationItem extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Text(catBreedCard.breedName,
                   textAlign: TextAlign.center,
-                  style: Styles.style18Bold(context,
-                          englishFontFamily: FontConstants.font2CormorantInfant)
+                  style: Styles.style18Bold(context)
                       .copyWith(color: ColorManager.white)),
             ),
           ],
@@ -256,12 +253,8 @@ class ParagraphStartsWithClickText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextStyle baseTextStyle = Styles.style18Medium(context,
-            englishFontFamily: FontConstants.fontArCairo)
-        .copyWith(
-            color: isLightTheme(context)
-                ? ColorManager.black
-                : ColorManager.white);
+    final TextStyle baseTextStyle = Styles.style18Medium(context).copyWith(
+        color: isLightTheme(context) ? ColorManager.black : ColorManager.white);
     return RichText(
         text: TextSpan(style: baseTextStyle, children: [
       TextSpan(

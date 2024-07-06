@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../domain/entities/bottom_nav_icon.dart';
 import '../../generated/l10n.dart';
 import '../resources/routes_manager.dart';
+import '../resources/styles_manager.dart';
 import '../resources/values_manager.dart';
 import 'favorites/view/favorites_view_body.dart';
 import 'uploads/view/uploads_view_body.dart';
@@ -124,6 +125,8 @@ class _HomeViewState extends State<HomeView> {
                       label: e.label,
                       backgroundColor: Theme.of(context).primaryColor);
                 }).toList(),
+                selectedLabelStyle: Styles.style14Medium(context),
+                unselectedLabelStyle: Styles.style12Medium(context),
               ),
             ),
           ],

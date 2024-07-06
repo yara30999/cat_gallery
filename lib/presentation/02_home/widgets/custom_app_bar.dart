@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../app/constants.dart';
 import '../../../generated/l10n.dart';
 import '../../resources/color_manager.dart';
-import '../../resources/font_manager.dart';
+import '../../resources/conistants_manager.dart';
 import '../../resources/styles_manager.dart';
 
 class PersistentAppBar extends StatelessWidget {
@@ -16,8 +15,8 @@ class PersistentAppBar extends StatelessWidget {
       //floating: true,
       pinned: true,
       delegate: MySliverPersistentHeaderDelegate(
-          minHeight: Constants.appBarHeight,
-          maxHeight: Constants.appBarHeight,
+          minHeight: AppConstants.appBarHeight,
+          maxHeight: AppConstants.appBarHeight,
           child: const CustomAppBar()),
     );
   }
@@ -65,9 +64,8 @@ class CustomAppBar extends StatelessWidget {
       iconTheme: Theme.of(context).iconTheme,
       title: Text(
         S.current.cat_gallery,
-        style: Styles.style40Black(context,
-                englishFontFamily: FontConstants.font3DancingScript)
-            .copyWith(color: ColorManager.white),
+        style:
+            Styles.style36Medium(context).copyWith(color: ColorManager.white),
       ),
       actions: [
         IconButton(
