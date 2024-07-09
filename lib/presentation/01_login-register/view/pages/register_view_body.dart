@@ -79,6 +79,18 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
   }
 
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    // Rebuild the gender items when dependencies change, like locale
+    genderItems = Gender.values.map((Gender gender) {
+      return DropdownMenuItem<Gender>(
+        value: gender,
+        child: Text(gender.displayValue),
+      );
+    }).toList();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Center(
       child: Padding(

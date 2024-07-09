@@ -24,7 +24,7 @@ class _MyAppState extends State<MyApp> {
       themeMode: ThemeMode.light,
       theme: getLightTheme(),
       darkTheme: getDarkTheme(),
-      locale: LocalizationUtils.arabicLocal,
+      locale: LocalizationUtils.englishLocal,
       localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
