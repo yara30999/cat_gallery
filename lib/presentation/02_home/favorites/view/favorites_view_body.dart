@@ -31,7 +31,7 @@ class _FavoritesViewBodyState extends State<FavoritesViewBody> {
                 ),
                 Text(
                   'favorates screen ',
-                  style: Styles.style36Medium(context),
+                  style: Styles.style36Medium(),
                 ),
                 Center(
                   child: ElevatedButton(

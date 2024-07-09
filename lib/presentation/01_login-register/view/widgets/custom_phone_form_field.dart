@@ -45,14 +45,13 @@ class PhoneFormField extends StatelessWidget {
       keyboardType: TextInputType.phone,
       onChanged: onPhoneNumberChanged,
       validator: validator,
-      style: Styles.style18Medium(context),
+      style: Styles.style18Medium(),
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.symmetric(
             horizontal: AppSize.s20, vertical: AppSize.s0),
         hintText: S.current.do_not_type_country_code_again,
-        hintStyle: Styles.style18Medium(context),
-        errorStyle:
-            Styles.style14Medium(context).copyWith(color: ColorManager.red),
+        hintStyle: Styles.style18Medium(),
+        errorStyle: Styles.style14Medium().copyWith(color: ColorManager.red),
         prefixIcon: Padding(
           padding: (LocalizationUtils.currentLocalIsAr())
               ? const EdgeInsets.only(right: 0)

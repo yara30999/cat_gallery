@@ -30,7 +30,7 @@ class _VotesViewBodyState extends State<VotesViewBody> {
                 ),
                 Text(
                   'votes screen ',
-                  style: Styles.style36Medium(context),
+                  style: Styles.style36Medium(),
                 ),
                 Center(
                   child: ElevatedButton(

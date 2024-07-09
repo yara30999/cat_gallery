@@ -56,7 +56,7 @@ class CustomTextField extends StatelessWidget {
       textDirection: textDirection,
       validator: customValidator ?? _defaultValidator,
       onChanged: onChanged,
-      style: Styles.style18Medium(context),
+      style: Styles.style18Medium(),
       decoration: InputDecoration(
           contentPadding: const EdgeInsets.symmetric(horizontal: AppSize.s20),
           hintText: hint,
@@ -65,10 +65,9 @@ class CustomTextField extends StatelessWidget {
           fillColor: ColorManager.offwhite,
           prefixIcon: prefixIcon,
           suffixIcon: suffixIcon,
-          hintStyle: Styles.style18Medium(context),
-          errorStyle:
-              Styles.style14Medium(context).copyWith(color: ColorManager.red),
-          labelStyle: Styles.style18Medium(context)
+          hintStyle: Styles.style18Medium(),
+          errorStyle: Styles.style14Medium().copyWith(color: ColorManager.red),
+          labelStyle: Styles.style18Medium()
               .copyWith(color: Theme.of(context).primaryColorDark)),
     );
   }

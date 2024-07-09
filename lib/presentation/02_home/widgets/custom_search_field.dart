@@ -53,11 +53,11 @@ class _CustomSearchFieldState extends State<CustomSearchField> {
       onChanged: (value) {
         _searchValue(value);
       },
-      style: Styles.style18Medium(context),
+      style: Styles.style18Medium(),
       decoration: InputDecoration(
           contentPadding: const EdgeInsets.symmetric(horizontal: AppSize.s20),
           hintText: S.current.Search_by_breed_name,
-          hintStyle: Styles.style18Medium(context),
+          hintStyle: Styles.style18Medium(),
           suffixIcon: widget.searchController.value.text.isEmpty
               ? Icon(
                   Icons.search,

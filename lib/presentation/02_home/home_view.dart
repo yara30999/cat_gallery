@@ -128,8 +128,8 @@ class _HomeViewState extends State<HomeView> {
                       label: e.label,
                       backgroundColor: Theme.of(context).primaryColor);
                 }).toList(),
-                selectedLabelStyle: Styles.style14Medium(context),
-                unselectedLabelStyle: Styles.style12Medium(context),
+                selectedLabelStyle: Styles.style14Medium(),
+                unselectedLabelStyle: Styles.style12Medium(),
               ),
             ),
           ],

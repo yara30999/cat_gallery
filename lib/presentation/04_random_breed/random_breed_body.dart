@@ -88,7 +88,7 @@ class _RandomBreedHeaderState extends State<RandomBreedHeader> {
       children: [
         Text(
           S.current.random_cat_images,
-          style: Styles.style36Medium(context),
+          style: Styles.style36Medium(),
         ),
         PopupMenuButton<SortingItem>(
           icon: const Icon(Icons.filter_alt_outlined),
@@ -217,8 +217,8 @@ class ActiveCatigoryItem extends StatelessWidget {
             fit: BoxFit.scaleDown,
             child: Text(categoryItemEntity.name,
                 textAlign: TextAlign.center,
-                style: Styles.style18Bold(context)
-                    .copyWith(color: ColorManager.white)),
+                style:
+                    Styles.style18Bold().copyWith(color: ColorManager.white)),
           ),
           const SizedBox(
             width: AppSize.s5,
@@ -261,8 +261,8 @@ class InActiveCatigoryItem extends StatelessWidget {
             fit: BoxFit.scaleDown,
             child: Text(categoryItemEntity.name,
                 textAlign: TextAlign.center,
-                style: Styles.style18Bold(context)
-                    .copyWith(color: ColorManager.black)),
+                style:
+                    Styles.style18Bold().copyWith(color: ColorManager.black)),
           ),
           const SizedBox(
             width: AppSize.s5,

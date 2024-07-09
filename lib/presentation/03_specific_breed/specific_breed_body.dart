@@ -33,7 +33,7 @@ class _SpecificBreedBodyState extends State<SpecificBreedBody> {
                 ),
                 Text(
                   "specific breed body",
-                  style: Styles.style36Medium(context),
+                  style: Styles.style36Medium(),
                 ),
                 ListView.separated(
                   // controller: _scrollController,

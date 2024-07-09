@@ -64,8 +64,7 @@ class CustomAppBar extends StatelessWidget {
       iconTheme: Theme.of(context).iconTheme,
       title: Text(
         S.current.cat_gallery,
-        style:
-            Styles.style36Medium(context).copyWith(color: ColorManager.white),
+        style: Styles.style36Medium().copyWith(color: ColorManager.white),
       ),
       actions: [
         IconButton(

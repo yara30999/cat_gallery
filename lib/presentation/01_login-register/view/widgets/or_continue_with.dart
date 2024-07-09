@@ -28,7 +28,7 @@ class OrContinueWith extends StatelessWidget {
         CustomDividerWithText(
           text: Text(
             S.current.orContinueWith,
-            style: Styles.style20Regular(context),
+            style: Styles.style20Regular(),
           ),
         ),
         SizedBox(

@@ -112,7 +112,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
               Center(
                 child: Text(
                   S.current.createAccount,
-                  style: Styles.style30Bold(context),
+                  style: Styles.style30Bold(),
                 ),
               ),
               const SizedBox(
@@ -231,7 +231,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                 height: AppSize.s10,
               ),
               DropdownButtonFormField<Gender>(
-                style: Styles.style18Medium(context)
+                style: Styles.style18Medium()
                     .copyWith(color: Theme.of(context).primaryColorDark),
                 value: selectedGender,
                 icon: Icon(
@@ -242,10 +242,10 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                   contentPadding:
                       const EdgeInsets.symmetric(horizontal: AppSize.s20),
                   labelText: S.current.selectGender,
-                  labelStyle: Styles.style18Medium(context)
+                  labelStyle: Styles.style18Medium()
                       .copyWith(color: Theme.of(context).primaryColorDark),
-                  errorStyle: Styles.style14Medium(context)
-                      .copyWith(color: ColorManager.red),
+                  errorStyle:
+                      Styles.style14Medium().copyWith(color: ColorManager.red),
                 ),
                 items: genderItems,
                 onChanged: (Gender? newValue) {

@@ -44,13 +44,13 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               Center(
                 child: Text(
                   S.current.hello,
-                  style: Styles.style30Bold(context),
+                  style: Styles.style30Bold(),
                 ),
               ),
               Center(
                 child: Text(
                   S.current.loginTitle,
-                  style: Styles.style30Bold(context),
+                  style: Styles.style30Bold(),
                 ),
               ),
               const SizedBox(
@@ -98,7 +98,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                   onPressed: () => {},
                   child: Text(
                     S.current.forgotYourPassword,
-                    style: Styles.style18semiBold(context),
+                    style: Styles.style18semiBold(),
                   ),
                 ),
               ),

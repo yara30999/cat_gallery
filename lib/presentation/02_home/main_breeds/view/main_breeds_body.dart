@@ -68,7 +68,7 @@ class MainBreedsHeader extends StatelessWidget {
         ),
         Text(
           S.current.main_breeds,
-          style: Styles.style36Medium(context),
+          style: Styles.style36Medium(),
         ),
         CustomSearchField(searchController: searchController),
         const SizedBox(
@@ -236,8 +236,8 @@ class CatBreedNavigationItem extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Text(catBreedCard.breedName,
                   textAlign: TextAlign.center,
-                  style: Styles.style18Bold(context)
-                      .copyWith(color: ColorManager.white)),
+                  style:
+                      Styles.style18Bold().copyWith(color: ColorManager.white)),
             ),
           ],
         ),
@@ -253,7 +253,7 @@ class ParagraphStartsWithClickText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextStyle baseTextStyle = Styles.style18Medium(context).copyWith(
+    final TextStyle baseTextStyle = Styles.style18Medium().copyWith(
         color: isLightTheme(context) ? ColorManager.black : ColorManager.white);
     return RichText(
         text: TextSpan(style: baseTextStyle, children: [

@@ -31,7 +31,7 @@ class _UploadsViewBodyState extends State<UploadsViewBody> {
                 ),
                 Text(
                   'upload screen ',
-                  style: Styles.style36Medium(context),
+                  style: Styles.style36Medium(),
                 ),
                 Center(
                   child: ElevatedButton(

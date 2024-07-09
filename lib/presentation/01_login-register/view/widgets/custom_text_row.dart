@@ -21,8 +21,7 @@ class CustomTextRow extends StatelessWidget {
       children: [
         Text(
           questionTxt,
-          style: Styles.style18semiBold(context)
-              .copyWith(color: ColorManager.grey1),
+          style: Styles.style18semiBold().copyWith(color: ColorManager.grey1),
         ),
         const SizedBox(
           width: AppSize.s5,
@@ -31,7 +30,7 @@ class CustomTextRow extends StatelessWidget {
           onTap: onTap,
           child: Text(
             clickTxt,
-            style: Styles.style18semiBold(context),
+            style: Styles.style18semiBold(),
           ),
         )
       ],

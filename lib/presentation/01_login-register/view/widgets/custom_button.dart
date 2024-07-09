@@ -16,7 +16,7 @@ class CustomButton extends StatelessWidget {
         onPressed: onTap,
         child: Text(
           btnTitle,
-          style: Styles.style30Bold(context),
+          style: Styles.style30Bold(),
         ));
   }
 }
