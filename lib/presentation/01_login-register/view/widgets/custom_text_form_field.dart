@@ -58,17 +58,14 @@ class CustomTextField extends StatelessWidget {
       onChanged: onChanged,
       style: Styles.style18Medium(),
       decoration: InputDecoration(
-          contentPadding: const EdgeInsets.symmetric(horizontal: AppSize.s20),
-          hintText: hint,
-          labelText: label,
-          filled: fillColor,
-          fillColor: ColorManager.offwhite,
-          prefixIcon: prefixIcon,
-          suffixIcon: suffixIcon,
-          hintStyle: Styles.style18Medium(),
-          errorStyle: Styles.style14Medium().copyWith(color: ColorManager.red),
-          labelStyle: Styles.style18Medium()
-              .copyWith(color: Theme.of(context).primaryColorDark)),
+        contentPadding: const EdgeInsets.symmetric(horizontal: AppSize.s20),
+        hintText: hint,
+        labelText: label,
+        filled: fillColor,
+        fillColor: ColorManager.offwhite,
+        prefixIcon: prefixIcon,
+        suffixIcon: suffixIcon,
+      ),
     );
   }
 }

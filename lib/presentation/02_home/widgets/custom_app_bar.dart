@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../generated/l10n.dart';
-import '../../resources/color_manager.dart';
 import '../../resources/conistants_manager.dart';
-import '../../resources/styles_manager.dart';
 
 class PersistentAppBar extends StatelessWidget {
   const PersistentAppBar({
@@ -64,7 +62,6 @@ class CustomAppBar extends StatelessWidget {
       iconTheme: Theme.of(context).iconTheme,
       title: Text(
         S.current.cat_gallery,
-        style: Styles.style36Medium().copyWith(color: ColorManager.white),
       ),
       actions: [
         IconButton(

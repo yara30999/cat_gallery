@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../../../../app/di.dart';
 import '../../../../data/special_sevices/country_service.dart';
 import '../../../../generated/l10n.dart';
-import '../../../resources/color_manager.dart';
 import '../../../resources/conistants_manager.dart';
 import '../../../resources/language_manager.dart';
 import '../../../resources/styles_manager.dart';
@@ -50,8 +49,6 @@ class PhoneFormField extends StatelessWidget {
         contentPadding: const EdgeInsets.symmetric(
             horizontal: AppSize.s20, vertical: AppSize.s0),
         hintText: S.current.do_not_type_country_code_again,
-        hintStyle: Styles.style18Medium(),
-        errorStyle: Styles.style14Medium().copyWith(color: ColorManager.red),
         prefixIcon: Padding(
           padding: (LocalizationUtils.currentLocalIsAr())
               ? const EdgeInsets.only(right: 0)

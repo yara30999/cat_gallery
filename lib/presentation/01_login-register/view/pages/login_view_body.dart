@@ -5,7 +5,6 @@ import '../../../resources/language_manager.dart';
 import '../../../resources/routes_manager.dart';
 import '../../../resources/styles_manager.dart';
 import '../../../resources/values_manager.dart';
-import '../widgets/custom_button.dart';
 import '../widgets/custom_text_form_field.dart';
 import '../widgets/custom_text_row.dart';
 import '../widgets/or_continue_with.dart';
@@ -103,20 +102,14 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 ),
               ),
               //login button
-              SizedBox(
-                height: MediaQuery.sizeOf(context).height * .06 < AppSize.s40
-                    ? AppSize.s40
-                    : MediaQuery.sizeOf(context).height * .06,
-                width: double.infinity,
-                child: CustomButton(
-                  //with null in onTap the button is disable
-                  onTap: (_formKey.currentState?.validate() ?? false)
-                      ? () {
-                          Navigator.pushNamed(context, Routes.homeRoute);
-                        }
-                      : null,
-                  btnTitle: S.current.loginLabel,
-                ),
+              ElevatedButton(
+                //with null in onTap the button is disable
+                onPressed: (_formKey.currentState?.validate() ?? false)
+                    ? () {
+                        Navigator.pushNamed(context, Routes.homeRoute);
+                      }
+                    : null,
+                child: Text(S.current.loginLabel),
               ),
               const SizedBox(
                 height: AppSize.s30,

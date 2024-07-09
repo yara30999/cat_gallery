@@ -9,7 +9,6 @@ import '../../../resources/conistants_manager.dart';
 import '../../../resources/routes_manager.dart';
 import '../../../resources/styles_manager.dart';
 import '../../../resources/values_manager.dart';
-import '../widgets/custom_button.dart';
 import '../widgets/custom_phone_form_field.dart';
 import '../widgets/custom_text_form_field.dart';
 import '../widgets/custom_text_row.dart';
@@ -242,10 +241,6 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                   contentPadding:
                       const EdgeInsets.symmetric(horizontal: AppSize.s20),
                   labelText: S.current.selectGender,
-                  labelStyle: Styles.style18Medium()
-                      .copyWith(color: Theme.of(context).primaryColorDark),
-                  errorStyle:
-                      Styles.style14Medium().copyWith(color: ColorManager.red),
                 ),
                 items: genderItems,
                 onChanged: (Gender? newValue) {
@@ -263,18 +258,11 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                 height: AppSize.s20,
               ),
               //register button
-              SizedBox(
-                height: MediaQuery.sizeOf(context).height * .06 < AppSize.s40
-                    ? AppSize.s40
-                    : MediaQuery.sizeOf(context).height * .06,
-                width: double.infinity,
-                child: CustomButton(
-                  //with null in onTap the button is disable
-                  onTap: (_formKey.currentState?.validate() ?? false)
-                      ? () {}
-                      : null,
-                  btnTitle: S.current.registerLabel,
-                ),
+              ElevatedButton(
+                //with null in onTap the button is disable
+                onPressed:
+                    (_formKey.currentState?.validate() ?? false) ? () {} : null,
+                child: Text(S.current.registerLabel),
               ),
               const SizedBox(
                 height: AppSize.s30,

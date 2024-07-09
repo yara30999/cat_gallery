@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'styles_manager.dart';
 import 'values_manager.dart';
 import 'color_manager.dart';
 
@@ -20,12 +21,15 @@ ThemeData getLightTheme() {
         elevation: AppSize.s4),
 
     // app bar theme
-    appBarTheme: const AppBarTheme(
+    appBarTheme: AppBarTheme(
       centerTitle: true,
       color: ColorManager.primary2,
       elevation: AppSize.s8,
       shadowColor: ColorManager.primary4,
-      // titleTextStyle: Styles.textStyle16En1,
+      titleTextStyle:
+          Styles.style36Medium().copyWith(color: ColorManager.white),
+      toolbarTextStyle:
+          Styles.style18Medium().copyWith(color: ColorManager.white),
     ),
 
     // button theme
@@ -37,42 +41,43 @@ ThemeData getLightTheme() {
 
     // elevated button them
     elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ElevatedButton.styleFrom(
-      foregroundColor: ColorManager.white,
-      backgroundColor: ColorManager.primary2,
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(AppSize.s12)),
-      // textStyle: Styles.textStyle18En1,
-    )),
+      style: ElevatedButton.styleFrom(
+        foregroundColor: ColorManager.white,
+        backgroundColor: ColorManager.primary2,
+        textStyle: Styles.style30Bold(),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(AppSize.s12)),
+      ),
+    ),
     floatingActionButtonTheme: FloatingActionButtonThemeData(
       backgroundColor: ColorManager.brown1,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppSize.s12)),
-      // extendedTextStyle: Styles.textStyle18En1,
+      extendedTextStyle: Styles.style18Medium(),
     ),
-
     // input decoration theme (text form field)
-    inputDecorationTheme: const InputDecorationTheme(
+    inputDecorationTheme: InputDecorationTheme(
       // content padding
-      contentPadding: EdgeInsets.all(AppPadding.p16),
-      hintStyle: TextStyle(color: ColorManager.grey1),
-      labelStyle: TextStyle(color: ColorManager.primary1),
-      errorStyle: TextStyle(color: ColorManager.red), // enabled border style
-      enabledBorder: OutlineInputBorder(
+      contentPadding: const EdgeInsets.all(AppPadding.p16),
+      hintStyle: Styles.style18Medium(),
+      errorStyle: Styles.style14Medium().copyWith(color: ColorManager.red),
+      labelStyle: Styles.style18Medium().copyWith(color: ColorManager.primary1),
+      // enabled border style
+      enabledBorder: const OutlineInputBorder(
           borderSide:
               BorderSide(color: ColorManager.primary1, width: AppSize.s2),
           borderRadius: BorderRadius.all(Radius.circular(AppSize.s12))),
       // focused border style
-      focusedBorder: OutlineInputBorder(
+      focusedBorder: const OutlineInputBorder(
           borderSide:
               BorderSide(color: ColorManager.primary1, width: AppSize.s2),
           borderRadius: BorderRadius.all(Radius.circular(AppSize.s12))),
       // error border style
-      errorBorder: OutlineInputBorder(
+      errorBorder: const OutlineInputBorder(
           borderSide: BorderSide(color: ColorManager.red, width: AppSize.s2),
           borderRadius: BorderRadius.all(Radius.circular(AppSize.s12))),
       // focused border style
-      focusedErrorBorder: OutlineInputBorder(
+      focusedErrorBorder: const OutlineInputBorder(
           borderSide: BorderSide(color: ColorManager.red, width: AppSize.s2),
           borderRadius: BorderRadius.all(Radius.circular(AppSize.s12))),
     ),
@@ -83,10 +88,13 @@ ThemeData getLightTheme() {
     ),
 
     //popup menu theme
-    popupMenuTheme: const PopupMenuThemeData(
+    popupMenuTheme: PopupMenuThemeData(
       color: ColorManager.grey2,
       elevation: AppSize.s10,
       iconColor: ColorManager.primary4,
+      textStyle: Styles.style18Bold().copyWith(color: ColorManager.primary2),
+      labelTextStyle: WidgetStateProperty.all<TextStyle>(
+          Styles.style18Bold().copyWith(color: ColorManager.primary2)),
     ),
   );
 }
@@ -110,12 +118,15 @@ ThemeData getDarkTheme() {
         elevation: AppSize.s4),
 
     // app bar theme
-    appBarTheme: const AppBarTheme(
+    appBarTheme: AppBarTheme(
       centerTitle: true,
       color: ColorManager.orange2,
       elevation: AppSize.s8,
       shadowColor: ColorManager.brown1,
-      // titleTextStyle: Styles.textStyle16En1,
+      titleTextStyle:
+          Styles.style36Medium().copyWith(color: ColorManager.white),
+      toolbarTextStyle:
+          Styles.style18Medium().copyWith(color: ColorManager.white),
     ),
 
     // button theme
@@ -127,44 +138,45 @@ ThemeData getDarkTheme() {
 
     // elevated button them
     elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ElevatedButton.styleFrom(
-      foregroundColor: ColorManager.white,
-      backgroundColor: ColorManager.orange3,
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(AppSize.s12)),
-      // textStyle: Styles.textStyle18En1,
-    )),
+      style: ElevatedButton.styleFrom(
+        foregroundColor: ColorManager.white,
+        backgroundColor: ColorManager.orange3,
+        textStyle: Styles.style30Bold(),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(AppSize.s12)),
+      ),
+    ),
 
     floatingActionButtonTheme: FloatingActionButtonThemeData(
       backgroundColor: ColorManager.brown1,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppSize.s12)),
-      // extendedTextStyle: Styles.textStyle18En1,
+      extendedTextStyle: Styles.style18Medium(),
     ),
 
     // input decoration theme (text form field)
-    inputDecorationTheme: const InputDecorationTheme(
+    inputDecorationTheme: InputDecorationTheme(
       // content padding
-      contentPadding: EdgeInsets.all(AppPadding.p16),
-      hintStyle: TextStyle(color: ColorManager.grey1),
-      labelStyle: TextStyle(color: ColorManager.orange3),
-      errorStyle: TextStyle(color: ColorManager.red),
+      contentPadding: const EdgeInsets.all(AppPadding.p16),
+      hintStyle: Styles.style18Medium(),
+      errorStyle: Styles.style14Medium().copyWith(color: ColorManager.red),
+      labelStyle: Styles.style18Medium().copyWith(color: ColorManager.orange3),
       // enabled border style
-      enabledBorder: OutlineInputBorder(
+      enabledBorder: const OutlineInputBorder(
           borderSide:
               BorderSide(color: ColorManager.orange3, width: AppSize.s2),
           borderRadius: BorderRadius.all(Radius.circular(AppSize.s12))),
       // focused border style
-      focusedBorder: OutlineInputBorder(
+      focusedBorder: const OutlineInputBorder(
           borderSide:
               BorderSide(color: ColorManager.orange3, width: AppSize.s2),
           borderRadius: BorderRadius.all(Radius.circular(AppSize.s12))),
       // error border style
-      errorBorder: OutlineInputBorder(
+      errorBorder: const OutlineInputBorder(
           borderSide: BorderSide(color: ColorManager.red, width: AppSize.s2),
           borderRadius: BorderRadius.all(Radius.circular(AppSize.s12))),
       // focused border style
-      focusedErrorBorder: OutlineInputBorder(
+      focusedErrorBorder: const OutlineInputBorder(
           borderSide: BorderSide(color: ColorManager.red, width: AppSize.s2),
           borderRadius: BorderRadius.all(Radius.circular(AppSize.s12))),
     ),
@@ -175,10 +187,13 @@ ThemeData getDarkTheme() {
     ),
 
     //popup menu theme
-    popupMenuTheme: const PopupMenuThemeData(
+    popupMenuTheme: PopupMenuThemeData(
       color: ColorManager.grey3,
       elevation: AppSize.s10,
       iconColor: ColorManager.orange4,
+      textStyle: Styles.style18Bold().copyWith(color: ColorManager.orange1),
+      labelTextStyle: WidgetStateProperty.all<TextStyle>(
+          Styles.style18Bold().copyWith(color: ColorManager.orange1)),
     ),
   );
 }
