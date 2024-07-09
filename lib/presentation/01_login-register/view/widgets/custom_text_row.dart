@@ -22,7 +22,7 @@ class CustomTextRow extends StatelessWidget {
         Text(
           questionTxt,
           style: Styles.style18semiBold(context)
-              .copyWith(color: ColorManager.grey),
+              .copyWith(color: ColorManager.grey1),
         ),
         const SizedBox(
           width: AppSize.s5,

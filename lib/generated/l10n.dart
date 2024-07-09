@@ -469,6 +469,206 @@ class S {
       args: [],
     );
   }
+
+  /// `random cat images`
+  String get random_cat_images {
+    return Intl.message(
+      'random cat images',
+      name: 'random_cat_images',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `all`
+  String get all {
+    return Intl.message(
+      'all',
+      name: 'all',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `hats`
+  String get hats {
+    return Intl.message(
+      'hats',
+      name: 'hats',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `space`
+  String get space {
+    return Intl.message(
+      'space',
+      name: 'space',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `funny`
+  String get funny {
+    return Intl.message(
+      'funny',
+      name: 'funny',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `sunglasses`
+  String get sunglasses {
+    return Intl.message(
+      'sunglasses',
+      name: 'sunglasses',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `boxes`
+  String get boxes {
+    return Intl.message(
+      'boxes',
+      name: 'boxes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `caturday`
+  String get caturday {
+    return Intl.message(
+      'caturday',
+      name: 'caturday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ties`
+  String get ties {
+    return Intl.message(
+      'ties',
+      name: 'ties',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `boys`
+  String get boys {
+    return Intl.message(
+      'boys',
+      name: 'boys',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `dream`
+  String get dream {
+    return Intl.message(
+      'dream',
+      name: 'dream',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `kittens`
+  String get kittens {
+    return Intl.message(
+      'kittens',
+      name: 'kittens',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `psychedelic`
+  String get psychedelic {
+    return Intl.message(
+      'psychedelic',
+      name: 'psychedelic',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `girls`
+  String get girls {
+    return Intl.message(
+      'girls',
+      name: 'girls',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `breaded`
+  String get breaded {
+    return Intl.message(
+      'breaded',
+      name: 'breaded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `sinks`
+  String get sinks {
+    return Intl.message(
+      'sinks',
+      name: 'sinks',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `clothes`
+  String get clothes {
+    return Intl.message(
+      'clothes',
+      name: 'clothes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ascending`
+  String get asc {
+    return Intl.message(
+      'ascending',
+      name: 'asc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `descending`
+  String get desc {
+    return Intl.message(
+      'descending',
+      name: 'desc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `random`
+  String get random {
+    return Intl.message(
+      'random',
+      name: 'random',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class BottomNavIcon {
+class BottomNavIconEntity {
   final String label;
   final IconData icon;
 
-  const BottomNavIcon({
+  const BottomNavIconEntity({
     required this.label,
     required this.icon,
   });

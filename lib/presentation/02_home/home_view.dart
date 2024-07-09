@@ -25,12 +25,13 @@ class _HomeViewState extends State<HomeView> {
   final ScrollController _uploadsScrollController = ScrollController();
   final ScrollController _votesScrollController = ScrollController();
 
-  List<BottomNavIcon> get _navigationItems => [
-        BottomNavIcon(icon: Icons.home, label: S.current.Home),
-        BottomNavIcon(icon: Icons.favorite, label: S.current.Favorites),
-        BottomNavIcon(
+  List<BottomNavIconEntity> get _navigationItems => [
+        BottomNavIconEntity(icon: Icons.home, label: S.current.Home),
+        BottomNavIconEntity(icon: Icons.favorite, label: S.current.Favorites),
+        BottomNavIconEntity(
             icon: Icons.drive_folder_upload, label: S.current.Uploads),
-        BottomNavIcon(icon: Icons.how_to_vote_outlined, label: S.current.Votes),
+        BottomNavIconEntity(
+            icon: Icons.how_to_vote_outlined, label: S.current.Votes),
       ];
 
   bool _isVisibleBottomNavBar = true;
@@ -51,19 +52,21 @@ class _HomeViewState extends State<HomeView> {
 
   void _scrollControllerListener(ScrollNotification scrollNotification) {
     if (scrollNotification is ScrollUpdateNotification) {
-      if (scrollNotification.scrollDelta! > 0) {
-        // User scrolled down
-        if (_isVisibleBottomNavBar) {
-          setState(() {
-            _isVisibleBottomNavBar = false;
-          });
-        }
-      } else if (scrollNotification.scrollDelta! < 0) {
-        // User scrolled up
-        if (!_isVisibleBottomNavBar) {
-          setState(() {
-            _isVisibleBottomNavBar = true;
-          });
+      if (scrollNotification.metrics.axis == Axis.vertical) {
+        if (scrollNotification.scrollDelta! > 0) {
+          // User scrolled down
+          if (_isVisibleBottomNavBar) {
+            setState(() {
+              _isVisibleBottomNavBar = false;
+            });
+          }
+        } else if (scrollNotification.scrollDelta! < 0) {
+          // User scrolled up
+          if (!_isVisibleBottomNavBar) {
+            setState(() {
+              _isVisibleBottomNavBar = true;
+            });
+          }
         }
       }
     }

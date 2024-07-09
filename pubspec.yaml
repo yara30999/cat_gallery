@@ -108,6 +108,22 @@ flutter:
     - assets/json/cat_error.json
     - assets/json/cat_loading.json
     - assets/json/cat_success.json
+    - assets/svg/0_all.svg
+    - assets/svg/1_hats.svg
+    - assets/svg/2_space.svg
+    - assets/svg/3_funny.svg
+    - assets/svg/4_sunglasses.svg
+    - assets/svg/5_boxes.svg
+    - assets/svg/6_caturday.svg
+    - assets/svg/7_ties.svg
+    - assets/svg/8_boys.svg
+    - assets/svg/9_dream.svg
+    - assets/svg/10_kittens.svg
+    - assets/svg/11_psychedelic.svg
+    - assets/svg/12_girls.svg
+    - assets/svg/13_breaded.svg
+    - assets/svg/14_sinks.svg
+    - assets/svg/15_clothes.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

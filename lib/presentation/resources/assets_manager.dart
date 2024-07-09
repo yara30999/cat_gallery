@@ -37,4 +37,20 @@ class SvgAssets {
   static const String logoWithTextW = "$svgPath/logo_with_text_white.svg";
   static const String google = "$svgPath/google.svg";
   static const String facebook = "$svgPath/facebook.svg";
+  static const String all = "$svgPath/0_all.svg";
+  static const String hats = "$svgPath/1_hats.svg";
+  static const String space = "$svgPath/2_space.svg";
+  static const String funny = "$svgPath/3_funny.svg";
+  static const String sunglasses = "$svgPath/4_sunglasses.svg";
+  static const String boxes = "$svgPath/5_boxes.svg";
+  static const String caturday = "$svgPath/6_caturday.svg";
+  static const String ties = "$svgPath/7_ties.svg";
+  static const String boys = "$svgPath/8_boys.svg";
+  static const String dream = "$svgPath/9_dream.svg";
+  static const String kittens = "$svgPath/10_kittens.svg";
+  static const String psychedelic = "$svgPath/11_psychedelic.svg";
+  static const String girls = "$svgPath/12_girls.svg";
+  static const String breaded = "$svgPath/13_breaded.svg";
+  static const String sinks = "$svgPath/14_sinks.svg";
+  static const String clothes = "$svgPath/15_clothes.svg";
 }

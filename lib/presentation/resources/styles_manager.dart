@@ -63,7 +63,7 @@ abstract class Styles {
         fontFamily: FontConstants.fontMarhey,
         fontSize: getResponsiveFontSize(context, fontSize: FontSize.s20),
         fontWeight: FontWeightManager.regular,
-        color: ColorManager.grey);
+        color: ColorManager.grey1);
   }
 
   /*..................used in 

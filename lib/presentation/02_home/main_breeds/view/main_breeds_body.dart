@@ -2,7 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import '../../../../app/functions.dart';
-import '../../../../domain/entities/cat_breed_card_info.dart';
+import '../../../../domain/entities/cat_breed_card.dart';
 import '../../../../generated/l10n.dart';
 import '../../../resources/color_manager.dart';
 import '../../../resources/routes_manager.dart';
@@ -85,103 +85,103 @@ class MainBreedsGridBuilder extends StatelessWidget {
     super.key,
   });
   // instead of doing (static final List<CatBreedCardInfo> items = [];)
-  List<CatBreedCardInfo> get items => [
-        const CatBreedCardInfo(
+  List<CatBreedCardEntity> get items => [
+        const CatBreedCardEntity(
             breedId: '',
             breedName: 'Footstool',
             referenceImgId: '',
             referenceImgurl: 'assets/images/cat_1.png'),
-        const CatBreedCardInfo(
+        const CatBreedCardEntity(
             breedId: '',
             breedName: 'Modern dresser',
             referenceImgId: '',
             referenceImgurl: 'assets/images/cat_2.png'),
-        const CatBreedCardInfo(
+        const CatBreedCardEntity(
             breedId: '',
             breedName: 'Bedside cupboard',
             referenceImgId: '',
             referenceImgurl: 'assets/images/cat_3.png'),
-        const CatBreedCardInfo(
+        const CatBreedCardEntity(
             breedId: '',
             breedName: 'Bedside cupboard',
             referenceImgId: '',
             referenceImgurl: 'assets/images/cat_4.png'),
-        const CatBreedCardInfo(
+        const CatBreedCardEntity(
             breedId: '',
             breedName: 'Bedside cupboard',
             referenceImgId: '',
             referenceImgurl: 'assets/images/cat_5.png'),
-        const CatBreedCardInfo(
+        const CatBreedCardEntity(
             breedId: '',
             breedName: 'Footstool',
             referenceImgId: '',
             referenceImgurl: 'assets/images/cat_6.png'),
-        const CatBreedCardInfo(
+        const CatBreedCardEntity(
             breedId: '',
             breedName: 'Footstool',
             referenceImgId: '',
             referenceImgurl: 'assets/images/cat_7.png'),
-        const CatBreedCardInfo(
+        const CatBreedCardEntity(
             breedId: '',
             breedName: 'Bedside cupboard',
             referenceImgId: '',
             referenceImgurl: 'assets/images/cat_8.png'),
-        const CatBreedCardInfo(
+        const CatBreedCardEntity(
             breedId: '',
             breedName: 'Footstool',
             referenceImgId: '',
             referenceImgurl: 'assets/images/cat_9.png'),
-        const CatBreedCardInfo(
+        const CatBreedCardEntity(
             breedId: '',
             breedName: 'Footstool',
             referenceImgId: '',
             referenceImgurl: 'assets/images/cat_10.png'),
-        const CatBreedCardInfo(
+        const CatBreedCardEntity(
             breedId: '',
             breedName: 'Footstool',
             referenceImgId: '',
             referenceImgurl: 'assets/images/cat_1.png'),
-        const CatBreedCardInfo(
+        const CatBreedCardEntity(
             breedId: '',
             breedName: 'Modern dresser',
             referenceImgId: '',
             referenceImgurl: 'assets/images/cat_2.png'),
-        const CatBreedCardInfo(
+        const CatBreedCardEntity(
             breedId: '',
             breedName: 'Bedside cupboard',
             referenceImgId: '',
             referenceImgurl: 'assets/images/cat_3.png'),
-        const CatBreedCardInfo(
+        const CatBreedCardEntity(
             breedId: '',
             breedName: 'Bedside cupboard',
             referenceImgId: '',
             referenceImgurl: 'assets/images/cat_4.png'),
-        const CatBreedCardInfo(
+        const CatBreedCardEntity(
             breedId: '',
             breedName: 'Bedside cupboard',
             referenceImgId: '',
             referenceImgurl: 'assets/images/cat_5.png'),
-        const CatBreedCardInfo(
+        const CatBreedCardEntity(
             breedId: '',
             breedName: 'Footstool',
             referenceImgId: '',
             referenceImgurl: 'assets/images/cat_6.png'),
-        const CatBreedCardInfo(
+        const CatBreedCardEntity(
             breedId: '',
             breedName: 'Footstool',
             referenceImgId: '',
             referenceImgurl: 'assets/images/cat_7.png'),
-        const CatBreedCardInfo(
+        const CatBreedCardEntity(
             breedId: '',
             breedName: 'Bedside cupboard',
             referenceImgId: '',
             referenceImgurl: 'assets/images/cat_8.png'),
-        const CatBreedCardInfo(
+        const CatBreedCardEntity(
             breedId: '',
             breedName: 'Footstool',
             referenceImgId: '',
             referenceImgurl: 'assets/images/cat_9.png'),
-        const CatBreedCardInfo(
+        const CatBreedCardEntity(
             breedId: '',
             breedName: 'Footstool',
             referenceImgId: '',
@@ -205,7 +205,7 @@ class MainBreedsGridBuilder extends StatelessWidget {
 }
 
 class CatBreedNavigationItem extends StatelessWidget {
-  final CatBreedCardInfo catBreedCard;
+  final CatBreedCardEntity catBreedCard;
 
   const CatBreedNavigationItem({
     super.key,

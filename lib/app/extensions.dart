@@ -12,3 +12,18 @@ extension GenderExtension on Gender {
     }
   }
 }
+
+enum SortingItem { asc, desc, random }
+
+extension SortingItemExtension on SortingItem {
+  String get displayValue {
+    switch (this) {
+      case SortingItem.asc:
+        return S.current.asc;
+      case SortingItem.desc:
+        return S.current.desc;
+      case SortingItem.random:
+        return S.current.random;
+    }
+  }
+}

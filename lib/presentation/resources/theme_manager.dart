@@ -4,6 +4,7 @@ import 'color_manager.dart';
 
 ThemeData getLightTheme() {
   return ThemeData(
+    useMaterial3: true,
     brightness: Brightness.light,
     // main colors
     primaryColor: ColorManager.primary2,
@@ -11,6 +12,7 @@ ThemeData getLightTheme() {
     primaryColorDark: ColorManager.primary1,
     disabledColor: ColorManager.pink3,
     scaffoldBackgroundColor: ColorManager.white,
+    unselectedWidgetColor: ColorManager.grey2,
     // cardview theme
     cardTheme: const CardTheme(
         color: ColorManager.white,
@@ -42,7 +44,6 @@ ThemeData getLightTheme() {
           borderRadius: BorderRadius.circular(AppSize.s12)),
       // textStyle: Styles.textStyle18En1,
     )),
-
     floatingActionButtonTheme: FloatingActionButtonThemeData(
       backgroundColor: ColorManager.brown1,
       shape: RoundedRectangleBorder(
@@ -54,7 +55,7 @@ ThemeData getLightTheme() {
     inputDecorationTheme: const InputDecorationTheme(
       // content padding
       contentPadding: EdgeInsets.all(AppPadding.p16),
-      hintStyle: TextStyle(color: ColorManager.grey),
+      hintStyle: TextStyle(color: ColorManager.grey1),
       labelStyle: TextStyle(color: ColorManager.primary1),
       errorStyle: TextStyle(color: ColorManager.red), // enabled border style
       enabledBorder: OutlineInputBorder(
@@ -80,18 +81,27 @@ ThemeData getLightTheme() {
     iconTheme: const IconThemeData(
       color: ColorManager.white,
     ),
+
+    //popup menu theme
+    popupMenuTheme: const PopupMenuThemeData(
+      color: ColorManager.grey2,
+      elevation: AppSize.s10,
+      iconColor: ColorManager.primary4,
+    ),
   );
 }
 
 ThemeData getDarkTheme() {
   return ThemeData(
+    useMaterial3: true,
     brightness: Brightness.dark,
     // main colors
     primaryColor: ColorManager.orange2,
     primaryColorLight: ColorManager.orange4,
     primaryColorDark: ColorManager.orange3,
-    disabledColor: ColorManager.brown1,
+    disabledColor: ColorManager.green1,
     scaffoldBackgroundColor: ColorManager.black,
+    unselectedWidgetColor: ColorManager.grey3,
 
     // cardview theme
     cardTheme: const CardTheme(
@@ -136,7 +146,7 @@ ThemeData getDarkTheme() {
     inputDecorationTheme: const InputDecorationTheme(
       // content padding
       contentPadding: EdgeInsets.all(AppPadding.p16),
-      hintStyle: TextStyle(color: ColorManager.grey),
+      hintStyle: TextStyle(color: ColorManager.grey1),
       labelStyle: TextStyle(color: ColorManager.orange3),
       errorStyle: TextStyle(color: ColorManager.red),
       // enabled border style
@@ -162,6 +172,13 @@ ThemeData getDarkTheme() {
     //icon theme
     iconTheme: const IconThemeData(
       color: ColorManager.white,
+    ),
+
+    //popup menu theme
+    popupMenuTheme: const PopupMenuThemeData(
+      color: ColorManager.grey3,
+      elevation: AppSize.s10,
+      iconColor: ColorManager.orange4,
     ),
   );
 }

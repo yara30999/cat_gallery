@@ -31,16 +31,25 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("إبحث حسب إسم السلاله ..."),
         "Uploads": MessageLookupByLibrary.simpleMessage("الملفات المرفوعة"),
         "Votes": MessageLookupByLibrary.simpleMessage("التصويتات"),
+        "all": MessageLookupByLibrary.simpleMessage("الكل"),
         "alreadyHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("لديك حساب؟"),
         "appTitle": MessageLookupByLibrary.simpleMessage(
             "تطبيق معلومات القطط باستخدام فلاتر"),
+        "asc": MessageLookupByLibrary.simpleMessage("تصاعدي"),
+        "boxes": MessageLookupByLibrary.simpleMessage("صناديق"),
+        "boys": MessageLookupByLibrary.simpleMessage("أولاد"),
+        "breaded": MessageLookupByLibrary.simpleMessage("مغلف"),
         "cat_gallery": MessageLookupByLibrary.simpleMessage("معرض القطط"),
+        "caturday": MessageLookupByLibrary.simpleMessage("يوم القط"),
+        "clothes": MessageLookupByLibrary.simpleMessage("ملابس"),
         "country_number_length_not_found":
             MessageLookupByLibrary.simpleMessage("بيانات البلد غير موجودة"),
         "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+        "desc": MessageLookupByLibrary.simpleMessage("تنازلي"),
         "do_not_type_country_code_again":
             MessageLookupByLibrary.simpleMessage("لا تكتب رمز البلد مرة أخرى"),
+        "dream": MessageLookupByLibrary.simpleMessage("حلم"),
         "emailLabel": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
         "emailNotValid": MessageLookupByLibrary.simpleMessage(
             "البريد الإلكتروني غير منسق بشكل جيد"),
@@ -48,8 +57,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "female": MessageLookupByLibrary.simpleMessage("أنثى"),
         "forgotYourPassword":
             MessageLookupByLibrary.simpleMessage("هل نسيت كلمة المرور؟"),
+        "funny": MessageLookupByLibrary.simpleMessage("مضحك"),
         "genderRequired": MessageLookupByLibrary.simpleMessage("الحقل مطلوب"),
+        "girls": MessageLookupByLibrary.simpleMessage("بنات"),
+        "hats": MessageLookupByLibrary.simpleMessage("قبعات"),
         "hello": MessageLookupByLibrary.simpleMessage("مرحباً!"),
+        "kittens": MessageLookupByLibrary.simpleMessage("قطط صغيرة"),
         "loginLabel": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "loginTitle":
             MessageLookupByLibrary.simpleMessage("تسجيل الدخول إلى حسابك."),
@@ -76,10 +89,18 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("طول رقم الهاتف غير صحيح"),
         "please_enter_a_valid_phone_number":
             MessageLookupByLibrary.simpleMessage("يرجى إدخال رقم هاتف صالح"),
+        "psychedelic": MessageLookupByLibrary.simpleMessage("هلوسه"),
+        "random": MessageLookupByLibrary.simpleMessage("عشوائي"),
+        "random_cat_images":
+            MessageLookupByLibrary.simpleMessage("صور قطط عشوائية"),
         "registerLabel": MessageLookupByLibrary.simpleMessage("تسجيل"),
         "search_country":
             MessageLookupByLibrary.simpleMessage("ابحث عن الدولة"),
         "selectGender": MessageLookupByLibrary.simpleMessage("اختر الجنس"),
+        "sinks": MessageLookupByLibrary.simpleMessage("أحواض مياه"),
+        "space": MessageLookupByLibrary.simpleMessage("فضاء"),
+        "sunglasses": MessageLookupByLibrary.simpleMessage("نظارات شمسية"),
+        "ties": MessageLookupByLibrary.simpleMessage("ربطات عنق"),
         "usernameLabel": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
         "usernameNotValid":
             MessageLookupByLibrary.simpleMessage("اسم المستخدم غير صالح"),
