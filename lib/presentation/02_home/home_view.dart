@@ -4,7 +4,6 @@ import '../../generated/l10n.dart';
 import '../resources/routes_manager.dart';
 import '../resources/styles_manager.dart';
 import '../resources/values_manager.dart';
-import 'favorites/view/favorites_view_body.dart';
 import 'uploads/view/uploads_view_body.dart';
 import 'votes/view/votes_view_body.dart';
 
@@ -94,8 +93,8 @@ class _HomeViewState extends State<HomeView> {
             MainBreedsNavigator(
               scrollController: _mainBreedsScrollController,
             ),
-            FavoritesViewBody(
-              favoratesScreenScrollController: _favoritesScrollController,
+            FavoritesNavigator(
+              scrollController: _favoritesScrollController,
             ),
             UploadsViewBody(
               uploadsScreenScrollController: _uploadsScrollController,

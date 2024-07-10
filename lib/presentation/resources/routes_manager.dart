@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../generated/l10n.dart';
 import '../01_login-register/view/pages/login_view.dart';
 import '../01_login-register/view/pages/register_view.dart';
+import '../02_home/favorites/view/favorites_view_body.dart';
 import '../02_home/main_breeds/view/main_breeds_body.dart';
 import '../02_home/home_view.dart';
 import '../03_specific_breed/specific_breed_body.dart';
@@ -14,6 +15,8 @@ class Routes {
   static const String mainBreedsRoute = "/";
   static const String specificBreedRoute = "/specific_breed_route";
   static const String randomBreedRoute = "/random_breeds_route";
+  static const String favoritesRoute = "/";
+  static const String scaleImageRoute = "/scale_image_route";
 }
 
 class RouteGenerator {
@@ -53,6 +56,19 @@ class RouteGenerator {
     }
   }
 
+  static Route<dynamic> getFavoritesNavigator(RouteSettings settings) {
+    final ScrollController controller = settings.arguments as ScrollController;
+    switch (settings.name) {
+      case Routes.favoritesRoute:
+        return MaterialPageRoute(
+            builder: (_) => FavoritesViewBody(
+                  favoratesScreenScrollController: controller,
+                ));
+      default:
+        return unDefinedRoute();
+    }
+  }
+
   static Route<dynamic> unDefinedRoute() {
     return MaterialPageRoute(
         builder: (_) => Scaffold(
@@ -74,6 +90,23 @@ class MainBreedsNavigator extends StatelessWidget {
       initialRoute: Routes.mainBreedsRoute,
       onGenerateRoute: (settings) =>
           RouteGenerator.getMainBreedsNavigator(RouteSettings(
+        name: settings.name,
+        arguments: scrollController,
+      )),
+    );
+  }
+}
+
+class FavoritesNavigator extends StatelessWidget {
+  final ScrollController scrollController;
+  const FavoritesNavigator({super.key, required this.scrollController});
+
+  @override
+  Widget build(BuildContext context) {
+    return Navigator(
+      initialRoute: Routes.favoritesRoute,
+      onGenerateRoute: (settings) =>
+          RouteGenerator.getFavoritesNavigator(RouteSettings(
         name: settings.name,
         arguments: scrollController,
       )),

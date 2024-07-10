@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../domain/entities/cat_breed_card.dart';
+import '../../../02_home/widgets/pinch_zoom_image.dart';
 import '../../../resources/values_manager.dart';
 import 'action_button.dart';
 import 'favorite_button.dart';
@@ -18,10 +19,9 @@ class CatImageWithClickOptions extends StatelessWidget {
       elevation: AppSize.s8,
       child: Column(
         children: [
-          Image.asset(
-            catBreedCard.referenceImgurl,
-            fit: BoxFit.cover,
-            width: double.infinity,
+          // form assets, use cashed network image here
+          PinchZoomImage(
+            assetName: catBreedCard.referenceImgurl,
           ),
           _buildActionRow(context),
         ],
