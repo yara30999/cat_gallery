@@ -6,9 +6,7 @@ import '../../resources/values_manager.dart';
 class CustomSearchField extends StatefulWidget {
   const CustomSearchField({
     super.key,
-    required this.searchController,
   });
-  final TextEditingController searchController;
 
   @override
   State<CustomSearchField> createState() => _CustomSearchFieldState();
@@ -16,7 +14,7 @@ class CustomSearchField extends StatefulWidget {
 
 class _CustomSearchFieldState extends State<CustomSearchField> {
   final FocusNode _focusNode = FocusNode();
-
+  final TextEditingController searchController = TextEditingController();
   @override
   void initState() {
     super.initState();
@@ -25,29 +23,29 @@ class _CustomSearchFieldState extends State<CustomSearchField> {
   @override
   void dispose() {
     _focusNode.dispose();
-    widget.searchController.dispose();
+    searchController.dispose();
     super.dispose();
   }
 
   void _clearSearch() {
-    widget.searchController.clear();
+    searchController.clear();
     _focusNode.unfocus();
     setState(() {
-      widget.searchController;
+      searchController;
     });
   }
 
   void _searchValue(String value) {
     //print('search field value : $value');
     setState(() {
-      widget.searchController;
+      searchController;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return TextField(
-      controller: widget.searchController,
+      controller: searchController,
       focusNode: _focusNode,
       keyboardType: TextInputType.text,
       onChanged: (value) {
@@ -58,7 +56,7 @@ class _CustomSearchFieldState extends State<CustomSearchField> {
           contentPadding: const EdgeInsets.symmetric(horizontal: AppSize.s20),
           hintText: S.current.Search_by_breed_name,
           hintStyle: Styles.style18Medium(),
-          suffixIcon: widget.searchController.value.text.isEmpty
+          suffixIcon: searchController.value.text.isEmpty
               ? Icon(
                   Icons.search,
                   color: Theme.of(context).primaryColorDark,
