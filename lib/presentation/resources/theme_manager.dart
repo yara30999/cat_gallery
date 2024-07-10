@@ -96,6 +96,11 @@ ThemeData getLightTheme() {
       labelTextStyle: WidgetStateProperty.all<TextStyle>(
           Styles.style18Bold().copyWith(color: ColorManager.primary2)),
     ),
+
+    //icon button
+    iconButtonTheme: const IconButtonThemeData(
+      style: ButtonStyle(iconSize: WidgetStatePropertyAll(23)),
+    ),
   );
 }
 
@@ -194,6 +199,11 @@ ThemeData getDarkTheme() {
       textStyle: Styles.style18Bold().copyWith(color: ColorManager.orange1),
       labelTextStyle: WidgetStateProperty.all<TextStyle>(
           Styles.style18Bold().copyWith(color: ColorManager.orange1)),
+    ),
+
+    //icon button
+    iconButtonTheme: const IconButtonThemeData(
+      style: ButtonStyle(iconSize: WidgetStatePropertyAll(23)),
     ),
   );
 }

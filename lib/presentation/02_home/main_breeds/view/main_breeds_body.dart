@@ -231,6 +231,7 @@ class CatBreedNavigationItem extends StatelessWidget {
             Image.asset(
               catBreedCard.referenceImgurl,
               fit: BoxFit.cover,
+              width: double.infinity,
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),

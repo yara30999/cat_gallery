@@ -5,7 +5,7 @@ import '../01_login-register/view/pages/register_view.dart';
 import '../02_home/main_breeds/view/main_breeds_body.dart';
 import '../02_home/home_view.dart';
 import '../03_specific_breed/specific_breed_body.dart';
-import '../04_random_breed/random_breed_body.dart';
+import '../04_random_breed/view/random_breed_body.dart';
 
 class Routes {
   static const String loginRoute = "/";

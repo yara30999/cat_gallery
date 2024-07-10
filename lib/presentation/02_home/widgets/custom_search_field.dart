@@ -38,7 +38,7 @@ class _CustomSearchFieldState extends State<CustomSearchField> {
   }
 
   void _searchValue(String value) {
-    print('search field value : $value');
+    //print('search field value : $value');
     setState(() {
       widget.searchController;
     });
