@@ -430,6 +430,16 @@ class S {
     );
   }
 
+  /// `Vote`
+  String get Vote {
+    return Intl.message(
+      'Vote',
+      name: 'Vote',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Search by breed name...`
   String get Search_by_breed_name {
     return Intl.message(

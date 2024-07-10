@@ -30,6 +30,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Search_by_breed_name":
             MessageLookupByLibrary.simpleMessage("Search by breed name..."),
         "Uploads": MessageLookupByLibrary.simpleMessage("Uploads"),
+        "Vote": MessageLookupByLibrary.simpleMessage("Vote"),
         "Votes": MessageLookupByLibrary.simpleMessage("Votes"),
         "all": MessageLookupByLibrary.simpleMessage("all"),
         "alreadyHaveAnAccount":

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import '../../../../domain/entities/cat_breed_card.dart';
-import '../../../02_home/widgets/pinch_zoom_image.dart';
-import '../../../resources/values_manager.dart';
+import '../../../domain/entities/cat_breed_card.dart';
+import 'pinch_zoom_image.dart';
+import '../../resources/values_manager.dart';
 import 'action_button.dart';
 import 'favorite_button.dart';
+import 'vote_dialog.dart';
 
 class CatImageWithClickOptions extends StatelessWidget {
   final CatBreedCardEntity catBreedCard;
@@ -12,6 +13,13 @@ class CatImageWithClickOptions extends StatelessWidget {
     super.key,
     required this.catBreedCard,
   });
+
+  void _voteButtonOnPress(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) => const VoteDialog(),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +46,9 @@ class CatImageWithClickOptions extends StatelessWidget {
         ),
         ActionButton(
           icon: Icons.how_to_vote_outlined,
-          onPressed: () {},
+          onPressed: () {
+            _voteButtonOnPress(context);
+          },
         ),
         ActionButton(
           icon: Icons.science_outlined,

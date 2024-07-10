@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import '../../../../domain/entities/cat_breed_card.dart';
 import '../../../resources/values_manager.dart';
-import 'cat_image_with_click_options.dart';
+import '../../../02_home/widgets/cat_image_with_click_options.dart';
 
 class RandomBreedGridBuilder extends StatelessWidget {
   const RandomBreedGridBuilder({

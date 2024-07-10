@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../../app/functions.dart';
-import '../../../resources/color_manager.dart';
+import '../../../app/functions.dart';
+import '../../resources/color_manager.dart';
 
 class FavoriteButton extends StatefulWidget {
   final VoidCallback onPressed;
