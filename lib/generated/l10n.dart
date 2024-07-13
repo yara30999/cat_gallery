@@ -490,6 +490,16 @@ class S {
     );
   }
 
+  /// `{breed_name} cat images`
+  String breed_cat_images(Object breed_name) {
+    return Intl.message(
+      '$breed_name cat images',
+      name: 'breed_cat_images',
+      desc: '',
+      args: [breed_name],
+    );
+  }
+
   /// `all`
   String get all {
     return Intl.message(
@@ -675,6 +685,176 @@ class S {
     return Intl.message(
       'random',
       name: 'random',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Adaptability`
+  String get adabtability {
+    return Intl.message(
+      'Adaptability',
+      name: 'adabtability',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Child Friendly`
+  String get child_friendly {
+    return Intl.message(
+      'Child Friendly',
+      name: 'child_friendly',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dog Friendly`
+  String get dog_friendly {
+    return Intl.message(
+      'Dog Friendly',
+      name: 'dog_friendly',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Stranger Friendly`
+  String get stranger_friendly {
+    return Intl.message(
+      'Stranger Friendly',
+      name: 'stranger_friendly',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Health Issues`
+  String get health_issues {
+    return Intl.message(
+      'Health Issues',
+      name: 'health_issues',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Social Needs`
+  String get social_needs {
+    return Intl.message(
+      'Social Needs',
+      name: 'social_needs',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Shedding`
+  String get shedding {
+    return Intl.message(
+      'Shedding',
+      name: 'shedding',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Affection`
+  String get affection {
+    return Intl.message(
+      'Affection',
+      name: 'affection',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Energy`
+  String get energy {
+    return Intl.message(
+      'Energy',
+      name: 'energy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Grooming`
+  String get grooming {
+    return Intl.message(
+      'Grooming',
+      name: 'grooming',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Intelligence`
+  String get intelligence {
+    return Intl.message(
+      'Intelligence',
+      name: 'intelligence',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `0`
+  String get zero {
+    return Intl.message(
+      '0',
+      name: 'zero',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `1`
+  String get one {
+    return Intl.message(
+      '1',
+      name: 'one',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `2`
+  String get two {
+    return Intl.message(
+      '2',
+      name: 'two',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `3`
+  String get three {
+    return Intl.message(
+      '3',
+      name: 'three',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `4`
+  String get four {
+    return Intl.message(
+      '4',
+      name: 'four',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `5`
+  String get five {
+    return Intl.message(
+      '5',
+      name: 'five',
       desc: '',
       args: [],
     );

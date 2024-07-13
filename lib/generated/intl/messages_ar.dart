@@ -20,6 +20,8 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
+  static String m0(breed_name) => "صور القطط ${breed_name}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "Browse_random_images_of_all_breeds":
@@ -32,6 +34,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Uploads": MessageLookupByLibrary.simpleMessage("الملفات المرفوعة"),
         "Vote": MessageLookupByLibrary.simpleMessage("صوت"),
         "Votes": MessageLookupByLibrary.simpleMessage("التصويتات"),
+        "adabtability": MessageLookupByLibrary.simpleMessage("التكيف"),
+        "affection": MessageLookupByLibrary.simpleMessage("المودة"),
         "all": MessageLookupByLibrary.simpleMessage("الكل"),
         "alreadyHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("لديك حساب؟"),
@@ -41,8 +45,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "boxes": MessageLookupByLibrary.simpleMessage("صناديق"),
         "boys": MessageLookupByLibrary.simpleMessage("أولاد"),
         "breaded": MessageLookupByLibrary.simpleMessage("مغلف"),
+        "breed_cat_images": m0,
         "cat_gallery": MessageLookupByLibrary.simpleMessage("معرض القطط"),
         "caturday": MessageLookupByLibrary.simpleMessage("يوم القط"),
+        "child_friendly": MessageLookupByLibrary.simpleMessage("صديق للأطفال"),
         "clothes": MessageLookupByLibrary.simpleMessage("ملابس"),
         "country_number_length_not_found":
             MessageLookupByLibrary.simpleMessage("بيانات البلد غير موجودة"),
@@ -50,19 +56,26 @@ class MessageLookup extends MessageLookupByLibrary {
         "desc": MessageLookupByLibrary.simpleMessage("تنازلي"),
         "do_not_type_country_code_again":
             MessageLookupByLibrary.simpleMessage("لا تكتب رمز البلد مرة أخرى"),
+        "dog_friendly": MessageLookupByLibrary.simpleMessage("صديق للكلاب"),
         "dream": MessageLookupByLibrary.simpleMessage("حلم"),
         "emailLabel": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
         "emailNotValid": MessageLookupByLibrary.simpleMessage(
             "البريد الإلكتروني غير منسق بشكل جيد"),
         "emptyMsg": MessageLookupByLibrary.simpleMessage("الحقل مطلوب"),
+        "energy": MessageLookupByLibrary.simpleMessage("الطاقة"),
         "female": MessageLookupByLibrary.simpleMessage("أنثى"),
+        "five": MessageLookupByLibrary.simpleMessage("٥"),
         "forgotYourPassword":
             MessageLookupByLibrary.simpleMessage("هل نسيت كلمة المرور؟"),
+        "four": MessageLookupByLibrary.simpleMessage("٤"),
         "funny": MessageLookupByLibrary.simpleMessage("مضحك"),
         "genderRequired": MessageLookupByLibrary.simpleMessage("الحقل مطلوب"),
         "girls": MessageLookupByLibrary.simpleMessage("بنات"),
+        "grooming": MessageLookupByLibrary.simpleMessage("الحاجه للتنظيف"),
         "hats": MessageLookupByLibrary.simpleMessage("قبعات"),
+        "health_issues": MessageLookupByLibrary.simpleMessage("مشاكل صحية"),
         "hello": MessageLookupByLibrary.simpleMessage("مرحباً!"),
+        "intelligence": MessageLookupByLibrary.simpleMessage("الذكاء"),
         "kittens": MessageLookupByLibrary.simpleMessage("قطط صغيرة"),
         "loginLabel": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "loginTitle":
@@ -75,6 +88,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "noRouteFound":
             MessageLookupByLibrary.simpleMessage("لم يتم العثور على المسار"),
         "notAMember": MessageLookupByLibrary.simpleMessage("لست عضوا؟"),
+        "one": MessageLookupByLibrary.simpleMessage("١"),
         "orContinueWith": MessageLookupByLibrary.simpleMessage("أو تابع مع"),
         "passwordConfirmLabel":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
@@ -98,16 +112,24 @@ class MessageLookup extends MessageLookupByLibrary {
         "search_country":
             MessageLookupByLibrary.simpleMessage("ابحث عن الدولة"),
         "selectGender": MessageLookupByLibrary.simpleMessage("اختر الجنس"),
+        "shedding": MessageLookupByLibrary.simpleMessage("تساقط الشعر"),
         "sinks": MessageLookupByLibrary.simpleMessage("أحواض مياه"),
+        "social_needs":
+            MessageLookupByLibrary.simpleMessage("إحتياجات إجتماعية"),
         "space": MessageLookupByLibrary.simpleMessage("فضاء"),
+        "stranger_friendly":
+            MessageLookupByLibrary.simpleMessage("صديق للغرباء"),
         "sunglasses": MessageLookupByLibrary.simpleMessage("نظارات شمسية"),
+        "three": MessageLookupByLibrary.simpleMessage("٣"),
         "ties": MessageLookupByLibrary.simpleMessage("ربطات عنق"),
+        "two": MessageLookupByLibrary.simpleMessage("٢"),
         "usernameLabel": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
         "usernameNotValid":
             MessageLookupByLibrary.simpleMessage("اسم المستخدم غير صالح"),
         "usernameTooLong":
             MessageLookupByLibrary.simpleMessage("اسم المستخدم طويل جدًا"),
         "usernameTooShort":
-            MessageLookupByLibrary.simpleMessage("اسم المستخدم قصير جدًا")
+            MessageLookupByLibrary.simpleMessage("اسم المستخدم قصير جدًا"),
+        "zero": MessageLookupByLibrary.simpleMessage("٠")
       };
 }

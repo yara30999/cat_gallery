@@ -18,7 +18,8 @@ ThemeData getLightTheme() {
     cardTheme: const CardTheme(
         color: ColorManager.white,
         shadowColor: ColorManager.brown1,
-        elevation: AppSize.s4),
+        surfaceTintColor: ColorManager.pink1,
+        elevation: AppSize.s8),
 
     // app bar theme
     appBarTheme: AppBarTheme(
@@ -118,9 +119,10 @@ ThemeData getDarkTheme() {
 
     // cardview theme
     cardTheme: const CardTheme(
-        color: ColorManager.white,
-        shadowColor: ColorManager.brown1,
-        elevation: AppSize.s4),
+        color: ColorManager.grey1,
+        shadowColor: ColorManager.orange1,
+        surfaceTintColor: ColorManager.black,
+        elevation: AppSize.s8),
 
     // app bar theme
     appBarTheme: AppBarTheme(

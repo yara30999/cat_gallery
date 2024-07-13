@@ -20,6 +20,8 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static String m0(breed_name) => "${breed_name} cat images";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "Browse_random_images_of_all_breeds":
@@ -32,6 +34,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Uploads": MessageLookupByLibrary.simpleMessage("Uploads"),
         "Vote": MessageLookupByLibrary.simpleMessage("Vote"),
         "Votes": MessageLookupByLibrary.simpleMessage("Votes"),
+        "adabtability": MessageLookupByLibrary.simpleMessage("Adaptability"),
+        "affection": MessageLookupByLibrary.simpleMessage("Affection"),
         "all": MessageLookupByLibrary.simpleMessage("all"),
         "alreadyHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
@@ -41,8 +45,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "boxes": MessageLookupByLibrary.simpleMessage("boxes"),
         "boys": MessageLookupByLibrary.simpleMessage("boys"),
         "breaded": MessageLookupByLibrary.simpleMessage("breaded"),
+        "breed_cat_images": m0,
         "cat_gallery": MessageLookupByLibrary.simpleMessage("Cat Gallery"),
         "caturday": MessageLookupByLibrary.simpleMessage("caturday"),
+        "child_friendly":
+            MessageLookupByLibrary.simpleMessage("Child Friendly"),
         "clothes": MessageLookupByLibrary.simpleMessage("clothes"),
         "country_number_length_not_found":
             MessageLookupByLibrary.simpleMessage("Country data not found"),
@@ -50,20 +57,27 @@ class MessageLookup extends MessageLookupByLibrary {
         "desc": MessageLookupByLibrary.simpleMessage("descending"),
         "do_not_type_country_code_again": MessageLookupByLibrary.simpleMessage(
             "Do not type the country code again"),
+        "dog_friendly": MessageLookupByLibrary.simpleMessage("Dog Friendly"),
         "dream": MessageLookupByLibrary.simpleMessage("dream"),
         "emailLabel": MessageLookupByLibrary.simpleMessage("Email Id"),
         "emailNotValid":
             MessageLookupByLibrary.simpleMessage("Email not formatted well"),
         "emptyMsg": MessageLookupByLibrary.simpleMessage("Field is required"),
+        "energy": MessageLookupByLibrary.simpleMessage("Energy"),
         "female": MessageLookupByLibrary.simpleMessage("Female"),
+        "five": MessageLookupByLibrary.simpleMessage("5"),
         "forgotYourPassword":
             MessageLookupByLibrary.simpleMessage("Forgot Your Password?"),
+        "four": MessageLookupByLibrary.simpleMessage("4"),
         "funny": MessageLookupByLibrary.simpleMessage("funny"),
         "genderRequired":
             MessageLookupByLibrary.simpleMessage("Gender is required"),
         "girls": MessageLookupByLibrary.simpleMessage("girls"),
+        "grooming": MessageLookupByLibrary.simpleMessage("Grooming"),
         "hats": MessageLookupByLibrary.simpleMessage("hats"),
+        "health_issues": MessageLookupByLibrary.simpleMessage("Health Issues"),
         "hello": MessageLookupByLibrary.simpleMessage("Hello!"),
+        "intelligence": MessageLookupByLibrary.simpleMessage("Intelligence"),
         "kittens": MessageLookupByLibrary.simpleMessage("kittens"),
         "loginLabel": MessageLookupByLibrary.simpleMessage("Login"),
         "loginTitle":
@@ -74,6 +88,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "male": MessageLookupByLibrary.simpleMessage("Male"),
         "noRouteFound": MessageLookupByLibrary.simpleMessage("no_route_found"),
         "notAMember": MessageLookupByLibrary.simpleMessage("Not a member?"),
+        "one": MessageLookupByLibrary.simpleMessage("1"),
         "orContinueWith":
             MessageLookupByLibrary.simpleMessage("Or Continue With"),
         "passwordConfirmLabel":
@@ -99,16 +114,23 @@ class MessageLookup extends MessageLookupByLibrary {
         "search_country":
             MessageLookupByLibrary.simpleMessage("Search country"),
         "selectGender": MessageLookupByLibrary.simpleMessage("Select Gender"),
+        "shedding": MessageLookupByLibrary.simpleMessage("Shedding"),
         "sinks": MessageLookupByLibrary.simpleMessage("sinks"),
+        "social_needs": MessageLookupByLibrary.simpleMessage("Social Needs"),
         "space": MessageLookupByLibrary.simpleMessage("space"),
+        "stranger_friendly":
+            MessageLookupByLibrary.simpleMessage("Stranger Friendly"),
         "sunglasses": MessageLookupByLibrary.simpleMessage("sunglasses"),
+        "three": MessageLookupByLibrary.simpleMessage("3"),
         "ties": MessageLookupByLibrary.simpleMessage("ties"),
+        "two": MessageLookupByLibrary.simpleMessage("2"),
         "usernameLabel": MessageLookupByLibrary.simpleMessage("Username"),
         "usernameNotValid":
             MessageLookupByLibrary.simpleMessage("Username not valid"),
         "usernameTooLong":
             MessageLookupByLibrary.simpleMessage("Username too long"),
         "usernameTooShort":
-            MessageLookupByLibrary.simpleMessage("Username too short")
+            MessageLookupByLibrary.simpleMessage("Username too short"),
+        "zero": MessageLookupByLibrary.simpleMessage("0")
       };
 }
