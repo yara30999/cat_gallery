@@ -24,6 +24,7 @@ class MeasurementDataEntity {
 
   final List<IndividualMeasurementBar> measurementDataBars;
   //must be in the same order of the measurementDataBars
+  //in separate get method to rebuild when the locals changes
   List<String> get labels => [
         S.current.adabtability,
         S.current.child_friendly,

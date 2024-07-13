@@ -78,7 +78,7 @@ class SpecificBreedBarGraphState extends State<SpecificBreedBarGraph> {
     isLeftLabelsShown = !LocalizationUtils.currentLocalIsAr();
     return Card(
       child: Padding(
-        padding: const EdgeInsets.all(26),
+        padding: const EdgeInsets.all(AppSize.s26),
         child: AspectRatio(
           aspectRatio: 1 / 1.5,
           child: RotatedBox(
