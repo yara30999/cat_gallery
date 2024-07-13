@@ -43,8 +43,11 @@ class CatImageWithClickOptions extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          FavoriteButton(
-            onPressed: () {},
+          SizedBox(
+            width: AppSize.s40,
+            child: FavoriteButton(
+              onPressed: () {},
+            ),
           ),
           ActionButton(
             icon: Icons.how_to_vote_outlined,
