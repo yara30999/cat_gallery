@@ -68,6 +68,22 @@ abstract class Styles {
         color: ColorManager.grey1);
   }
 
+  static TextStyle style22Medium() {
+    return TextStyle(
+      fontFamily: FontConstants.fontMarhey,
+      fontSize: getResponsiveFontSize(fontSize: FontSize.s22),
+      fontWeight: FontWeightManager.medium,
+    );
+  }
+
+  static TextStyle style24Medium() {
+    return TextStyle(
+      fontFamily: FontConstants.fontMarhey,
+      fontSize: getResponsiveFontSize(fontSize: FontSize.s24),
+      fontWeight: FontWeightManager.medium,
+    );
+  }
+
   /*..................used in 
   -login button
   -the two texts in login screen

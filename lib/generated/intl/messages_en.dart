@@ -20,7 +20,18 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
-  static String m0(breed_name) => "${breed_name} cat images";
+  static String m0(breedName) => "${breedName} cat images";
+
+  static String m1(lifeSpan) =>
+      "Their typical lifespan ranges from ${lifeSpan} years.";
+
+  static String m2(origin) => "The breed originates from ${origin}.";
+
+  static String m3(temperament) =>
+      "These cats possess a temperament that is ${temperament}.";
+
+  static String m4(catBreed, weightImperial, weightMetric) =>
+      "The ${catBreed} has a weight range of ${weightImperial} pounds (${weightMetric} kg).";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -47,6 +58,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "breaded": MessageLookupByLibrary.simpleMessage("breaded"),
         "breed_cat_images": m0,
         "cat_gallery": MessageLookupByLibrary.simpleMessage("Cat Gallery"),
+        "cat_lifespan": m1,
+        "cat_origin": m2,
+        "cat_temperament": m3,
+        "cat_weight_range": m4,
         "caturday": MessageLookupByLibrary.simpleMessage("caturday"),
         "child_friendly":
             MessageLookupByLibrary.simpleMessage("Child Friendly"),
@@ -86,9 +101,12 @@ class MessageLookup extends MessageLookupByLibrary {
             " Or choose a specific cat breed to browse images with."),
         "main_breeds": MessageLookupByLibrary.simpleMessage("main breeds"),
         "male": MessageLookupByLibrary.simpleMessage("Male"),
+        "more_information": MessageLookupByLibrary.simpleMessage(
+            "For more information, you can visit their "),
         "noRouteFound": MessageLookupByLibrary.simpleMessage("no_route_found"),
         "notAMember": MessageLookupByLibrary.simpleMessage("Not a member?"),
         "one": MessageLookupByLibrary.simpleMessage("1"),
+        "or": MessageLookupByLibrary.simpleMessage(" or "),
         "orContinueWith":
             MessageLookupByLibrary.simpleMessage("Or Continue With"),
         "passwordConfirmLabel":
@@ -123,6 +141,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "sunglasses": MessageLookupByLibrary.simpleMessage("sunglasses"),
         "three": MessageLookupByLibrary.simpleMessage("3"),
         "ties": MessageLookupByLibrary.simpleMessage("ties"),
+        "to": MessageLookupByLibrary.simpleMessage("to"),
         "two": MessageLookupByLibrary.simpleMessage("2"),
         "usernameLabel": MessageLookupByLibrary.simpleMessage("Username"),
         "usernameNotValid":
@@ -131,6 +150,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Username too long"),
         "usernameTooShort":
             MessageLookupByLibrary.simpleMessage("Username too short"),
+        "vetstreet_page":
+            MessageLookupByLibrary.simpleMessage("Vetstreet page"),
+        "wikipedia_page":
+            MessageLookupByLibrary.simpleMessage("Wikipedia page"),
         "zero": MessageLookupByLibrary.simpleMessage("0")
       };
 }

@@ -490,13 +490,13 @@ class S {
     );
   }
 
-  /// `{breed_name} cat images`
-  String breed_cat_images(Object breed_name) {
+  /// `{breedName} cat images`
+  String breed_cat_images(Object breedName) {
     return Intl.message(
-      '$breed_name cat images',
+      '$breedName cat images',
       name: 'breed_cat_images',
       desc: '',
-      args: [breed_name],
+      args: [breedName],
     );
   }
 
@@ -855,6 +855,97 @@ class S {
     return Intl.message(
       '5',
       name: 'five',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The {catBreed} has a weight range of {weightImperial} pounds ({weightMetric} kg).`
+  String cat_weight_range(
+      Object catBreed, Object weightImperial, Object weightMetric) {
+    return Intl.message(
+      'The $catBreed has a weight range of $weightImperial pounds ($weightMetric kg).',
+      name: 'cat_weight_range',
+      desc: '',
+      args: [catBreed, weightImperial, weightMetric],
+    );
+  }
+
+  /// `These cats possess a temperament that is {temperament}.`
+  String cat_temperament(Object temperament) {
+    return Intl.message(
+      'These cats possess a temperament that is $temperament.',
+      name: 'cat_temperament',
+      desc: '',
+      args: [temperament],
+    );
+  }
+
+  /// `Their typical lifespan ranges from {lifeSpan} years.`
+  String cat_lifespan(Object lifeSpan) {
+    return Intl.message(
+      'Their typical lifespan ranges from $lifeSpan years.',
+      name: 'cat_lifespan',
+      desc: '',
+      args: [lifeSpan],
+    );
+  }
+
+  /// `The breed originates from {origin}.`
+  String cat_origin(Object origin) {
+    return Intl.message(
+      'The breed originates from $origin.',
+      name: 'cat_origin',
+      desc: '',
+      args: [origin],
+    );
+  }
+
+  /// `For more information, you can visit their `
+  String get more_information {
+    return Intl.message(
+      'For more information, you can visit their ',
+      name: 'more_information',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Vetstreet page`
+  String get vetstreet_page {
+    return Intl.message(
+      'Vetstreet page',
+      name: 'vetstreet_page',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wikipedia page`
+  String get wikipedia_page {
+    return Intl.message(
+      'Wikipedia page',
+      name: 'wikipedia_page',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` or `
+  String get or {
+    return Intl.message(
+      ' or ',
+      name: 'or',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `to`
+  String get to {
+    return Intl.message(
+      'to',
+      name: 'to',
       desc: '',
       args: [],
     );

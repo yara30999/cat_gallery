@@ -55,6 +55,7 @@ class ParagraphStartsWithClickText extends StatelessWidget {
           decorationStyle: TextDecorationStyle.solid,
           decorationThickness: AppSize.s2,
         ),
+        mouseCursor: SystemMouseCursors.click,
         recognizer: TapGestureRecognizer()
           ..onTap = () {
             Navigator.pushNamed(

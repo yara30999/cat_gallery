@@ -43,7 +43,7 @@
   "Browse_random_images_of_all_breeds": "Browse random images of all breeds.",
   "main_breed_paragraph": " Or choose a specific cat breed to browse images with.",
   "random_cat_images": "random cat images",
-  "breed_cat_images": "{breed_name} cat images",
+  "breed_cat_images": "{breedName} cat images",
   "all": "all",
   "hats": "hats",
   "space": "space",
@@ -79,5 +79,14 @@
   "two": "2",
   "three": "3",
   "four": "4",
-  "five": "5"
+  "five": "5",
+  "cat_weight_range": "The {catBreed} has a weight range of {weightImperial} pounds ({weightMetric} kg).",
+  "cat_temperament": "These cats possess a temperament that is {temperament}.",
+  "cat_lifespan": "Their typical lifespan ranges from {lifeSpan} years.",
+  "cat_origin": "The breed originates from {origin}.",
+  "more_information": "For more information, you can visit their ",
+  "vetstreet_page": "Vetstreet page",
+  "wikipedia_page": "Wikipedia page",
+  "or": " or ",
+  "to": "to"
 }

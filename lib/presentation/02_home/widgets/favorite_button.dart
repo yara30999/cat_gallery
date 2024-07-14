@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../app/functions.dart';
 import '../../resources/color_manager.dart';
+import '../../resources/values_manager.dart';
 
 class FavoriteButton extends StatefulWidget {
   final VoidCallback onPressed;
@@ -52,15 +53,19 @@ class FavoriteButtonState extends State<FavoriteButton>
     return AnimatedBuilder(
       animation: _animation,
       builder: (BuildContext context, Widget? child) {
-        return IconButton(
-          splashColor: ColorManager.white,
-          iconSize: _animation.value,
-          isSelected: isFavorite,
-          color:
-              isLightTheme(context) ? ColorManager.black : ColorManager.white,
-          icon: const Icon(Icons.favorite_border_outlined),
-          selectedIcon: const Icon(Icons.favorite, color: ColorManager.red),
-          onPressed: _toggleFavorite,
+        return SizedBox(
+          height: AppSize.s40,
+          width: AppSize.s40,
+          child: IconButton(
+            splashColor: ColorManager.white,
+            iconSize: _animation.value,
+            isSelected: isFavorite,
+            color:
+                isLightTheme(context) ? ColorManager.black : ColorManager.white,
+            icon: const Icon(Icons.favorite_border_outlined),
+            selectedIcon: const Icon(Icons.favorite, color: ColorManager.red),
+            onPressed: _toggleFavorite,
+          ),
         );
       },
     );

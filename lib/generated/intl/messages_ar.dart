@@ -20,7 +20,16 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
-  static String m0(breed_name) => "صور القطط ${breed_name}";
+  static String m0(breedName) => "صور القط ${breedName}";
+
+  static String m1(lifeSpan) => "يتراوح عمرها النموذجي من ${lifeSpan} سنوات.";
+
+  static String m2(origin) => "تنحدر السلالة من ${origin}.";
+
+  static String m3(temperament) => "تتمتع هذه القطط بمزاج ${temperament}.";
+
+  static String m4(catBreed, weightImperial, weightMetric) =>
+      "القط ${catBreed} لديه نطاق وزن من ${weightImperial} أرطال (${weightMetric} كجم).";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -47,6 +56,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "breaded": MessageLookupByLibrary.simpleMessage("مغلف"),
         "breed_cat_images": m0,
         "cat_gallery": MessageLookupByLibrary.simpleMessage("معرض القطط"),
+        "cat_lifespan": m1,
+        "cat_origin": m2,
+        "cat_temperament": m3,
+        "cat_weight_range": m4,
         "caturday": MessageLookupByLibrary.simpleMessage("يوم القط"),
         "child_friendly": MessageLookupByLibrary.simpleMessage("صديق للأطفال"),
         "clothes": MessageLookupByLibrary.simpleMessage("ملابس"),
@@ -85,10 +98,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "main_breeds":
             MessageLookupByLibrary.simpleMessage("السلالات الرئيسية"),
         "male": MessageLookupByLibrary.simpleMessage("ذكر"),
+        "more_information": MessageLookupByLibrary.simpleMessage(
+            "لمزيد من المعلومات، يمكنك زيارة "),
         "noRouteFound":
             MessageLookupByLibrary.simpleMessage("لم يتم العثور على المسار"),
         "notAMember": MessageLookupByLibrary.simpleMessage("لست عضوا؟"),
         "one": MessageLookupByLibrary.simpleMessage("١"),
+        "or": MessageLookupByLibrary.simpleMessage(" أو "),
         "orContinueWith": MessageLookupByLibrary.simpleMessage("أو تابع مع"),
         "passwordConfirmLabel":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
@@ -122,6 +138,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "sunglasses": MessageLookupByLibrary.simpleMessage("نظارات شمسية"),
         "three": MessageLookupByLibrary.simpleMessage("٣"),
         "ties": MessageLookupByLibrary.simpleMessage("ربطات عنق"),
+        "to": MessageLookupByLibrary.simpleMessage("إلى"),
         "two": MessageLookupByLibrary.simpleMessage("٢"),
         "usernameLabel": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
         "usernameNotValid":
@@ -130,6 +147,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("اسم المستخدم طويل جدًا"),
         "usernameTooShort":
             MessageLookupByLibrary.simpleMessage("اسم المستخدم قصير جدًا"),
+        "vetstreet_page": MessageLookupByLibrary.simpleMessage("صفحة فيتستريت"),
+        "wikipedia_page":
+            MessageLookupByLibrary.simpleMessage("صفحة ويكيبيديا"),
         "zero": MessageLookupByLibrary.simpleMessage("٠")
       };
 }

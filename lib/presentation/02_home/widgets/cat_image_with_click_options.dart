@@ -38,34 +38,28 @@ class CatImageWithClickOptions extends StatelessWidget {
   }
 
   Widget _buildActionRow(BuildContext context) {
-    return SizedBox(
-      height: AppSize.s40,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          SizedBox(
-            width: AppSize.s40,
-            child: FavoriteButton(
-              onPressed: () {},
-            ),
-          ),
-          ActionButton(
-            icon: Icons.how_to_vote_outlined,
-            onPressed: () {
-              _voteButtonOnPress(context);
-            },
-          ),
-          ActionButton(
-            icon: Icons.science_outlined,
-            onPressed: () {},
-          ),
-          const Spacer(),
-          ActionButton(
-            icon: Icons.save_alt,
-            onPressed: () {},
-          ),
-        ],
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        FavoriteButton(
+          onPressed: () {},
+        ),
+        ActionButton(
+          icon: Icons.how_to_vote_outlined,
+          onPressed: () {
+            _voteButtonOnPress(context);
+          },
+        ),
+        ActionButton(
+          icon: Icons.science_outlined,
+          onPressed: () {},
+        ),
+        const Spacer(),
+        ActionButton(
+          icon: Icons.save_alt,
+          onPressed: () {},
+        ),
+      ],
     );
   }
 }
