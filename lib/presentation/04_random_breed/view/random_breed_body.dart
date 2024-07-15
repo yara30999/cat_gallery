@@ -6,17 +6,28 @@ import 'widgets/category_section.dart';
 import 'widgets/random_breed_grid_builder.dart';
 import 'widgets/random_breed_header.dart';
 
-class RandomBreedBody extends StatelessWidget {
-  final ScrollController randomBreedScreenScrollController;
+class RandomBreedBody extends StatefulWidget {
+  final ScrollController? randomBreedScreenScrollController;
   const RandomBreedBody({
     super.key,
     required this.randomBreedScreenScrollController,
   });
 
   @override
+  State<RandomBreedBody> createState() => _RandomBreedBodyState();
+}
+
+class _RandomBreedBodyState extends State<RandomBreedBody> {
+  @override
+  void dispose() {
+    widget.randomBreedScreenScrollController?.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return CustomScrollView(
-      controller: randomBreedScreenScrollController,
+      controller: widget.randomBreedScreenScrollController,
       slivers: [
         const PersistentAppBar(),
         const SliverPadding(

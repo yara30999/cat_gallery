@@ -4,7 +4,7 @@ import '../../../resources/values_manager.dart';
 import '../../widgets/custom_app_bar.dart';
 
 class UploadsViewBody extends StatefulWidget {
-  final ScrollController uploadsScreenScrollController;
+  final ScrollController? uploadsScreenScrollController;
   const UploadsViewBody(
       {super.key, required this.uploadsScreenScrollController});
 
@@ -13,6 +13,12 @@ class UploadsViewBody extends StatefulWidget {
 }
 
 class _UploadsViewBodyState extends State<UploadsViewBody> {
+  @override
+  void dispose() {
+    widget.uploadsScreenScrollController?.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(

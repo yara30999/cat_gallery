@@ -5,7 +5,7 @@ import 'widgets/specific_breed_grid_builder.dart';
 import 'widgets/specific_breed_header.dart';
 
 class SpecificBreedBody extends StatefulWidget {
-  final ScrollController specificBreedScreenScrollController;
+  final ScrollController? specificBreedScreenScrollController;
   const SpecificBreedBody({
     super.key,
     required this.specificBreedScreenScrollController,
@@ -16,6 +16,12 @@ class SpecificBreedBody extends StatefulWidget {
 }
 
 class _SpecificBreedBodyState extends State<SpecificBreedBody> {
+  @override
+  void dispose() {
+    widget.specificBreedScreenScrollController?.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(

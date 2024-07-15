@@ -4,7 +4,7 @@ import '../../../resources/values_manager.dart';
 import '../../widgets/custom_app_bar.dart';
 
 class FavoritesViewBody extends StatefulWidget {
-  final ScrollController favoratesScreenScrollController;
+  final ScrollController? favoratesScreenScrollController;
   const FavoritesViewBody(
       {super.key, required this.favoratesScreenScrollController});
 
@@ -13,6 +13,12 @@ class FavoritesViewBody extends StatefulWidget {
 }
 
 class _FavoritesViewBodyState extends State<FavoritesViewBody> {
+  @override
+  void dispose() {
+    widget.favoratesScreenScrollController?.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(

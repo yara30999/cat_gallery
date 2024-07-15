@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../domain/entities/bottom_nav_icon.dart';
 import '../../generated/l10n.dart';
+import '../resources/platform_manager.dart';
 import '../resources/routes_manager.dart';
 import '../resources/styles_manager.dart';
 import '../resources/values_manager.dart';
@@ -91,49 +92,55 @@ class _HomeViewState extends State<HomeView> {
           index: _currentPage,
           children: [
             MainBreedsNavigator(
-              scrollController: _mainBreedsScrollController,
+              scrollController:
+                  isWebOrDesktopApp() ? null : _mainBreedsScrollController,
             ),
             FavoritesNavigator(
-              scrollController: _favoritesScrollController,
+              scrollController:
+                  isWebOrDesktopApp() ? null : _favoritesScrollController,
             ),
             UploadsViewBody(
-              uploadsScreenScrollController: _uploadsScrollController,
+              uploadsScreenScrollController:
+                  isWebOrDesktopApp() ? null : _uploadsScrollController,
             ),
             VotesViewBody(
-              votesScreenScrollController: _votesScrollController,
+              votesScreenScrollController:
+                  isWebOrDesktopApp() ? null : _votesScrollController,
             ),
           ],
         ),
       ),
-      bottomNavigationBar: AnimatedContainer(
-        duration: const Duration(milliseconds: 400),
-        height: _isVisibleBottomNavBar
-            ? kBottomNavigationBarHeight + (_paddingValue * 2)
-            : 0.0,
-        padding: const EdgeInsets.all(_paddingValue),
-        child: Wrap(
-          direction: Axis.horizontal,
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(AppSize.s20),
-              child: BottomNavigationBar(
-                currentIndex: _currentPage,
-                onTap: onTabTapped,
-                selectedItemColor: Colors.black,
-                unselectedItemColor: Colors.white,
-                items: _navigationItems.map((e) {
-                  return BottomNavigationBarItem(
-                      icon: Icon(e.icon),
-                      label: e.label,
-                      backgroundColor: Theme.of(context).primaryColor);
-                }).toList(),
-                selectedLabelStyle: Styles.style14Medium(),
-                unselectedLabelStyle: Styles.style12Medium(),
+      bottomNavigationBar: isWebOrDesktopApp()
+          ? null
+          : AnimatedContainer(
+              duration: const Duration(milliseconds: 400),
+              height: _isVisibleBottomNavBar
+                  ? kBottomNavigationBarHeight + (_paddingValue * 2)
+                  : 0.0,
+              padding: const EdgeInsets.all(_paddingValue),
+              child: Wrap(
+                direction: Axis.horizontal,
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(AppSize.s20),
+                    child: BottomNavigationBar(
+                      currentIndex: _currentPage,
+                      onTap: onTabTapped,
+                      selectedItemColor: Colors.black,
+                      unselectedItemColor: Colors.white,
+                      items: _navigationItems.map((e) {
+                        return BottomNavigationBarItem(
+                            icon: Icon(e.icon),
+                            label: e.label,
+                            backgroundColor: Theme.of(context).primaryColor);
+                      }).toList(),
+                      selectedLabelStyle: Styles.style14Medium(),
+                      unselectedLabelStyle: Styles.style12Medium(),
+                    ),
+                  ),
+                ],
               ),
             ),
-          ],
-        ),
-      ),
     );
   }
 }

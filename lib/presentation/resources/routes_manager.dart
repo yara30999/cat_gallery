@@ -7,6 +7,7 @@ import '../02_home/main_breeds/view/main_breeds_body.dart';
 import '../02_home/home_view.dart';
 import '../03_specific_breed/view/specific_breed_body.dart';
 import '../04_random_breed/view/random_breed_body.dart';
+import '../05_analysis_screen/view/analysis_body.dart';
 
 class Routes {
   static const String loginRoute = "/";
@@ -15,6 +16,7 @@ class Routes {
   static const String mainBreedsRoute = "/";
   static const String specificBreedRoute = "/specific_breed_route";
   static const String randomBreedRoute = "/random_breeds_route";
+  static const String analysisRoute = "/analysis_route";
   static const String favoritesRoute = "/";
   static const String scaleImageRoute = "/scale_image_route";
 }
@@ -34,7 +36,8 @@ class RouteGenerator {
   }
 
   static Route<dynamic> getMainBreedsNavigator(RouteSettings settings) {
-    final ScrollController controller = settings.arguments as ScrollController;
+    final ScrollController? controller =
+        settings.arguments as ScrollController?;
     switch (settings.name) {
       case Routes.mainBreedsRoute:
         return MaterialPageRoute(
@@ -51,13 +54,19 @@ class RouteGenerator {
             builder: (_) => RandomBreedBody(
                   randomBreedScreenScrollController: controller,
                 ));
+      case Routes.analysisRoute:
+        return MaterialPageRoute(
+            builder: (_) => AnalysisBody(
+                  analysisScreenScrollController: controller,
+                ));
       default:
         return unDefinedRoute();
     }
   }
 
   static Route<dynamic> getFavoritesNavigator(RouteSettings settings) {
-    final ScrollController controller = settings.arguments as ScrollController;
+    final ScrollController? controller =
+        settings.arguments as ScrollController?;
     switch (settings.name) {
       case Routes.favoritesRoute:
         return MaterialPageRoute(
@@ -81,7 +90,7 @@ class RouteGenerator {
 }
 
 class MainBreedsNavigator extends StatelessWidget {
-  final ScrollController scrollController;
+  final ScrollController? scrollController;
   const MainBreedsNavigator({super.key, required this.scrollController});
 
   @override
@@ -98,7 +107,7 @@ class MainBreedsNavigator extends StatelessWidget {
 }
 
 class FavoritesNavigator extends StatelessWidget {
-  final ScrollController scrollController;
+  final ScrollController? scrollController;
   const FavoritesNavigator({super.key, required this.scrollController});
 
   @override

@@ -4,7 +4,7 @@ import '../../../resources/values_manager.dart';
 import '../../widgets/custom_app_bar.dart';
 
 class VotesViewBody extends StatefulWidget {
-  final ScrollController votesScreenScrollController;
+  final ScrollController? votesScreenScrollController;
   const VotesViewBody({super.key, required this.votesScreenScrollController});
 
   @override
@@ -12,6 +12,12 @@ class VotesViewBody extends StatefulWidget {
 }
 
 class _VotesViewBodyState extends State<VotesViewBody> {
+  @override
+  void dispose() {
+    widget.votesScreenScrollController?.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(

@@ -6,6 +6,7 @@ import '../../../../domain/entities/cat_breed_entity.dart';
 import '../../../../generated/l10n.dart';
 import '../../../resources/color_manager.dart';
 import '../../../resources/styles_manager.dart';
+import '../../../resources/values_manager.dart';
 
 class SpecificBreedInformation extends StatefulWidget {
   const SpecificBreedInformation({super.key, required this.catBreedEntity});
@@ -21,20 +22,20 @@ class _SpecificBreedInformationState extends State<SpecificBreedInformation> {
 
   Future<void> _launchInBrowserView(String url) async {
     final Uri uri = Uri.parse(url);
-    // if (!await launchUrl(uri, mode: LaunchMode.platformDefault)) {
-    //   throw Exception('Could not launch ${url.toString()}');
-    // }
-
-    final bool nativeAppLaunchSucceeded = await launchUrl(
-      uri,
-      mode: LaunchMode.externalNonBrowserApplication,
-    );
-    if (!nativeAppLaunchSucceeded) {
-      await launchUrl(
-        uri,
-        mode: LaunchMode.inAppBrowserView,
-      );
+    if (!await launchUrl(uri, mode: LaunchMode.platformDefault)) {
+      throw Exception('Could not launch ${url.toString()}');
     }
+
+    // final bool nativeAppLaunchSucceeded = await launchUrl(
+    //   uri,
+    //   mode: LaunchMode.externalNonBrowserApplication,
+    // );
+    // if (!nativeAppLaunchSucceeded) {
+    //   await launchUrl(
+    //     uri,
+    //     mode: LaunchMode.inAppBrowserView,
+    //   );
+    // }
   }
 
   Widget _launchStatus(BuildContext context, AsyncSnapshot<void> snapshot) {
@@ -51,7 +52,7 @@ class _SpecificBreedInformationState extends State<SpecificBreedInformation> {
         color: isLightTheme(context) ? ColorManager.black : ColorManager.white);
     return Card(
       child: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(AppSize.s20),
         child: Column(
           children: [
             RichText(
