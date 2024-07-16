@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -22,20 +23,19 @@ class _SpecificBreedInformationState extends State<SpecificBreedInformation> {
 
   Future<void> _launchInBrowserView(String url) async {
     final Uri uri = Uri.parse(url);
-    if (!await launchUrl(uri, mode: LaunchMode.platformDefault)) {
-      throw Exception('Could not launch ${url.toString()}');
-    }
 
-    // final bool nativeAppLaunchSucceeded = await launchUrl(
-    //   uri,
-    //   mode: LaunchMode.externalNonBrowserApplication,
-    // );
-    // if (!nativeAppLaunchSucceeded) {
-    //   await launchUrl(
-    //     uri,
-    //     mode: LaunchMode.inAppBrowserView,
-    //   );
-    // }
+    if (kIsWeb) {
+      if (!await launchUrl(
+        uri,
+        mode: LaunchMode.inAppBrowserView,
+      )) {
+        throw Exception('Could not launch ${url.toString()}');
+      }
+    } else {
+      if (!await launchUrl(uri, mode: LaunchMode.platformDefault)) {
+        throw Exception('Could not launch ${url.toString()}');
+      }
+    }
   }
 
   Widget _launchStatus(BuildContext context, AsyncSnapshot<void> snapshot) {
