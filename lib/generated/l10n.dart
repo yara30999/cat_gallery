@@ -950,6 +950,16 @@ class S {
       args: [],
     );
   }
+
+  /// `image analysis`
+  String get image_analysis {
+    return Intl.message(
+      'image analysis',
+      name: 'image_analysis',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

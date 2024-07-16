@@ -4,7 +4,7 @@ import '../../widgets/custom_app_bar.dart';
 import 'widgets/main_breeds_grid_builder.dart';
 import 'widgets/main_breeds_header.dart';
 
-class MainBreedsBody extends StatefulWidget {
+class MainBreedsBody extends StatelessWidget {
   final ScrollController? mainBreedsScreenScrollController;
   const MainBreedsBody({
     super.key,
@@ -12,20 +12,9 @@ class MainBreedsBody extends StatefulWidget {
   });
 
   @override
-  State<MainBreedsBody> createState() => _MainBreedsBodyState();
-}
-
-class _MainBreedsBodyState extends State<MainBreedsBody> {
-  @override
-  void dispose() {
-    widget.mainBreedsScreenScrollController?.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return CustomScrollView(
-      controller: widget.mainBreedsScreenScrollController,
+      controller: mainBreedsScreenScrollController,
       slivers: const [
         PersistentAppBar(),
         SliverPadding(

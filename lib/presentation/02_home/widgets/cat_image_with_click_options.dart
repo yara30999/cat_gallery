@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../domain/entities/cat_breed_card.dart';
+import '../../resources/routes_manager.dart';
 import 'pinch_zoom_image.dart';
 import '../../resources/values_manager.dart';
 import 'action_button.dart';
@@ -19,6 +20,10 @@ class CatImageWithClickOptions extends StatelessWidget {
       context: context,
       builder: (BuildContext context) => const VoteDialog(),
     );
+  }
+
+  void _analysisButtonOnPress(BuildContext context) {
+    Navigator.pushNamed(context, Routes.analysisRoute);
   }
 
   @override
@@ -52,7 +57,9 @@ class CatImageWithClickOptions extends StatelessWidget {
         ),
         ActionButton(
           icon: Icons.science_outlined,
-          onPressed: () {},
+          onPressed: () {
+            _analysisButtonOnPress(context);
+          },
         ),
         const Spacer(),
         ActionButton(

@@ -3,26 +3,15 @@ import '../../../resources/styles_manager.dart';
 import '../../../resources/values_manager.dart';
 import '../../widgets/custom_app_bar.dart';
 
-class UploadsViewBody extends StatefulWidget {
+class UploadsViewBody extends StatelessWidget {
   final ScrollController? uploadsScreenScrollController;
   const UploadsViewBody(
       {super.key, required this.uploadsScreenScrollController});
 
   @override
-  State<UploadsViewBody> createState() => _UploadsViewBodyState();
-}
-
-class _UploadsViewBodyState extends State<UploadsViewBody> {
-  @override
-  void dispose() {
-    widget.uploadsScreenScrollController?.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return CustomScrollView(
-      controller: widget.uploadsScreenScrollController,
+      controller: uploadsScreenScrollController,
       slivers: [
         const PersistentAppBar(),
         SliverToBoxAdapter(

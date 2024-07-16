@@ -88,6 +88,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "hats": MessageLookupByLibrary.simpleMessage("قبعات"),
         "health_issues": MessageLookupByLibrary.simpleMessage("مشاكل صحية"),
         "hello": MessageLookupByLibrary.simpleMessage("مرحباً!"),
+        "image_analysis": MessageLookupByLibrary.simpleMessage("تحليل الصورة"),
         "intelligence": MessageLookupByLibrary.simpleMessage("الذكاء"),
         "kittens": MessageLookupByLibrary.simpleMessage("قطط صغيرة"),
         "loginLabel": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),

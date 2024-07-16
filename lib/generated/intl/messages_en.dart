@@ -92,6 +92,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "hats": MessageLookupByLibrary.simpleMessage("hats"),
         "health_issues": MessageLookupByLibrary.simpleMessage("Health Issues"),
         "hello": MessageLookupByLibrary.simpleMessage("Hello!"),
+        "image_analysis":
+            MessageLookupByLibrary.simpleMessage("image analysis"),
         "intelligence": MessageLookupByLibrary.simpleMessage("Intelligence"),
         "kittens": MessageLookupByLibrary.simpleMessage("kittens"),
         "loginLabel": MessageLookupByLibrary.simpleMessage("Login"),
