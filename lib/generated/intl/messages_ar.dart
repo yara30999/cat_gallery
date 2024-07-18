@@ -71,20 +71,24 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("لا تكتب رمز البلد مرة أخرى"),
         "dog_friendly": MessageLookupByLibrary.simpleMessage("صديق للكلاب"),
         "dream": MessageLookupByLibrary.simpleMessage("حلم"),
+        "eighty_percent": MessageLookupByLibrary.simpleMessage("٨٠٪"),
         "emailLabel": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
         "emailNotValid": MessageLookupByLibrary.simpleMessage(
             "البريد الإلكتروني غير منسق بشكل جيد"),
         "emptyMsg": MessageLookupByLibrary.simpleMessage("الحقل مطلوب"),
         "energy": MessageLookupByLibrary.simpleMessage("الطاقة"),
         "female": MessageLookupByLibrary.simpleMessage("أنثى"),
+        "fifty_percent": MessageLookupByLibrary.simpleMessage("٥٠٪"),
         "five": MessageLookupByLibrary.simpleMessage("٥"),
         "forgotYourPassword":
             MessageLookupByLibrary.simpleMessage("هل نسيت كلمة المرور؟"),
         "four": MessageLookupByLibrary.simpleMessage("٤"),
+        "fourty_percent": MessageLookupByLibrary.simpleMessage("٤٠٪"),
         "funny": MessageLookupByLibrary.simpleMessage("مضحك"),
         "genderRequired": MessageLookupByLibrary.simpleMessage("الحقل مطلوب"),
         "girls": MessageLookupByLibrary.simpleMessage("بنات"),
         "grooming": MessageLookupByLibrary.simpleMessage("الحاجه للتنظيف"),
+        "handred_percent": MessageLookupByLibrary.simpleMessage("١٠٠٪"),
         "hats": MessageLookupByLibrary.simpleMessage("قبعات"),
         "health_issues": MessageLookupByLibrary.simpleMessage("مشاكل صحية"),
         "hello": MessageLookupByLibrary.simpleMessage("مرحباً!"),
@@ -101,6 +105,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "male": MessageLookupByLibrary.simpleMessage("ذكر"),
         "more_information": MessageLookupByLibrary.simpleMessage(
             "لمزيد من المعلومات، يمكنك زيارة "),
+        "ninty_percent": MessageLookupByLibrary.simpleMessage("٩٠٪"),
         "noRouteFound":
             MessageLookupByLibrary.simpleMessage("لم يتم العثور على المسار"),
         "notAMember": MessageLookupByLibrary.simpleMessage("لست عضوا؟"),
@@ -129,17 +134,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "search_country":
             MessageLookupByLibrary.simpleMessage("ابحث عن الدولة"),
         "selectGender": MessageLookupByLibrary.simpleMessage("اختر الجنس"),
+        "seventy_percent": MessageLookupByLibrary.simpleMessage("٧٠٪"),
         "shedding": MessageLookupByLibrary.simpleMessage("تساقط الشعر"),
         "sinks": MessageLookupByLibrary.simpleMessage("أحواض مياه"),
+        "sixty_percent": MessageLookupByLibrary.simpleMessage("٦٠٪"),
         "social_needs":
             MessageLookupByLibrary.simpleMessage("إحتياجات إجتماعية"),
         "space": MessageLookupByLibrary.simpleMessage("فضاء"),
         "stranger_friendly":
             MessageLookupByLibrary.simpleMessage("صديق للغرباء"),
         "sunglasses": MessageLookupByLibrary.simpleMessage("نظارات شمسية"),
+        "ten_percent": MessageLookupByLibrary.simpleMessage("١٠٪"),
+        "thirty_percent": MessageLookupByLibrary.simpleMessage("٣٠٪"),
         "three": MessageLookupByLibrary.simpleMessage("٣"),
         "ties": MessageLookupByLibrary.simpleMessage("ربطات عنق"),
         "to": MessageLookupByLibrary.simpleMessage("إلى"),
+        "twenty_percent": MessageLookupByLibrary.simpleMessage("٢٠٪"),
         "two": MessageLookupByLibrary.simpleMessage("٢"),
         "usernameLabel": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
         "usernameNotValid":
@@ -149,8 +159,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "usernameTooShort":
             MessageLookupByLibrary.simpleMessage("اسم المستخدم قصير جدًا"),
         "vetstreet_page": MessageLookupByLibrary.simpleMessage("صفحة فيتستريت"),
+        "we_are_using_AWS_Rekognition":
+            MessageLookupByLibrary.simpleMessage("نحن نستخدم AWS Rekognition."),
         "wikipedia_page":
             MessageLookupByLibrary.simpleMessage("صفحة ويكيبيديا"),
-        "zero": MessageLookupByLibrary.simpleMessage("٠")
+        "zero": MessageLookupByLibrary.simpleMessage("٠"),
+        "zero_percent": MessageLookupByLibrary.simpleMessage("٠٪")
       };
 }

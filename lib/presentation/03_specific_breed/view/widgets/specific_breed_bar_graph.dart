@@ -1,8 +1,6 @@
 import 'dart:math';
-
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-
 import '../../../../domain/entities/cat_breed_entity.dart';
 import '../../../../domain/entities/measurement_data_entity.dart';
 import '../../../../generated/l10n.dart';

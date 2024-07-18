@@ -80,6 +80,17 @@
   "three": "٣",
   "four": "٤",
   "five": "٥",
+  "zero_percent": "٠٪",
+  "ten_percent": "١٠٪",
+  "twenty_percent": "٢٠٪",
+  "thirty_percent": "٣٠٪",
+  "fourty_percent": "٤٠٪",
+  "fifty_percent": "٥٠٪",
+  "sixty_percent": "٦٠٪",
+  "seventy_percent": "٧٠٪",
+  "eighty_percent": "٨٠٪",
+  "ninty_percent": "٩٠٪",
+  "handred_percent": "١٠٠٪",
   "cat_weight_range": "القط {catBreed} لديه نطاق وزن من {weightImperial} أرطال ({weightMetric} كجم).",
   "cat_temperament": "تتمتع هذه القطط بمزاج {temperament}.",
   "cat_lifespan": "يتراوح عمرها النموذجي من {lifeSpan} سنوات.",
@@ -89,5 +100,6 @@
   "wikipedia_page": "صفحة ويكيبيديا",
   "or": " أو ",
   "to": "إلى",
-  "image_analysis": "تحليل الصورة"
+  "image_analysis": "تحليل الصورة",
+  "we_are_using_AWS_Rekognition": "نحن نستخدم AWS Rekognition."
 }

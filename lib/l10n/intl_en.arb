@@ -80,6 +80,17 @@
   "three": "3",
   "four": "4",
   "five": "5",
+  "zero_percent": "0٪",
+  "ten_percent": "10%",
+  "twenty_percent": "20%",
+  "thirty_percent": "30%",
+  "fourty_percent": "40%",
+  "fifty_percent": "50%",
+  "sixty_percent": "60%",
+  "seventy_percent": "70%",
+  "eighty_percent": "80%",
+  "ninty_percent": "90%",
+  "handred_percent": "100%",
   "cat_weight_range": "The {catBreed} has a weight range of {weightImperial} pounds ({weightMetric} kg).",
   "cat_temperament": "These cats possess a temperament that is {temperament}.",
   "cat_lifespan": "Their typical lifespan ranges from {lifeSpan} years.",
@@ -89,5 +100,6 @@
   "wikipedia_page": "Wikipedia page",
   "or": " or ",
   "to": "to",
-  "image_analysis": "image analysis"
+  "image_analysis": "image analysis",
+  "we_are_using_AWS_Rekognition": "we are using AWS Rekognition."
 }

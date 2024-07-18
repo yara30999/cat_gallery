@@ -860,6 +860,116 @@ class S {
     );
   }
 
+  /// `0٪`
+  String get zero_percent {
+    return Intl.message(
+      '0٪',
+      name: 'zero_percent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `10%`
+  String get ten_percent {
+    return Intl.message(
+      '10%',
+      name: 'ten_percent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `20%`
+  String get twenty_percent {
+    return Intl.message(
+      '20%',
+      name: 'twenty_percent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `30%`
+  String get thirty_percent {
+    return Intl.message(
+      '30%',
+      name: 'thirty_percent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `40%`
+  String get fourty_percent {
+    return Intl.message(
+      '40%',
+      name: 'fourty_percent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `50%`
+  String get fifty_percent {
+    return Intl.message(
+      '50%',
+      name: 'fifty_percent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `60%`
+  String get sixty_percent {
+    return Intl.message(
+      '60%',
+      name: 'sixty_percent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `70%`
+  String get seventy_percent {
+    return Intl.message(
+      '70%',
+      name: 'seventy_percent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `80%`
+  String get eighty_percent {
+    return Intl.message(
+      '80%',
+      name: 'eighty_percent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `90%`
+  String get ninty_percent {
+    return Intl.message(
+      '90%',
+      name: 'ninty_percent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `100%`
+  String get handred_percent {
+    return Intl.message(
+      '100%',
+      name: 'handred_percent',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `The {catBreed} has a weight range of {weightImperial} pounds ({weightMetric} kg).`
   String cat_weight_range(
       Object catBreed, Object weightImperial, Object weightMetric) {
@@ -956,6 +1066,16 @@ class S {
     return Intl.message(
       'image analysis',
       name: 'image_analysis',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `we are using AWS Rekognition.`
+  String get we_are_using_AWS_Rekognition {
+    return Intl.message(
+      'we are using AWS Rekognition.',
+      name: 'we_are_using_AWS_Rekognition',
       desc: '',
       args: [],
     );

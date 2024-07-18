@@ -74,21 +74,25 @@ class MessageLookup extends MessageLookupByLibrary {
             "Do not type the country code again"),
         "dog_friendly": MessageLookupByLibrary.simpleMessage("Dog Friendly"),
         "dream": MessageLookupByLibrary.simpleMessage("dream"),
+        "eighty_percent": MessageLookupByLibrary.simpleMessage("80%"),
         "emailLabel": MessageLookupByLibrary.simpleMessage("Email Id"),
         "emailNotValid":
             MessageLookupByLibrary.simpleMessage("Email not formatted well"),
         "emptyMsg": MessageLookupByLibrary.simpleMessage("Field is required"),
         "energy": MessageLookupByLibrary.simpleMessage("Energy"),
         "female": MessageLookupByLibrary.simpleMessage("Female"),
+        "fifty_percent": MessageLookupByLibrary.simpleMessage("50%"),
         "five": MessageLookupByLibrary.simpleMessage("5"),
         "forgotYourPassword":
             MessageLookupByLibrary.simpleMessage("Forgot Your Password?"),
         "four": MessageLookupByLibrary.simpleMessage("4"),
+        "fourty_percent": MessageLookupByLibrary.simpleMessage("40%"),
         "funny": MessageLookupByLibrary.simpleMessage("funny"),
         "genderRequired":
             MessageLookupByLibrary.simpleMessage("Gender is required"),
         "girls": MessageLookupByLibrary.simpleMessage("girls"),
         "grooming": MessageLookupByLibrary.simpleMessage("Grooming"),
+        "handred_percent": MessageLookupByLibrary.simpleMessage("100%"),
         "hats": MessageLookupByLibrary.simpleMessage("hats"),
         "health_issues": MessageLookupByLibrary.simpleMessage("Health Issues"),
         "hello": MessageLookupByLibrary.simpleMessage("Hello!"),
@@ -105,6 +109,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "male": MessageLookupByLibrary.simpleMessage("Male"),
         "more_information": MessageLookupByLibrary.simpleMessage(
             "For more information, you can visit their "),
+        "ninty_percent": MessageLookupByLibrary.simpleMessage("90%"),
         "noRouteFound": MessageLookupByLibrary.simpleMessage("no_route_found"),
         "notAMember": MessageLookupByLibrary.simpleMessage("Not a member?"),
         "one": MessageLookupByLibrary.simpleMessage("1"),
@@ -134,16 +139,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "search_country":
             MessageLookupByLibrary.simpleMessage("Search country"),
         "selectGender": MessageLookupByLibrary.simpleMessage("Select Gender"),
+        "seventy_percent": MessageLookupByLibrary.simpleMessage("70%"),
         "shedding": MessageLookupByLibrary.simpleMessage("Shedding"),
         "sinks": MessageLookupByLibrary.simpleMessage("sinks"),
+        "sixty_percent": MessageLookupByLibrary.simpleMessage("60%"),
         "social_needs": MessageLookupByLibrary.simpleMessage("Social Needs"),
         "space": MessageLookupByLibrary.simpleMessage("space"),
         "stranger_friendly":
             MessageLookupByLibrary.simpleMessage("Stranger Friendly"),
         "sunglasses": MessageLookupByLibrary.simpleMessage("sunglasses"),
+        "ten_percent": MessageLookupByLibrary.simpleMessage("10%"),
+        "thirty_percent": MessageLookupByLibrary.simpleMessage("30%"),
         "three": MessageLookupByLibrary.simpleMessage("3"),
         "ties": MessageLookupByLibrary.simpleMessage("ties"),
         "to": MessageLookupByLibrary.simpleMessage("to"),
+        "twenty_percent": MessageLookupByLibrary.simpleMessage("20%"),
         "two": MessageLookupByLibrary.simpleMessage("2"),
         "usernameLabel": MessageLookupByLibrary.simpleMessage("Username"),
         "usernameNotValid":
@@ -154,8 +164,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Username too short"),
         "vetstreet_page":
             MessageLookupByLibrary.simpleMessage("Vetstreet page"),
+        "we_are_using_AWS_Rekognition": MessageLookupByLibrary.simpleMessage(
+            "we are using AWS Rekognition."),
         "wikipedia_page":
             MessageLookupByLibrary.simpleMessage("Wikipedia page"),
-        "zero": MessageLookupByLibrary.simpleMessage("0")
+        "zero": MessageLookupByLibrary.simpleMessage("0"),
+        "zero_percent": MessageLookupByLibrary.simpleMessage("0٪")
       };
 }
