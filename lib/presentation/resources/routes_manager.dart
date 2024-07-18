@@ -73,6 +73,11 @@ class RouteGenerator {
             builder: (_) => FavoritesViewBody(
                   favoratesScreenScrollController: controller,
                 ));
+      case Routes.analysisRoute:
+        return MaterialPageRoute(
+            builder: (_) => AnalysisBody(
+                  analysisScreenScrollController: controller,
+                ));
       default:
         return unDefinedRoute();
     }
