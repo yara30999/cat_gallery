@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../../resources/values_manager.dart';
 import '../../widgets/custom_app_bar.dart';
-import 'favorites_grid_builder.dart';
-import 'favorites_header.dart';
+import 'widgets/favorites_grid_builder.dart';
+import 'widgets/favorites_header.dart';
 
 class FavoritesViewBody extends StatelessWidget {
   final ScrollController? favoratesScreenScrollController;

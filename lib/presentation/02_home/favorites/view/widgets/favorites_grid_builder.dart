@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import '../../../../domain/entities/cat_with_click_entity.dart';
-import '../../../resources/values_manager.dart';
-import '../../widgets/cat_image_with_click_options_and_date.dart';
+import '../../../../../domain/entities/cat_with_click_entity.dart';
+import '../../../../resources/values_manager.dart';
+import '../../../widgets/cat_image_with_click_options_and_date.dart';
 
 class FavoritesGridBuilder extends StatelessWidget {
   const FavoritesGridBuilder({super.key});

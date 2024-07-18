@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import '../../../../generated/l10n.dart';
-import '../../../resources/styles_manager.dart';
 
-class FavoriteScreenHeader extends StatelessWidget {
-  const FavoriteScreenHeader({super.key});
+import '../../../../../generated/l10n.dart';
+import '../../../../resources/styles_manager.dart';
+
+class VotesScreenHeader extends StatelessWidget {
+  const VotesScreenHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +13,7 @@ class FavoriteScreenHeader extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          S.current.Favorites,
+          S.current.Votes,
           style: Styles.style36Medium(),
         ),
       ],
