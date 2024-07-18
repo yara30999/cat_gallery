@@ -5,6 +5,8 @@ import '../01_login-register/view/pages/register_view.dart';
 import '../02_home/favorites/view/favorites_view_body.dart';
 import '../02_home/main_breeds/view/main_breeds_body.dart';
 import '../02_home/home_view.dart';
+import '../02_home/uploads/view/uploads_view_body.dart';
+import '../02_home/votes/view/votes_view_body.dart';
 import '../03_specific_breed/view/specific_breed_body.dart';
 import '../04_random_breed/view/random_breed_body.dart';
 import '../05_analysis_screen/view/analysis_body.dart';
@@ -19,6 +21,8 @@ class Routes {
   static const String analysisRoute = "/analysis_route";
   static const String favoritesRoute = "/";
   static const String scaleImageRoute = "/scale_image_route";
+  static const String votesRoute = "/";
+  static const String uploadsRoute = "/";
 }
 
 class RouteGenerator {
@@ -83,6 +87,44 @@ class RouteGenerator {
     }
   }
 
+  static Route<dynamic> getUploadsNavigator(RouteSettings settings) {
+    final ScrollController? controller =
+        settings.arguments as ScrollController?;
+    switch (settings.name) {
+      case Routes.uploadsRoute:
+        return MaterialPageRoute(
+            builder: (_) => UploadsViewBody(
+                  uploadsScreenScrollController: controller,
+                ));
+      case Routes.analysisRoute:
+        return MaterialPageRoute(
+            builder: (_) => AnalysisBody(
+                  analysisScreenScrollController: controller,
+                ));
+      default:
+        return unDefinedRoute();
+    }
+  }
+
+  static Route<dynamic> getVotesNavigator(RouteSettings settings) {
+    final ScrollController? controller =
+        settings.arguments as ScrollController?;
+    switch (settings.name) {
+      case Routes.votesRoute:
+        return MaterialPageRoute(
+            builder: (_) => VotesViewBody(
+                  votesScreenScrollController: controller,
+                ));
+      case Routes.analysisRoute:
+        return MaterialPageRoute(
+            builder: (_) => AnalysisBody(
+                  analysisScreenScrollController: controller,
+                ));
+      default:
+        return unDefinedRoute();
+    }
+  }
+
   static Route<dynamic> unDefinedRoute() {
     return MaterialPageRoute(
         builder: (_) => Scaffold(
@@ -121,6 +163,40 @@ class FavoritesNavigator extends StatelessWidget {
       initialRoute: Routes.favoritesRoute,
       onGenerateRoute: (settings) =>
           RouteGenerator.getFavoritesNavigator(RouteSettings(
+        name: settings.name,
+        arguments: scrollController,
+      )),
+    );
+  }
+}
+
+class UploadsNavigator extends StatelessWidget {
+  final ScrollController? scrollController;
+  const UploadsNavigator({super.key, required this.scrollController});
+
+  @override
+  Widget build(BuildContext context) {
+    return Navigator(
+      initialRoute: Routes.uploadsRoute,
+      onGenerateRoute: (settings) =>
+          RouteGenerator.getUploadsNavigator(RouteSettings(
+        name: settings.name,
+        arguments: scrollController,
+      )),
+    );
+  }
+}
+
+class VotesNavigator extends StatelessWidget {
+  final ScrollController? scrollController;
+  const VotesNavigator({super.key, required this.scrollController});
+
+  @override
+  Widget build(BuildContext context) {
+    return Navigator(
+      initialRoute: Routes.favoritesRoute,
+      onGenerateRoute: (settings) =>
+          RouteGenerator.getVotesNavigator(RouteSettings(
         name: settings.name,
         arguments: scrollController,
       )),

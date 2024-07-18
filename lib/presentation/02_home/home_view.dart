@@ -5,8 +5,6 @@ import '../resources/platform_manager.dart';
 import '../resources/routes_manager.dart';
 import '../resources/styles_manager.dart';
 import '../resources/values_manager.dart';
-import 'uploads/view/uploads_view_body.dart';
-import 'votes/view/votes_view_body.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({
@@ -99,12 +97,12 @@ class _HomeViewState extends State<HomeView> {
               scrollController:
                   isWebOrDesktopApp() ? null : _favoritesScrollController,
             ),
-            UploadsViewBody(
-              uploadsScreenScrollController:
+            UploadsNavigator(
+              scrollController:
                   isWebOrDesktopApp() ? null : _uploadsScrollController,
             ),
-            VotesViewBody(
-              votesScreenScrollController:
+            VotesNavigator(
+              scrollController:
                   isWebOrDesktopApp() ? null : _votesScrollController,
             ),
           ],
