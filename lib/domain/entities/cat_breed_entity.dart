@@ -12,30 +12,30 @@
       'intelligence',
     */
 class CatBreedEntity {
-  Weight weight;
-  String id;
-  String referenceImageId;
-  String wikipediaUrl;
-  String vetstreetUrl;
-  String name;
-  String temperament; //الطبع
-  String origin;
-  String description;
-  String lifeSpan;
+  final Weight weight;
+  final String id;
+  final String referenceImageId;
+  final String wikipediaUrl;
+  final String vetstreetUrl;
+  final String name;
+  final String temperament; //الطبع
+  final String origin;
+  final String description;
+  final String lifeSpan;
   //measurments values
-  int adaptability;
-  int affectionLevel;
-  int childFriendly;
-  int dogFriendly;
-  int energyLevel;
-  int grooming;
-  int healthIssues;
-  int intelligence;
-  int sheddingLevel;
-  int socialNeeds;
-  int strangerFriendly;
+  final int adaptability;
+  final int affectionLevel;
+  final int childFriendly;
+  final int dogFriendly;
+  final int energyLevel;
+  final int grooming;
+  final int healthIssues;
+  final int intelligence;
+  final int sheddingLevel;
+  final int socialNeeds;
+  final int strangerFriendly;
 
-  CatBreedEntity({
+  const CatBreedEntity({
     required this.weight,
     required this.id,
     required this.name,
@@ -61,10 +61,10 @@ class CatBreedEntity {
 }
 
 class Weight {
-  String imperial; //(lbs) 7 to 10 pounds
-  String metric; //(kg) 3 to 5 kilograms
+  final String imperial; //(lbs) 7 to 10 pounds
+  final String metric; //(kg) 3 to 5 kilograms
 
-  Weight({
+  const Weight({
     required this.imperial,
     required this.metric,
   });

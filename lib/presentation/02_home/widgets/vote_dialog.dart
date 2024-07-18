@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import '../../../domain/entities/cat_with_click_entity.dart';
 import '../../../generated/l10n.dart';
 import 'vote_selector_button.dart';
 
 class VoteDialog extends StatelessWidget {
-  const VoteDialog({super.key});
+  final Vote? vote;
+  const VoteDialog({
+    super.key,
+    required this.vote,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +17,9 @@ class VoteDialog extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           const SizedBox(height: 20),
-          const VoteSelectorButton(),
+          VoteSelectorButton(
+            vote: vote,
+          ),
           const SizedBox(height: 20),
           ElevatedButton(
             onPressed: () {

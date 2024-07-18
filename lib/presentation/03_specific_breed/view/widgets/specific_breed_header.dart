@@ -8,7 +8,7 @@ import 'specific_breed_info.dart';
 class SpecificBreedHeader extends StatelessWidget {
   const SpecificBreedHeader({super.key});
 
-  CatBreedEntity get dummyCatBreed => CatBreedEntity(
+  CatBreedEntity get dummyCatBreed => const CatBreedEntity(
       weight: Weight(imperial: '7 - 10', metric: '3 - 5'),
       id: 'Abys',
       name: 'Abyssinian',

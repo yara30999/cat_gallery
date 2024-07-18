@@ -116,8 +116,7 @@ class _PinchZoomImageState extends State<PinchZoomImage>
         child: CachedNetworkImage(
           fit: BoxFit.cover,
           width: double.infinity,
-          imageUrl:
-              "https://i.pinimg.com/736x/e6/9b/6f/e69b6feb89a524682cf149d527026893--chats-tabby-tabby-cats.jpg",
+          imageUrl: widget.assetName,
           errorWidget: (context, url, error) => const Icon(Icons.error),
           placeholder: (context, url) => const SizedBox(
               width: double.infinity,

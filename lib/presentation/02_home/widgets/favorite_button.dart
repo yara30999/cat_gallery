@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import '../../../app/functions.dart';
+import '../../../domain/entities/cat_with_click_entity.dart';
 import '../../resources/color_manager.dart';
 import '../../resources/values_manager.dart';
 
 class FavoriteButton extends StatefulWidget {
+  final Favorite? favorite;
   final VoidCallback onPressed;
   const FavoriteButton({
     super.key,
     required this.onPressed,
+    required this.favorite,
   });
 
   @override
@@ -16,7 +19,7 @@ class FavoriteButton extends StatefulWidget {
 
 class FavoriteButtonState extends State<FavoriteButton>
     with SingleTickerProviderStateMixin {
-  bool isFavorite = false;
+  late bool isFavorite;
   late final AnimationController _controller;
   late final Animation<double> _animation;
 
@@ -30,6 +33,8 @@ class FavoriteButtonState extends State<FavoriteButton>
     _animation = Tween(begin: 23.0, end: 30.0).animate(
       CurvedAnimation(parent: _controller, curve: Curves.bounceInOut),
     );
+
+    isFavorite = widget.favorite == null ? false : true;
   }
 
   @override

@@ -6,7 +6,8 @@ import 'analysis_bar_graph.dart';
 
 class AnalysisSection extends StatelessWidget {
   const AnalysisSection({super.key});
-  ImageAnalysisEntity get dummyImageAnalysis => ImageAnalysisEntity(labels: [
+  ImageAnalysisEntity get dummyImageAnalysis =>
+      const ImageAnalysisEntity(labels: [
         Label(name: 'Animal', confidence: 99.23681640625),
         Label(name: 'Mammal', confidence: 99.23681640625),
         Label(name: 'Rat', confidence: 99.23681640625),

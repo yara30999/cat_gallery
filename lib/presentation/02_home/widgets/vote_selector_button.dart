@@ -1,17 +1,27 @@
 import 'package:flutter/material.dart';
+import '../../../domain/entities/cat_with_click_entity.dart';
 import '../../resources/color_manager.dart';
 import '../../resources/styles_manager.dart';
 import '../../resources/values_manager.dart';
 
 class VoteSelectorButton extends StatefulWidget {
-  const VoteSelectorButton({super.key});
+  final Vote? vote;
+  const VoteSelectorButton({
+    super.key,
+    required this.vote,
+  });
 
   @override
   VoteSelectorButtonState createState() => VoteSelectorButtonState();
 }
 
 class VoteSelectorButtonState extends State<VoteSelectorButton> {
-  int _voteValue = 0;
+  late int _voteValue = 0;
+  @override
+  void initState() {
+    super.initState();
+    _voteValue = widget.vote == null ? 0 : widget.vote!.value;
+  }
 
   void _incrementQuantity() {
     setState(() {

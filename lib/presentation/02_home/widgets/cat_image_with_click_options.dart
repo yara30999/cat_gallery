@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../domain/entities/cat_breed_card.dart';
+import '../../../domain/entities/cat_with_click_entity.dart';
 import '../../resources/routes_manager.dart';
 import 'pinch_zoom_image.dart';
 import '../../resources/values_manager.dart';
@@ -8,17 +8,19 @@ import 'favorite_button.dart';
 import 'vote_dialog.dart';
 
 class CatImageWithClickOptions extends StatelessWidget {
-  final CatBreedCardEntity catBreedCard;
+  final CatWithClickEntity catWithClickEntity;
 
   const CatImageWithClickOptions({
     super.key,
-    required this.catBreedCard,
+    required this.catWithClickEntity,
   });
 
   void _voteButtonOnPress(BuildContext context) {
     showDialog(
       context: context,
-      builder: (BuildContext context) => const VoteDialog(),
+      builder: (BuildContext context) => VoteDialog(
+        vote: catWithClickEntity.vote,
+      ),
     );
   }
 
@@ -34,7 +36,7 @@ class CatImageWithClickOptions extends StatelessWidget {
         children: [
           // form assets, use cashed network image here
           PinchZoomImage(
-            assetName: catBreedCard.referenceImgurl,
+            assetName: catWithClickEntity.imageUrl,
           ),
           _buildActionRow(context),
         ],
@@ -48,6 +50,7 @@ class CatImageWithClickOptions extends StatelessWidget {
       children: [
         FavoriteButton(
           onPressed: () {},
+          favorite: catWithClickEntity.favorite,
         ),
         ActionButton(
           icon: Icons.how_to_vote_outlined,
