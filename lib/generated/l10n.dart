@@ -500,6 +500,26 @@ class S {
     );
   }
 
+  /// `breed: {breedName}`
+  String upload_breed(Object breedName) {
+    return Intl.message(
+      'breed: $breedName',
+      name: 'upload_breed',
+      desc: '',
+      args: [breedName],
+    );
+  }
+
+  /// `category: {categoryName}`
+  String upload_category(Object categoryName) {
+    return Intl.message(
+      'category: $categoryName',
+      name: 'upload_category',
+      desc: '',
+      args: [categoryName],
+    );
+  }
+
   /// `all`
   String get all {
     return Intl.message(

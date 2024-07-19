@@ -44,6 +44,8 @@
   "main_breed_paragraph": "أو اختر سلالة معينة من القطط لتصفح الصور بها.",
   "random_cat_images": "صور قطط عشوائية",
   "breed_cat_images": "صور القط {breedName}",
+  "upload_breed": "سلالة: {breedName}",
+  "upload_category": "فئة: {categoryName}",
   "all": "الكل",
   "hats": "قبعات",
   "space": "فضاء",

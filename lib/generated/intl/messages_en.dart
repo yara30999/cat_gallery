@@ -33,6 +33,10 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m4(catBreed, weightImperial, weightMetric) =>
       "The ${catBreed} has a weight range of ${weightImperial} pounds (${weightMetric} kg).";
 
+  static String m5(breedName) => "breed: ${breedName}";
+
+  static String m6(categoryName) => "category: ${categoryName}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "Browse_random_images_of_all_breeds":
@@ -155,6 +159,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "to": MessageLookupByLibrary.simpleMessage("to"),
         "twenty_percent": MessageLookupByLibrary.simpleMessage("20%"),
         "two": MessageLookupByLibrary.simpleMessage("2"),
+        "upload_breed": m5,
+        "upload_category": m6,
         "usernameLabel": MessageLookupByLibrary.simpleMessage("Username"),
         "usernameNotValid":
             MessageLookupByLibrary.simpleMessage("Username not valid"),

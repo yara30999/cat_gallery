@@ -4,15 +4,17 @@ class CatWithClickEntity {
   final Favorite? favorite;
   final Vote? vote;
   final List<Category>? categories;
+  final String? breedName;
   final String? createdAt;
 
   const CatWithClickEntity({
     required this.imageId,
     required this.imageUrl,
-    required this.favorite,
-    required this.vote,
-    required this.categories,
-    required this.createdAt,
+    this.favorite,
+    this.vote,
+    this.categories,
+    this.createdAt,
+    this.breedName,
   });
 }
 
