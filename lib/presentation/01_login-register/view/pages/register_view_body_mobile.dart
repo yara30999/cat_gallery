@@ -14,14 +14,14 @@ import '../widgets/custom_text_form_field.dart';
 import '../widgets/custom_text_row.dart';
 import '../widgets/or_continue_with.dart';
 
-class RegisterViewBody extends StatefulWidget {
-  const RegisterViewBody({super.key});
+class RegisterViewBodyMobile extends StatefulWidget {
+  const RegisterViewBodyMobile({super.key});
 
   @override
-  State<RegisterViewBody> createState() => _RegisterViewBodyState();
+  State<RegisterViewBodyMobile> createState() => _RegisterViewBodyMobileState();
 }
 
-class _RegisterViewBodyState extends State<RegisterViewBody> {
+class _RegisterViewBodyMobileState extends State<RegisterViewBodyMobile> {
   String? name;
   String? email;
   String? password;

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-
+import '../../../resources/platform_manager.dart';
 import '../widgets/background_painter.dart';
-import 'register_view_body.dart';
+import 'register_view_body_desktop.dart';
+import 'register_view_body_mobile.dart';
+import 'register_view_body_tablet.dart';
 
 class RegisterView extends StatefulWidget {
   const RegisterView({super.key});
@@ -27,7 +29,11 @@ class _RegisterViewState extends State<RegisterView> {
         // size: Size(MediaQuery.sizeOf(context).width,
         //     MediaQuery.sizeOf(context).height),
         painter: BackgroundPainter(),
-        child: const RegisterViewBody(),
+        child: AdaptiveLayout(
+          mobileLayout: (context) => const RegisterViewBodyMobile(),
+          tabletLayout: (context) => const RegisterViewBodyTablet(),
+          desktopLayout: (context) => const RegisterViewBodyDesktop(),
+        ),
       ),
     );
   }

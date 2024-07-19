@@ -4,6 +4,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import '../generated/l10n.dart';
 import '../presentation/resources/language_manager.dart';
 import '../presentation/resources/routes_manager.dart';
+import '../presentation/resources/size_config.dart';
 import '../presentation/resources/theme_manager.dart';
 
 class MyApp extends StatefulWidget {
@@ -16,6 +17,8 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
+    // to initialize h && w inside the class
+    SizeConfig.init(context);
     return MaterialApp(
       builder: DevicePreview.appBuilder,
       debugShowCheckedModeBanner: false,

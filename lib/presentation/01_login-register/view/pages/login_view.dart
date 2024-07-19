@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import '../../../resources/conistants_manager.dart';
-import 'login_view_body.dart';
+import '../../../resources/platform_manager.dart';
+import 'login_view_body_desktop.dart';
+import 'login_view_body_mobile.dart';
 import '../widgets/background_painter.dart';
+import 'login_view_body_tablet.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -35,7 +38,11 @@ class _LoginViewState extends State<LoginView> {
         // size: Size(MediaQuery.sizeOf(context).width,
         //     MediaQuery.sizeOf(context).height),
         painter: BackgroundPainter(),
-        child: const LoginViewBody(),
+        child: AdaptiveLayout(
+          mobileLayout: (context) => const LoginViewBodyMobile(),
+          tabletLayout: (context) => const LoginViewBodyTablet(),
+          desktopLayout: (context) => const LoginViewBodyDesktop(),
+        ),
       ),
     );
   }

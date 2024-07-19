@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 
 bool isWebOrDesktopApp() {
   if (kIsWeb) {
@@ -15,5 +16,35 @@ bool isWebOrDesktopApp() {
       default:
         return false;
     }
+  }
+}
+
+class AdaptiveLayout extends StatelessWidget {
+  const AdaptiveLayout(
+      {super.key,
+      required this.mobileLayout,
+      required this.tabletLayout,
+      required this.desktopLayout});
+  // very important to use WidgetBuilder here
+  final WidgetBuilder mobileLayout;
+  final WidgetBuilder tabletLayout;
+  final WidgetBuilder desktopLayout;
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (BuildContext context, BoxConstraints constraints) {
+        if (constraints.maxWidth < 800) {
+          // so this is fun can never be build unless it called
+          return mobileLayout(context);
+        } else if (constraints.maxWidth < 1200) {
+          // so this is fun can never be build unless it called
+          return tabletLayout(context);
+        } else {
+          // so this is fun can never be build unless it called
+          return desktopLayout(context);
+        }
+      },
+    );
   }
 }

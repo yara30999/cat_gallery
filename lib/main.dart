@@ -10,7 +10,7 @@ void main() async {
   await initAppModule();
   runApp(
     DevicePreview(
-      enabled: true, //!kReleaseMode,
+      enabled: false, //!kReleaseMode,
       builder: (context) => const MyApp(), // Wrap your app
     ),
   );

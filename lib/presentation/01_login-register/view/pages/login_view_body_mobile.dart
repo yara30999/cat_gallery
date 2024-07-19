@@ -9,14 +9,14 @@ import '../widgets/custom_text_form_field.dart';
 import '../widgets/custom_text_row.dart';
 import '../widgets/or_continue_with.dart';
 
-class LoginViewBody extends StatefulWidget {
-  const LoginViewBody({super.key});
+class LoginViewBodyMobile extends StatefulWidget {
+  const LoginViewBodyMobile({super.key});
 
   @override
-  State<LoginViewBody> createState() => _LoginViewBodyState();
+  State<LoginViewBodyMobile> createState() => _LoginViewBodyMobileState();
 }
 
-class _LoginViewBodyState extends State<LoginViewBody> {
+class _LoginViewBodyMobileState extends State<LoginViewBodyMobile> {
   String? email;
   String? password;
   bool isObscure = true;
