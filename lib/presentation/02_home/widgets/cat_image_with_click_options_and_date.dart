@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get_time_ago/get_time_ago.dart';
 import '../../../domain/entities/cat_with_click_entity.dart';
+import '../../resources/language_manager.dart';
 import '../../resources/styles_manager.dart';
 import '../../resources/values_manager.dart';
 import 'cat_image_with_click_options.dart';
@@ -26,10 +28,13 @@ class CatImageWithClickOptionsAndDate extends StatelessWidget {
                 top: 5,
               ),
               child: Text(
-                //TODO: use time ago package
-                // use catWithClickEntity.createdAt
-                '12-5-2024  5:30',
-                style: Styles.style16Medium(),
+                //TODO: update local here
+                GetTimeAgo.parse(
+                  DateTime.parse(catWithClickEntity.createdAt!),
+                  pattern: "dd-MM-yyyy hh:mm aa",
+                  locale: LanguageType.english.getCode(),
+                ),
+                style: Styles.style16Light(),
               ),
             ),
           ],

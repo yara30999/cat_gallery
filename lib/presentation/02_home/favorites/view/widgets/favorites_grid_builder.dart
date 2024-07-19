@@ -15,7 +15,7 @@ class FavoritesGridBuilder extends StatelessWidget {
             favorite: Favorite(id: '1234567555'),
             vote: Vote(id: '252536945', value: 5),
             categories: [Category(id: '1252525666', name: 'hats')],
-            createdAt: null),
+            createdAt: '2024-07-18T11:06:27.000Z'),
         const CatWithClickEntity(
             imageId: '123456789',
             imageUrl:
@@ -23,7 +23,7 @@ class FavoritesGridBuilder extends StatelessWidget {
             favorite: Favorite(id: '1234567555'),
             vote: Vote(id: '252536945', value: 9),
             categories: null,
-            createdAt: null),
+            createdAt: '2024-07-16T13:53:34.000Z'),
         const CatWithClickEntity(
             imageId: '123456789',
             imageUrl:
@@ -31,7 +31,7 @@ class FavoritesGridBuilder extends StatelessWidget {
             favorite: Favorite(id: '1234567555'),
             vote: Vote(id: '252536945', value: -4),
             categories: null,
-            createdAt: null),
+            createdAt: '2024-06-26T09:20:11.000Z'),
         const CatWithClickEntity(
             imageId: '123456789',
             imageUrl:
@@ -39,7 +39,7 @@ class FavoritesGridBuilder extends StatelessWidget {
             favorite: Favorite(id: '1234567555'),
             vote: null,
             categories: [Category(id: '1252525666', name: 'hats')],
-            createdAt: null),
+            createdAt: '2024-07-19T05:14:08.000Z'),
         const CatWithClickEntity(
             imageId: '123456789',
             imageUrl:
@@ -47,7 +47,7 @@ class FavoritesGridBuilder extends StatelessWidget {
             favorite: Favorite(id: '1234567555'),
             vote: null,
             categories: null,
-            createdAt: null),
+            createdAt: '2024-07-19T02:02:35.000Z'),
         const CatWithClickEntity(
             imageId: '123456789',
             imageUrl:
@@ -55,7 +55,7 @@ class FavoritesGridBuilder extends StatelessWidget {
             favorite: Favorite(id: '1234567555'),
             vote: null,
             categories: null,
-            createdAt: null),
+            createdAt: '2024-07-19T09:06:35.000Z'),
       ];
   @override
   Widget build(BuildContext context) {

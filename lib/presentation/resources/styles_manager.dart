@@ -29,6 +29,14 @@ abstract class Styles {
     );
   }
 
+  static TextStyle style16Light() {
+    return TextStyle(
+      fontFamily: FontConstants.fontMarhey,
+      fontSize: getResponsiveFontSize(fontSize: FontSize.s16),
+      fontWeight: FontWeightManager.light,
+    );
+  }
+
   static TextStyle style18Medium() {
     return TextStyle(
       fontFamily: FontConstants.fontMarhey,
