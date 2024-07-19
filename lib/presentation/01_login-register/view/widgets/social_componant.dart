@@ -17,17 +17,18 @@ class SocialComponant extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 2 / 1,
-      child: PhysicalModel(
-        // The color behind the widget
-        color: color,
-        elevation: AppSize.s10,
-        borderRadius:
-            BorderRadius.circular(AppSize.s12), // Optional: Add border radius
-        shadowColor: ColorManager.black, // Optional: Customize the shadow color
-        child: GestureDetector(
-          onTap: onTap,
+    return GestureDetector(
+      onTap: onTap,
+      child: AspectRatio(
+        aspectRatio: 2 / 1,
+        child: PhysicalModel(
+          // The color behind the widget
+          color: color,
+          elevation: AppSize.s10,
+          borderRadius:
+              BorderRadius.circular(AppSize.s12), // Optional: Add border radius
+          shadowColor:
+              ColorManager.black, // Optional: Customize the shadow color
           child: SvgPicture.asset(svgString),
         ),
       ),
