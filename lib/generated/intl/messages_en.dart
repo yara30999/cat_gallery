@@ -39,13 +39,22 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "Arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
         "Browse_random_images_of_all_breeds":
             MessageLookupByLibrary.simpleMessage(
                 "Browse random images of all breeds."),
+        "Dark": MessageLookupByLibrary.simpleMessage("Dark"),
+        "English": MessageLookupByLibrary.simpleMessage("English"),
         "Favorites": MessageLookupByLibrary.simpleMessage("Favorites"),
         "Home": MessageLookupByLibrary.simpleMessage("Home"),
+        "Language": MessageLookupByLibrary.simpleMessage("Language:"),
+        "Light": MessageLookupByLibrary.simpleMessage("Light"),
+        "Logout_account":
+            MessageLookupByLibrary.simpleMessage("Logout account"),
         "Search_by_breed_name":
             MessageLookupByLibrary.simpleMessage("Search by breed name..."),
+        "System": MessageLookupByLibrary.simpleMessage("System"),
+        "Theme": MessageLookupByLibrary.simpleMessage("Theme:"),
         "Uploads": MessageLookupByLibrary.simpleMessage("Uploads"),
         "Vote": MessageLookupByLibrary.simpleMessage("Vote"),
         "Votes": MessageLookupByLibrary.simpleMessage("Votes"),
@@ -56,6 +65,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
         "appTitle":
             MessageLookupByLibrary.simpleMessage("Flutter cat information app"),
+        "app_developer": MessageLookupByLibrary.simpleMessage(
+            "App developer: \nEng. Yara Nasser Elniny\n yaranasserelniny@gmail.com \n 01093017989"),
         "asc": MessageLookupByLibrary.simpleMessage("ascending"),
         "boxes": MessageLookupByLibrary.simpleMessage("boxes"),
         "boys": MessageLookupByLibrary.simpleMessage("boys"),
@@ -95,6 +106,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "genderRequired":
             MessageLookupByLibrary.simpleMessage("Gender is required"),
         "girls": MessageLookupByLibrary.simpleMessage("girls"),
+        "go_back": MessageLookupByLibrary.simpleMessage("Go Back"),
         "grooming": MessageLookupByLibrary.simpleMessage("Grooming"),
         "handred_percent": MessageLookupByLibrary.simpleMessage("100%"),
         "hats": MessageLookupByLibrary.simpleMessage("hats"),
@@ -113,6 +125,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "male": MessageLookupByLibrary.simpleMessage("Male"),
         "more_information": MessageLookupByLibrary.simpleMessage(
             "For more information, you can visit their "),
+        "mr": MessageLookupByLibrary.simpleMessage("Mr. "),
+        "mrs": MessageLookupByLibrary.simpleMessage("Mrs. "),
         "ninty_percent": MessageLookupByLibrary.simpleMessage("90%"),
         "noRouteFound": MessageLookupByLibrary.simpleMessage("no_route_found"),
         "notAMember": MessageLookupByLibrary.simpleMessage("Not a member?"),

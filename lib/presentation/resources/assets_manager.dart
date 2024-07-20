@@ -53,4 +53,7 @@ class SvgAssets {
   static const String breaded = "$svgPath/13_breaded.svg";
   static const String sinks = "$svgPath/14_sinks.svg";
   static const String clothes = "$svgPath/15_clothes.svg";
+  static const String drawer1 = "$svgPath/drawer_1.svg";
+  static const String drawer2 = "$svgPath/drawer_2.svg";
+  static const String drawer3 = "$svgPath/drawer_3.svg";
 }

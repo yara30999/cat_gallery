@@ -33,6 +33,17 @@ ThemeData getLightTheme() {
           Styles.style18Medium().copyWith(color: ColorManager.white),
     ),
 
+    // radio theme
+    radioTheme: RadioThemeData(
+      fillColor:
+          WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
+        if (states.contains(WidgetState.selected)) {
+          return ColorManager.primary2; // Color when selected
+        }
+        return ColorManager.grey1; // Default color
+      }),
+    ),
+
     // button theme
     buttonTheme: const ButtonThemeData(
         shape: StadiumBorder(),
@@ -134,6 +145,17 @@ ThemeData getDarkTheme() {
           Styles.style36Medium().copyWith(color: ColorManager.white),
       toolbarTextStyle:
           Styles.style18Medium().copyWith(color: ColorManager.white),
+    ),
+
+    // radio theme
+    radioTheme: RadioThemeData(
+      fillColor:
+          WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
+        if (states.contains(WidgetState.selected)) {
+          return ColorManager.orange2; // Color when selected
+        }
+        return ColorManager.grey1; // Default color
+      }),
     ),
 
     // button theme

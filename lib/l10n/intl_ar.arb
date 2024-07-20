@@ -103,5 +103,17 @@
   "or": " أو ",
   "to": "إلى",
   "image_analysis": "تحليل الصورة",
-  "we_are_using_AWS_Rekognition": "نحن نستخدم AWS Rekognition."
+  "we_are_using_AWS_Rekognition": "نحن نستخدم AWS Rekognition.",
+  "go_back": "رجوع",
+  "mr": "السيد ",
+  "mrs": "السيدة ",
+  "app_developer": "مطور التطبيق: \nم. يارا ناصر النني\n yaranasserelniny@gmail.com \n 01093017989",
+  "Theme": "الموضوع:",
+  "System": "النظام",
+  "Light": "فاتح",
+  "Dark": "داكن",
+  "Language": "اللغة:",
+  "English": "إنجليزي",
+  "Arabic": "عربي",
+  "Logout_account": "تسجيل خروج "
 }

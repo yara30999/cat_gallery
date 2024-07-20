@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../../resources/values_manager.dart';
-import '../../widgets/custom_app_bar.dart';
 import 'widgets/main_breeds_grid_builder.dart';
 import 'widgets/main_breeds_header.dart';
 
@@ -16,7 +15,6 @@ class MainBreedsBody extends StatelessWidget {
     return CustomScrollView(
       controller: mainBreedsScreenScrollController,
       slivers: const [
-        PersistentAppBar(),
         SliverPadding(
           padding: EdgeInsets.symmetric(
             horizontal: AppPadding.p16,

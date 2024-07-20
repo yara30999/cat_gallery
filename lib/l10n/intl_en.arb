@@ -103,5 +103,17 @@
   "or": " or ",
   "to": "to",
   "image_analysis": "image analysis",
-  "we_are_using_AWS_Rekognition": "we are using AWS Rekognition."
+  "we_are_using_AWS_Rekognition": "we are using AWS Rekognition.",
+  "go_back": "Go Back",
+  "mr": "Mr. ",
+  "mrs": "Mrs. ",
+  "app_developer": "App developer: \nEng. Yara Nasser Elniny\n yaranasserelniny@gmail.com \n 01093017989",
+  "Theme": "Theme:",
+  "System": "System",
+  "Light": "Light",
+  "Dark": "Dark",
+  "Language": "Language:",
+  "English": "English",
+  "Arabic": "Arabic",
+  "Logout_account": "Logout account"
 }

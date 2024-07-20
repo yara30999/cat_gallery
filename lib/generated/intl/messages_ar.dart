@@ -37,13 +37,21 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "Arabic": MessageLookupByLibrary.simpleMessage("عربي"),
         "Browse_random_images_of_all_breeds":
             MessageLookupByLibrary.simpleMessage(
                 "تصفح الصور العشوائية لجميع السلالات."),
+        "Dark": MessageLookupByLibrary.simpleMessage("داكن"),
+        "English": MessageLookupByLibrary.simpleMessage("إنجليزي"),
         "Favorites": MessageLookupByLibrary.simpleMessage("المفضلة"),
         "Home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
+        "Language": MessageLookupByLibrary.simpleMessage("اللغة:"),
+        "Light": MessageLookupByLibrary.simpleMessage("فاتح"),
+        "Logout_account": MessageLookupByLibrary.simpleMessage("تسجيل خروج "),
         "Search_by_breed_name":
             MessageLookupByLibrary.simpleMessage("إبحث حسب إسم السلاله ..."),
+        "System": MessageLookupByLibrary.simpleMessage("النظام"),
+        "Theme": MessageLookupByLibrary.simpleMessage("الموضوع:"),
         "Uploads": MessageLookupByLibrary.simpleMessage("الملفات المرفوعة"),
         "Vote": MessageLookupByLibrary.simpleMessage("صوت"),
         "Votes": MessageLookupByLibrary.simpleMessage("التصويتات"),
@@ -54,6 +62,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("لديك حساب؟"),
         "appTitle": MessageLookupByLibrary.simpleMessage(
             "تطبيق معلومات القطط باستخدام فلاتر"),
+        "app_developer": MessageLookupByLibrary.simpleMessage(
+            "مطور التطبيق: \nم. يارا ناصر النني\n yaranasserelniny@gmail.com \n 01093017989"),
         "asc": MessageLookupByLibrary.simpleMessage("تصاعدي"),
         "boxes": MessageLookupByLibrary.simpleMessage("صناديق"),
         "boys": MessageLookupByLibrary.simpleMessage("أولاد"),
@@ -91,6 +101,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "funny": MessageLookupByLibrary.simpleMessage("مضحك"),
         "genderRequired": MessageLookupByLibrary.simpleMessage("الحقل مطلوب"),
         "girls": MessageLookupByLibrary.simpleMessage("بنات"),
+        "go_back": MessageLookupByLibrary.simpleMessage("رجوع"),
         "grooming": MessageLookupByLibrary.simpleMessage("الحاجه للتنظيف"),
         "handred_percent": MessageLookupByLibrary.simpleMessage("١٠٠٪"),
         "hats": MessageLookupByLibrary.simpleMessage("قبعات"),
@@ -109,6 +120,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "male": MessageLookupByLibrary.simpleMessage("ذكر"),
         "more_information": MessageLookupByLibrary.simpleMessage(
             "لمزيد من المعلومات، يمكنك زيارة "),
+        "mr": MessageLookupByLibrary.simpleMessage("السيد "),
+        "mrs": MessageLookupByLibrary.simpleMessage("السيدة "),
         "ninty_percent": MessageLookupByLibrary.simpleMessage("٩٠٪"),
         "noRouteFound":
             MessageLookupByLibrary.simpleMessage("لم يتم العثور على المسار"),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../../resources/values_manager.dart';
-import '../../widgets/custom_app_bar.dart';
 import 'widgets/votes_grid_builder.dart';
 import 'widgets/votes_header.dart';
 
@@ -13,7 +12,6 @@ class VotesViewBody extends StatelessWidget {
     return CustomScrollView(
       controller: votesScreenScrollController,
       slivers: const [
-        PersistentAppBar(),
         SliverPadding(
           padding: EdgeInsets.only(
             right: AppSize.s16,

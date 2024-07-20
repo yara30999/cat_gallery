@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../02_home/widgets/custom_app_bar.dart';
+import '../../02_home/widgets/persistenet_header.dart';
 import '../../resources/values_manager.dart';
 import 'widgets/specific_breed_grid_builder.dart';
 import 'widgets/specific_breed_header.dart';
@@ -16,10 +16,10 @@ class SpecificBreedBody extends StatelessWidget {
     return CustomScrollView(
       controller: specificBreedScreenScrollController,
       slivers: const [
-        PersistentAppBar(),
+        PersistentHeader(),
         SliverPadding(
-          padding: EdgeInsets.symmetric(
-              horizontal: AppPadding.p16, vertical: AppPadding.p10),
+          padding:
+              EdgeInsets.symmetric(horizontal: AppPadding.p16, vertical: 0),
           sliver: SliverToBoxAdapter(
             child: SpecificBreedHeader(),
           ),

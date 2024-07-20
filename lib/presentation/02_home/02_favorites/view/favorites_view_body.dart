@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 import '../../../resources/values_manager.dart';
-import '../../widgets/custom_app_bar.dart';
-import 'widgets/uploads_grid_builder.dart';
-import 'widgets/uploads_header.dart';
+import 'widgets/favorites_grid_builder.dart';
+import 'widgets/favorites_header.dart';
 
-class UploadsViewBody extends StatelessWidget {
-  final ScrollController? uploadsScreenScrollController;
-  const UploadsViewBody(
-      {super.key, required this.uploadsScreenScrollController});
+class FavoritesViewBody extends StatelessWidget {
+  final ScrollController? favoratesScreenScrollController;
+  const FavoritesViewBody(
+      {super.key, required this.favoratesScreenScrollController});
 
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
-      controller: uploadsScreenScrollController,
+      controller: favoratesScreenScrollController,
       slivers: const [
-        PersistentAppBar(),
         SliverPadding(
           padding: EdgeInsets.only(
             right: AppSize.s16,
@@ -23,7 +21,7 @@ class UploadsViewBody extends StatelessWidget {
             bottom: 0,
           ),
           sliver: SliverToBoxAdapter(
-            child: UploadsScreenHeader(),
+            child: FavoriteScreenHeader(),
           ),
         ),
         SliverPadding(
@@ -31,7 +29,7 @@ class UploadsViewBody extends StatelessWidget {
             horizontal: AppPadding.p16,
             vertical: AppPadding.p20,
           ),
-          sliver: UploadsScreenGridBuilder(),
+          sliver: FavoritesGridBuilder(),
         ),
       ],
     );

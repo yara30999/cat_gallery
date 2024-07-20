@@ -1100,6 +1100,126 @@ class S {
       args: [],
     );
   }
+
+  /// `Go Back`
+  String get go_back {
+    return Intl.message(
+      'Go Back',
+      name: 'go_back',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mr. `
+  String get mr {
+    return Intl.message(
+      'Mr. ',
+      name: 'mr',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mrs. `
+  String get mrs {
+    return Intl.message(
+      'Mrs. ',
+      name: 'mrs',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `App developer: \nEng. Yara Nasser Elniny\n yaranasserelniny@gmail.com \n 01093017989`
+  String get app_developer {
+    return Intl.message(
+      'App developer: \nEng. Yara Nasser Elniny\n yaranasserelniny@gmail.com \n 01093017989',
+      name: 'app_developer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Theme:`
+  String get Theme {
+    return Intl.message(
+      'Theme:',
+      name: 'Theme',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `System`
+  String get System {
+    return Intl.message(
+      'System',
+      name: 'System',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Light`
+  String get Light {
+    return Intl.message(
+      'Light',
+      name: 'Light',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dark`
+  String get Dark {
+    return Intl.message(
+      'Dark',
+      name: 'Dark',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Language:`
+  String get Language {
+    return Intl.message(
+      'Language:',
+      name: 'Language',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `English`
+  String get English {
+    return Intl.message(
+      'English',
+      name: 'English',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Arabic`
+  String get Arabic {
+    return Intl.message(
+      'Arabic',
+      name: 'Arabic',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Logout account`
+  String get Logout_account {
+    return Intl.message(
+      'Logout account',
+      name: 'Logout_account',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
