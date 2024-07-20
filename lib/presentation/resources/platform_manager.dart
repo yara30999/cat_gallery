@@ -48,3 +48,33 @@ class AdaptiveLayout extends StatelessWidget {
     );
   }
 }
+
+class MiniAdaptiveLayout extends StatelessWidget {
+  const MiniAdaptiveLayout(
+      {super.key,
+      required this.mobileLayout,
+      required this.tabletLayout,
+      required this.desktopLayout});
+  // very important to use WidgetBuilder here
+  final WidgetBuilder mobileLayout;
+  final WidgetBuilder tabletLayout;
+  final WidgetBuilder desktopLayout;
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (BuildContext context, BoxConstraints constraints) {
+        if (constraints.maxWidth < 666.6) {
+          // so this is fun can never be build unless it called
+          return mobileLayout(context);
+        } else if (constraints.maxWidth < 1000) {
+          // so this is fun can never be build unless it called
+          return tabletLayout(context);
+        } else {
+          // so this is fun can never be build unless it called
+          return desktopLayout(context);
+        }
+      },
+    );
+  }
+}

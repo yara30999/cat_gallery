@@ -4,8 +4,8 @@ import '../../../../../domain/entities/cat_breed_card.dart';
 import '../../../../resources/values_manager.dart';
 import 'cat_breed_navigation_item.dart';
 
-class MainBreedsGridBuilder extends StatelessWidget {
-  const MainBreedsGridBuilder({
+class MainBreedsGridBuilderMobile extends StatelessWidget {
+  const MainBreedsGridBuilderMobile({
     super.key,
   });
   // instead of doing (static final List<CatBreedCardInfo> items = [];)

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../../resources/values_manager.dart';
-import 'widgets/main_breeds_grid_builder.dart';
-import 'widgets/main_breeds_header.dart';
+import '../../../resources/platform_manager.dart';
+import 'main_breed_body_desktop.dart';
+import 'main_breed_body_mobile.dart';
+import 'main_breed_body_tablet.dart';
 
 class MainBreedsBody extends StatelessWidget {
   final ScrollController? mainBreedsScreenScrollController;
@@ -12,25 +13,13 @@ class MainBreedsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      controller: mainBreedsScreenScrollController,
-      slivers: const [
-        SliverPadding(
-          padding: EdgeInsets.symmetric(
-            horizontal: AppPadding.p16,
-          ),
-          sliver: SliverToBoxAdapter(
-            child: MainBreedsHeader(),
-          ),
-        ),
-        SliverPadding(
-          padding: EdgeInsets.symmetric(
-            horizontal: AppPadding.p16,
-            vertical: AppPadding.p20,
-          ),
-          sliver: MainBreedsGridBuilder(),
-        ),
-      ],
+    return MiniAdaptiveLayout(
+      mobileLayout: (context) => MainBreedsBodyMobile(
+          mainBreedsScreenScrollController: mainBreedsScreenScrollController),
+      tabletLayout: (context) => MainBreedsBodyTablet(
+          mainBreedsScreenScrollController: mainBreedsScreenScrollController),
+      desktopLayout: (context) => MainBreedsBodyDesktop(
+          mainBreedsScreenScrollController: mainBreedsScreenScrollController),
     );
   }
 }
