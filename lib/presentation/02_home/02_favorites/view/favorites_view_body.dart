@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../../resources/values_manager.dart';
-import 'widgets/favorites_grid_builder.dart';
-import 'widgets/favorites_header.dart';
+import '../../../resources/platform_manager.dart';
+import 'favorites_view_body_desktop.dart';
+import 'favorites_view_body_mobile.dart';
+import 'favorites_view_body_tablet.dart';
 
 class FavoritesViewBody extends StatelessWidget {
   final ScrollController? favoratesScreenScrollController;
@@ -10,28 +11,13 @@ class FavoritesViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      controller: favoratesScreenScrollController,
-      slivers: const [
-        SliverPadding(
-          padding: EdgeInsets.only(
-            right: AppSize.s16,
-            left: AppSize.s16,
-            top: AppSize.s10,
-            bottom: 0,
-          ),
-          sliver: SliverToBoxAdapter(
-            child: FavoriteScreenHeader(),
-          ),
-        ),
-        SliverPadding(
-          padding: EdgeInsets.symmetric(
-            horizontal: AppPadding.p16,
-            vertical: AppPadding.p20,
-          ),
-          sliver: FavoritesGridBuilder(),
-        ),
-      ],
+    return MiniAdaptiveLayout(
+      mobileLayout: (context) => FavoritesViewBodyMobile(
+          favoratesScreenScrollController: favoratesScreenScrollController),
+      tabletLayout: (context) => FavoritesViewBodyTablet(
+          favoratesScreenScrollController: favoratesScreenScrollController),
+      desktopLayout: (context) => FavoritesViewBodyDesktop(
+          favoratesScreenScrollController: favoratesScreenScrollController),
     );
   }
 }
