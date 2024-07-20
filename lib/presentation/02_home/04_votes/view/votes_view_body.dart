@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../../resources/values_manager.dart';
-import 'widgets/votes_grid_builder.dart';
-import 'widgets/votes_header.dart';
+import '../../../resources/platform_manager.dart';
+import 'votes_view_body_desktop.dart';
+import 'votes_view_body_mobile.dart';
+import 'votes_view_body_tablet.dart';
 
 class VotesViewBody extends StatelessWidget {
   final ScrollController? votesScreenScrollController;
@@ -9,28 +10,13 @@ class VotesViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      controller: votesScreenScrollController,
-      slivers: const [
-        SliverPadding(
-          padding: EdgeInsets.only(
-            right: AppSize.s16,
-            left: AppSize.s16,
-            top: AppSize.s10,
-            bottom: 0,
-          ),
-          sliver: SliverToBoxAdapter(
-            child: VotesScreenHeader(),
-          ),
-        ),
-        SliverPadding(
-          padding: EdgeInsets.symmetric(
-            horizontal: AppPadding.p16,
-            vertical: AppPadding.p20,
-          ),
-          sliver: VotesGridBuilder(),
-        ),
-      ],
+    return MiniAdaptiveLayout(
+      mobileLayout: (context) => VotesViewBodyMobile(
+          votesScreenScrollController: votesScreenScrollController),
+      tabletLayout: (context) => VotesViewBodyTablet(
+          votesScreenScrollController: votesScreenScrollController),
+      desktopLayout: (context) => VotesViewBodyDesktop(
+          votesScreenScrollController: votesScreenScrollController),
     );
   }
 }

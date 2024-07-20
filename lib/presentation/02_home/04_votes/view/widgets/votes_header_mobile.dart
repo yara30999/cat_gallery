@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-
 import '../../../../../generated/l10n.dart';
 import '../../../../resources/styles_manager.dart';
 
-class VotesScreenHeader extends StatelessWidget {
-  const VotesScreenHeader({super.key});
+class VotesScreenHeaderMobile extends StatelessWidget {
+  const VotesScreenHeaderMobile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +13,7 @@ class VotesScreenHeader extends StatelessWidget {
       children: [
         Text(
           S.current.Votes,
-          style: Styles.style36Medium(),
+          style: Styles.style18Medium(),
         ),
       ],
     );
