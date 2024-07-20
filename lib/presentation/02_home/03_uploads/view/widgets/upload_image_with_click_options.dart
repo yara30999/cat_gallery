@@ -8,7 +8,6 @@ import '../../../../resources/styles_manager.dart';
 import '../../../../resources/values_manager.dart';
 import '../../../widgets/action_button.dart';
 import '../../../widgets/pinch_zoom_image.dart';
-import '../../../widgets/vote_dialog.dart';
 
 class UploadImageWithClickOptions extends StatelessWidget {
   final CatWithClickEntity catWithClickEntity;
@@ -17,15 +16,6 @@ class UploadImageWithClickOptions extends StatelessWidget {
     super.key,
     required this.catWithClickEntity,
   });
-
-  void _voteButtonOnPress(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) => VoteDialog(
-        vote: catWithClickEntity.vote,
-      ),
-    );
-  }
 
   void _analysisButtonOnPress(BuildContext context) {
     Navigator.pushNamed(context, Routes.analysisRoute);

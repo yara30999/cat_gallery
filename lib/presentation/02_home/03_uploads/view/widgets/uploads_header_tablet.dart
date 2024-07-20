@@ -3,8 +3,8 @@ import '../../../../../generated/l10n.dart';
 import '../../../../resources/color_manager.dart';
 import '../../../../resources/styles_manager.dart';
 
-class UploadsScreenHeader extends StatelessWidget {
-  const UploadsScreenHeader({super.key});
+class UploadsScreenHeaderTablet extends StatelessWidget {
+  const UploadsScreenHeaderTablet({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class UploadsScreenHeader extends StatelessWidget {
       children: [
         Text(
           S.current.Uploads,
-          style: Styles.style36Medium(),
+          style: Styles.style22Medium(),
         ),
         CircleAvatar(
           backgroundColor: Theme.of(context).unselectedWidgetColor,
