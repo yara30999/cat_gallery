@@ -38,7 +38,7 @@ class _HomeViewTabletState extends State<HomeViewTablet> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBody: true,
+      //extendBody: true,
       key: GlobalKeys.scaffoldKey,
       appBar: const CustomAppBar(),
       drawer: const CustomDrawer(),

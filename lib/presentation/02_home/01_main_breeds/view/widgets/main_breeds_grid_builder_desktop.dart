@@ -118,7 +118,7 @@ class MainBreedsGridBuilderDesktop extends StatelessWidget {
       childCount: items.length,
       mainAxisSpacing: AppPadding.p20,
       crossAxisSpacing: AppPadding.p10,
-      crossAxisCount: 5,
+      crossAxisCount: 6,
       itemBuilder: (context, index) {
         return CatBreedNavigationItem(
           catBreedCard: items[index],

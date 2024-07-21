@@ -6,14 +6,17 @@ import '../../../../domain/entities/measurement_data_entity.dart';
 import '../../../../generated/l10n.dart';
 import '../../../resources/color_manager.dart';
 import '../../../resources/language_manager.dart';
-import '../../../resources/styles_manager.dart';
 import '../../../resources/values_manager.dart';
 
 class SpecificBreedBarGraph extends StatefulWidget {
   final CatBreedEntity catBreedEntity;
+  final TextStyle labelsStyle;
+  final double? barWidth;
   const SpecificBreedBarGraph({
     super.key,
     required this.catBreedEntity,
+    required this.labelsStyle,
+    this.barWidth,
   });
 
   @override
@@ -34,7 +37,7 @@ class SpecificBreedBarGraphState extends State<SpecificBreedBarGraph> {
         S.current.five
       ];
 
-  TextStyle get labelsStyle => Styles.style18Medium();
+  //TextStyle get labelsStyle => ;
 
   @override
   void initState() {
@@ -130,7 +133,7 @@ class SpecificBreedBarGraphState extends State<SpecificBreedBarGraph> {
           borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(AppSize.s12),
               topRight: Radius.circular(AppSize.s12)),
-          width: AppSize.s25,
+          width: widget.barWidth ?? AppSize.s25,
           backDrawRodData: BackgroundBarChartRodData(
             show: true,
             fromY: 0,
@@ -185,8 +188,8 @@ class SpecificBreedBarGraphState extends State<SpecificBreedBarGraph> {
     //we can use swich statement on the value
     //but i did this to minimize the code
     Widget text = index >= 0 && index < myMeasurementData.labels.length
-        ? Text(myMeasurementData.labels[index], style: labelsStyle)
-        : Text('', style: labelsStyle);
+        ? Text(myMeasurementData.labels[index], style: widget.labelsStyle)
+        : Text('', style: widget.labelsStyle);
     return SideTitleWidget(
       axisSide: meta.axisSide,
       space: 60,
@@ -208,8 +211,8 @@ class SpecificBreedBarGraphState extends State<SpecificBreedBarGraph> {
     //we can use swich statement on the value
     //but i did this to minimize the code
     Widget text = index >= 0 && index < yAxisLabels.length
-        ? Text(yAxisLabels[index], style: labelsStyle)
-        : Text('', style: labelsStyle);
+        ? Text(yAxisLabels[index], style: widget.labelsStyle)
+        : Text('', style: widget.labelsStyle);
     return SideTitleWidget(
       axisSide: meta.axisSide,
       space: 8,
@@ -229,8 +232,8 @@ class SpecificBreedBarGraphState extends State<SpecificBreedBarGraph> {
     //we can use swich statement on the value
     //but i did this to minimize the code
     Widget text = index >= 0 && index < yAxisLabels.length
-        ? Text(yAxisLabels[index], style: labelsStyle)
-        : Text('', style: labelsStyle);
+        ? Text(yAxisLabels[index], style: widget.labelsStyle)
+        : Text('', style: widget.labelsStyle);
     return SideTitleWidget(
       axisSide: meta.axisSide,
       space: 8,

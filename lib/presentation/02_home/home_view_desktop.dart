@@ -45,7 +45,7 @@ class _HomeViewDesktopState extends State<HomeViewDesktop> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBody: true,
+      //extendBody: true,
       body: Row(
         children: [
           //web drawer ..................................

@@ -5,6 +5,22 @@ import 'color_manager.dart';
 import 'font_manager.dart';
 
 abstract class Styles {
+  static TextStyle style8Medium() {
+    return TextStyle(
+      fontFamily: FontConstants.fontMarhey,
+      fontSize: getResponsiveFontSize(fontSize: FontSize.s8),
+      fontWeight: FontWeightManager.medium,
+    );
+  }
+
+  static TextStyle style10Medium() {
+    return TextStyle(
+      fontFamily: FontConstants.fontMarhey,
+      fontSize: getResponsiveFontSize(fontSize: FontSize.s10),
+      fontWeight: FontWeightManager.medium,
+    );
+  }
+
   static TextStyle style12Medium() {
     return TextStyle(
       fontFamily: FontConstants.fontMarhey,

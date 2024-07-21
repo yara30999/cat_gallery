@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import '../../../../app/functions.dart';
 import '../../../../domain/entities/cat_breed_entity.dart';
 import '../../../../generated/l10n.dart';
+import '../../../resources/color_manager.dart';
 import '../../../resources/styles_manager.dart';
 import 'specific_breed_bar_graph.dart';
 import 'specific_breed_info.dart';
 
-class SpecificBreedHeader extends StatelessWidget {
-  const SpecificBreedHeader({super.key});
+class SpecificBreedHeaderMobile extends StatelessWidget {
+  const SpecificBreedHeaderMobile({super.key});
 
   CatBreedEntity get dummyCatBreed => const CatBreedEntity(
       weight: Weight(imperial: '7 - 10', metric: '3 - 5'),
@@ -65,14 +67,19 @@ class SpecificBreedHeader extends StatelessWidget {
           fit: BoxFit.scaleDown,
           child: Text(
             S.current.breed_cat_images(dummyCatBreed.name),
-            style: Styles.style36Medium(),
+            style: Styles.style18Medium(),
           ),
         ),
         SpecificBreedInformation(
           catBreedEntity: dummyCatBreed,
+          baseTextStyle: Styles.style16Medium().copyWith(
+              color: isLightTheme(context)
+                  ? ColorManager.black
+                  : ColorManager.white),
         ),
         SpecificBreedBarGraph(
           catBreedEntity: dummyCatBreed,
+          labelsStyle: Styles.style16Medium(),
         ),
       ],
     );

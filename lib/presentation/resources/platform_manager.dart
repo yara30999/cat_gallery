@@ -64,10 +64,10 @@ class MiniAdaptiveLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
-        if (constraints.maxWidth < 666.6) {
+        if (MediaQuery.sizeOf(context).width < 800) {
           // so this is fun can never be build unless it called
           return mobileLayout(context);
-        } else if (constraints.maxWidth < 1000) {
+        } else if (MediaQuery.sizeOf(context).width < 1200) {
           // so this is fun can never be build unless it called
           return tabletLayout(context);
         } else {

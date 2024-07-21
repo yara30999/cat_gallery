@@ -6,12 +6,13 @@ import '../../../../app/functions.dart';
 import '../../../../domain/entities/cat_breed_entity.dart';
 import '../../../../generated/l10n.dart';
 import '../../../resources/color_manager.dart';
-import '../../../resources/styles_manager.dart';
 import '../../../resources/values_manager.dart';
 
 class SpecificBreedInformation extends StatefulWidget {
-  const SpecificBreedInformation({super.key, required this.catBreedEntity});
+  const SpecificBreedInformation(
+      {super.key, required this.catBreedEntity, required this.baseTextStyle});
   final CatBreedEntity catBreedEntity;
+  final TextStyle baseTextStyle;
 
   @override
   State<SpecificBreedInformation> createState() =>
@@ -48,17 +49,15 @@ class _SpecificBreedInformationState extends State<SpecificBreedInformation> {
 
   @override
   Widget build(BuildContext context) {
-    final TextStyle baseTextStyle = Styles.style22Medium().copyWith(
-        color: isLightTheme(context) ? ColorManager.black : ColorManager.white);
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(AppSize.s20),
         child: Column(
           children: [
             RichText(
-              maxLines: 70,
+              maxLines: 30,
               text: TextSpan(
-                style: baseTextStyle,
+                style: widget.baseTextStyle,
                 children: [
                   TextSpan(text: widget.catBreedEntity.description),
                   const TextSpan(text: '\n\n'),
