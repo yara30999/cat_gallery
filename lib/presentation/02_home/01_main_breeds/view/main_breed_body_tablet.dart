@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../resources/styles_manager.dart';
 import '../../../resources/values_manager.dart';
-import 'widgets/main_breeds_grid_builder_tablet.dart';
+import 'widgets/main_breeds_grid_builder.dart';
 import 'widgets/main_breeds_header.dart';
 
 class MainBreedsBodyTablet extends StatelessWidget {
@@ -31,7 +31,9 @@ class MainBreedsBodyTablet extends StatelessWidget {
             horizontal: AppPadding.p60,
             vertical: AppPadding.p20,
           ),
-          sliver: MainBreedsGridBuilderTablet(),
+          sliver: MainBreedsGridBuilder(
+            columnNumbers: 4,
+          ),
         ),
       ],
     );

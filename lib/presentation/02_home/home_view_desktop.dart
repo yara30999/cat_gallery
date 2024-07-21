@@ -86,12 +86,13 @@ class _HomeViewDesktopState extends State<HomeViewDesktop> {
                     SliverList.builder(
                       itemCount: items.length,
                       itemBuilder: (context, index) {
-                        return GestureDetector(
-                          onTap: () {
-                            onTabTapped(index);
-                          },
-                          child: Padding(
-                            padding: const EdgeInsets.only(top: AppPadding.p10),
+                        return Padding(
+                          padding: const EdgeInsets.only(top: AppPadding.p10),
+                          child: InkWell(
+                            mouseCursor: SystemMouseCursors.click,
+                            onTap: () {
+                              onTabTapped(index);
+                            },
                             child: DrawerItem(
                               drawerItemEntity: items[index],
                               isActive: _currentPage == index,
@@ -127,10 +128,14 @@ class _HomeViewDesktopState extends State<HomeViewDesktop> {
                           const SizedBox(
                             height: AppSize.s5,
                           ),
-                          ActiveDrawerItem(
-                            drawerItemEntity: DrawerItemEntity(
-                                title: S.current.Logout_account,
-                                icon: Icons.exit_to_app_outlined),
+                          InkWell(
+                            onTap: () {},
+                            mouseCursor: SystemMouseCursors.click,
+                            child: ActiveDrawerItem(
+                              drawerItemEntity: DrawerItemEntity(
+                                  title: S.current.Logout_account,
+                                  icon: Icons.exit_to_app_outlined),
+                            ),
                           ),
                           const SizedBox(
                             height: AppSize.s15,

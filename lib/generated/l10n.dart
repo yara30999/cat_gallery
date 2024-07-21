@@ -1220,6 +1220,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Failed to load image.`
+  String get Failed_to_load_image {
+    return Intl.message(
+      'Failed to load image.',
+      name: 'Failed_to_load_image',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

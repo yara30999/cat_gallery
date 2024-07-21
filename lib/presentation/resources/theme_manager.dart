@@ -51,6 +51,20 @@ ThemeData getLightTheme() {
         buttonColor: ColorManager.primary1,
         splashColor: ColorManager.brown1),
 
+    // progress indicator
+    progressIndicatorTheme: const ProgressIndicatorThemeData(
+      // Color of the progress indicator
+      color: ColorManager.primary2,
+      // Color of the track for circular progress indicator
+      circularTrackColor: Colors.transparent,
+      // Color of the track for linear progress indicator
+      linearTrackColor: Colors.transparent,
+      // Minimum height for linear progress indicator
+      linearMinHeight: 5.0,
+      // Background color for refresh indicators
+      refreshBackgroundColor: ColorManager.primary2,
+    ),
+
     // elevated button them
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
@@ -164,6 +178,20 @@ ThemeData getDarkTheme() {
         disabledColor: ColorManager.brown1,
         buttonColor: ColorManager.orange3,
         splashColor: ColorManager.brown1),
+
+    // progress indicator
+    progressIndicatorTheme: const ProgressIndicatorThemeData(
+      // Color of the progress indicator
+      color: ColorManager.orange2,
+      // Color of the track for circular progress indicator
+      circularTrackColor: Colors.transparent,
+      // Color of the track for linear progress indicator
+      linearTrackColor: Colors.transparent,
+      // Minimum height for linear progress indicator
+      linearMinHeight: 5.0,
+      // Background color for refresh indicators
+      refreshBackgroundColor: ColorManager.orange2,
+    ),
 
     // elevated button them
     elevatedButtonTheme: ElevatedButtonThemeData(

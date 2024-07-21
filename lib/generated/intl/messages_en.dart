@@ -45,6 +45,8 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Browse random images of all breeds."),
         "Dark": MessageLookupByLibrary.simpleMessage("Dark"),
         "English": MessageLookupByLibrary.simpleMessage("English"),
+        "Failed_to_load_image":
+            MessageLookupByLibrary.simpleMessage("Failed to load image."),
         "Favorites": MessageLookupByLibrary.simpleMessage("Favorites"),
         "Home": MessageLookupByLibrary.simpleMessage("Home"),
         "Language": MessageLookupByLibrary.simpleMessage("Language:"),

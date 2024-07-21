@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import '../../../domain/entities/cat_with_click_entity.dart';
 import '../../resources/platform_manager.dart';
 import '../../resources/routes_manager.dart';
-import 'pinch_zoom_image.dart';
+import 'images_widgets/cat_cashed_image.dart';
+import 'images_widgets/cat_network_image.dart';
+import 'images_widgets/cat_pinch_zoom_image.dart';
 import '../../resources/values_manager.dart';
 import 'action_button.dart';
 import 'favorite_button.dart';
@@ -35,15 +37,14 @@ class CatImageWithClickOptions extends StatelessWidget {
       elevation: AppSize.s8,
       child: Column(
         children: [
-          isWebOrDesktopApp()
-              ? Image.network(
-                  catWithClickEntity.imageUrl,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
-                )
-              : PinchZoomImage(
-                  assetName: catWithClickEntity.imageUrl,
-                ),
+          DeviceWidget(
+              androidIos: (context) => CatPinchZoomImage(
+                    assetName: catWithClickEntity.imageUrl,
+                  ),
+              web: (context) =>
+                  CatNetworkImage(imgUrl: catWithClickEntity.imageUrl),
+              desktop: (context) =>
+                  CatCashedImage(imgUrl: catWithClickEntity.imageUrl)),
           _buildActionRow(context),
         ],
       ),

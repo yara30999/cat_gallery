@@ -115,5 +115,6 @@
   "Language": "Language:",
   "English": "English",
   "Arabic": "Arabic",
-  "Logout_account": "Logout account"
+  "Logout_account": "Logout account",
+  "Failed_to_load_image": "Failed to load image."
 }

@@ -107,13 +107,14 @@
   "go_back": "رجوع",
   "mr": "السيد ",
   "mrs": "السيدة ",
-  "app_developer": "مطور التطبيق: \nم. يارا ناصر النني\n yaranasserelniny@gmail.com \n 01093017989",
-  "Theme": "الموضوع:",
+  "app_developer": "مطور التطبيق: \nم. يارا ناصر الدين النني\n yaranasserelniny@gmail.com \n 01093017989",
+  "Theme": "السمة:",
   "System": "النظام",
   "Light": "فاتح",
   "Dark": "داكن",
   "Language": "اللغة:",
   "English": "إنجليزي",
   "Arabic": "عربي",
-  "Logout_account": "تسجيل خروج "
+  "Logout_account": "تسجيل خروج ",
+  "Failed_to_load_image": "فشل تحميل الصورة."
 }

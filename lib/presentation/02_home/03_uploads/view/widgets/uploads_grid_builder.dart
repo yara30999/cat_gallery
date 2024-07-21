@@ -12,7 +12,7 @@ class UploadsScreenGridBuilder extends StatelessWidget {
         const CatWithClickEntity(
             imageId: '123456789',
             imageUrl:
-                "https://i.pinimg.com/736x/e6/9b/6f/e69b6feb89a524682cf149d527026893--chats-tabby-tabby-cats.jpg",
+                "https://t3.ftcdn.net/jpg/06/05/37/40/360_F_605374009_hEUHatmKPzuHTIacg7rLneAgnLHUgegM.jpg",
             favorite: null,
             vote: Vote(id: '252536945', value: 5),
             categories: [Category(id: '1252525666', name: 'hats')],
@@ -21,7 +21,7 @@ class UploadsScreenGridBuilder extends StatelessWidget {
         const CatWithClickEntity(
             imageId: '123456789',
             imageUrl:
-                "https://i.pinimg.com/736x/e6/9b/6f/e69b6feb89a524682cf149d527026893--chats-tabby-tabby-cats.jpg",
+                "https://t3.ftcdn.net/jpg/06/05/37/40/360_F_605374009_hEUHatmKPzuHTIacg7rLneAgnLHUgegM.jpg",
             favorite: null,
             vote: Vote(id: '252536945', value: 9),
             categories: null,
@@ -30,14 +30,14 @@ class UploadsScreenGridBuilder extends StatelessWidget {
         const CatWithClickEntity(
             imageId: '123456789',
             imageUrl:
-                "https://i.pinimg.com/736x/e6/9b/6f/e69b6feb89a524682cf149d527026893--chats-tabby-tabby-cats.jpg",
+                "https://t3.ftcdn.net/jpg/06/05/37/40/360_F_605374009_hEUHatmKPzuHTIacg7rLneAgnLHUgegM.jpg",
             favorite: null,
             vote: Vote(id: '252536945', value: -4),
             createdAt: '2024-06-26T09:20:11.000Z'),
         const CatWithClickEntity(
             imageId: '123456789',
             imageUrl:
-                "https://i.pinimg.com/736x/e6/9b/6f/e69b6feb89a524682cf149d527026893--chats-tabby-tabby-cats.jpg",
+                "https://t3.ftcdn.net/jpg/06/05/37/40/360_F_605374009_hEUHatmKPzuHTIacg7rLneAgnLHUgegM.jpg",
             favorite: null,
             vote: null,
             categories: [Category(id: '1252525666', name: 'hats')],
@@ -46,14 +46,14 @@ class UploadsScreenGridBuilder extends StatelessWidget {
         const CatWithClickEntity(
             imageId: '123456789',
             imageUrl:
-                "https://i.pinimg.com/736x/e6/9b/6f/e69b6feb89a524682cf149d527026893--chats-tabby-tabby-cats.jpg",
+                "https://t3.ftcdn.net/jpg/06/05/37/40/360_F_605374009_hEUHatmKPzuHTIacg7rLneAgnLHUgegM.jpg",
             favorite: null,
             vote: null,
             createdAt: '2024-07-19T02:02:35.000Z'),
         const CatWithClickEntity(
             imageId: '123456789',
             imageUrl:
-                "https://i.pinimg.com/736x/e6/9b/6f/e69b6feb89a524682cf149d527026893--chats-tabby-tabby-cats.jpg",
+                "https://t3.ftcdn.net/jpg/06/05/37/40/360_F_605374009_hEUHatmKPzuHTIacg7rLneAgnLHUgegM.jpg",
             favorite: null,
             vote: null,
             categories: [Category(id: '1252525666', name: 'hats')],

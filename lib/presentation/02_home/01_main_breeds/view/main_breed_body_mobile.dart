@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../resources/styles_manager.dart';
 import '../../../resources/values_manager.dart';
-import 'widgets/main_breeds_grid_builder_mobile.dart';
+import 'widgets/main_breeds_grid_builder.dart';
 import 'widgets/main_breeds_header.dart';
 
 class MainBreedsBodyMobile extends StatelessWidget {
@@ -31,7 +31,9 @@ class MainBreedsBodyMobile extends StatelessWidget {
             horizontal: AppPadding.p16,
             vertical: AppPadding.p20,
           ),
-          sliver: MainBreedsGridBuilderMobile(),
+          sliver: MainBreedsGridBuilder(
+            columnNumbers: 2,
+          ),
         ),
       ],
     );

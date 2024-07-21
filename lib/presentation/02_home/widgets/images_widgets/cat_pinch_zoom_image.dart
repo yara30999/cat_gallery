@@ -1,18 +1,16 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import '../../resources/color_manager.dart';
-import '../../resources/values_manager.dart';
-import 'custom_fade_image.dart';
+import '../../../resources/color_manager.dart';
+import 'cat_cashed_image.dart';
 
-class PinchZoomImage extends StatefulWidget {
+class CatPinchZoomImage extends StatefulWidget {
   final String assetName;
-  const PinchZoomImage({super.key, required this.assetName});
+  const CatPinchZoomImage({super.key, required this.assetName});
 
   @override
-  State<PinchZoomImage> createState() => _PinchZoomImageState();
+  State<CatPinchZoomImage> createState() => _CatPinchZoomImageState();
 }
 
-class _PinchZoomImageState extends State<PinchZoomImage>
+class _CatPinchZoomImageState extends State<CatPinchZoomImage>
     with SingleTickerProviderStateMixin {
   final double minScale = 1;
   final double maxScale = 4;
@@ -113,16 +111,7 @@ class _PinchZoomImageState extends State<PinchZoomImage>
           scale = details.scale;
           entry!.markNeedsBuild();
         },
-        child: CachedNetworkImage(
-          fit: BoxFit.cover,
-          width: double.infinity,
-          imageUrl: widget.assetName,
-          errorWidget: (context, url, error) => const Icon(Icons.error),
-          placeholder: (context, url) => const SizedBox(
-              width: double.infinity,
-              height: AppSize.s160,
-              child: CustomFadingImage()),
-        ),
+        child: CatCashedImage(imgUrl: widget.assetName),
       ),
     );
   }

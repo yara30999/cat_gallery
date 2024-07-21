@@ -28,14 +28,17 @@ class CustomDrawer extends StatelessWidget {
             SliverToBoxAdapter(
               child: Material(
                 color: Theme.of(context).primaryColor,
-                child: SizedBox(
-                  height: AppSize.s60,
-                  width: double.infinity,
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(
+                    minHeight: AppSize.s60,
+                  ),
                   child: Center(
-                    child: Text(
-                      S.current.cat_gallery,
-                      style: Styles.style36Medium()
-                          .copyWith(color: ColorManager.white),
+                    child: SafeArea(
+                      child: Text(
+                        S.current.cat_gallery,
+                        style: Styles.style36Medium()
+                            .copyWith(color: ColorManager.white),
+                      ),
                     ),
                   ),
                 ),
@@ -76,10 +79,14 @@ class CustomDrawer extends StatelessWidget {
                   const SizedBox(
                     height: AppSize.s5,
                   ),
-                  ActiveDrawerItem(
-                    drawerItemEntity: DrawerItemEntity(
-                        title: S.current.Logout_account,
-                        icon: Icons.exit_to_app_outlined),
+                  InkWell(
+                    onTap: () {},
+                    mouseCursor: SystemMouseCursors.click,
+                    child: ActiveDrawerItem(
+                      drawerItemEntity: DrawerItemEntity(
+                          title: S.current.Logout_account,
+                          icon: Icons.exit_to_app_outlined),
+                    ),
                   ),
                   const SizedBox(
                     height: AppSize.s28,

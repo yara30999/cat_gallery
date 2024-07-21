@@ -7,7 +7,9 @@ import '../../../../resources/routes_manager.dart';
 import '../../../../resources/styles_manager.dart';
 import '../../../../resources/values_manager.dart';
 import '../../../widgets/action_button.dart';
-import '../../../widgets/pinch_zoom_image.dart';
+import '../../../widgets/images_widgets/cat_cashed_image.dart';
+import '../../../widgets/images_widgets/cat_network_image.dart';
+import '../../../widgets/images_widgets/cat_pinch_zoom_image.dart';
 
 class UploadImageWithClickOptions extends StatelessWidget {
   final CatWithClickEntity catWithClickEntity;
@@ -27,15 +29,14 @@ class UploadImageWithClickOptions extends StatelessWidget {
       elevation: AppSize.s8,
       child: Column(
         children: [
-          isWebOrDesktopApp()
-              ? Image.network(
-                  catWithClickEntity.imageUrl,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
-                )
-              : PinchZoomImage(
-                  assetName: catWithClickEntity.imageUrl,
-                ),
+          DeviceWidget(
+              androidIos: (context) => CatPinchZoomImage(
+                    assetName: catWithClickEntity.imageUrl,
+                  ),
+              web: (context) =>
+                  CatNetworkImage(imgUrl: catWithClickEntity.imageUrl),
+              desktop: (context) =>
+                  CatCashedImage(imgUrl: catWithClickEntity.imageUrl)),
           _buildActionRow(context),
         ],
       ),

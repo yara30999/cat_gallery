@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../resources/styles_manager.dart';
 import '../../../resources/values_manager.dart';
-import 'widgets/main_breeds_grid_builder_desktop.dart';
+import 'widgets/main_breeds_grid_builder.dart';
 import 'widgets/main_breeds_header.dart';
 
 class MainBreedsBodyDesktop extends StatelessWidget {
@@ -31,7 +31,9 @@ class MainBreedsBodyDesktop extends StatelessWidget {
             horizontal: AppPadding.p100,
             vertical: AppPadding.p20,
           ),
-          sliver: MainBreedsGridBuilderDesktop(),
+          sliver: MainBreedsGridBuilder(
+            columnNumbers: 6,
+          ),
         ),
       ],
     );

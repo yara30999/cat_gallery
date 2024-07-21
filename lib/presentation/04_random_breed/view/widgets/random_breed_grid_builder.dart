@@ -13,7 +13,7 @@ class RandomBreedGridBuilder extends StatelessWidget {
         const CatWithClickEntity(
             imageId: '123456789',
             imageUrl:
-                "https://i.pinimg.com/736x/e6/9b/6f/e69b6feb89a524682cf149d527026893--chats-tabby-tabby-cats.jpg",
+                "https://t3.ftcdn.net/jpg/06/05/37/40/360_F_605374009_hEUHatmKPzuHTIacg7rLneAgnLHUgegM.jpg",
             favorite: Favorite(id: '1234567555'),
             vote: Vote(id: '252536945', value: 5),
             categories: [Category(id: '1252525666', name: 'hats')],
@@ -21,7 +21,7 @@ class RandomBreedGridBuilder extends StatelessWidget {
         const CatWithClickEntity(
             imageId: '123456789',
             imageUrl:
-                "https://i.pinimg.com/736x/e6/9b/6f/e69b6feb89a524682cf149d527026893--chats-tabby-tabby-cats.jpg",
+                "https://t3.ftcdn.net/jpg/06/05/37/40/360_F_605374009_hEUHatmKPzuHTIacg7rLneAgnLHUgegM.jpg",
             favorite: null,
             vote: Vote(id: '252536945', value: 9),
             categories: null,
@@ -29,7 +29,7 @@ class RandomBreedGridBuilder extends StatelessWidget {
         const CatWithClickEntity(
             imageId: '123456789',
             imageUrl:
-                "https://i.pinimg.com/736x/e6/9b/6f/e69b6feb89a524682cf149d527026893--chats-tabby-tabby-cats.jpg",
+                "https://t3.ftcdn.net/jpg/06/05/37/40/360_F_605374009_hEUHatmKPzuHTIacg7rLneAgnLHUgegM.jpg",
             favorite: Favorite(id: '1234567555'),
             vote: Vote(id: '252536945', value: -4),
             categories: null,
@@ -37,7 +37,7 @@ class RandomBreedGridBuilder extends StatelessWidget {
         const CatWithClickEntity(
             imageId: '123456789',
             imageUrl:
-                "https://i.pinimg.com/736x/e6/9b/6f/e69b6feb89a524682cf149d527026893--chats-tabby-tabby-cats.jpg",
+                "https://t3.ftcdn.net/jpg/06/05/37/40/360_F_605374009_hEUHatmKPzuHTIacg7rLneAgnLHUgegM.jpg",
             favorite: Favorite(id: '1234567555'),
             vote: null,
             categories: [Category(id: '1252525666', name: 'hats')],
@@ -45,7 +45,7 @@ class RandomBreedGridBuilder extends StatelessWidget {
         const CatWithClickEntity(
             imageId: '123456789',
             imageUrl:
-                "https://i.pinimg.com/736x/e6/9b/6f/e69b6feb89a524682cf149d527026893--chats-tabby-tabby-cats.jpg",
+                "https://t3.ftcdn.net/jpg/06/05/37/40/360_F_605374009_hEUHatmKPzuHTIacg7rLneAgnLHUgegM.jpg",
             favorite: null,
             vote: null,
             categories: null,
@@ -53,7 +53,7 @@ class RandomBreedGridBuilder extends StatelessWidget {
         const CatWithClickEntity(
             imageId: '123456789',
             imageUrl:
-                "https://i.pinimg.com/736x/e6/9b/6f/e69b6feb89a524682cf149d527026893--chats-tabby-tabby-cats.jpg",
+                "https://t3.ftcdn.net/jpg/06/05/37/40/360_F_605374009_hEUHatmKPzuHTIacg7rLneAgnLHUgegM.jpg",
             favorite: null,
             vote: null,
             categories: null,

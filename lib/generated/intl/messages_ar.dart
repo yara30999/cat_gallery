@@ -43,6 +43,8 @@ class MessageLookup extends MessageLookupByLibrary {
                 "تصفح الصور العشوائية لجميع السلالات."),
         "Dark": MessageLookupByLibrary.simpleMessage("داكن"),
         "English": MessageLookupByLibrary.simpleMessage("إنجليزي"),
+        "Failed_to_load_image":
+            MessageLookupByLibrary.simpleMessage("فشل تحميل الصورة."),
         "Favorites": MessageLookupByLibrary.simpleMessage("المفضلة"),
         "Home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
         "Language": MessageLookupByLibrary.simpleMessage("اللغة:"),
@@ -51,7 +53,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Search_by_breed_name":
             MessageLookupByLibrary.simpleMessage("إبحث حسب إسم السلاله ..."),
         "System": MessageLookupByLibrary.simpleMessage("النظام"),
-        "Theme": MessageLookupByLibrary.simpleMessage("الموضوع:"),
+        "Theme": MessageLookupByLibrary.simpleMessage("السمة:"),
         "Uploads": MessageLookupByLibrary.simpleMessage("الملفات المرفوعة"),
         "Vote": MessageLookupByLibrary.simpleMessage("صوت"),
         "Votes": MessageLookupByLibrary.simpleMessage("التصويتات"),
@@ -63,7 +65,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "appTitle": MessageLookupByLibrary.simpleMessage(
             "تطبيق معلومات القطط باستخدام فلاتر"),
         "app_developer": MessageLookupByLibrary.simpleMessage(
-            "مطور التطبيق: \nم. يارا ناصر النني\n yaranasserelniny@gmail.com \n 01093017989"),
+            "مطور التطبيق: \nم. يارا ناصر الدين النني\n yaranasserelniny@gmail.com \n 01093017989"),
         "asc": MessageLookupByLibrary.simpleMessage("تصاعدي"),
         "boxes": MessageLookupByLibrary.simpleMessage("صناديق"),
         "boys": MessageLookupByLibrary.simpleMessage("أولاد"),

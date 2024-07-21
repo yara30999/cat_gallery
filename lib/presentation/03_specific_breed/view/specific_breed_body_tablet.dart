@@ -26,7 +26,7 @@ class SpecificBreedBodyTablet extends StatelessWidget {
         ),
         SliverPadding(
           padding: EdgeInsets.symmetric(
-            horizontal: AppPadding.p100,
+            horizontal: AppPadding.p200,
             vertical: AppPadding.p20,
           ),
           sliver: SpecificBreedGridBuilder(),

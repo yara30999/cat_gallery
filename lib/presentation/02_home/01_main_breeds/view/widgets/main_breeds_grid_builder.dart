@@ -4,10 +4,12 @@ import '../../../../../domain/entities/cat_breed_card.dart';
 import '../../../../resources/values_manager.dart';
 import 'cat_breed_navigation_item.dart';
 
-class MainBreedsGridBuilderDesktop extends StatelessWidget {
-  const MainBreedsGridBuilderDesktop({
+class MainBreedsGridBuilder extends StatelessWidget {
+  const MainBreedsGridBuilder({
     super.key,
+    required this.columnNumbers,
   });
+  final int columnNumbers;
   // instead of doing (static final List<CatBreedCardInfo> items = [];)
   List<CatBreedCardEntity> get items => [
         const CatBreedCardEntity(
@@ -118,7 +120,7 @@ class MainBreedsGridBuilderDesktop extends StatelessWidget {
       childCount: items.length,
       mainAxisSpacing: AppPadding.p20,
       crossAxisSpacing: AppPadding.p10,
-      crossAxisCount: 6,
+      crossAxisCount: columnNumbers,
       itemBuilder: (context, index) {
         return CatBreedNavigationItem(
           catBreedCard: items[index],
