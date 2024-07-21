@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 
 import '../../../../../domain/entities/cat_breed_card.dart';
 import '../../../../resources/color_manager.dart';
+import '../../../../resources/platform_manager.dart';
 import '../../../../resources/routes_manager.dart';
 import '../../../../resources/styles_manager.dart';
 import '../../../../resources/values_manager.dart';
+import '../../../widgets/images_widgets/cat_cashed_image.dart';
+import '../../../widgets/images_widgets/cat_network_image.dart';
 
 class CatBreedNavigationItem extends StatelessWidget {
   final CatBreedCardEntity catBreedCard;
@@ -30,11 +33,14 @@ class CatBreedNavigationItem extends StatelessWidget {
         color: Theme.of(context).disabledColor,
         child: Column(
           children: [
-            Image.asset(
-              catBreedCard.referenceImgurl,
-              fit: BoxFit.cover,
-              width: double.infinity,
-            ),
+            DeviceWidget(
+                androidIos: (context) => CatCashedImage(
+                      imgUrl: catBreedCard.referenceImgurl,
+                    ),
+                web: (context) =>
+                    CatNetworkImage(imgUrl: catBreedCard.referenceImgurl),
+                desktop: (context) =>
+                    CatCashedImage(imgUrl: catBreedCard.referenceImgurl)),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(catBreedCard.breedName,

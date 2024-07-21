@@ -3,8 +3,8 @@ import '../../../resources/color_manager.dart';
 import 'cat_cashed_image.dart';
 
 class CatPinchZoomImage extends StatefulWidget {
-  final String assetName;
-  const CatPinchZoomImage({super.key, required this.assetName});
+  final String imgUrl;
+  const CatPinchZoomImage({super.key, required this.imgUrl});
 
   @override
   State<CatPinchZoomImage> createState() => _CatPinchZoomImageState();
@@ -111,7 +111,7 @@ class _CatPinchZoomImageState extends State<CatPinchZoomImage>
           scale = details.scale;
           entry!.markNeedsBuild();
         },
-        child: CatCashedImage(imgUrl: widget.assetName),
+        child: CatCashedImage(imgUrl: widget.imgUrl),
       ),
     );
   }
