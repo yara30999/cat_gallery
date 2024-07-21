@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import '../../../../../generated/l10n.dart';
 import '../../../../resources/color_manager.dart';
-import '../../../../resources/styles_manager.dart';
 
-class UploadsScreenHeaderTablet extends StatelessWidget {
-  const UploadsScreenHeaderTablet({super.key});
+class UploadsScreenHeader extends StatelessWidget {
+  const UploadsScreenHeader({super.key, required this.headerStyle});
+  final TextStyle headerStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class UploadsScreenHeaderTablet extends StatelessWidget {
       children: [
         Text(
           S.current.Uploads,
-          style: Styles.style22Medium(),
+          style: headerStyle,
         ),
         CircleAvatar(
           backgroundColor: Theme.of(context).unselectedWidgetColor,

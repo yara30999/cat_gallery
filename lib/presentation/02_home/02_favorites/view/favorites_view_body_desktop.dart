@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import '../../../resources/styles_manager.dart';
 import '../../../resources/values_manager.dart';
 import 'widgets/favorites_grid_builder.dart';
-import 'widgets/favorites_header_desktop.dart';
+import 'widgets/favorites_header.dart';
 
 class FavoritesViewBodyDesktop extends StatelessWidget {
   final ScrollController? favoratesScreenScrollController;
@@ -12,19 +13,21 @@ class FavoritesViewBodyDesktop extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       controller: favoratesScreenScrollController,
-      slivers: const [
+      slivers: [
         SliverPadding(
-          padding: EdgeInsets.only(
+          padding: const EdgeInsets.only(
             right: AppSize.s60,
             left: AppSize.s60,
             top: AppSize.s10,
             bottom: 0,
           ),
           sliver: SliverToBoxAdapter(
-            child: FavoriteScreenHeaderDesktop(),
+            child: FavoriteScreenHeader(
+              headerStyle: Styles.style36Medium(),
+            ),
           ),
         ),
-        SliverPadding(
+        const SliverPadding(
           padding: EdgeInsets.symmetric(
             horizontal: AppPadding.p340,
             vertical: AppPadding.p20,

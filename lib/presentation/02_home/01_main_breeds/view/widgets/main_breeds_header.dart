@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import '../../../../../generated/l10n.dart';
-import '../../../../resources/styles_manager.dart';
 import '../../../../resources/values_manager.dart';
 import '../../../widgets/custom_search_field.dart';
 import 'paragraph_with_click.dart';
 
-class MainBreedsHeaderDesktop extends StatelessWidget {
-  const MainBreedsHeaderDesktop({
+class MainBreedsHeader extends StatelessWidget {
+  const MainBreedsHeader({
     super.key,
+    required this.headerStyle,
   });
+  final TextStyle headerStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class MainBreedsHeaderDesktop extends StatelessWidget {
         ),
         Text(
           S.current.main_breeds,
-          style: Styles.style36Medium(),
+          style: headerStyle,
         ),
         const CustomSearchField(),
         const SizedBox(

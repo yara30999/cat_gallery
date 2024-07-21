@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import '../../../resources/styles_manager.dart';
 import '../../../resources/values_manager.dart';
 import 'widgets/main_breeds_grid_builder_desktop.dart';
-import 'widgets/main_breeds_header_desktop.dart';
+import 'widgets/main_breeds_header.dart';
 
 class MainBreedsBodyDesktop extends StatelessWidget {
   final ScrollController? mainBreedsScreenScrollController;
@@ -14,16 +15,18 @@ class MainBreedsBodyDesktop extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       controller: mainBreedsScreenScrollController,
-      slivers: const [
+      slivers: [
         SliverPadding(
-          padding: EdgeInsets.symmetric(
+          padding: const EdgeInsets.symmetric(
             horizontal: AppPadding.p60,
           ),
           sliver: SliverToBoxAdapter(
-            child: MainBreedsHeaderDesktop(),
+            child: MainBreedsHeader(
+              headerStyle: Styles.style36Medium(),
+            ),
           ),
         ),
-        SliverPadding(
+        const SliverPadding(
           padding: EdgeInsets.symmetric(
             horizontal: AppPadding.p100,
             vertical: AppPadding.p20,

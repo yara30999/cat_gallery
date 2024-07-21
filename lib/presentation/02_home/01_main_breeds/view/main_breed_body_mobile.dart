@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import '../../../resources/styles_manager.dart';
 import '../../../resources/values_manager.dart';
 import 'widgets/main_breeds_grid_builder_mobile.dart';
-import 'widgets/main_breeds_header_mobile.dart';
+import 'widgets/main_breeds_header.dart';
 
 class MainBreedsBodyMobile extends StatelessWidget {
   final ScrollController? mainBreedsScreenScrollController;
@@ -14,16 +15,18 @@ class MainBreedsBodyMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       controller: mainBreedsScreenScrollController,
-      slivers: const [
+      slivers: [
         SliverPadding(
-          padding: EdgeInsets.symmetric(
+          padding: const EdgeInsets.symmetric(
             horizontal: AppPadding.p16,
           ),
           sliver: SliverToBoxAdapter(
-            child: MainBreedsHeaderMobile(),
+            child: MainBreedsHeader(
+              headerStyle: Styles.style18Medium(),
+            ),
           ),
         ),
-        SliverPadding(
+        const SliverPadding(
           padding: EdgeInsets.symmetric(
             horizontal: AppPadding.p16,
             vertical: AppPadding.p20,

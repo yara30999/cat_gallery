@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import '../../../resources/styles_manager.dart';
 import '../../../resources/values_manager.dart';
 import 'widgets/votes_grid_builder.dart';
-import 'widgets/votes_header_mobile.dart';
+import 'widgets/votes_header.dart';
 
 class VotesViewBodyMobile extends StatelessWidget {
   final ScrollController? votesScreenScrollController;
@@ -12,19 +13,21 @@ class VotesViewBodyMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       controller: votesScreenScrollController,
-      slivers: const [
+      slivers: [
         SliverPadding(
-          padding: EdgeInsets.only(
+          padding: const EdgeInsets.only(
             right: AppSize.s16,
             left: AppSize.s16,
             top: AppSize.s10,
             bottom: 0,
           ),
           sliver: SliverToBoxAdapter(
-            child: VotesScreenHeaderMobile(),
+            child: VotesScreenHeader(
+              headerStyle: Styles.style18Medium(),
+            ),
           ),
         ),
-        SliverPadding(
+        const SliverPadding(
           padding: EdgeInsets.symmetric(
             horizontal: AppPadding.p16,
             vertical: AppPadding.p20,
