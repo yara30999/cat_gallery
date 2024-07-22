@@ -144,22 +144,28 @@ class InformationBody extends StatelessWidget {
               const SizedBox(
                 height: AppSize.s10,
               ),
-              SpecificBreedInformation(
-                catBreedEntity: dummyCatBreed,
-                baseTextStyle: Styles.style16Medium().copyWith(
-                    color: isLightTheme(context)
-                        ? ColorManager.black
-                        : ColorManager.white),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: AppPadding.p14),
+                child: SpecificBreedInformation(
+                  catBreedEntity: dummyCatBreed,
+                  baseTextStyle: Styles.style16Medium().copyWith(
+                      color: isLightTheme(context)
+                          ? ColorManager.black
+                          : ColorManager.white),
+                ),
               ),
               const SizedBox(
                 height: AppSize.s10,
               ),
-              AspectRatio(
-                aspectRatio: 2 / 1.8,
-                child: SpecificBreedBarGraph(
-                  catBreedEntity: dummyCatBreed,
-                  labelsStyle: Styles.style12Medium(),
-                  barWidth: AppSize.s11,
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: AppPadding.p14),
+                child: AspectRatio(
+                  aspectRatio: 2 / 1.8,
+                  child: SpecificBreedBarGraph(
+                    catBreedEntity: dummyCatBreed,
+                    labelsStyle: Styles.style12Medium(),
+                    barWidth: AppSize.s11,
+                  ),
                 ),
               ),
             ],
