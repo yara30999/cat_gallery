@@ -30,6 +30,14 @@ abstract class Styles {
     );
   }
 
+  static TextStyle style12Regular() {
+    return TextStyle(
+      fontFamily: FontConstants.fontMarhey,
+      fontSize: getResponsiveFontSize(fontSize: FontSize.s12),
+      fontWeight: FontWeightManager.regular,
+    );
+  }
+
   static TextStyle style14Medium() {
     return TextStyle(
       fontFamily: FontConstants.fontMarhey,
@@ -43,6 +51,14 @@ abstract class Styles {
       fontFamily: FontConstants.fontMarhey,
       fontSize: getResponsiveFontSize(fontSize: FontSize.s16),
       fontWeight: FontWeightManager.medium,
+    );
+  }
+
+  static TextStyle style16Regular() {
+    return TextStyle(
+      fontFamily: FontConstants.fontMarhey,
+      fontSize: getResponsiveFontSize(fontSize: FontSize.s16),
+      fontWeight: FontWeightManager.regular,
     );
   }
 

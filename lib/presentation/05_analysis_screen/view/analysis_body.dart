@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../02_home/widgets/persistenet_header.dart';
-import '../../resources/values_manager.dart';
-import 'widgets/analysis_header.dart';
-import 'widgets/analysis_section.dart';
+import '../../resources/platform_manager.dart';
+import 'analysis_body_desktop.dart';
+import 'analysis_body_mobile.dart';
+import 'analysis_body_tablet.dart';
 
 class AnalysisBody extends StatelessWidget {
   final ScrollController? analysisScreenScrollController;
@@ -13,27 +13,13 @@ class AnalysisBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      controller: analysisScreenScrollController,
-      slivers: const [
-        PersistentHeader(),
-        SliverPadding(
-          padding:
-              EdgeInsets.symmetric(horizontal: AppPadding.p16, vertical: 0),
-          sliver: SliverToBoxAdapter(
-            child: AnalysisHeader(),
-          ),
-        ),
-        SliverPadding(
-          padding: EdgeInsets.symmetric(
-            horizontal: AppPadding.p16,
-            vertical: AppPadding.p20,
-          ),
-          sliver: SliverToBoxAdapter(
-            child: AnalysisSection(),
-          ),
-        ),
-      ],
+    return MiniAdaptiveLayout(
+      mobileLayout: (context) => AnalysisBodyMobile(
+          analysisScreenScrollController: analysisScreenScrollController),
+      tabletLayout: (context) => AnalysisBodyTablet(
+          analysisScreenScrollController: analysisScreenScrollController),
+      desktopLayout: (context) => AnalysisBodyDesktop(
+          analysisScreenScrollController: analysisScreenScrollController),
     );
   }
 }

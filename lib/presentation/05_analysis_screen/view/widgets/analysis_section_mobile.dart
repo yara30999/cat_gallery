@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import '../../../../domain/entities/image_analysis_entity.dart';
+import '../../../resources/styles_manager.dart';
 import '../../../resources/values_manager.dart';
 import 'analysis_image.dart';
 import 'analysis_bar_graph.dart';
 
-class AnalysisSection extends StatelessWidget {
-  const AnalysisSection({super.key});
+class AnalysisSectionMobile extends StatelessWidget {
+  const AnalysisSectionMobile({super.key});
   ImageAnalysisEntity get dummyImageAnalysis =>
       const ImageAnalysisEntity(labels: [
         Label(name: 'Animal', confidence: 99.23681640625),
@@ -24,12 +25,16 @@ class AnalysisSection extends StatelessWidget {
     return Column(
       children: [
         //get the image here using api call...
-        const AnalysisImage(),
+        const AnalysisImage(
+          imgUrl:
+              'https://i2.wp.com/www.e-travelmag.com/wp-content/uploads/2021/12/Cats_of_Athens-7.jpg?ssl=1',
+        ),
         const SizedBox(
           height: AppSize.s20,
         ),
         AnalysisBarGraph(
           imageAnalysisEntity: dummyImageAnalysis,
+          labelsStyle: Styles.style14Medium(),
         ),
       ],
     );

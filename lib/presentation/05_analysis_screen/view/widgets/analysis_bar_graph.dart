@@ -7,14 +7,17 @@ import '../../../../domain/entities/measurement_data_entity.dart';
 import '../../../../generated/l10n.dart';
 import '../../../resources/color_manager.dart';
 import '../../../resources/language_manager.dart';
-import '../../../resources/styles_manager.dart';
 import '../../../resources/values_manager.dart';
 
 class AnalysisBarGraph extends StatefulWidget {
   final ImageAnalysisEntity imageAnalysisEntity;
+  final TextStyle labelsStyle;
+  final double? barWidth;
   const AnalysisBarGraph({
     super.key,
     required this.imageAnalysisEntity,
+    required this.labelsStyle,
+    this.barWidth,
   });
 
   @override
@@ -37,8 +40,6 @@ class _AnalysisBarGraphState extends State<AnalysisBarGraph> {
         S.current.ninty_percent,
         S.current.handred_percent,
       ];
-
-  TextStyle get labelsStyle => Styles.style18Medium();
 
   @override
   void initState() {
@@ -110,7 +111,7 @@ class _AnalysisBarGraphState extends State<AnalysisBarGraph> {
           borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(AppSize.s12),
               topRight: Radius.circular(AppSize.s12)),
-          width: AppSize.s20,
+          width: widget.barWidth ?? AppSize.s20,
           backDrawRodData: BackgroundBarChartRodData(
             show: true,
             fromY: 0,
@@ -177,75 +178,75 @@ class _AnalysisBarGraphState extends State<AnalysisBarGraph> {
       );
 
   Widget getBottomTitles(double value, TitleMeta meta) {
-    Widget text = Text('', style: labelsStyle);
+    Widget text = Text('', style: widget.labelsStyle);
     switch (value.toInt()) {
       case 1:
         if (value.toInt() <= analysisDataEntity.labels.length) {
-          text = Text(analysisDataEntity.labels[0], style: labelsStyle);
+          text = Text(analysisDataEntity.labels[0], style: widget.labelsStyle);
         }
         break;
       case 2:
         if (value.toInt() <= analysisDataEntity.labels.length) {
-          text = Text(analysisDataEntity.labels[1], style: labelsStyle);
+          text = Text(analysisDataEntity.labels[1], style: widget.labelsStyle);
         }
         break;
       case 3:
         if (value.toInt() <= analysisDataEntity.labels.length) {
-          text = Text(analysisDataEntity.labels[2], style: labelsStyle);
+          text = Text(analysisDataEntity.labels[2], style: widget.labelsStyle);
         }
         break;
       case 4:
         if (value.toInt() <= analysisDataEntity.labels.length) {
-          text = Text(analysisDataEntity.labels[3], style: labelsStyle);
+          text = Text(analysisDataEntity.labels[3], style: widget.labelsStyle);
         }
         break;
       case 5:
         if (value.toInt() <= analysisDataEntity.labels.length) {
-          text = Text(analysisDataEntity.labels[4], style: labelsStyle);
+          text = Text(analysisDataEntity.labels[4], style: widget.labelsStyle);
         }
         break;
       case 6:
         if (value.toInt() <= analysisDataEntity.labels.length) {
-          text = Text(analysisDataEntity.labels[5], style: labelsStyle);
+          text = Text(analysisDataEntity.labels[5], style: widget.labelsStyle);
         }
         break;
       case 7:
         if (value.toInt() <= analysisDataEntity.labels.length) {
-          text = Text(analysisDataEntity.labels[6], style: labelsStyle);
+          text = Text(analysisDataEntity.labels[6], style: widget.labelsStyle);
         }
         break;
       case 8:
         if (value.toInt() <= analysisDataEntity.labels.length) {
-          text = Text(analysisDataEntity.labels[7], style: labelsStyle);
+          text = Text(analysisDataEntity.labels[7], style: widget.labelsStyle);
         }
         break;
       case 9:
         if (value.toInt() <= analysisDataEntity.labels.length) {
-          text = Text(analysisDataEntity.labels[8], style: labelsStyle);
+          text = Text(analysisDataEntity.labels[8], style: widget.labelsStyle);
         }
         break;
       case 10:
         if (value.toInt() <= analysisDataEntity.labels.length) {
-          text = Text(analysisDataEntity.labels[9], style: labelsStyle);
+          text = Text(analysisDataEntity.labels[9], style: widget.labelsStyle);
         }
         break;
       case 11:
         if (value.toInt() <= analysisDataEntity.labels.length) {
-          text = Text(analysisDataEntity.labels[10], style: labelsStyle);
+          text = Text(analysisDataEntity.labels[10], style: widget.labelsStyle);
         }
         break;
       case 12:
         if (value.toInt() <= analysisDataEntity.labels.length) {
-          text = Text(analysisDataEntity.labels[11], style: labelsStyle);
+          text = Text(analysisDataEntity.labels[11], style: widget.labelsStyle);
         }
         break;
       case 13:
         if (value.toInt() <= analysisDataEntity.labels.length) {
-          text = Text(analysisDataEntity.labels[12], style: labelsStyle);
+          text = Text(analysisDataEntity.labels[12], style: widget.labelsStyle);
         }
         break;
       default:
-        text = Text('', style: labelsStyle);
+        text = Text('', style: widget.labelsStyle);
         break;
     }
     return SideTitleWidget(
@@ -259,43 +260,43 @@ class _AnalysisBarGraphState extends State<AnalysisBarGraph> {
   }
 
   Widget getYAxisTitles(double value, TitleMeta meta) {
-    Widget text = Text('', style: labelsStyle);
+    Widget text = Text('', style: widget.labelsStyle);
     switch (value.toInt()) {
       case 0:
-        text = Text(yAxisLabels[0], style: labelsStyle);
+        text = Text(yAxisLabels[0], style: widget.labelsStyle);
         break;
       // case 10:
-      //   text = Text(yAxisLabels[1], style: labelsStyle);
+      //   text = Text(yAxisLabels[1], style: widget.labelsStyle);
       //   break;
       case 20:
-        text = Text(yAxisLabels[2], style: labelsStyle);
+        text = Text(yAxisLabels[2], style: widget.labelsStyle);
         break;
       // case 30:
-      //   text = Text(yAxisLabels[3], style: labelsStyle);
+      //   text = Text(yAxisLabels[3], style: widget.labelsStyle);
       //   break;
       case 40:
-        text = Text(yAxisLabels[4], style: labelsStyle);
+        text = Text(yAxisLabels[4], style: widget.labelsStyle);
         break;
       // case 50:
-      //   text = Text(yAxisLabels[5], style: labelsStyle);
+      //   text = Text(yAxisLabels[5], style: widget.labelsStyle);
       //   break;
       case 60:
-        text = Text(yAxisLabels[6], style: labelsStyle);
+        text = Text(yAxisLabels[6], style: widget.labelsStyle);
         break;
       // case 70:
-      //   text = Text(yAxisLabels[7], style: labelsStyle);
+      //   text = Text(yAxisLabels[7], style: widget.labelsStyle);
       //   break;
       case 80:
-        text = Text(yAxisLabels[8], style: labelsStyle);
+        text = Text(yAxisLabels[8], style: widget.labelsStyle);
         break;
       // case 90:
-      //   text = Text(yAxisLabels[9], style: labelsStyle);
+      //   text = Text(yAxisLabels[9], style: widget.labelsStyle);
       //   break;
       case 100:
-        text = Text(yAxisLabels[10], style: labelsStyle);
+        text = Text(yAxisLabels[10], style: widget.labelsStyle);
         break;
       default:
-        text = Text('', style: labelsStyle);
+        text = Text('', style: widget.labelsStyle);
         break;
     }
     return SideTitleWidget(

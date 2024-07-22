@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import '../../../../generated/l10n.dart';
-import '../../../resources/styles_manager.dart';
 
 class AnalysisHeader extends StatelessWidget {
-  const AnalysisHeader({super.key});
+  const AnalysisHeader(
+      {super.key, required this.firstStyle, required this.secondStyle});
+  final TextStyle firstStyle;
+  final TextStyle secondStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -14,14 +16,14 @@ class AnalysisHeader extends StatelessWidget {
           fit: BoxFit.scaleDown,
           child: Text(
             S.current.image_analysis,
-            style: Styles.style36Medium(),
+            style: firstStyle,
           ),
         ),
         FittedBox(
           fit: BoxFit.scaleDown,
           child: Text(
             S.current.we_are_using_AWS_Rekognition,
-            style: Styles.style20Regular(),
+            style: secondStyle,
           ),
         ),
       ],
