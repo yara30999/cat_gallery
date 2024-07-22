@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'color_manager.dart';
+import 'conistants_manager.dart';
 import 'font_manager.dart';
 
 abstract class Styles {
@@ -149,11 +150,10 @@ double getScaleFactor() {
   var physicalWidth = dispatcher.views.first.physicalSize.width;
   var devicePixelRatio = dispatcher.views.first.devicePixelRatio;
   double width = physicalWidth / devicePixelRatio;
-  const breakPointMobileTablet = 800;
-  const breakPointTabletLaptop = 1200;
-  if (width < breakPointMobileTablet) {
+
+  if (width < AppConstants.breakPointMobileTablet) {
     return width / 550;
-  } else if (width < breakPointTabletLaptop) {
+  } else if (width < AppConstants.breakPointTabletLaptop) {
     return width / 1000;
   } else {
     return width / 1920;

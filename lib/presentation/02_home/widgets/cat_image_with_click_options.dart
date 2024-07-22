@@ -37,7 +37,7 @@ class CatImageWithClickOptions extends StatelessWidget {
       elevation: AppSize.s8,
       child: Column(
         children: [
-          DeviceWidget(
+          PlatformWidget(
               androidIos: (context) => CatPinchZoomImage(
                     imgUrl: catWithClickEntity.imageUrl,
                   ),

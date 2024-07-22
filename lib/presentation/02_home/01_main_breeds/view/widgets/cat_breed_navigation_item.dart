@@ -33,7 +33,7 @@ class CatBreedNavigationItem extends StatelessWidget {
         color: Theme.of(context).disabledColor,
         child: Column(
           children: [
-            DeviceWidget(
+            PlatformWidget(
                 androidIos: (context) => CatCashedImage(
                       imgUrl: catBreedCard.referenceImgurl,
                     ),

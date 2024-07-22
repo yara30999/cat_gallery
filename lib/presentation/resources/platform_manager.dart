@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'conistants_manager.dart';
 
 bool isWebOrDesktopApp() {
   if (kIsWeb) {
@@ -19,8 +20,8 @@ bool isWebOrDesktopApp() {
   }
 }
 
-class DeviceWidget extends StatelessWidget {
-  const DeviceWidget(
+class PlatformWidget extends StatelessWidget {
+  const PlatformWidget(
       {super.key,
       required this.androidIos,
       required this.web,
@@ -64,10 +65,10 @@ class AdaptiveLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
-        if (constraints.maxWidth < 800) {
+        if (constraints.maxWidth < AppConstants.breakPointMobileTablet) {
           // so this is fun can never be build unless it called
           return mobileLayout(context);
-        } else if (constraints.maxWidth < 1200) {
+        } else if (constraints.maxWidth < AppConstants.breakPointTabletLaptop) {
           // so this is fun can never be build unless it called
           return tabletLayout(context);
         } else {
@@ -94,10 +95,12 @@ class MiniAdaptiveLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
-        if (MediaQuery.sizeOf(context).width < 800) {
+        if (MediaQuery.sizeOf(context).width <
+            AppConstants.breakPointMobileTablet) {
           // so this is fun can never be build unless it called
           return mobileLayout(context);
-        } else if (MediaQuery.sizeOf(context).width < 1200) {
+        } else if (MediaQuery.sizeOf(context).width <
+            AppConstants.breakPointTabletLaptop) {
           // so this is fun can never be build unless it called
           return tabletLayout(context);
         } else {
