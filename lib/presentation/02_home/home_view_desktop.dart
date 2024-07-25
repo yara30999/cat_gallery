@@ -46,130 +46,132 @@ class _HomeViewDesktopState extends State<HomeViewDesktop> {
   Widget build(BuildContext context) {
     return Scaffold(
       //extendBody: true,
-      body: Row(
-        children: [
-          //web drawer ..................................
-          Expanded(
-            flex: 1,
-            child: Material(
-              elevation: AppSize.s15,
-              color: Theme.of(context).scaffoldBackgroundColor,
-              child: SizedBox(
-                height: double.infinity,
-                width: MediaQuery.sizeOf(context).width * .7,
-                child: CustomScrollView(
-                  slivers: [
-                    SliverToBoxAdapter(
-                      child: Material(
-                        color: Theme.of(context).primaryColor,
-                        child: SizedBox(
-                          height: AppSize.s60,
-                          width: double.infinity,
-                          child: Center(
-                            child: Text(
-                              S.current.cat_gallery,
-                              style: Styles.style36Medium()
-                                  .copyWith(color: ColorManager.white),
+      body: SafeArea(
+        child: Row(
+          children: [
+            //web drawer ..................................
+            Expanded(
+              flex: 1,
+              child: Material(
+                elevation: AppSize.s15,
+                color: Theme.of(context).scaffoldBackgroundColor,
+                child: SizedBox(
+                  height: double.infinity,
+                  width: MediaQuery.sizeOf(context).width * .7,
+                  child: CustomScrollView(
+                    slivers: [
+                      SliverToBoxAdapter(
+                        child: Material(
+                          color: Theme.of(context).primaryColor,
+                          child: SizedBox(
+                            height: AppSize.s60,
+                            width: double.infinity,
+                            child: Center(
+                              child: Text(
+                                S.current.cat_gallery,
+                                style: Styles.style36Medium()
+                                    .copyWith(color: ColorManager.white),
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
-                    const SliverToBoxAdapter(
-                      child: UserInfoListTile(
-                        userInfoEntity: UserInfoEntity(
-                            gender: Gender.male,
-                            name: 'Lekan Okeowo',
-                            email: 'demo@gmail.com'),
+                      const SliverToBoxAdapter(
+                        child: UserInfoListTile(
+                          userInfoEntity: UserInfoEntity(
+                              gender: Gender.male,
+                              name: 'Lekan Okeowo',
+                              email: 'demo@gmail.com'),
+                        ),
                       ),
-                    ),
-                    SliverList.builder(
-                      itemCount: items.length,
-                      itemBuilder: (context, index) {
-                        return Padding(
-                          padding: const EdgeInsets.only(top: AppPadding.p10),
-                          child: InkWell(
-                            mouseCursor: SystemMouseCursors.click,
-                            onTap: () {
-                              onTabTapped(index);
-                            },
-                            child: DrawerItem(
-                              drawerItemEntity: items[index],
-                              isActive: _currentPage == index,
+                      SliverList.builder(
+                        itemCount: items.length,
+                        itemBuilder: (context, index) {
+                          return Padding(
+                            padding: const EdgeInsets.only(top: AppPadding.p10),
+                            child: InkWell(
+                              mouseCursor: SystemMouseCursors.click,
+                              onTap: () {
+                                onTabTapped(index);
+                              },
+                              child: DrawerItem(
+                                drawerItemEntity: items[index],
+                                isActive: _currentPage == index,
+                              ),
                             ),
-                          ),
-                        );
-                      },
-                    ),
-                    const SliverToBoxAdapter(
-                      child: Divider(
-                        color: ColorManager.grey2,
+                          );
+                        },
                       ),
-                    ),
-                    const SliverToBoxAdapter(child: ThemeButton()),
-                    const SliverToBoxAdapter(
-                      child: Divider(
-                        color: ColorManager.grey2,
+                      const SliverToBoxAdapter(
+                        child: Divider(
+                          color: ColorManager.grey2,
+                        ),
                       ),
-                    ),
-                    const SliverToBoxAdapter(child: LanguageButton()),
-                    SliverFillRemaining(
-                      hasScrollBody: false,
-                      child: Column(
-                        children: [
-                          const Expanded(
-                              child: SizedBox(
-                            height: AppSize.s10,
-                          )),
-                          const Divider(
-                            color: ColorManager.grey2,
-                          ),
-                          const AppDeveloper(),
-                          const SizedBox(
-                            height: AppSize.s5,
-                          ),
-                          InkWell(
-                            onTap: () {},
-                            mouseCursor: SystemMouseCursors.click,
-                            child: ActiveDrawerItem(
-                              drawerItemEntity: DrawerItemEntity(
-                                  title: S.current.Logout_account,
-                                  icon: Icons.exit_to_app_outlined),
+                      const SliverToBoxAdapter(child: ThemeButton()),
+                      const SliverToBoxAdapter(
+                        child: Divider(
+                          color: ColorManager.grey2,
+                        ),
+                      ),
+                      const SliverToBoxAdapter(child: LanguageButton()),
+                      SliverFillRemaining(
+                        hasScrollBody: false,
+                        child: Column(
+                          children: [
+                            const Expanded(
+                                child: SizedBox(
+                              height: AppSize.s10,
+                            )),
+                            const Divider(
+                              color: ColorManager.grey2,
                             ),
-                          ),
-                          const SizedBox(
-                            height: AppSize.s15,
-                          )
-                        ],
+                            const AppDeveloper(),
+                            const SizedBox(
+                              height: AppSize.s5,
+                            ),
+                            InkWell(
+                              onTap: () {},
+                              mouseCursor: SystemMouseCursors.click,
+                              child: ActiveDrawerItem(
+                                drawerItemEntity: DrawerItemEntity(
+                                    title: S.current.Logout_account,
+                                    icon: Icons.exit_to_app_outlined),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: AppSize.s15,
+                            )
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-          // web pages ..................................
-          Expanded(
-            flex: 5,
-            child: IndexedStack(
-              index: _currentPage,
-              children: const [
-                MainBreedsNavigator(
-                  scrollController: null,
-                ),
-                FavoritesNavigator(
-                  scrollController: null,
-                ),
-                UploadsNavigator(
-                  scrollController: null,
-                ),
-                VotesNavigator(
-                  scrollController: null,
-                ),
-              ],
+            // web pages ..................................
+            Expanded(
+              flex: 5,
+              child: IndexedStack(
+                index: _currentPage,
+                children: const [
+                  MainBreedsNavigator(
+                    scrollController: null,
+                  ),
+                  FavoritesNavigator(
+                    scrollController: null,
+                  ),
+                  UploadsNavigator(
+                    scrollController: null,
+                  ),
+                  VotesNavigator(
+                    scrollController: null,
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

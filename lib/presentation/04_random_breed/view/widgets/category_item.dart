@@ -18,12 +18,8 @@ class CategoryItem extends StatelessWidget {
       firstCurve: Curves.linear,
       secondCurve: Curves.linear,
       duration: const Duration(milliseconds: 500),
-      firstChild: SizedBox(
-          height: MediaQuery.of(context).size.height * .05,
-          child: ActiveCatigoryItem(categoryItemEntity: categoryItemEntity)),
-      secondChild: SizedBox(
-          height: MediaQuery.of(context).size.height * .05,
-          child: InActiveCatigoryItem(categoryItemEntity: categoryItemEntity)),
+      firstChild: ActiveCatigoryItem(categoryItemEntity: categoryItemEntity),
+      secondChild: InActiveCatigoryItem(categoryItemEntity: categoryItemEntity),
       crossFadeState:
           isActive ? CrossFadeState.showFirst : CrossFadeState.showSecond,
     );

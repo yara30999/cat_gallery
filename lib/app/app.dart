@@ -2,6 +2,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import '../generated/l10n.dart';
+import '../presentation/04_random_breed/view/widgets/my_custom_scroll_behavior.dart';
 import '../presentation/resources/language_manager.dart';
 import '../presentation/resources/routes_manager.dart';
 import '../presentation/resources/size_config.dart';
@@ -20,6 +21,7 @@ class _MyAppState extends State<MyApp> {
     // to initialize h && w inside the class
     SizeConfig.init(context);
     return MaterialApp(
+      scrollBehavior: MyCustomScrollBehavior(),
       builder: DevicePreview.appBuilder,
       debugShowCheckedModeBanner: false,
       onGenerateRoute: RouteGenerator.getRoute,

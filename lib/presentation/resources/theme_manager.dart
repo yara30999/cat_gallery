@@ -118,9 +118,9 @@ ThemeData getLightTheme() {
       color: ColorManager.grey2,
       elevation: AppSize.s10,
       iconColor: ColorManager.primary4,
-      textStyle: Styles.style18Bold().copyWith(color: ColorManager.primary2),
+      textStyle: Styles.style18Medium().copyWith(color: ColorManager.primary2),
       labelTextStyle: WidgetStateProperty.all<TextStyle>(
-          Styles.style18Bold().copyWith(color: ColorManager.primary2)),
+          Styles.style18Medium().copyWith(color: ColorManager.primary2)),
     ),
 
     //icon button
@@ -248,9 +248,9 @@ ThemeData getDarkTheme() {
       color: ColorManager.grey3,
       elevation: AppSize.s10,
       iconColor: ColorManager.orange4,
-      textStyle: Styles.style18Bold().copyWith(color: ColorManager.orange1),
+      textStyle: Styles.style18Medium().copyWith(color: ColorManager.orange1),
       labelTextStyle: WidgetStateProperty.all<TextStyle>(
-          Styles.style18Bold().copyWith(color: ColorManager.orange1)),
+          Styles.style18Medium().copyWith(color: ColorManager.orange1)),
     ),
 
     //icon button

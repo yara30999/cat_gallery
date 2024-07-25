@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../domain/entities/category_item.dart';
+import 'my_custom_scroll_behavior.dart';
 import '../../../resources/language_manager.dart';
 import '../../../resources/values_manager.dart';
 import 'category_item.dart';
@@ -16,35 +17,38 @@ class _CategorySectionState extends State<CategorySection> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * .06,
-      child: ListView.builder(
-          shrinkWrap: true,
-          scrollDirection: Axis.horizontal,
-          itemCount: CategoryItemEntity.items.length,
-          itemBuilder: (buildContext, index) {
-            return GestureDetector(
-              onTap: () {
-                if (activeIndex != index) {
-                  setState(() {
-                    activeIndex = index;
-                  });
-                }
-              },
-              child: Padding(
-                padding: EdgeInsets.only(
-                    right: LocalizationUtils.currentLocalIsAr()
-                        ? 0.0
-                        : AppPadding.p10,
-                    left: LocalizationUtils.currentLocalIsAr()
-                        ? AppPadding.p10
-                        : 0.0),
-                child: CategoryItem(
-                  isActive: activeIndex == index,
-                  categoryItemEntity: CategoryItemEntity.items[index],
+      height: AppSize.s50,
+      child: ScrollConfiguration(
+        behavior: MyCustomScrollBehavior(),
+        child: ListView.builder(
+            shrinkWrap: true,
+            scrollDirection: Axis.horizontal,
+            itemCount: CategoryItemEntity.items.length,
+            itemBuilder: (buildContext, index) {
+              return GestureDetector(
+                onTap: () {
+                  if (activeIndex != index) {
+                    setState(() {
+                      activeIndex = index;
+                    });
+                  }
+                },
+                child: Padding(
+                  padding: EdgeInsets.only(
+                      right: LocalizationUtils.currentLocalIsAr()
+                          ? 0.0
+                          : AppPadding.p10,
+                      left: LocalizationUtils.currentLocalIsAr()
+                          ? AppPadding.p10
+                          : 0.0),
+                  child: CategoryItem(
+                    isActive: activeIndex == index,
+                    categoryItemEntity: CategoryItemEntity.items[index],
+                  ),
                 ),
-              ),
-            );
-          }),
+              );
+            }),
+      ),
     );
   }
 }

@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import '../../../../app/extensions.dart';
 
 class SortPopupMenu extends StatefulWidget {
-  const SortPopupMenu({super.key});
+  const SortPopupMenu({
+    super.key,
+  });
 
   @override
   SortPopupMenuState createState() => SortPopupMenuState();
@@ -10,13 +12,13 @@ class SortPopupMenu extends StatefulWidget {
 
 class SortPopupMenuState extends State<SortPopupMenu> {
   SortingItem? selectedSortingItem = SortingItem.asc;
-  List<PopupMenuItem<SortingItem>> sortItems =
-      SortingItem.values.map((SortingItem sortingItem) {
-    return PopupMenuItem<SortingItem>(
-      value: sortingItem,
-      child: Text(sortingItem.displayValue),
-    );
-  }).toList();
+  List<PopupMenuItem<SortingItem>> sortItems = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _updateSortItems();
+  }
 
   @override
   void didChangeDependencies() {
@@ -28,7 +30,9 @@ class SortPopupMenuState extends State<SortPopupMenu> {
     sortItems = SortingItem.values.map((SortingItem sortingItem) {
       return PopupMenuItem<SortingItem>(
         value: sortingItem,
-        child: Text(sortingItem.displayValue),
+        child: Text(
+          sortingItem.displayValue,
+        ),
       );
     }).toList();
   }
