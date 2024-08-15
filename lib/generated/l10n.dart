@@ -1230,6 +1230,156 @@ class S {
       args: [],
     );
   }
+
+  /// `upload cat image`
+  String get upload_image {
+    return Intl.message(
+      'upload cat image',
+      name: 'upload_image',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Remember: The image you upload must contain a cat, otherwise it will not be uploaded.`
+  String get remember {
+    return Intl.message(
+      'Remember: The image you upload must contain a cat, otherwise it will not be uploaded.',
+      name: 'remember',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Gallery`
+  String get gallery {
+    return Intl.message(
+      'Gallery',
+      name: 'gallery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Camera`
+  String get camera {
+    return Intl.message(
+      'Camera',
+      name: 'camera',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add image file.`
+  String get add_image_file {
+    return Intl.message(
+      'Add image file.',
+      name: 'add_image_file',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Click or Drag image file.`
+  String get click_or_drag_image_file {
+    return Intl.message(
+      'Click or Drag image file.',
+      name: 'click_or_drag_image_file',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Selected category: {categoryName}`
+  String selected_category(Object categoryName) {
+    return Intl.message(
+      'Selected category: $categoryName',
+      name: 'selected_category',
+      desc: '',
+      args: [categoryName],
+    );
+  }
+
+  /// `Nothing`
+  String get nothing {
+    return Intl.message(
+      'Nothing',
+      name: 'nothing',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Optional`
+  String get Optional {
+    return Intl.message(
+      'Optional',
+      name: 'Optional',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Category:`
+  String get select_category {
+    return Intl.message(
+      'Select Category:',
+      name: 'select_category',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `I don't know the category.`
+  String get do_not_know_category {
+    return Intl.message(
+      'I don\'t know the category.',
+      name: 'do_not_know_category',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Selected breed: {breedName}`
+  String selected_breed(Object breedName) {
+    return Intl.message(
+      'Selected breed: $breedName',
+      name: 'selected_breed',
+      desc: '',
+      args: [breedName],
+    );
+  }
+
+  /// `Select Breed:`
+  String get select_breed {
+    return Intl.message(
+      'Select Breed:',
+      name: 'select_breed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `I don't know the breed.`
+  String get do_not_know_breed {
+    return Intl.message(
+      'I don\'t know the breed.',
+      name: 'do_not_know_breed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Upload`
+  String get upload {
+    return Intl.message(
+      'Upload',
+      name: 'upload',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

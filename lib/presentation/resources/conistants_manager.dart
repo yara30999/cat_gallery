@@ -19,6 +19,6 @@ class AppConstants {
   static const String initialCountryISO = "EG";
   static const String initialCountryCode = "+20";
   static const double appBarHeight = kToolbarHeight * 2;
-  static const int breakPointMobileTablet = 800;
-  static const int breakPointTabletLaptop = 1200;
+  static const int breakPointMobileTablet = 800; //1100
+  static const int breakPointTabletLaptop = 1200; //1700
 }

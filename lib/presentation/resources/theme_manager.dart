@@ -145,7 +145,7 @@ ThemeData getDarkTheme() {
     // cardview theme
     cardTheme: const CardTheme(
         color: ColorManager.grey1,
-        shadowColor: ColorManager.orange1,
+        shadowColor: ColorManager.grey5,
         surfaceTintColor: ColorManager.black,
         elevation: AppSize.s8),
 

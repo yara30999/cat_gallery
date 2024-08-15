@@ -31,9 +31,13 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m4(catBreed, weightImperial, weightMetric) =>
       "القط ${catBreed} لديه نطاق وزن من ${weightImperial} أرطال (${weightMetric} كجم).";
 
-  static String m5(breedName) => "سلالة: ${breedName}";
+  static String m5(breedName) => "الفصيلة المختاره: ${breedName}";
 
-  static String m6(categoryName) => "فئة: ${categoryName}";
+  static String m6(categoryName) => "الفئة المختاره: ${categoryName}";
+
+  static String m7(breedName) => "سلالة: ${breedName}";
+
+  static String m8(categoryName) => "فئة: ${categoryName}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -50,6 +54,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Language": MessageLookupByLibrary.simpleMessage("اللغة:"),
         "Light": MessageLookupByLibrary.simpleMessage("فاتح"),
         "Logout_account": MessageLookupByLibrary.simpleMessage("تسجيل خروج "),
+        "Optional": MessageLookupByLibrary.simpleMessage("إختياري"),
         "Search_by_breed_name":
             MessageLookupByLibrary.simpleMessage("إبحث حسب إسم السلاله ..."),
         "System": MessageLookupByLibrary.simpleMessage("النظام"),
@@ -58,6 +63,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Vote": MessageLookupByLibrary.simpleMessage("صوت"),
         "Votes": MessageLookupByLibrary.simpleMessage("التصويتات"),
         "adabtability": MessageLookupByLibrary.simpleMessage("التكيف"),
+        "add_image_file":
+            MessageLookupByLibrary.simpleMessage("أضف ملف الصورة."),
         "affection": MessageLookupByLibrary.simpleMessage("المودة"),
         "all": MessageLookupByLibrary.simpleMessage("الكل"),
         "alreadyHaveAnAccount":
@@ -71,6 +78,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "boys": MessageLookupByLibrary.simpleMessage("أولاد"),
         "breaded": MessageLookupByLibrary.simpleMessage("مغلف"),
         "breed_cat_images": m0,
+        "camera": MessageLookupByLibrary.simpleMessage("الكاميرا"),
         "cat_gallery": MessageLookupByLibrary.simpleMessage("معرض القطط"),
         "cat_lifespan": m1,
         "cat_origin": m2,
@@ -78,11 +86,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "cat_weight_range": m4,
         "caturday": MessageLookupByLibrary.simpleMessage("يوم القط"),
         "child_friendly": MessageLookupByLibrary.simpleMessage("صديق للأطفال"),
+        "click_or_drag_image_file":
+            MessageLookupByLibrary.simpleMessage("انقر أو اسحب ملف الصورة."),
         "clothes": MessageLookupByLibrary.simpleMessage("ملابس"),
         "country_number_length_not_found":
             MessageLookupByLibrary.simpleMessage("بيانات البلد غير موجودة"),
         "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
         "desc": MessageLookupByLibrary.simpleMessage("تنازلي"),
+        "do_not_know_breed":
+            MessageLookupByLibrary.simpleMessage("لا أعرف الفصيلة."),
+        "do_not_know_category":
+            MessageLookupByLibrary.simpleMessage("لا أعرف الفئة."),
         "do_not_type_country_code_again":
             MessageLookupByLibrary.simpleMessage("لا تكتب رمز البلد مرة أخرى"),
         "dog_friendly": MessageLookupByLibrary.simpleMessage("صديق للكلاب"),
@@ -101,6 +115,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "four": MessageLookupByLibrary.simpleMessage("٤"),
         "fourty_percent": MessageLookupByLibrary.simpleMessage("٤٠٪"),
         "funny": MessageLookupByLibrary.simpleMessage("مضحك"),
+        "gallery": MessageLookupByLibrary.simpleMessage("المعرض"),
         "genderRequired": MessageLookupByLibrary.simpleMessage("الحقل مطلوب"),
         "girls": MessageLookupByLibrary.simpleMessage("بنات"),
         "go_back": MessageLookupByLibrary.simpleMessage("رجوع"),
@@ -128,6 +143,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "noRouteFound":
             MessageLookupByLibrary.simpleMessage("لم يتم العثور على المسار"),
         "notAMember": MessageLookupByLibrary.simpleMessage("لست عضوا؟"),
+        "nothing": MessageLookupByLibrary.simpleMessage("لا شيء"),
         "one": MessageLookupByLibrary.simpleMessage("١"),
         "or": MessageLookupByLibrary.simpleMessage(" أو "),
         "orContinueWith": MessageLookupByLibrary.simpleMessage("أو تابع مع"),
@@ -150,9 +166,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "random_cat_images":
             MessageLookupByLibrary.simpleMessage("صور قطط عشوائية"),
         "registerLabel": MessageLookupByLibrary.simpleMessage("تسجيل"),
+        "remember": MessageLookupByLibrary.simpleMessage(
+            "تذكر: الصوره التي ستقوم بتحميلها يجب ان تحتوى على قطه، والا لن يتم تحميلها."),
         "search_country":
             MessageLookupByLibrary.simpleMessage("ابحث عن الدولة"),
         "selectGender": MessageLookupByLibrary.simpleMessage("اختر الجنس"),
+        "select_breed": MessageLookupByLibrary.simpleMessage("إختر الفصيلة:"),
+        "select_category": MessageLookupByLibrary.simpleMessage("إختر الفئة:"),
+        "selected_breed": m5,
+        "selected_category": m6,
         "seventy_percent": MessageLookupByLibrary.simpleMessage("٧٠٪"),
         "shedding": MessageLookupByLibrary.simpleMessage("تساقط الشعر"),
         "sinks": MessageLookupByLibrary.simpleMessage("أحواض مياه"),
@@ -170,8 +192,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "to": MessageLookupByLibrary.simpleMessage("إلى"),
         "twenty_percent": MessageLookupByLibrary.simpleMessage("٢٠٪"),
         "two": MessageLookupByLibrary.simpleMessage("٢"),
-        "upload_breed": m5,
-        "upload_category": m6,
+        "upload": MessageLookupByLibrary.simpleMessage("تحميل"),
+        "upload_breed": m7,
+        "upload_category": m8,
+        "upload_image": MessageLookupByLibrary.simpleMessage("تحميل صورة"),
         "usernameLabel": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
         "usernameNotValid":
             MessageLookupByLibrary.simpleMessage("اسم المستخدم غير صالح"),

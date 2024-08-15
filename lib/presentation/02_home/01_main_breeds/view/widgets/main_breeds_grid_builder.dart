@@ -10,6 +10,8 @@ class MainBreedsGridBuilder extends StatelessWidget {
     required this.columnNumbers,
   });
   final int columnNumbers;
+
+  // TODO: 2 we should get the actual breed list (items) from the api...
   // instead of doing (static final List<CatBreedCardInfo> items = [];)
   List<CatBreedCardEntity> get items => [
         const CatBreedCardEntity(

@@ -10,6 +10,7 @@ import '../02_home/04_votes/view/votes_view_body.dart';
 import '../03_specific_breed/view/specific_breed_body.dart';
 import '../04_random_breed/view/random_breed_body.dart';
 import '../05_analysis_screen/view/analysis_body.dart';
+import '../06_add_image_screen/view/add_image_body.dart';
 
 class Routes {
   static const String loginRoute = "/";
@@ -23,6 +24,7 @@ class Routes {
   static const String scaleImageRoute = "/scale_image_route";
   static const String votesRoute = "/";
   static const String uploadsRoute = "/";
+  static const String addImageRoute = "add_image_route";
 }
 
 class RouteGenerator {
@@ -100,6 +102,11 @@ class RouteGenerator {
         return MaterialPageRoute(
             builder: (_) => AnalysisBody(
                   analysisScreenScrollController: controller,
+                ));
+      case Routes.addImageRoute:
+        return MaterialPageRoute(
+            builder: (_) => AddImageBody(
+                  addImageScreenScrollController: controller,
                 ));
       default:
         return unDefinedRoute();

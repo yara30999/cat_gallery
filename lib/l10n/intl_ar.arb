@@ -116,5 +116,20 @@
   "English": "إنجليزي",
   "Arabic": "عربي",
   "Logout_account": "تسجيل خروج ",
-  "Failed_to_load_image": "فشل تحميل الصورة."
+  "Failed_to_load_image": "فشل تحميل الصورة.",
+  "upload_image": "تحميل صورة",
+  "remember": "تذكر: الصوره التي ستقوم بتحميلها يجب ان تحتوى على قطه، والا لن يتم تحميلها.",
+  "gallery": "المعرض",
+  "camera": "الكاميرا",
+  "add_image_file": "أضف ملف الصورة.",
+  "click_or_drag_image_file": "انقر أو اسحب ملف الصورة.",
+  "selected_category": "الفئة المختاره: {categoryName}",
+  "nothing": "لا شيء",
+  "Optional": "إختياري",
+  "select_category": "إختر الفئة:",
+  "do_not_know_category": "لا أعرف الفئة.",
+  "selected_breed": "الفصيلة المختاره: {breedName}",
+  "select_breed": "إختر الفصيلة:",
+  "do_not_know_breed": "لا أعرف الفصيلة.",
+  "upload": "تحميل"
 }

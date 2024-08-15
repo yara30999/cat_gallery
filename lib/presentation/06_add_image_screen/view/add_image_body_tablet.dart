@@ -2,29 +2,26 @@ import 'package:flutter/material.dart';
 import '../../02_home/widgets/persistenet_header.dart';
 import '../../resources/styles_manager.dart';
 import '../../resources/values_manager.dart';
-import 'widgets/analysis_header.dart';
-import 'widgets/analysis_section_mobile.dart';
+import 'widgets/add_image_header.dart';
+import 'widgets/add_image_secion_tablet.dart';
 
-class AnalysisBodyMobile extends StatelessWidget {
-  final ScrollController? analysisScreenScrollController;
-  const AnalysisBodyMobile({
-    super.key,
-    required this.analysisScreenScrollController,
-  });
+class AddImageBodyTablet extends StatelessWidget {
+  final ScrollController? addImageScreenScrollController;
+  const AddImageBodyTablet({super.key, this.addImageScreenScrollController});
 
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
-      controller: analysisScreenScrollController,
+      controller: addImageScreenScrollController,
       slivers: [
         const PersistentHeader(),
         SliverPadding(
           padding: const EdgeInsets.symmetric(
-              horizontal: AppPadding.p16, vertical: 0),
+              horizontal: AppPadding.p40, vertical: 0),
           sliver: SliverToBoxAdapter(
-            child: AnalysisHeader(
-              firstStyle: Styles.style18Medium(),
-              secondStyle: Styles.style14Medium(),
+            child: AddImageHeader(
+              firstStyle: Styles.style22Medium(),
+              secondStyle: Styles.style16Regular(),
             ),
           ),
         ),
@@ -34,7 +31,7 @@ class AnalysisBodyMobile extends StatelessWidget {
             vertical: AppPadding.p20,
           ),
           sliver: SliverToBoxAdapter(
-            child: AnalysisSectionMobile(),
+            child: AddImageSectionTablet(),
           ),
         ),
       ],

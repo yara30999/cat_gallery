@@ -33,9 +33,13 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m4(catBreed, weightImperial, weightMetric) =>
       "The ${catBreed} has a weight range of ${weightImperial} pounds (${weightMetric} kg).";
 
-  static String m5(breedName) => "breed: ${breedName}";
+  static String m5(breedName) => "Selected breed: ${breedName}";
 
-  static String m6(categoryName) => "category: ${categoryName}";
+  static String m6(categoryName) => "Selected category: ${categoryName}";
+
+  static String m7(breedName) => "breed: ${breedName}";
+
+  static String m8(categoryName) => "category: ${categoryName}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -53,6 +57,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Light": MessageLookupByLibrary.simpleMessage("Light"),
         "Logout_account":
             MessageLookupByLibrary.simpleMessage("Logout account"),
+        "Optional": MessageLookupByLibrary.simpleMessage("Optional"),
         "Search_by_breed_name":
             MessageLookupByLibrary.simpleMessage("Search by breed name..."),
         "System": MessageLookupByLibrary.simpleMessage("System"),
@@ -61,6 +66,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Vote": MessageLookupByLibrary.simpleMessage("Vote"),
         "Votes": MessageLookupByLibrary.simpleMessage("Votes"),
         "adabtability": MessageLookupByLibrary.simpleMessage("Adaptability"),
+        "add_image_file":
+            MessageLookupByLibrary.simpleMessage("Add image file."),
         "affection": MessageLookupByLibrary.simpleMessage("Affection"),
         "all": MessageLookupByLibrary.simpleMessage("all"),
         "alreadyHaveAnAccount":
@@ -74,6 +81,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "boys": MessageLookupByLibrary.simpleMessage("boys"),
         "breaded": MessageLookupByLibrary.simpleMessage("breaded"),
         "breed_cat_images": m0,
+        "camera": MessageLookupByLibrary.simpleMessage("Camera"),
         "cat_gallery": MessageLookupByLibrary.simpleMessage("Cat Gallery"),
         "cat_lifespan": m1,
         "cat_origin": m2,
@@ -82,11 +90,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "caturday": MessageLookupByLibrary.simpleMessage("caturday"),
         "child_friendly":
             MessageLookupByLibrary.simpleMessage("Child Friendly"),
+        "click_or_drag_image_file":
+            MessageLookupByLibrary.simpleMessage("Click or Drag image file."),
         "clothes": MessageLookupByLibrary.simpleMessage("clothes"),
         "country_number_length_not_found":
             MessageLookupByLibrary.simpleMessage("Country data not found"),
         "createAccount": MessageLookupByLibrary.simpleMessage("Create Account"),
         "desc": MessageLookupByLibrary.simpleMessage("descending"),
+        "do_not_know_breed":
+            MessageLookupByLibrary.simpleMessage("I don\'t know the breed."),
+        "do_not_know_category":
+            MessageLookupByLibrary.simpleMessage("I don\'t know the category."),
         "do_not_type_country_code_again": MessageLookupByLibrary.simpleMessage(
             "Do not type the country code again"),
         "dog_friendly": MessageLookupByLibrary.simpleMessage("Dog Friendly"),
@@ -105,6 +119,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "four": MessageLookupByLibrary.simpleMessage("4"),
         "fourty_percent": MessageLookupByLibrary.simpleMessage("40%"),
         "funny": MessageLookupByLibrary.simpleMessage("funny"),
+        "gallery": MessageLookupByLibrary.simpleMessage("Gallery"),
         "genderRequired":
             MessageLookupByLibrary.simpleMessage("Gender is required"),
         "girls": MessageLookupByLibrary.simpleMessage("girls"),
@@ -132,6 +147,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ninty_percent": MessageLookupByLibrary.simpleMessage("90%"),
         "noRouteFound": MessageLookupByLibrary.simpleMessage("no_route_found"),
         "notAMember": MessageLookupByLibrary.simpleMessage("Not a member?"),
+        "nothing": MessageLookupByLibrary.simpleMessage("Nothing"),
         "one": MessageLookupByLibrary.simpleMessage("1"),
         "or": MessageLookupByLibrary.simpleMessage(" or "),
         "orContinueWith":
@@ -156,9 +172,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "random_cat_images":
             MessageLookupByLibrary.simpleMessage("random cat images"),
         "registerLabel": MessageLookupByLibrary.simpleMessage("Register"),
+        "remember": MessageLookupByLibrary.simpleMessage(
+            "Remember: The image you upload must contain a cat, otherwise it will not be uploaded."),
         "search_country":
             MessageLookupByLibrary.simpleMessage("Search country"),
         "selectGender": MessageLookupByLibrary.simpleMessage("Select Gender"),
+        "select_breed": MessageLookupByLibrary.simpleMessage("Select Breed:"),
+        "select_category":
+            MessageLookupByLibrary.simpleMessage("Select Category:"),
+        "selected_breed": m5,
+        "selected_category": m6,
         "seventy_percent": MessageLookupByLibrary.simpleMessage("70%"),
         "shedding": MessageLookupByLibrary.simpleMessage("Shedding"),
         "sinks": MessageLookupByLibrary.simpleMessage("sinks"),
@@ -175,8 +198,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "to": MessageLookupByLibrary.simpleMessage("to"),
         "twenty_percent": MessageLookupByLibrary.simpleMessage("20%"),
         "two": MessageLookupByLibrary.simpleMessage("2"),
-        "upload_breed": m5,
-        "upload_category": m6,
+        "upload": MessageLookupByLibrary.simpleMessage("Upload"),
+        "upload_breed": m7,
+        "upload_category": m8,
+        "upload_image":
+            MessageLookupByLibrary.simpleMessage("upload cat image"),
         "usernameLabel": MessageLookupByLibrary.simpleMessage("Username"),
         "usernameNotValid":
             MessageLookupByLibrary.simpleMessage("Username not valid"),

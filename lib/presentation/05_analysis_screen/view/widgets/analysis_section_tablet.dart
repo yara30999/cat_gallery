@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import '../../../../domain/entities/image_analysis_entity.dart';
 import '../../../resources/styles_manager.dart';
@@ -30,11 +32,14 @@ class AnalysisSectionTablet extends StatelessWidget {
       children: [
         //get the image here using api call...
         ConstrainedBox(
-            constraints: const BoxConstraints(
-                maxWidth: AppSize.s500, maxHeight: AppSize.s1200),
+            constraints: BoxConstraints.fromViewConstraints(
+                const ViewConstraints(
+                    maxHeight: AppSize.s1200, maxWidth: AppSize.s400)),
+            // constraints: const BoxConstraints(
+            //     maxWidth: AppSize.s500, maxHeight: AppSize.s1200),
             child: const AnalysisImage(
               imgUrl:
-                  'https://thumbs.dreamstime.com/b/gray-cat-closeup-looking-camera-31894830.jpg',
+                  'https://th.bing.com/th/id/R.0715d6df3995c9154949ab56b207fc6c?rik=wCFaOTOqHCy7YQ&riu=http%3a%2f%2fcdn0.wideopenpets.com%2fwp-content%2fuploads%2f2018%2f02%2fAdobeStock_78698208.jpeg&ehk=cB9mVaBIVQujqA5FUdzgzpM%2fkHHkjGVIoXmPZPAg2kI%3d&risl=&pid=ImgRaw&r=0',
             )),
         SizedBox(
           height: AppSize.s400,

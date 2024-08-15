@@ -49,8 +49,9 @@ dependencies:
   cached_network_image: ^3.3.1
   get_time_ago: ^1.3.1
   image_picker: ^1.1.2
-  transparent_image: ^2.0.1
-  multilevel_drawer: ^2.0.0
+  mime: ^1.0.5
+  flutter_dropzone: ^4.0.1
+  dotted_border: ^2.1.0
 
 dev_dependencies:
   flutter_test:
@@ -71,6 +72,7 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  generate: true
 
   # To add assets to your application, add an assets section, like this:
   # assets:

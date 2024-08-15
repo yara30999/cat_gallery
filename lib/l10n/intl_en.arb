@@ -116,5 +116,20 @@
   "English": "English",
   "Arabic": "Arabic",
   "Logout_account": "Logout account",
-  "Failed_to_load_image": "Failed to load image."
+  "Failed_to_load_image": "Failed to load image.",
+  "upload_image": "upload cat image",
+  "remember": "Remember: The image you upload must contain a cat, otherwise it will not be uploaded.",
+  "gallery": "Gallery",
+  "camera": "Camera",
+  "add_image_file": "Add image file.",
+  "click_or_drag_image_file": "Click or Drag image file.",
+  "selected_category": "Selected category: {categoryName}",
+  "nothing": "Nothing",
+  "Optional": "Optional",
+  "select_category": "Select Category:",
+  "do_not_know_category": "I don't know the category.",
+  "selected_breed": "Selected breed: {breedName}",
+  "select_breed": "Select Breed:",
+  "do_not_know_breed": "I don't know the breed.",
+  "upload": "Upload"
 }
