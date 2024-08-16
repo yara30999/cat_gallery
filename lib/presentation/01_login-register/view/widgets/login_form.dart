@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../view_model/cubit/auth_cubit.dart';
 import 'custom_text_form_field.dart';
 import 'custom_text_row.dart';
 import 'or_continue_with.dart';
@@ -106,7 +108,8 @@ class _LoginFormState extends State<LoginForm> {
                 //with null in onTap the button is disable
                 onPressed: (_formKey.currentState?.validate() ?? false)
                     ? () {
-                        Navigator.pushNamed(context, Routes.homeRoute);
+                        BlocProvider.of<AuthCubit>(context)
+                            .loginUser(email: email!, password: password!);
                       }
                     : null,
                 child: Text(S.current.loginLabel),

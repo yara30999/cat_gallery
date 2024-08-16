@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../app/extensions.dart';
+import '../../../app/functions.dart';
 import '../../../domain/entities/drawer_item_entity.dart';
 import '../../../domain/entities/user_info_entity.dart';
 import '../../../generated/l10n.dart';
+import '../../01_login-register/view_model/cubit/auth_cubit.dart';
 import '../../resources/color_manager.dart';
+import '../../resources/routes_manager.dart';
 import '../../resources/styles_manager.dart';
 import '../../resources/values_manager.dart';
 import 'app_developer.dart';
@@ -13,8 +17,8 @@ import 'theme_button.dart';
 import 'user_info_list_tile.dart';
 
 class CustomDrawer extends StatelessWidget {
-  const CustomDrawer({super.key});
-
+  const CustomDrawer({super.key, required this.scaffoldKey});
+  final GlobalKey<ScaffoldState> scaffoldKey;
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -79,13 +83,27 @@ class CustomDrawer extends StatelessWidget {
                   const SizedBox(
                     height: AppSize.s5,
                   ),
-                  InkWell(
-                    onTap: () {},
-                    mouseCursor: SystemMouseCursors.click,
-                    child: ActiveDrawerItem(
-                      drawerItemEntity: DrawerItemEntity(
-                          title: S.current.Logout_account,
-                          icon: Icons.exit_to_app_outlined),
+                  BlocListener<AuthCubit, AuthState>(
+                    listener: (context, state) {
+                      if (state is LogoutLoading) {
+                        scaffoldKey.currentState?.closeDrawer();
+                      } else if (state is LogoutSuccess) {
+                        Navigator.pushReplacementNamed(
+                            context, Routes.loginRoute);
+                      } else if (state is LogoutFailure) {
+                        showSnakBar(context, state.errMessage);
+                      }
+                    },
+                    child: InkWell(
+                      onTap: () {
+                        BlocProvider.of<AuthCubit>(context).logout();
+                      },
+                      mouseCursor: SystemMouseCursors.click,
+                      child: ActiveDrawerItem(
+                        drawerItemEntity: DrawerItemEntity(
+                            title: S.current.Logout_account,
+                            icon: Icons.exit_to_app_outlined),
+                      ),
                     ),
                   ),
                   const SizedBox(

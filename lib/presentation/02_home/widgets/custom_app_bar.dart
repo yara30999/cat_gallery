@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import '../../../generated/l10n.dart';
-import '../../resources/global_keys_manager.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({
     super.key,
+    required this.scaffoldKey,
   });
+  final GlobalKey<ScaffoldState> scaffoldKey;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       leading: IconButton(
         onPressed: () {
-          GlobalKeys.scaffoldKey.currentState?.openDrawer();
+          scaffoldKey.currentState?.openDrawer();
         },
         icon: const Icon(
           Icons.menu,

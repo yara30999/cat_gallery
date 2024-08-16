@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../domain/entities/bottom_nav_icon.dart';
 import '../../generated/l10n.dart';
-import '../resources/global_keys_manager.dart';
 import '../resources/routes_manager.dart';
 import '../resources/styles_manager.dart';
 import '../resources/values_manager.dart';
@@ -18,6 +17,7 @@ class HomeViewMobile extends StatefulWidget {
 }
 
 class _HomeViewMobileState extends State<HomeViewMobile> {
+  final _scaffoldKeyMobile = GlobalKey<ScaffoldState>();
   int _currentPage = 0;
   static const double _paddingValue = 20.0;
   late ScrollController _mainBreedsScrollController;
@@ -89,9 +89,13 @@ class _HomeViewMobileState extends State<HomeViewMobile> {
     return Scaffold(
       // to give feeling of floating bottom nav bar
       extendBody: true,
-      key: GlobalKeys.scaffoldKey,
-      appBar: const CustomAppBar(),
-      drawer: const CustomDrawer(),
+      key: _scaffoldKeyMobile,
+      appBar: CustomAppBar(
+        scaffoldKey: _scaffoldKeyMobile,
+      ),
+      drawer: CustomDrawer(
+        scaffoldKey: _scaffoldKeyMobile,
+      ),
       body: NotificationListener<ScrollNotification>(
         onNotification: (scrollNotification) {
           _scrollControllerListener(scrollNotification);

@@ -127,6 +127,13 @@ ThemeData getLightTheme() {
     iconButtonTheme: const IconButtonThemeData(
       style: ButtonStyle(iconSize: WidgetStatePropertyAll(23)),
     ),
+
+    //snak bar theme
+    snackBarTheme: SnackBarThemeData(
+      backgroundColor: ColorManager.brown1,
+      contentTextStyle:
+          Styles.style14Medium().copyWith(color: ColorManager.white),
+    ),
   );
 }
 
@@ -256,6 +263,13 @@ ThemeData getDarkTheme() {
     //icon button
     iconButtonTheme: const IconButtonThemeData(
       style: ButtonStyle(iconSize: WidgetStatePropertyAll(23)),
+    ),
+
+    //snak bar theme
+    snackBarTheme: SnackBarThemeData(
+      backgroundColor: ColorManager.brown5,
+      contentTextStyle:
+          Styles.style14Medium().copyWith(color: ColorManager.black),
     ),
   );
 }

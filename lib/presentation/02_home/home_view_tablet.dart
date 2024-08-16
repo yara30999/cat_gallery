@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../domain/entities/bottom_nav_icon.dart';
 import '../../generated/l10n.dart';
-import '../resources/global_keys_manager.dart';
 import '../resources/routes_manager.dart';
 import '../resources/styles_manager.dart';
 import 'widgets/custom_app_bar.dart';
@@ -17,6 +16,7 @@ class HomeViewTablet extends StatefulWidget {
 }
 
 class _HomeViewTabletState extends State<HomeViewTablet> {
+  final _scaffoldKeyTablet = GlobalKey<ScaffoldState>();
   int _currentPage = 0;
   List<BottomNavIconEntity> get _navigationItems => [
         BottomNavIconEntity(icon: Icons.home, label: S.current.Home),
@@ -39,9 +39,13 @@ class _HomeViewTabletState extends State<HomeViewTablet> {
   Widget build(BuildContext context) {
     return Scaffold(
       //extendBody: true,
-      key: GlobalKeys.scaffoldKey,
-      appBar: const CustomAppBar(),
-      drawer: const CustomDrawer(),
+      key: _scaffoldKeyTablet,
+      appBar: CustomAppBar(
+        scaffoldKey: _scaffoldKeyTablet,
+      ),
+      drawer: CustomDrawer(
+        scaffoldKey: _scaffoldKeyTablet,
+      ),
       body: IndexedStack(
         index: _currentPage,
         children: const [

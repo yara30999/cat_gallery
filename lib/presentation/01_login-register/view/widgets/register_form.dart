@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl_phone_field/phone_number.dart' as intl_phone;
+import '../../view_model/cubit/auth_cubit.dart';
 import 'custom_phone_form_field.dart';
 import 'custom_text_form_field.dart';
 import 'custom_text_row.dart';
@@ -199,7 +201,7 @@ class _RegisterFormState extends State<RegisterForm> {
                 height: AppSize.s20,
               ),
               /* from country_code_picker: ^3.0.0
-                         and Phone obj come from intl_phone_field: ^3.1.0 */
+                             and Phone obj come from intl_phone_field: ^3.1.0 */
               PhoneFormField(
                 countryCode: _countryCode,
                 countryISOCode: _countryISOCode,
@@ -260,8 +262,12 @@ class _RegisterFormState extends State<RegisterForm> {
               //register button
               ElevatedButton(
                 //with null in onTap the button is disable
-                onPressed:
-                    (_formKey.currentState?.validate() ?? false) ? () {} : null,
+                onPressed: (_formKey.currentState?.validate() ?? false)
+                    ? () {
+                        BlocProvider.of<AuthCubit>(context)
+                            .registerUser(email: email!, password: password!);
+                      }
+                    : null,
                 child: Text(S.current.registerLabel),
               ),
               const SizedBox(
