@@ -1380,6 +1380,356 @@ class S {
       args: [],
     );
   }
+
+  /// `success`
+  String get success {
+    return Intl.message(
+      'success',
+      name: 'success',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `bad request. try again later`
+  String get bad_request_error {
+    return Intl.message(
+      'bad request. try again later',
+      name: 'bad_request_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `incorrect certificate`
+  String get incorrect_certificate_error {
+    return Intl.message(
+      'incorrect certificate',
+      name: 'incorrect_certificate_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `user unauthorized, try again later`
+  String get unauthorized_error {
+    return Intl.message(
+      'user unauthorized, try again later',
+      name: 'unauthorized_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `forbidden request. try again later`
+  String get forbidden_error {
+    return Intl.message(
+      'forbidden request. try again later',
+      name: 'forbidden_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `some thing went wrong, try again later`
+  String get internal_server_error {
+    return Intl.message(
+      'some thing went wrong, try again later',
+      name: 'internal_server_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `url not found, try again later`
+  String get not_found_error {
+    return Intl.message(
+      'url not found, try again later',
+      name: 'not_found_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Time out error, Try again later`
+  String get connection_timeout_error {
+    return Intl.message(
+      'Time out error, Try again later',
+      name: 'connection_timeout_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Request was cancelled, Try again later`
+  String get cancel_error {
+    return Intl.message(
+      'Request was cancelled, Try again later',
+      name: 'cancel_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recieve time out error, Try again later`
+  String get recieve_timeout_error {
+    return Intl.message(
+      'Recieve time out error, Try again later',
+      name: 'recieve_timeout_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send time out error, Try again later`
+  String get send_timeout_error {
+    return Intl.message(
+      'Send time out error, Try again later',
+      name: 'send_timeout_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `cache error, try again later`
+  String get cache_error {
+    return Intl.message(
+      'cache error, try again later',
+      name: 'cache_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please check your internet connection`
+  String get no_internet_connection_error {
+    return Intl.message(
+      'Please check your internet connection',
+      name: 'no_internet_connection_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `some thing went wrong, try again later`
+  String get unknown_error {
+    return Intl.message(
+      'some thing went wrong, try again later',
+      name: 'unknown_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `success with not content`
+  String get no_content {
+    return Intl.message(
+      'success with not content',
+      name: 'no_content',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `conflict found, try again later`
+  String get conflict_error {
+    return Intl.message(
+      'conflict found, try again later',
+      name: 'conflict_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `some thing went wrong, try again later`
+  String get default_error {
+    return Intl.message(
+      'some thing went wrong, try again later',
+      name: 'default_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Loading ...`
+  String get loading {
+    return Intl.message(
+      'Loading ...',
+      name: 'loading',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Google sign-in was canceled or failed`
+  String get google {
+    return Intl.message(
+      'Google sign-in was canceled or failed',
+      name: 'google',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Facebook sign-in was canceled or failed`
+  String get facebook {
+    return Intl.message(
+      'Facebook sign-in was canceled or failed',
+      name: 'facebook',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The password provided is too weak.`
+  String get week_password {
+    return Intl.message(
+      'The password provided is too weak.',
+      name: 'week_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The account already exists for that email.`
+  String get email_exists {
+    return Intl.message(
+      'The account already exists for that email.',
+      name: 'email_exists',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No user found for that email.`
+  String get user_not_found {
+    return Intl.message(
+      'No user found for that email.',
+      name: 'user_not_found',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wrong password provided for that user.`
+  String get wrong_password {
+    return Intl.message(
+      'Wrong password provided for that user.',
+      name: 'wrong_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wrong password or username.`
+  String get invalid_credential {
+    return Intl.message(
+      'Wrong password or username.',
+      name: 'invalid_credential',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Too many requests, please try again later.`
+  String get too_many_requests {
+    return Intl.message(
+      'Too many requests, please try again later.',
+      name: 'too_many_requests',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sorry, this email is invalid.`
+  String get invalid_email {
+    return Intl.message(
+      'Sorry, this email is invalid.',
+      name: 'invalid_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Operation not allowed, please try again later.`
+  String get opration_not_allowed {
+    return Intl.message(
+      'Operation not allowed, please try again later.',
+      name: 'opration_not_allowed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This account exists with different credential.`
+  String get different_credential {
+    return Intl.message(
+      'This account exists with different credential.',
+      name: 'different_credential',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The continue URL provided in the request is invalid.`
+  String get invalid_continue_uri {
+    return Intl.message(
+      'The continue URL provided in the request is invalid.',
+      name: 'invalid_continue_uri',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The domain of the continue URL is not whitelisted. Whitelist the domain in the Firebase console.`
+  String get unauthorized_continue_uri {
+    return Intl.message(
+      'The domain of the continue URL is not whitelisted. Whitelist the domain in the Firebase console.',
+      name: 'unauthorized_continue_uri',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No worries, we will send you reset instructions.`
+  String get no_worries {
+    return Intl.message(
+      'No worries, we will send you reset instructions.',
+      name: 'no_worries',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset password`
+  String get reset_password {
+    return Intl.message(
+      'Reset password',
+      name: 'reset_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Go back to login`
+  String get go_back_to_login {
+    return Intl.message(
+      'Go back to login',
+      name: 'go_back_to_login',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset password mail has been sent successfully to your email, go check.`
+  String get reset_password_mail_sent {
+    return Intl.message(
+      'Reset password mail has been sent successfully to your email, go check.',
+      name: 'reset_password_mail_sent',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

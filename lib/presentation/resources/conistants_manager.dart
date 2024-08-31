@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 class AppConstants {
-  static const int splashDelay = 1;
-  static const String baseUrl = "https://zzzzz@qwerty.com/";
+  static const int splashDelay = 5;
+  static const int onboardingDelay = 12;
+  static const int refreshDelay = 2;
+  static const String baseUrl = "https://api.thecatapi.com/";
   static const String empty = "";
   static const String token = "SEND TOKEN HERE";
   static const int zero = 0;
@@ -21,4 +23,8 @@ class AppConstants {
   static const double appBarHeight = kToolbarHeight * 2;
   static const int breakPointMobileTablet = 800; //1100
   static const int breakPointTabletLaptop = 1200; //1700
+  static const String google = 'google';
+  static const String facebook = 'facebook';
+  static const String kBreedsBox = 'kBreedsBox';
+  static const String kUserDataBox = 'kUserDataBox';
 }

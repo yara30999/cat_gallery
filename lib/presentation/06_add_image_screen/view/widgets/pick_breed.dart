@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../domain/entities/cat_breed_card.dart';
 import '../../../../generated/l10n.dart';
+import '../../../02_home/view/01_main_breeds/view_model/cubit/cat_breeds_cubit.dart';
 import '../../../resources/color_manager.dart';
 import '../../../resources/styles_manager.dart';
 import '../../../resources/values_manager.dart';
@@ -35,40 +37,8 @@ class _PickBreedState extends State<PickBreed> {
   @override
   void initState() {
     super.initState();
-    // TODO: 1 we should get the actual breed list from the api...
     // we need only breed id and name...
-    breeds = const [
-      CatBreedCardEntity(
-        breedId: 'abys',
-        breedName: 'Abyssinian',
-        referenceImgId: '',
-        referenceImgurl: '',
-      ),
-      CatBreedCardEntity(
-        breedId: 'aege',
-        breedName: 'Aegean',
-        referenceImgId: '',
-        referenceImgurl: '',
-      ),
-      CatBreedCardEntity(
-        breedId: 'abob',
-        breedName: 'American Bobtail',
-        referenceImgId: '',
-        referenceImgurl: '',
-      ),
-      CatBreedCardEntity(
-        breedId: 'acur',
-        breedName: 'American Curl',
-        referenceImgId: '',
-        referenceImgurl: '',
-      ),
-      CatBreedCardEntity(
-        breedId: 'asho',
-        breedName: 'American Shorthair',
-        referenceImgId: '',
-        referenceImgurl: '',
-      ),
-    ];
+    breeds = BlocProvider.of<CatBreedsCubit>(context).catBreedsList;
   }
 
   @override

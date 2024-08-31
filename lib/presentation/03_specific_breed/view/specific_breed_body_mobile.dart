@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../02_home/widgets/persistenet_header.dart';
+import '../../02_home/view/widgets/persistenet_header.dart';
 import '../../resources/values_manager.dart';
 import 'widgets/specific_breed_grid_builder.dart';
 import 'widgets/specific_breed_header_mobile.dart';

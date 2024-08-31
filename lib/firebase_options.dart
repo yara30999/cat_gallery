@@ -63,6 +63,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '108167851161',
     projectId: 'cat-gallery-e6567',
     storageBucket: 'cat-gallery-e6567.appspot.com',
+    androidClientId: '108167851161-hck8ullc2cseb4odkilagpt5f12febu2.apps.googleusercontent.com',
+    iosClientId: '108167851161-6vp8ih1vsd27tsnqiqmd6u8m3sfctog9.apps.googleusercontent.com',
     iosBundleId: 'com.example.myCat',
   );
 
@@ -72,6 +74,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '108167851161',
     projectId: 'cat-gallery-e6567',
     storageBucket: 'cat-gallery-e6567.appspot.com',
+    androidClientId: '108167851161-hck8ullc2cseb4odkilagpt5f12febu2.apps.googleusercontent.com',
+    iosClientId: '108167851161-6vp8ih1vsd27tsnqiqmd6u8m3sfctog9.apps.googleusercontent.com',
     iosBundleId: 'com.example.myCat',
   );
 
@@ -83,4 +87,5 @@ class DefaultFirebaseOptions {
     authDomain: 'cat-gallery-e6567.firebaseapp.com',
     storageBucket: 'cat-gallery-e6567.appspot.com',
   );
+
 }

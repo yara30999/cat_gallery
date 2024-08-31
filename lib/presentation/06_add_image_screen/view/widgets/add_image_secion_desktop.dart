@@ -6,7 +6,7 @@ import 'package:flutter_dropzone/flutter_dropzone.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:async';
 import 'package:flutter/foundation.dart';
-import '../../../02_home/widgets/images_widgets/cat_network_image.dart';
+import '../../../02_home/view/widgets/images_widgets/cat_network_image.dart';
 import '../../../resources/color_manager.dart';
 import '../../../resources/values_manager.dart';
 import 'camera_gallery_buttons.dart';

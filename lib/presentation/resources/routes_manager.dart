@@ -1,20 +1,24 @@
 import 'package:flutter/material.dart';
 import '../../generated/l10n.dart';
-import '../01_login-register/view/pages/login_view.dart';
-import '../01_login-register/view/pages/register_view.dart';
-import '../02_home/02_favorites/view/favorites_view_body.dart';
-import '../02_home/01_main_breeds/view/main_breeds_body.dart';
-import '../02_home/home_view.dart';
-import '../02_home/03_uploads/view/uploads_view_body.dart';
-import '../02_home/04_votes/view/votes_view_body.dart';
+import '../00_on_boarding/view/on_boarding_view.dart';
+import '../01_login-register-forgotpass/view/pages/forgot_pass_view.dart';
+import '../01_login-register-forgotpass/view/pages/login_view.dart';
+import '../01_login-register-forgotpass/view/pages/register_view.dart';
+import '../02_home/view/02_favorites/view/favorites_view_body.dart';
+import '../02_home/view/01_main_breeds/view/main_breeds_body.dart';
+import '../02_home/view/home_view.dart';
+import '../02_home/view/03_uploads/view/uploads_view_body.dart';
+import '../02_home/view/04_votes/view/votes_view_body.dart';
 import '../03_specific_breed/view/specific_breed_body.dart';
 import '../04_random_breed/view/random_breed_body.dart';
 import '../05_analysis_screen/view/analysis_body.dart';
 import '../06_add_image_screen/view/add_image_body.dart';
 
 class Routes {
-  static const String loginRoute = "/";
+  static const String onBoardingRoute = "/";
+  static const String loginRoute = "/login_route";
   static const String registerRoute = "/register_route";
+  static const String forgotPasswordRoute = "/forgot_password_route";
   static const String homeRoute = "/home_route";
   static const String mainBreedsRoute = "/";
   static const String specificBreedRoute = "/specific_breed_route";
@@ -30,10 +34,14 @@ class Routes {
 class RouteGenerator {
   static Route<dynamic> getRoute(RouteSettings settings) {
     switch (settings.name) {
+      case Routes.onBoardingRoute:
+        return MaterialPageRoute(builder: (_) => const OnBoardingView());
       case Routes.loginRoute:
         return MaterialPageRoute(builder: (_) => const LoginView());
       case Routes.registerRoute:
         return MaterialPageRoute(builder: (_) => const RegisterView());
+      case Routes.forgotPasswordRoute:
+        return MaterialPageRoute(builder: (_) => const ForgotPasswordView());
       case Routes.homeRoute:
         return MaterialPageRoute(builder: (_) => const HomeView());
       default:

@@ -14,6 +14,18 @@ class ImageAssets {
   static const String logoWithTextW = "$imagePath/logo_with_text_white.png";
   static const String catWithoutBackground =
       "$imagePath/cat_without_background.png";
+  static const String cat1 = "$imagePath/cat_1.png";
+  static const String cat2 = "$imagePath/cat_2.png";
+  static const String cat3 = "$imagePath/cat_3.png";
+  static const String cat4 = "$imagePath/cat_4.png";
+  static const String cat5 = "$imagePath/cat_5.png";
+  static const String cat6 = "$imagePath/cat_6.png";
+  static const String cat7 = "$imagePath/cat_7.png";
+  static const String cat8 = "$imagePath/cat_8.png";
+  static const String cat9 = "$imagePath/cat_9.png";
+  static const String cat10 = "$imagePath/cat_10.png";
+  static const String loading = "$imagePath/loading.png";
+  static const String imageNotFound = "$imagePath/image_not_found.png";
 }
 
 class JsonAssets {
@@ -21,6 +33,7 @@ class JsonAssets {
   static const String error = "$jsonPath/cat_error.json";
   static const String empty = "$jsonPath/cat_empty.json";
   static const String success = "$jsonPath/cat_success.json";
+  static const String onBoarding = "$jsonPath/on_boarding.json";
 }
 
 class SvgAssets {

@@ -1,6 +1,11 @@
+import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'conistants_manager.dart';
+
+bool isDesktop() {
+  return Platform.isMacOS || Platform.isWindows || Platform.isLinux;
+}
 
 bool isWebOrDesktopApp() {
   if (kIsWeb) {

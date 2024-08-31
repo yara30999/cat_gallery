@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../app/functions.dart';
 import '../../../domain/entities/cat_breed_entity.dart';
-import '../../02_home/widgets/persistenet_header.dart';
+import '../../02_home/view/widgets/persistenet_header.dart';
 import '../../resources/color_manager.dart';
 import '../../resources/styles_manager.dart';
 import '../../resources/values_manager.dart';

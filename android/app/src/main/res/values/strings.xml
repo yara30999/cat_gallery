@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">CatGallery</string>
+    <string name="facebook_app_id">1030545768602779</string>
+    <string name="facebook_client_token">5c730d15000634c06ec06d030ece299a</string>
+    <string name="fb_login_protocol_scheme">e40e6a7b5ad145f47a17aa642d059fd9</string>
+
 </resources>

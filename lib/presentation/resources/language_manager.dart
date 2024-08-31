@@ -17,9 +17,6 @@ extension LanguageTypeExtension on LanguageType {
   }
 }
 
-/*
-Do not forget to use shared prefs on the localization 
-*/
 class LocalizationUtils {
   static const Locale arabicLocal = Locale("ar", "SA");
   static const Locale englishLocal = Locale("en", "US");
@@ -27,8 +24,4 @@ class LocalizationUtils {
   static bool currentLocalIsAr() {
     return Intl.getCurrentLocale() == LanguageType.arabic.getCode();
   }
-
-  // static bool currentLocalIsEn() {
-  //   return Intl.getCurrentLocale() == LanguageType.english.getValue();
-  // }
 }

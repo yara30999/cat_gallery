@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../domain/entities/category_item.dart';
-import '../../02_home/widgets/persistenet_header.dart';
+import '../../02_home/view/widgets/persistenet_header.dart';
 import '../../resources/language_manager.dart';
 import '../../resources/styles_manager.dart';
 import '../../resources/values_manager.dart';

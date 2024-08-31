@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../02_home/widgets/images_widgets/cat_cashed_image.dart';
-import '../../../02_home/widgets/images_widgets/cat_network_image.dart';
-import '../../../02_home/widgets/images_widgets/cat_pinch_zoom_image.dart';
+import '../../../02_home/view/widgets/images_widgets/cat_cashed_image.dart';
+import '../../../02_home/view/widgets/images_widgets/cat_network_image.dart';
+import '../../../02_home/view/widgets/images_widgets/cat_pinch_zoom_image.dart';
 import '../../../resources/platform_manager.dart';
 import '../../../resources/values_manager.dart';
 
