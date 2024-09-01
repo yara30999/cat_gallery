@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../generated/l10n.dart';
 import '../../../resources/styles_manager.dart';
 import '../../../resources/values_manager.dart';
+import '../01_main_breeds/view_model/cubit/cat_breeds_cubit.dart';
 
 class CustomSearchField extends StatefulWidget {
   const CustomSearchField({
@@ -33,13 +35,16 @@ class _CustomSearchFieldState extends State<CustomSearchField> {
     setState(() {
       searchController;
     });
+    // Reset search when cleared
+    context.read<CatBreedsCubit>().searchBreeds('');
   }
 
   void _searchValue(String value) {
-    //print('search field value : $value');
     setState(() {
       searchController;
     });
+    // Perform search with each keystroke
+    context.read<CatBreedsCubit>().searchBreeds(value);
   }
 
   @override

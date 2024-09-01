@@ -10,11 +10,26 @@ class CatBreedsCubit extends Cubit<CatBreedsState> {
   final GetBreedsUsecase _getBreedsUsecase;
   final RefreshBreedsUsecase _refreshBreedsUsecase;
   late List<CatBreedCardEntity> catBreedsList;
+  // This will store the filtered list
+  List<CatBreedCardEntity> filteredBreedsList = [];
 
   CatBreedsCubit(this._getBreedsUsecase, this._refreshBreedsUsecase)
       : super(const CatBreedsInitial([], loading: false)) {
     // Initialize catBreedsList in the constructor body
     catBreedsList = generateDummyCatBreedsList();
+  }
+
+  void searchBreeds(String query) {
+    if (query.isEmpty) {
+      // Reset to full list if query is empty
+      filteredBreedsList = catBreedsList;
+    } else {
+      filteredBreedsList = catBreedsList
+          .where((breed) =>
+              breed.breedName.toLowerCase().contains(query.toLowerCase()))
+          .toList();
+    }
+    emit(CatBreedsSuccess(filteredBreedsList, loading: false));
   }
 
   Future<void> getBreeds({required String uid}) async {

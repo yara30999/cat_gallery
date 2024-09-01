@@ -53,6 +53,10 @@ class BreedAlertDialog extends StatelessWidget {
               constraints: const BoxConstraints(maxWidth: AppSize.s400),
               child: Card(
                 child: ListTile(
+                  leading: Text(
+                    '${index + 1}',
+                    style: Styles.style18Medium(),
+                  ),
                   title: Text(
                     breedList[index].breedName,
                     style: Styles.style18Medium(),

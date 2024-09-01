@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AppConstants {
-  static const int splashDelay = 5;
-  static const int onboardingDelay = 12;
+  static const int splashDelay = 3;
+  static const int onboardingDelay = 6;
   static const int refreshDelay = 2;
   static const String baseUrl = "https://api.thecatapi.com/";
   static const String empty = "";
