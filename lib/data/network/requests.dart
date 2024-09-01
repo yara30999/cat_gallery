@@ -23,3 +23,10 @@ class CatImageRequest {
 
   CatImageRequest(this.uid, this.imgid);
 }
+
+class BreedInfoRequest {
+  String uid;
+  String breedId;
+
+  BreedInfoRequest(this.uid, this.breedId);
+}

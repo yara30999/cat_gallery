@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import '../../02_home/view/widgets/persistenet_header.dart';
-import '../../resources/values_manager.dart';
-import 'bloc_builders/specific_breed_header_t_bloc_builder.dart';
-import 'widgets/specific_breed_grid_builder.dart';
+import 'specific_breed_grid_builder.dart';
+import 'specific_breed_header_desktop.dart';
+import '../../../02_home/view/widgets/persistenet_header.dart';
+import '../../../resources/values_manager.dart';
 
-class SpecificBreedBodyTablet extends StatelessWidget {
-  const SpecificBreedBodyTablet({
+class ImagesDesktopBody extends StatelessWidget {
+  const ImagesDesktopBody({
     super.key,
   });
 
@@ -16,14 +16,14 @@ class SpecificBreedBodyTablet extends StatelessWidget {
         PersistentHeader(),
         SliverPadding(
           padding:
-              EdgeInsets.symmetric(horizontal: AppPadding.p40, vertical: 0),
+              EdgeInsets.symmetric(horizontal: AppPadding.p16, vertical: 0),
           sliver: SliverToBoxAdapter(
-            child: SpecificBreedHeaderTabletBlocBuilder(),
+            child: SpecificBreedHeaderDesktop(),
           ),
         ),
         SliverPadding(
           padding: EdgeInsets.symmetric(
-            horizontal: AppPadding.p200,
+            horizontal: AppPadding.p130, //340
             vertical: AppPadding.p20,
           ),
           sliver: SpecificBreedGridBuilder(),

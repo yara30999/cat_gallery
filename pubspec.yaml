@@ -142,7 +142,8 @@ flutter:
     - assets/json/cat_empty.json
     - assets/json/cat_error.json
     - assets/json/cat_loading.json
-    - assets/json/cat_success.json
+    - assets/json/cat_loading_2.json
+    - assets/json/cat_success.json 
     - assets/json/on_boarding.json
     - assets/svg/0_all.svg
     - assets/svg/1_hats.svg

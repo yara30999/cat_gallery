@@ -10,6 +10,7 @@ import '../network/app_api.dart';
 import '../network/requests.dart';
 import '../responses/image_response.dart';
 import '../responses/breeds_response.dart';
+import '../responses/single_breed_response.dart';
 
 abstract class RemoteDataSource {
   Future<AuthenticationEntity> login(LoginRequest loginRequest);
@@ -20,6 +21,7 @@ abstract class RemoteDataSource {
   Future<void> logout();
   Future<List<BreedResponse>> getBreeds(String uid);
   Future<CatImageResponse> getCatImage(CatImageRequest catImageRequest);
+  Future<SingleBreedResponse> getBreedInfo(BreedInfoRequest breedInfoRequest);
 }
 
 class RemoteDataSourceImpl implements RemoteDataSource {
@@ -155,5 +157,12 @@ class RemoteDataSourceImpl implements RemoteDataSource {
   Future<CatImageResponse> getCatImage(CatImageRequest catImageRequest) async {
     return await _appServiceClient.getImage(
         catImageRequest.uid, catImageRequest.imgid);
+  }
+
+  @override
+  Future<SingleBreedResponse> getBreedInfo(
+      BreedInfoRequest breedInfoRequest) async {
+    return await _appServiceClient.getBreedInfo(
+        breedInfoRequest.uid, breedInfoRequest.breedId);
   }
 }

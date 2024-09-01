@@ -2,6 +2,7 @@ import 'package:dartz/dartz.dart';
 import '../../app/app_prefs.dart';
 import '../../domain/entities/authentication.dart';
 import '../../domain/entities/cat_breed_card.dart';
+import '../../domain/entities/cat_breed_entity.dart';
 import '../../domain/entities/cat_image_entity.dart';
 import '../../domain/repository/repository.dart';
 import '../data_source/local_data_source.dart';
@@ -180,6 +181,21 @@ class RepositoryImpl implements Repository {
     if (await _networkInfo.isConnected) {
       try {
         final response = await _remoteDataSource.getCatImage(catImageRequest);
+        return Right(response.toDomain());
+      } catch (error) {
+        return Left(ErrorHandler.handle(error).failure);
+      }
+    } else {
+      return Left(DataSource.noInternetConnection.getFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, CatBreedEntity>> getBreedInfo(
+      BreedInfoRequest breedInfoRequest) async {
+    if (await _networkInfo.isConnected) {
+      try {
+        final response = await _remoteDataSource.getBreedInfo(breedInfoRequest);
         return Right(response.toDomain());
       } catch (error) {
         return Left(ErrorHandler.handle(error).failure);

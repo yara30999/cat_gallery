@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../../domain/entities/cat_breed_card.dart';
+import '../../../../../01_login-register-forgotpass/view_model/auth_cubit/auth_cubit.dart';
+import '../../../../../03_specific_breed/view_model/cubit/specific_breed_cubit.dart';
 import '../../../../../resources/color_manager.dart';
 import '../../../../../resources/platform_manager.dart';
 import '../../../../../resources/routes_manager.dart';
@@ -8,16 +10,6 @@ import '../../../../../resources/styles_manager.dart';
 import '../../../../../resources/values_manager.dart';
 import '../../../widgets/images_widgets/cat_cashed_image.dart';
 import '../../../widgets/images_widgets/cat_network_image.dart';
-
-class SpecificBreedArguments {
-  final ScrollController? scrollController;
-  final String breedName;
-
-  SpecificBreedArguments({
-    this.scrollController,
-    required this.breedName,
-  });
-}
 
 class CatBreedNavigationItem extends StatelessWidget {
   final CatBreedCardEntity catBreedCard;
@@ -27,15 +19,24 @@ class CatBreedNavigationItem extends StatelessWidget {
     required this.catBreedCard,
   });
 
+  void _catImageOnTap(BuildContext context) {
+    var uid = context.read<AuthCubit>().authObj!.uid;
+    var breedID = catBreedCard.breedId;
+    var breedName = catBreedCard.breedName;
+    //pass data
+    context.read<SpecificBreedCubit>().breedId = breedID;
+    context.read<SpecificBreedCubit>().breedName = breedName;
+    // and trigger request...
+    context.read<SpecificBreedCubit>().getBreedInfo(uid: uid, breedId: breedID);
+    //then navigate
+    Navigator.pushNamed(context, Routes.specificBreedRoute);
+  }
+
   @override
   Widget build(BuildContext context) {
-    //TODO pass the data here
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(
-          context,
-          Routes.specificBreedRoute,
-        );
+        _catImageOnTap(context);
       },
       child: Material(
         elevation: AppSize.s8,

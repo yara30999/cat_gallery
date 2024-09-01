@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import '../../../../domain/entities/cat_breed_entity.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../generated/l10n.dart';
+import '../../../resources/conistants_manager.dart';
 import '../../../resources/styles_manager.dart';
+import '../../view_model/cubit/specific_breed_cubit.dart';
 
 class SpecificBreedHeaderDesktop extends StatelessWidget {
-  const SpecificBreedHeaderDesktop({super.key, required this.catBreedEntity});
-  final CatBreedEntity catBreedEntity;
+  const SpecificBreedHeaderDesktop({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,9 @@ class SpecificBreedHeaderDesktop extends StatelessWidget {
         FittedBox(
           fit: BoxFit.scaleDown,
           child: Text(
-            S.current.breed_cat_images(catBreedEntity.name),
+            S.current.breed_cat_images(
+                context.read<SpecificBreedCubit>().breedName ??
+                    AppConstants.empty),
             style: Styles.style36Medium(),
           ),
         ),

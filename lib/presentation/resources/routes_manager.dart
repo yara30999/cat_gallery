@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../app/di.dart';
 import '../../generated/l10n.dart';
 import '../00_on_boarding/view/on_boarding_view.dart';
 import '../01_login-register-forgotpass/view/pages/forgot_pass_view.dart';
@@ -10,6 +12,7 @@ import '../02_home/view/home_view.dart';
 import '../02_home/view/03_uploads/view/uploads_view_body.dart';
 import '../02_home/view/04_votes/view/votes_view_body.dart';
 import '../03_specific_breed/view/specific_breed_body.dart';
+import '../03_specific_breed/view_model/cubit/specific_breed_cubit.dart';
 import '../04_random_breed/view/random_breed_body.dart';
 import '../05_analysis_screen/view/analysis_body.dart';
 import '../06_add_image_screen/view/add_image_body.dart';
@@ -124,16 +127,19 @@ class MainBreedsNavigator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Navigator(
-      initialRoute: Routes.mainBreedsRoute,
-      //onGenerateRoute: RouteGenerator.getMainBreedsNavigator,
-      // onGenerateRoute: (settings) =>
-      //     RouteGenerator.getMainBreedsNavigator(RouteSettings(
-      //   name: settings.name,
-      //   arguments: scrollController,
-      // )),
-      onGenerateRoute: (settings) =>
-          RouteGenerator.getMainBreedsNavigator(context, settings),
+    return BlocProvider(
+      create: (context) => SpecificBreedCubit(instance()),
+      child: Navigator(
+        initialRoute: Routes.mainBreedsRoute,
+        //onGenerateRoute: RouteGenerator.getMainBreedsNavigator,
+        // onGenerateRoute: (settings) =>
+        //     RouteGenerator.getMainBreedsNavigator(RouteSettings(
+        //   name: settings.name,
+        //   arguments: scrollController,
+        // )),
+        onGenerateRoute: (settings) =>
+            RouteGenerator.getMainBreedsNavigator(context, settings),
+      ),
     );
   }
 }

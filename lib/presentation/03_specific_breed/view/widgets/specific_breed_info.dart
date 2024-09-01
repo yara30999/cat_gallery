@@ -6,6 +6,7 @@ import '../../../../app/functions.dart';
 import '../../../../domain/entities/cat_breed_entity.dart';
 import '../../../../generated/l10n.dart';
 import '../../../resources/color_manager.dart';
+import '../../../resources/conistants_manager.dart';
 import '../../../resources/values_manager.dart';
 
 class SpecificBreedInformation extends StatefulWidget {
@@ -81,41 +82,47 @@ class _SpecificBreedInformationState extends State<SpecificBreedInformation> {
                   TextSpan(
                     text: S.current.cat_origin(widget.catBreedEntity.origin),
                   ),
-                  const TextSpan(text: '\n\n'),
-                  TextSpan(
-                    text: S.current.more_information,
-                  ),
-                  TextSpan(
-                    text: S.current.vetstreet_page,
-                    style: isLightTheme(context)
-                        ? const TextStyle(color: ColorManager.blue)
-                        : const TextStyle(color: ColorManager.orange4),
-                    mouseCursor: SystemMouseCursors.click,
-                    recognizer: TapGestureRecognizer()
-                      ..onTap = () {
-                        setState(() {
-                          _launched = _launchInBrowserView(
-                              widget.catBreedEntity.vetstreetUrl);
-                        });
-                      },
-                  ),
-                  TextSpan(
-                    text: S.current.or,
-                  ),
-                  TextSpan(
-                    text: S.current.wikipedia_page,
-                    style: isLightTheme(context)
-                        ? const TextStyle(color: ColorManager.blue)
-                        : const TextStyle(color: ColorManager.orange4),
-                    mouseCursor: SystemMouseCursors.click,
-                    recognizer: TapGestureRecognizer()
-                      ..onTap = () {
-                        setState(() {
-                          _launched = _launchInBrowserView(
-                              widget.catBreedEntity.wikipediaUrl);
-                        });
-                      },
-                  ),
+                  const TextSpan(text: '\t'),
+                  if (widget.catBreedEntity.vetstreetUrl !=
+                          AppConstants.empty ||
+                      widget.catBreedEntity.wikipediaUrl != AppConstants.empty)
+                    TextSpan(
+                      text: S.current.more_information,
+                    ),
+                  if (widget.catBreedEntity.vetstreetUrl != AppConstants.empty)
+                    TextSpan(
+                      text: S.current.vetstreet_page,
+                      style: isLightTheme(context)
+                          ? const TextStyle(color: ColorManager.blue)
+                          : const TextStyle(color: ColorManager.orange4),
+                      mouseCursor: SystemMouseCursors.click,
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          setState(() {
+                            _launched = _launchInBrowserView(
+                                widget.catBreedEntity.vetstreetUrl);
+                          });
+                        },
+                    ),
+                  if (widget.catBreedEntity.vetstreetUrl != AppConstants.empty)
+                    TextSpan(
+                      text: S.current.or,
+                    ),
+                  if (widget.catBreedEntity.wikipediaUrl != AppConstants.empty)
+                    TextSpan(
+                      text: S.current.wikipedia_page,
+                      style: isLightTheme(context)
+                          ? const TextStyle(color: ColorManager.blue)
+                          : const TextStyle(color: ColorManager.orange4),
+                      mouseCursor: SystemMouseCursors.click,
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          setState(() {
+                            _launched = _launchInBrowserView(
+                                widget.catBreedEntity.wikipediaUrl);
+                          });
+                        },
+                    ),
                 ],
               ),
             ),

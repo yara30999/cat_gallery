@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../02_home/view/widgets/persistenet_header.dart';
 import '../../02_home/view_model/scroll_controllers_cubit/scroll_controllers_cubit.dart';
 import '../../resources/values_manager.dart';
+import 'bloc_builders/specific_breed_header_m_bloc_builder.dart';
 import 'widgets/specific_breed_grid_builder.dart';
-import 'widgets/specific_breed_header_mobile.dart';
 
 class SpecificBreedBodyMobile extends StatelessWidget {
   const SpecificBreedBodyMobile({
@@ -22,7 +22,7 @@ class SpecificBreedBodyMobile extends StatelessWidget {
           padding:
               EdgeInsets.symmetric(horizontal: AppPadding.p16, vertical: 0),
           sliver: SliverToBoxAdapter(
-            child: SpecificBreedHeaderMobile(),
+            child: SpecificBreedHeaderMobileBlocBuilder(),
           ),
         ),
         SliverPadding(

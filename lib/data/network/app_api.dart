@@ -3,6 +3,7 @@ import 'package:retrofit/retrofit.dart';
 import '../../presentation/resources/conistants_manager.dart';
 import '../responses/image_response.dart';
 import '../responses/breeds_response.dart';
+import '../responses/single_breed_response.dart';
 part 'app_api.g.dart';
 
 // var userId= BlocProvider.of<AuthCubit>(context).authObj!.name;
@@ -20,5 +21,11 @@ abstract class AppServiceClient {
   Future<CatImageResponse> getImage(
     @Query('sub_id') String uid,
     @Path('imgid') String imgid,
+  );
+
+  @GET("v1/breeds/{breed_id}")
+  Future<SingleBreedResponse> getBreedInfo(
+    @Query('sub_id') String uid,
+    @Path('breed_id') String breedId,
   );
 }

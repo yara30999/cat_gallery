@@ -4,6 +4,7 @@ import '../../data/network/failure.dart';
 import '../../data/network/requests.dart';
 import '../entities/authentication.dart';
 import '../entities/cat_breed_card.dart';
+import '../entities/cat_breed_entity.dart';
 import '../entities/cat_image_entity.dart';
 
 abstract class Repository {
@@ -21,4 +22,6 @@ abstract class Repository {
       String uid);
   Future<Either<Failure, CatImageEntity>> getCatImage(
       CatImageRequest catImageRequest);
+  Future<Either<Failure, CatBreedEntity>> getBreedInfo(
+      BreedInfoRequest breedInfoRequest);
 }

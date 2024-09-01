@@ -30,6 +30,7 @@ class ImageAssets {
 
 class JsonAssets {
   static const String loading = "$jsonPath/cat_loading.json";
+  static const String loading2 = "$jsonPath/cat_loading_2.json";
   static const String error = "$jsonPath/cat_error.json";
   static const String empty = "$jsonPath/cat_empty.json";
   static const String success = "$jsonPath/cat_success.json";
