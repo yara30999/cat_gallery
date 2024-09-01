@@ -49,92 +49,57 @@ class RouteGenerator {
     }
   }
 
-  static Route<dynamic> getMainBreedsNavigator(RouteSettings settings) {
-    final ScrollController? controller =
-        settings.arguments as ScrollController?;
+  static Route<dynamic> getMainBreedsNavigator(
+      BuildContext context, RouteSettings settings) {
+    // final ScrollController? controller =
+    //     settings.arguments as ScrollController?;
     switch (settings.name) {
       case Routes.mainBreedsRoute:
-        return MaterialPageRoute(
-            builder: (_) => MainBreedsBody(
-                  mainBreedsScreenScrollController: controller,
-                ));
+        return MaterialPageRoute(builder: (_) => const MainBreedsBody());
       case Routes.specificBreedRoute:
-        return MaterialPageRoute(
-            builder: (_) => SpecificBreedBody(
-                  specificBreedScreenScrollController: controller,
-                ));
+        return MaterialPageRoute(builder: (_) => const SpecificBreedBody());
       case Routes.randomBreedRoute:
-        return MaterialPageRoute(
-            builder: (_) => RandomBreedBody(
-                  randomBreedScreenScrollController: controller,
-                ));
+        return MaterialPageRoute(builder: (_) => const RandomBreedBody());
       case Routes.analysisRoute:
-        return MaterialPageRoute(
-            builder: (_) => AnalysisBody(
-                  analysisScreenScrollController: controller,
-                ));
+        return MaterialPageRoute(builder: (_) => const AnalysisBody());
       default:
         return unDefinedRoute();
     }
   }
 
-  static Route<dynamic> getFavoritesNavigator(RouteSettings settings) {
-    final ScrollController? controller =
-        settings.arguments as ScrollController?;
+  static Route<dynamic> getFavoritesNavigator(
+      BuildContext context, RouteSettings settings) {
     switch (settings.name) {
       case Routes.favoritesRoute:
-        return MaterialPageRoute(
-            builder: (_) => FavoritesViewBody(
-                  favoratesScreenScrollController: controller,
-                ));
+        return MaterialPageRoute(builder: (_) => const FavoritesViewBody());
       case Routes.analysisRoute:
-        return MaterialPageRoute(
-            builder: (_) => AnalysisBody(
-                  analysisScreenScrollController: controller,
-                ));
+        return MaterialPageRoute(builder: (_) => const AnalysisBody());
       default:
         return unDefinedRoute();
     }
   }
 
-  static Route<dynamic> getUploadsNavigator(RouteSettings settings) {
-    final ScrollController? controller =
-        settings.arguments as ScrollController?;
+  static Route<dynamic> getUploadsNavigator(
+      BuildContext context, RouteSettings settings) {
     switch (settings.name) {
       case Routes.uploadsRoute:
-        return MaterialPageRoute(
-            builder: (_) => UploadsViewBody(
-                  uploadsScreenScrollController: controller,
-                ));
+        return MaterialPageRoute(builder: (_) => const UploadsViewBody());
       case Routes.analysisRoute:
-        return MaterialPageRoute(
-            builder: (_) => AnalysisBody(
-                  analysisScreenScrollController: controller,
-                ));
+        return MaterialPageRoute(builder: (_) => const AnalysisBody());
       case Routes.addImageRoute:
-        return MaterialPageRoute(
-            builder: (_) => AddImageBody(
-                  addImageScreenScrollController: controller,
-                ));
+        return MaterialPageRoute(builder: (_) => const AddImageBody());
       default:
         return unDefinedRoute();
     }
   }
 
-  static Route<dynamic> getVotesNavigator(RouteSettings settings) {
-    final ScrollController? controller =
-        settings.arguments as ScrollController?;
+  static Route<dynamic> getVotesNavigator(
+      BuildContext context, RouteSettings settings) {
     switch (settings.name) {
       case Routes.votesRoute:
-        return MaterialPageRoute(
-            builder: (_) => VotesViewBody(
-                  votesScreenScrollController: controller,
-                ));
+        return MaterialPageRoute(builder: (_) => const VotesViewBody());
       case Routes.analysisRoute:
-        return MaterialPageRoute(
-            builder: (_) => AnalysisBody(
-                  analysisScreenScrollController: controller,
-                ));
+        return MaterialPageRoute(builder: (_) => const AnalysisBody());
       default:
         return unDefinedRoute();
     }
@@ -152,69 +117,61 @@ class RouteGenerator {
 }
 
 class MainBreedsNavigator extends StatelessWidget {
-  final ScrollController? scrollController;
-  const MainBreedsNavigator({super.key, required this.scrollController});
+  //final ScrollController? scrollController;
+  const MainBreedsNavigator({
+    super.key, //required this.scrollController
+  });
 
   @override
   Widget build(BuildContext context) {
     return Navigator(
       initialRoute: Routes.mainBreedsRoute,
+      //onGenerateRoute: RouteGenerator.getMainBreedsNavigator,
+      // onGenerateRoute: (settings) =>
+      //     RouteGenerator.getMainBreedsNavigator(RouteSettings(
+      //   name: settings.name,
+      //   arguments: scrollController,
+      // )),
       onGenerateRoute: (settings) =>
-          RouteGenerator.getMainBreedsNavigator(RouteSettings(
-        name: settings.name,
-        arguments: scrollController,
-      )),
+          RouteGenerator.getMainBreedsNavigator(context, settings),
     );
   }
 }
 
 class FavoritesNavigator extends StatelessWidget {
-  final ScrollController? scrollController;
-  const FavoritesNavigator({super.key, required this.scrollController});
+  const FavoritesNavigator({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Navigator(
-      initialRoute: Routes.favoritesRoute,
-      onGenerateRoute: (settings) =>
-          RouteGenerator.getFavoritesNavigator(RouteSettings(
-        name: settings.name,
-        arguments: scrollController,
-      )),
-    );
+        initialRoute: Routes.favoritesRoute,
+        onGenerateRoute: (settings) =>
+            RouteGenerator.getFavoritesNavigator(context, settings));
   }
 }
 
 class UploadsNavigator extends StatelessWidget {
-  final ScrollController? scrollController;
-  const UploadsNavigator({super.key, required this.scrollController});
+  const UploadsNavigator({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Navigator(
       initialRoute: Routes.uploadsRoute,
       onGenerateRoute: (settings) =>
-          RouteGenerator.getUploadsNavigator(RouteSettings(
-        name: settings.name,
-        arguments: scrollController,
-      )),
+          RouteGenerator.getUploadsNavigator(context, settings),
     );
   }
 }
 
 class VotesNavigator extends StatelessWidget {
-  final ScrollController? scrollController;
-  const VotesNavigator({super.key, required this.scrollController});
+  const VotesNavigator({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Navigator(
       initialRoute: Routes.favoritesRoute,
       onGenerateRoute: (settings) =>
-          RouteGenerator.getVotesNavigator(RouteSettings(
-        name: settings.name,
-        arguments: scrollController,
-      )),
+          RouteGenerator.getVotesNavigator(context, settings),
     );
   }
 }

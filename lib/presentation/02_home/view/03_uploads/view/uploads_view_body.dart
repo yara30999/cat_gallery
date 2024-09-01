@@ -5,19 +5,14 @@ import 'uploads_view_body_mobile.dart';
 import 'uploads_view_body_tablet.dart';
 
 class UploadsViewBody extends StatelessWidget {
-  final ScrollController? uploadsScreenScrollController;
-  const UploadsViewBody(
-      {super.key, required this.uploadsScreenScrollController});
+  const UploadsViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MiniAdaptiveLayout(
-      mobileLayout: (context) => UploadsViewBodyMobile(
-          uploadsScreenScrollController: uploadsScreenScrollController),
-      tabletLayout: (context) => UploadsViewBodyTablet(
-          uploadsScreenScrollController: uploadsScreenScrollController),
-      desktopLayout: (context) => UploadsViewBodyDesktop(
-          uploadsScreenScrollController: uploadsScreenScrollController),
+      mobileLayout: (context) => const UploadsViewBodyMobile(),
+      tabletLayout: (context) => const UploadsViewBodyTablet(),
+      desktopLayout: (context) => const UploadsViewBodyDesktop(),
     );
   }
 }

@@ -11,10 +11,8 @@ import 'widgets/specific_breed_header_desktop.dart';
 import 'widgets/specific_breed_info.dart';
 
 class SpecificBreedBodyDesktop extends StatelessWidget {
-  final ScrollController? specificBreedScreenScrollController;
   const SpecificBreedBodyDesktop({
     super.key,
-    required this.specificBreedScreenScrollController,
   });
 
   CatBreedEntity get dummyCatBreed => const CatBreedEntity(
@@ -73,10 +71,7 @@ class SpecificBreedBodyDesktop extends StatelessWidget {
         Flexible(
           flex: 8,
           fit: FlexFit.loose,
-          child: ImagesBody(
-              specificBreedScreenScrollController:
-                  specificBreedScreenScrollController,
-              dummyCatBreed: dummyCatBreed),
+          child: ImagesBody(dummyCatBreed: dummyCatBreed),
         ),
         Flexible(
           flex: 3,
@@ -91,17 +86,14 @@ class SpecificBreedBodyDesktop extends StatelessWidget {
 class ImagesBody extends StatelessWidget {
   const ImagesBody({
     super.key,
-    required this.specificBreedScreenScrollController,
     required this.dummyCatBreed,
   });
 
-  final ScrollController? specificBreedScreenScrollController;
   final CatBreedEntity dummyCatBreed;
 
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
-      controller: specificBreedScreenScrollController,
       slivers: [
         const PersistentHeader(),
         SliverPadding(

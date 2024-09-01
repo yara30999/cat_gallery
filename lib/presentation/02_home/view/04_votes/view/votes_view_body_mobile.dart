@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../resources/styles_manager.dart';
 import '../../../../resources/values_manager.dart';
+import '../../../view_model/scroll_controllers_cubit/scroll_controllers_cubit.dart';
 import 'widgets/votes_grid_builder.dart';
 import 'widgets/votes_header.dart';
 
 class VotesViewBodyMobile extends StatelessWidget {
-  final ScrollController? votesScreenScrollController;
-  const VotesViewBodyMobile(
-      {super.key, required this.votesScreenScrollController});
+  const VotesViewBodyMobile({super.key});
 
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
-      controller: votesScreenScrollController,
+      controller:
+          context.read<BottomScrollControllersCubit>().bottomScrollController,
       slivers: [
         SliverPadding(
           padding: const EdgeInsets.only(

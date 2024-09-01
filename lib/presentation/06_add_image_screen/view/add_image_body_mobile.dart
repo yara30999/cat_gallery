@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../02_home/view/widgets/persistenet_header.dart';
+import '../../02_home/view_model/scroll_controllers_cubit/scroll_controllers_cubit.dart';
 import '../../resources/styles_manager.dart';
 import '../../resources/values_manager.dart';
 import 'widgets/add_image_header.dart';
 import 'widgets/add_image_secion_mobile.dart';
 
 class AddImageBodyMobile extends StatelessWidget {
-  final ScrollController? addImageScreenScrollController;
-  const AddImageBodyMobile({super.key, this.addImageScreenScrollController});
+  const AddImageBodyMobile({super.key});
 
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
-      controller: addImageScreenScrollController,
+      controller:
+          context.read<BottomScrollControllersCubit>().bottomScrollController,
       slivers: [
         const PersistentHeader(),
         SliverPadding(

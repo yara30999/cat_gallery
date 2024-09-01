@@ -5,21 +5,16 @@ import 'random_breed_body_mobile.dart';
 import 'random_breed_body_tablet.dart';
 
 class RandomBreedBody extends StatelessWidget {
-  final ScrollController? randomBreedScreenScrollController;
   const RandomBreedBody({
     super.key,
-    required this.randomBreedScreenScrollController,
   });
 
   @override
   Widget build(BuildContext context) {
     return MiniAdaptiveLayout(
-      mobileLayout: (context) => RandomBreedBodyMobile(
-          randomBreedScreenScrollController: randomBreedScreenScrollController),
-      tabletLayout: (context) => RandomBreedBodyTablet(
-          randomBreedScreenScrollController: randomBreedScreenScrollController),
-      desktopLayout: (context) => RandomBreedBodyDesktop(
-          randomBreedScreenScrollController: randomBreedScreenScrollController),
+      mobileLayout: (context) => const RandomBreedBodyMobile(),
+      tabletLayout: (context) => const RandomBreedBodyTablet(),
+      desktopLayout: (context) => const RandomBreedBodyDesktop(),
     );
   }
 }

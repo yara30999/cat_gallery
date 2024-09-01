@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../02_home/view/widgets/persistenet_header.dart';
+import '../../02_home/view_model/scroll_controllers_cubit/scroll_controllers_cubit.dart';
 import '../../resources/language_manager.dart';
 import '../../resources/styles_manager.dart';
 import '../../resources/values_manager.dart';
@@ -8,16 +10,15 @@ import 'widgets/random_breed_grid_builder.dart';
 import 'widgets/random_breed_header.dart';
 
 class RandomBreedBodyMobile extends StatelessWidget {
-  final ScrollController? randomBreedScreenScrollController;
   const RandomBreedBodyMobile({
     super.key,
-    required this.randomBreedScreenScrollController,
   });
 
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
-      controller: randomBreedScreenScrollController,
+      controller:
+          context.read<BottomScrollControllersCubit>().bottomScrollController,
       slivers: [
         const PersistentHeader(),
         SliverPadding(

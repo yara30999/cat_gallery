@@ -6,16 +6,13 @@ import 'widgets/analysis_header.dart';
 import 'widgets/analysis_section_tablet.dart';
 
 class AnalysisBodyTablet extends StatelessWidget {
-  final ScrollController? analysisScreenScrollController;
   const AnalysisBodyTablet({
     super.key,
-    required this.analysisScreenScrollController,
   });
 
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
-      controller: analysisScreenScrollController,
       slivers: [
         const PersistentHeader(),
         SliverPadding(

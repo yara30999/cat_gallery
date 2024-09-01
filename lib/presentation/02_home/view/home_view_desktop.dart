@@ -152,18 +152,10 @@ class _HomeViewDesktopState extends State<HomeViewDesktop> {
               child: IndexedStack(
                 index: _currentPage,
                 children: const [
-                  MainBreedsNavigator(
-                    scrollController: null,
-                  ),
-                  FavoritesNavigator(
-                    scrollController: null,
-                  ),
-                  UploadsNavigator(
-                    scrollController: null,
-                  ),
-                  VotesNavigator(
-                    scrollController: null,
-                  ),
+                  MainBreedsNavigator(),
+                  FavoritesNavigator(),
+                  UploadsNavigator(),
+                  VotesNavigator(),
                 ],
               ),
             ),

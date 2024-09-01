@@ -5,14 +5,11 @@ import 'widgets/uploads_grid_builder.dart';
 import 'widgets/uploads_header.dart';
 
 class UploadsViewBodyTablet extends StatelessWidget {
-  final ScrollController? uploadsScreenScrollController;
-  const UploadsViewBodyTablet(
-      {super.key, required this.uploadsScreenScrollController});
+  const UploadsViewBodyTablet({super.key});
 
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
-      controller: uploadsScreenScrollController,
       slivers: [
         SliverPadding(
           padding: const EdgeInsets.only(

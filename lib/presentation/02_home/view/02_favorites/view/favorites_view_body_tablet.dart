@@ -5,14 +5,11 @@ import 'widgets/favorites_grid_builder.dart';
 import 'widgets/favorites_header.dart';
 
 class FavoritesViewBodyTablet extends StatelessWidget {
-  final ScrollController? favoratesScreenScrollController;
-  const FavoritesViewBodyTablet(
-      {super.key, required this.favoratesScreenScrollController});
+  const FavoritesViewBodyTablet({super.key});
 
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
-      controller: favoratesScreenScrollController,
       slivers: [
         SliverPadding(
           padding: const EdgeInsets.only(

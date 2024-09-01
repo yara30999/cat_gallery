@@ -10,10 +10,8 @@ import 'main_breed_body_mobile.dart';
 import 'main_breed_body_tablet.dart';
 
 class MainBreedsBody extends StatelessWidget {
-  final ScrollController? mainBreedsScreenScrollController;
   const MainBreedsBody({
     super.key,
-    required this.mainBreedsScreenScrollController,
   });
 
   Future<void> _refreshBreedsData(BuildContext context) async {
@@ -36,12 +34,9 @@ class MainBreedsBody extends StatelessWidget {
         return _refreshBreedsData(context);
       },
       child: MiniAdaptiveLayout(
-        mobileLayout: (context) => MainBreedsBodyMobile(
-            mainBreedsScreenScrollController: mainBreedsScreenScrollController),
-        tabletLayout: (context) => MainBreedsBodyTablet(
-            mainBreedsScreenScrollController: mainBreedsScreenScrollController),
-        desktopLayout: (context) => MainBreedsBodyDesktop(
-            mainBreedsScreenScrollController: mainBreedsScreenScrollController),
+        mobileLayout: (context) => const MainBreedsBodyMobile(),
+        tabletLayout: (context) => const MainBreedsBodyTablet(),
+        desktopLayout: (context) => const MainBreedsBodyDesktop(),
       ),
     );
   }

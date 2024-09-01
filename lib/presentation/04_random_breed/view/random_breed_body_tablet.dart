@@ -8,16 +8,13 @@ import 'widgets/random_breed_grid_builder.dart';
 import 'widgets/random_breed_header.dart';
 
 class RandomBreedBodyTablet extends StatelessWidget {
-  final ScrollController? randomBreedScreenScrollController;
   const RandomBreedBodyTablet({
     super.key,
-    required this.randomBreedScreenScrollController,
   });
 
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
-      controller: randomBreedScreenScrollController,
       slivers: [
         const PersistentHeader(),
         SliverPadding(

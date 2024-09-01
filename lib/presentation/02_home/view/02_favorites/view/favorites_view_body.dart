@@ -5,19 +5,14 @@ import 'favorites_view_body_mobile.dart';
 import 'favorites_view_body_tablet.dart';
 
 class FavoritesViewBody extends StatelessWidget {
-  final ScrollController? favoratesScreenScrollController;
-  const FavoritesViewBody(
-      {super.key, required this.favoratesScreenScrollController});
+  const FavoritesViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MiniAdaptiveLayout(
-      mobileLayout: (context) => FavoritesViewBodyMobile(
-          favoratesScreenScrollController: favoratesScreenScrollController),
-      tabletLayout: (context) => FavoritesViewBodyTablet(
-          favoratesScreenScrollController: favoratesScreenScrollController),
-      desktopLayout: (context) => FavoritesViewBodyDesktop(
-          favoratesScreenScrollController: favoratesScreenScrollController),
+      mobileLayout: (context) => const FavoritesViewBodyMobile(),
+      tabletLayout: (context) => const FavoritesViewBodyTablet(),
+      desktopLayout: (context) => const FavoritesViewBodyDesktop(),
     );
   }
 }

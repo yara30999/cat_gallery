@@ -5,14 +5,11 @@ import 'widgets/votes_grid_builder.dart';
 import 'widgets/votes_header.dart';
 
 class VotesViewBodyDesktop extends StatelessWidget {
-  final ScrollController? votesScreenScrollController;
-  const VotesViewBodyDesktop(
-      {super.key, required this.votesScreenScrollController});
+  const VotesViewBodyDesktop({super.key});
 
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
-      controller: votesScreenScrollController,
       slivers: [
         SliverPadding(
           padding: const EdgeInsets.only(

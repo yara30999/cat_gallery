@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../resources/styles_manager.dart';
 import '../../../../resources/values_manager.dart';
+import '../../../view_model/scroll_controllers_cubit/scroll_controllers_cubit.dart';
 import 'widgets/main_breeds_bloc_builder.dart';
 import 'widgets/main_breeds_header.dart';
 
 class MainBreedsBodyMobile extends StatelessWidget {
-  final ScrollController? mainBreedsScreenScrollController;
   const MainBreedsBodyMobile({
     super.key,
-    required this.mainBreedsScreenScrollController,
   });
 
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
-      controller: mainBreedsScreenScrollController,
+      controller:
+          context.read<BottomScrollControllersCubit>().bottomScrollController,
       slivers: [
         SliverPadding(
           padding: const EdgeInsets.symmetric(

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../domain/entities/bottom_nav_icon.dart';
 import '../../../generated/l10n.dart';
 import '../../resources/routes_manager.dart';
 import '../../resources/styles_manager.dart';
 import '../../resources/values_manager.dart';
+import '../view_model/scroll_controllers_cubit/scroll_controllers_cubit.dart';
 import 'widgets/custom_app_bar.dart';
 import 'widgets/custom_drawer.dart';
 
@@ -20,10 +22,6 @@ class _HomeViewMobileState extends State<HomeViewMobile> {
   final _scaffoldKeyMobile = GlobalKey<ScaffoldState>();
   int _currentPage = 0;
   static const double _paddingValue = 20.0;
-  late ScrollController _mainBreedsScrollController;
-  late ScrollController _favoritesScrollController;
-  late ScrollController _uploadsScrollController;
-  late ScrollController _votesScrollController;
 
   List<BottomNavIconEntity> get _navigationItems => [
         BottomNavIconEntity(icon: Icons.home, label: S.current.Home),
@@ -39,18 +37,11 @@ class _HomeViewMobileState extends State<HomeViewMobile> {
   @override
   void initState() {
     super.initState();
-    _mainBreedsScrollController = ScrollController();
-    _favoritesScrollController = ScrollController();
-    _uploadsScrollController = ScrollController();
-    _votesScrollController = ScrollController();
   }
 
   @override
   void dispose() {
-    _mainBreedsScrollController.dispose();
-    _favoritesScrollController.dispose();
-    _uploadsScrollController.dispose();
-    _votesScrollController.dispose();
+    context.read<BottomScrollControllersCubit>().disposeControllers();
     super.dispose();
   }
 
@@ -103,19 +94,11 @@ class _HomeViewMobileState extends State<HomeViewMobile> {
         },
         child: IndexedStack(
           index: _currentPage,
-          children: [
-            MainBreedsNavigator(
-              scrollController: _mainBreedsScrollController,
-            ),
-            FavoritesNavigator(
-              scrollController: _favoritesScrollController,
-            ),
-            UploadsNavigator(
-              scrollController: _uploadsScrollController,
-            ),
-            VotesNavigator(
-              scrollController: _votesScrollController,
-            ),
+          children: const [
+            MainBreedsNavigator(),
+            FavoritesNavigator(),
+            UploadsNavigator(),
+            VotesNavigator(),
           ],
         ),
       ),

@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../02_home/view/widgets/persistenet_header.dart';
+import '../../02_home/view_model/scroll_controllers_cubit/scroll_controllers_cubit.dart';
 import '../../resources/styles_manager.dart';
 import '../../resources/values_manager.dart';
 import 'widgets/analysis_header.dart';
 import 'widgets/analysis_section_mobile.dart';
 
 class AnalysisBodyMobile extends StatelessWidget {
-  final ScrollController? analysisScreenScrollController;
   const AnalysisBodyMobile({
     super.key,
-    required this.analysisScreenScrollController,
   });
 
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
-      controller: analysisScreenScrollController,
+      controller:
+          context.read<BottomScrollControllersCubit>().bottomScrollController,
       slivers: [
         const PersistentHeader(),
         SliverPadding(

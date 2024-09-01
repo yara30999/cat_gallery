@@ -6,13 +6,11 @@ import 'widgets/add_image_header.dart';
 import 'widgets/add_image_secion_desktop.dart';
 
 class AddImageBodyDesktop extends StatelessWidget {
-  final ScrollController? addImageScreenScrollController;
-  const AddImageBodyDesktop({super.key, this.addImageScreenScrollController});
+  const AddImageBodyDesktop({super.key});
 
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
-      controller: addImageScreenScrollController,
       slivers: [
         const PersistentHeader(),
         SliverPadding(

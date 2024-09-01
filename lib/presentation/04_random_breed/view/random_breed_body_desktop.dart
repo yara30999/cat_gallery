@@ -9,24 +9,19 @@ import 'widgets/random_breed_grid_builder.dart';
 import 'widgets/random_breed_header.dart';
 
 class RandomBreedBodyDesktop extends StatelessWidget {
-  final ScrollController? randomBreedScreenScrollController;
   const RandomBreedBodyDesktop({
     super.key,
-    required this.randomBreedScreenScrollController,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       mainAxisSize: MainAxisSize.min,
       children: [
         Flexible(
-          child: ImagesBody(
-            randomBreedScreenScrollController:
-                randomBreedScreenScrollController,
-          ),
+          child: ImagesBody(),
         ),
-        const CategoryBody(),
+        CategoryBody(),
       ],
     );
   }
@@ -35,15 +30,11 @@ class RandomBreedBodyDesktop extends StatelessWidget {
 class ImagesBody extends StatelessWidget {
   const ImagesBody({
     super.key,
-    required this.randomBreedScreenScrollController,
   });
-
-  final ScrollController? randomBreedScreenScrollController;
 
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
-      controller: randomBreedScreenScrollController,
       slivers: [
         const PersistentHeader(),
         SliverPadding(

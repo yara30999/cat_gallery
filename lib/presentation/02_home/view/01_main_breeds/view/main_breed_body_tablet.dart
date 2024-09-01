@@ -5,16 +5,13 @@ import 'widgets/main_breeds_bloc_builder.dart';
 import 'widgets/main_breeds_header.dart';
 
 class MainBreedsBodyTablet extends StatelessWidget {
-  final ScrollController? mainBreedsScreenScrollController;
   const MainBreedsBodyTablet({
     super.key,
-    required this.mainBreedsScreenScrollController,
   });
 
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
-      controller: mainBreedsScreenScrollController,
       slivers: [
         SliverPadding(
           padding: const EdgeInsets.symmetric(
