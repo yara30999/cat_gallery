@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../domain/entities/cat_with_click_entity.dart';
+import '../../../resources/color_manager.dart';
 import '../../../resources/platform_manager.dart';
 import '../../../resources/routes_manager.dart';
 import 'images_widgets/cat_cashed_image.dart';
@@ -59,11 +60,19 @@ class CatImageWithClickOptions extends StatelessWidget {
           onPressed: () {},
           favorite: catWithClickEntity.favorite,
         ),
-        ActionButton(
-          icon: Icons.how_to_vote_outlined,
-          onPressed: () {
-            _voteButtonOnPress(context);
-          },
+        Badge.count(
+          textColor: Theme.of(context).scaffoldBackgroundColor,
+          backgroundColor: ColorManager.green3,
+          count: catWithClickEntity.vote == null
+              ? 0
+              : catWithClickEntity.vote!.value,
+          offset: const Offset(3, 10),
+          child: ActionButton(
+            icon: Icons.how_to_vote_outlined,
+            onPressed: () {
+              _voteButtonOnPress(context);
+            },
+          ),
         ),
         ActionButton(
           icon: Icons.science_outlined,
