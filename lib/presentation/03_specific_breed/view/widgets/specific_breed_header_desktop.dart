@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../generated/l10n.dart';
 import '../../../resources/conistants_manager.dart';
 import '../../../resources/styles_manager.dart';
-import '../../view_model/cubit/specific_breed_cubit.dart';
+import '../../view_model/breed/specific_breed_cubit.dart';
 
 class SpecificBreedHeaderDesktop extends StatelessWidget {
   const SpecificBreedHeaderDesktop({super.key});

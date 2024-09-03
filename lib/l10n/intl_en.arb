@@ -166,5 +166,6 @@
   "no_worries": "No worries, we will send you reset instructions.",
   "reset_password": "Reset password",
   "go_back_to_login": "Go back to login",
-  "reset_password_mail_sent": "Reset password mail has been sent successfully to your email, go check."
+  "reset_password_mail_sent": "Reset password mail has been sent successfully to your email, go check.",
+  "no_more_cat_images": "No more cat images."
 }

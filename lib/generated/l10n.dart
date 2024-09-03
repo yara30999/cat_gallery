@@ -1730,6 +1730,16 @@ class S {
       args: [],
     );
   }
+
+  /// `No more cat images.`
+  String get no_more_cat_images {
+    return Intl.message(
+      'No more cat images.',
+      name: 'no_more_cat_images',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

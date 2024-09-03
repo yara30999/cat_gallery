@@ -30,7 +30,7 @@ class UploadImageWithClickOptionsAndDate extends StatelessWidget {
               ),
               child: Text(
                 GetTimeAgo.parse(
-                  DateTime.parse(catWithClickEntity.createdAt!),
+                  catWithClickEntity.createdAt ?? DateTime.now(),
                   pattern: "dd-MM-yyyy hh:mm aa",
                   locale: BlocProvider.of<SettingsCubit>(context)
                       .currentLocale

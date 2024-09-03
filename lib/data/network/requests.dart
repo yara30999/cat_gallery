@@ -30,3 +30,11 @@ class BreedInfoRequest {
 
   BreedInfoRequest(this.uid, this.breedId);
 }
+
+class BreedImagesRequest {
+  String uid;
+  String breedId;
+  int pageNum;
+
+  BreedImagesRequest(this.uid, this.breedId, this.pageNum);
+}

@@ -9,6 +9,7 @@ const String contentType = "content-type";
 const String accept = "accept";
 const String authorization = "authorization";
 const String defaultLangauge = "langauge";
+const String xApiKey = "x-api-key";
 
 class DioFactory {
   final AppPreferences _appPreferences;
@@ -23,6 +24,7 @@ class DioFactory {
       contentType: applicationJson,
       accept: applicationJson,
       authorization: AppConstants.token,
+      xApiKey: AppConstants.xApiKey,
       defaultLangauge: language //get lang from app prefs
     };
 

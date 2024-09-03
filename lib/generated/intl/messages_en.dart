@@ -185,6 +185,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("success with not content"),
         "no_internet_connection_error": MessageLookupByLibrary.simpleMessage(
             "Please check your internet connection"),
+        "no_more_cat_images":
+            MessageLookupByLibrary.simpleMessage("No more cat images."),
         "no_worries": MessageLookupByLibrary.simpleMessage(
             "No worries, we will send you reset instructions."),
         "notAMember": MessageLookupByLibrary.simpleMessage("Not a member?"),

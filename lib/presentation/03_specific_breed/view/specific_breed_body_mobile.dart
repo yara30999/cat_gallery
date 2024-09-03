@@ -4,7 +4,7 @@ import '../../02_home/view/widgets/persistenet_header.dart';
 import '../../02_home/view_model/scroll_controllers_cubit/scroll_controllers_cubit.dart';
 import '../../resources/values_manager.dart';
 import 'bloc_builders/specific_breed_header_m_bloc_builder.dart';
-import 'widgets/specific_breed_grid_builder.dart';
+import 'bloc_builders/specific_images_bloc_consumer.dart';
 
 class SpecificBreedBodyMobile extends StatelessWidget {
   const SpecificBreedBodyMobile({
@@ -30,7 +30,7 @@ class SpecificBreedBodyMobile extends StatelessWidget {
             horizontal: AppPadding.p16,
             vertical: AppPadding.p20,
           ),
-          sliver: SpecificBreedGridBuilder(),
+          sliver: SpecificImagesBlocConsumer(),
         ),
       ],
     );

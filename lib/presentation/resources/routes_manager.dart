@@ -12,7 +12,8 @@ import '../02_home/view/home_view.dart';
 import '../02_home/view/03_uploads/view/uploads_view_body.dart';
 import '../02_home/view/04_votes/view/votes_view_body.dart';
 import '../03_specific_breed/view/specific_breed_body.dart';
-import '../03_specific_breed/view_model/cubit/specific_breed_cubit.dart';
+import '../03_specific_breed/view_model/breed/specific_breed_cubit.dart';
+import '../03_specific_breed/view_model/images/specific_images_cubit.dart';
 import '../04_random_breed/view/random_breed_body.dart';
 import '../05_analysis_screen/view/analysis_body.dart';
 import '../06_add_image_screen/view/add_image_body.dart';
@@ -127,8 +128,15 @@ class MainBreedsNavigator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => SpecificBreedCubit(instance()),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => SpecificBreedCubit(instance()),
+        ),
+        BlocProvider(
+          create: (context) => SpecificImagesCubit(instance()),
+        ),
+      ],
       child: Navigator(
         initialRoute: Routes.mainBreedsRoute,
         //onGenerateRoute: RouteGenerator.getMainBreedsNavigator,

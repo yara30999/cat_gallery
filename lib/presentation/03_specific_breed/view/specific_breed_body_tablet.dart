@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../../02_home/view/widgets/persistenet_header.dart';
 import '../../resources/values_manager.dart';
 import 'bloc_builders/specific_breed_header_t_bloc_builder.dart';
-import 'widgets/specific_breed_grid_builder.dart';
+import 'bloc_builders/specific_images_bloc_consumer.dart';
 
 class SpecificBreedBodyTablet extends StatelessWidget {
   const SpecificBreedBodyTablet({
@@ -26,7 +26,7 @@ class SpecificBreedBodyTablet extends StatelessWidget {
             horizontal: AppPadding.p200,
             vertical: AppPadding.p20,
           ),
-          sliver: SpecificBreedGridBuilder(),
+          sliver: SpecificImagesBlocConsumer(),
         ),
       ],
     );

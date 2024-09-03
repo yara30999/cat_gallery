@@ -39,8 +39,8 @@ class _MainBreedsBlocBuilderState extends State<MainBreedsBlocBuilder> {
               because the height can make it scrollable...
               */
               height: AppSize.s2000,
-              child: SingleChildScrollView(
-                physics: const NeverScrollableScrollPhysics(),
+              child: Align(
+                alignment: Alignment.topCenter,
                 child: ErrorStateWidget(
                   errorText: state.errMessage,
                 ),

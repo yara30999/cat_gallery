@@ -5,8 +5,10 @@ class AppConstants {
   static const int onboardingDelay = 5;
   static const int refreshDelay = 2;
   static const String baseUrl = "https://api.thecatapi.com/";
-  static const String empty = "";
+  static const String xApiKey =
+      "live_fRl8P1uYl7wNnQ1DQvv8mIp2OQohecbeIr2ytN0dS2Zoq8u8TWUuJxSaY3lQ5IIG";
   static const String token = "SEND TOKEN HERE";
+  static const String empty = "";
   static const int zero = 0;
   static const Duration apiTimeOut = Duration(minutes: 2);
   static const List<String> favoriteCountries = [

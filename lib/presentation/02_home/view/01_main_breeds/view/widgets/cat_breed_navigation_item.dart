@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../../domain/entities/cat_breed_card.dart';
 import '../../../../../01_login-register-forgotpass/view_model/auth_cubit/auth_cubit.dart';
-import '../../../../../03_specific_breed/view_model/cubit/specific_breed_cubit.dart';
+import '../../../../../03_specific_breed/view_model/breed/specific_breed_cubit.dart';
+import '../../../../../03_specific_breed/view_model/images/specific_images_cubit.dart';
 import '../../../../../resources/color_manager.dart';
 import '../../../../../resources/platform_manager.dart';
 import '../../../../../resources/routes_manager.dart';
@@ -24,10 +25,13 @@ class CatBreedNavigationItem extends StatelessWidget {
     var breedID = catBreedCard.breedId;
     var breedName = catBreedCard.breedName;
     //pass data
-    context.read<SpecificBreedCubit>().breedId = breedID;
     context.read<SpecificBreedCubit>().breedName = breedName;
+    context.read<SpecificBreedCubit>().breedId = breedID;
     // and trigger request...
     context.read<SpecificBreedCubit>().getBreedInfo(uid: uid, breedId: breedID);
+    context
+        .read<SpecificImagesCubit>()
+        .getBreedImages(uid: uid, breedId: breedID, pageNum: 0);
     //then navigate
     Navigator.pushNamed(context, Routes.specificBreedRoute);
   }

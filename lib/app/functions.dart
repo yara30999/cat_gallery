@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../domain/entities/cat_breed_card.dart';
+import '../domain/entities/cat_with_click_entity.dart';
 
 bool isLightTheme(BuildContext context) {
   return Theme.of(context).brightness == Brightness.light;
@@ -20,5 +21,17 @@ List<CatBreedCardEntity> generateDummyCatBreedsList() {
       referenceImgId: '111111111',
       referenceImgurl: '',
     );
+  });
+}
+
+List<CatWithClickEntity> generateDummyCatImagesList() {
+  return List.generate(40, (index) {
+    return CatWithClickEntity(
+        imageId: '1111',
+        imageUrl: '',
+        favorite: const Favorite(id: 1111),
+        vote: const Vote(id: 1, value: 3),
+        createdAt: DateTime.now(),
+        breedName: 'bla bla');
   });
 }

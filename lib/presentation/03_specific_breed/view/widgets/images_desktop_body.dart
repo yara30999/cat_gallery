@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'specific_breed_grid_builder.dart';
+import '../bloc_builders/specific_images_bloc_consumer.dart';
 import 'specific_breed_header_desktop.dart';
 import '../../../02_home/view/widgets/persistenet_header.dart';
 import '../../../resources/values_manager.dart';
@@ -26,7 +26,7 @@ class ImagesDesktopBody extends StatelessWidget {
             horizontal: AppPadding.p130, //340
             vertical: AppPadding.p20,
           ),
-          sliver: SpecificBreedGridBuilder(),
+          sliver: SpecificImagesBlocConsumer(),
         ),
       ],
     );

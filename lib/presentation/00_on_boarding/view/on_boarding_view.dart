@@ -31,12 +31,14 @@ class _OnBoardingViewState extends State<OnBoardingView> {
           if (isUserLoggedIn)
             {
               // navigate to home screen
-              Navigator.pushReplacementNamed(context, Routes.homeRoute)
+              if (mounted)
+                Navigator.pushReplacementNamed(context, Routes.homeRoute)
             }
           else
             {
               // navigate to login screen
-              Navigator.pushReplacementNamed(context, Routes.loginRoute)
+              if (mounted)
+                Navigator.pushReplacementNamed(context, Routes.loginRoute)
             }
         });
   }

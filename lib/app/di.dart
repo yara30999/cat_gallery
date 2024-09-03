@@ -14,6 +14,7 @@ import '../data/special_sevices/validation_service.dart';
 import '../domain/repository/repository.dart';
 import '../domain/usecase/facebook_sign_in_usecase.dart';
 import '../domain/usecase/forgot_password_usecase.dart';
+import '../domain/usecase/get_breed_images_usecase.dart';
 import '../domain/usecase/get_breed_info_usecase.dart';
 import '../domain/usecase/get_breeds_usecase.dart';
 import '../domain/usecase/get_cat_image_usecase.dart';
@@ -104,5 +105,10 @@ Future<void> initAppModule() async {
   if (!GetIt.I.isRegistered<GetBreedInfoUsecase>()) {
     instance.registerFactory<GetBreedInfoUsecase>(
         () => GetBreedInfoUsecase(instance()));
+  }
+  // get breed images usecase
+  if (!GetIt.I.isRegistered<GetBreedImagesUsecase>()) {
+    instance.registerFactory<GetBreedImagesUsecase>(
+        () => GetBreedImagesUsecase(instance()));
   }
 }

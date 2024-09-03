@@ -1,8 +1,10 @@
 import '../../app/extensions.dart';
 import '../../domain/entities/cat_breed_card.dart';
-import '../../domain/entities/cat_breed_entity.dart' as catBreed;
+import '../../domain/entities/cat_breed_entity.dart' as cat_breed;
 import '../../domain/entities/cat_image_entity.dart';
+import '../../domain/entities/cat_with_click_entity.dart';
 import '../../presentation/resources/conistants_manager.dart';
+import '../responses/cat_with_click_response.dart';
 import '../responses/image_response.dart';
 import '../responses/breeds_response.dart';
 import '../responses/single_breed_response.dart';
@@ -38,13 +40,21 @@ extension CatImageResponseMapper on CatImageResponse? {
   }
 }
 
+extension WeightResponseMapper on WeightResponse? {
+  cat_breed.Weight toDomain() {
+    return cat_breed.Weight(
+      imperial: this!.imperial,
+      metric: this!.metric,
+    );
+  }
+}
+
 extension SingleBreedResponseMapper on SingleBreedResponse? {
-  catBreed.CatBreedEntity toDomain() {
-    return catBreed.CatBreedEntity(
+  cat_breed.CatBreedEntity toDomain() {
+    return cat_breed.CatBreedEntity(
       id: this!.id,
       name: this!.name,
-      weight: catBreed.Weight(
-          imperial: this!.weight.imperial, metric: this!.weight.metric),
+      weight: this!.weight.toDomain(),
       origin: this!.origin,
       description: this!.description,
       lifeSpan: this!.lifeSpan,
@@ -64,5 +74,55 @@ extension SingleBreedResponseMapper on SingleBreedResponse? {
       socialNeeds: this!.socialNeeds,
       strangerFriendly: this!.strangerFriendly,
     );
+  }
+}
+
+extension FavouriteResponseMapper on FavouriteResponse? {
+  Favorite? toDomain() {
+    return Favorite(
+      id: this!.id,
+    );
+  }
+}
+
+extension VoteResponseMapper on VoteResponse? {
+  Vote? toDomain() {
+    return Vote(id: this!.id, value: this!.value);
+  }
+}
+
+extension CategoryResponseMapper on CategoryResponse? {
+  Category? toDomain() {
+    return Category(
+      id: this!.id,
+      name: this!.name,
+    );
+  }
+}
+
+extension CatWithClickResponseMapper on CatWithClickResponse? {
+  CatWithClickEntity toDomain() {
+    List<Category>? categories =
+        (this?.categories?.map((categoryRes) => categoryRes.toDomain()) ??
+                const Iterable.empty())
+            .cast<Category>()
+            .toList();
+
+    List<CatBreedCardEntity> breedsList =
+        (this?.breeds?.map((breedsRes) => breedsRes.toDomain()) ??
+                const Iterable.empty())
+            .cast<CatBreedCardEntity>()
+            .toList();
+
+    String? breedName = breedsList.isEmpty ? null : breedsList.first.breedName;
+
+    return CatWithClickEntity(
+        imageId: this!.id,
+        imageUrl: this!.url,
+        favorite: this?.favourite?.toDomain(),
+        vote: this?.vote?.toDomain(),
+        createdAt: this?.createdAt,
+        categories: categories,
+        breedName: breedName);
   }
 }

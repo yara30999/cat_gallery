@@ -5,7 +5,7 @@ class CatWithClickEntity {
   final Vote? vote;
   final List<Category>? categories;
   final String? breedName;
-  final String? createdAt;
+  final DateTime? createdAt;
 
   const CatWithClickEntity({
     required this.imageId,
@@ -19,14 +19,14 @@ class CatWithClickEntity {
 }
 
 class Favorite {
-  final String id;
+  final int id;
   const Favorite({
     required this.id,
   });
 }
 
 class Vote {
-  final String id;
+  final int id;
   final int value;
   const Vote({
     required this.id,
@@ -35,7 +35,7 @@ class Vote {
 }
 
 class Category {
-  final String id;
+  final int id;
   final String name;
 
   const Category({required this.id, required this.name});
