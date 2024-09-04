@@ -38,3 +38,20 @@ class BreedImagesRequest {
 
   BreedImagesRequest(this.uid, this.breedId, this.pageNum);
 }
+
+class NoCategoryImagesRequest {
+  String uid;
+  int pageNum;
+  String order;
+
+  NoCategoryImagesRequest(this.uid, this.pageNum, this.order);
+}
+
+class CategoryImagesRequest {
+  String uid;
+  String categoryId;
+  int pageNum;
+  String order;
+
+  CategoryImagesRequest(this.uid, this.categoryId, this.pageNum, this.order);
+}

@@ -29,6 +29,17 @@ extension SortingItemExtension on SortingItem {
         return S.current.random;
     }
   }
+
+  String get apiValue {
+    switch (this) {
+      case SortingItem.asc:
+        return 'ASC';
+      case SortingItem.desc:
+        return 'DESC';
+      case SortingItem.random:
+        return 'RANDOM';
+    }
+  }
 }
 
 const String light = "light_theme";

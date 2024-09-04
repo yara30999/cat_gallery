@@ -6,6 +6,7 @@ import '../00_on_boarding/view/on_boarding_view.dart';
 import '../01_login-register-forgotpass/view/pages/forgot_pass_view.dart';
 import '../01_login-register-forgotpass/view/pages/login_view.dart';
 import '../01_login-register-forgotpass/view/pages/register_view.dart';
+import '../02_home/view/01_main_breeds/view_model/cubit/cat_breeds_cubit.dart';
 import '../02_home/view/02_favorites/view/favorites_view_body.dart';
 import '../02_home/view/01_main_breeds/view/main_breeds_body.dart';
 import '../02_home/view/home_view.dart';
@@ -14,7 +15,7 @@ import '../02_home/view/04_votes/view/votes_view_body.dart';
 import '../03_specific_breed/view/specific_breed_body.dart';
 import '../03_specific_breed/view_model/breed/specific_breed_cubit.dart';
 import '../03_specific_breed/view_model/images/specific_images_cubit.dart';
-import '../04_random_breed/view/random_breed_body.dart';
+import '../04_no_breed/view/no_breed_body.dart';
 import '../05_analysis_screen/view/analysis_body.dart';
 import '../06_add_image_screen/view/add_image_body.dart';
 
@@ -63,7 +64,7 @@ class RouteGenerator {
       case Routes.specificBreedRoute:
         return MaterialPageRoute(builder: (_) => const SpecificBreedBody());
       case Routes.randomBreedRoute:
-        return MaterialPageRoute(builder: (_) => const RandomBreedBody());
+        return MaterialPageRoute(builder: (_) => const NoBreedBody());
       case Routes.analysisRoute:
         return MaterialPageRoute(builder: (_) => const AnalysisBody());
       default:
@@ -130,6 +131,10 @@ class MainBreedsNavigator extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
+        BlocProvider(
+          create: (BuildContext context) =>
+              CatBreedsCubit(instance(), instance()),
+        ),
         BlocProvider(
           create: (context) => SpecificBreedCubit(instance()),
         ),

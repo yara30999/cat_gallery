@@ -1740,6 +1740,16 @@ class S {
       args: [],
     );
   }
+
+  /// `There is no images in this category section.`
+  String get no_images_category {
+    return Intl.message(
+      'There is no images in this category section.',
+      name: 'no_images_category',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

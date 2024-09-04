@@ -142,6 +142,8 @@ flutter:
     - assets/svg/google.svg
     - assets/svg/facebook.svg
     - assets/json/cat_empty.json
+    - assets/json/cat_empty_2.json
+    - assets/json/cat_empty_3.json
     - assets/json/cat_error.json
     - assets/json/cat_loading.json
     - assets/json/cat_loading_2.json

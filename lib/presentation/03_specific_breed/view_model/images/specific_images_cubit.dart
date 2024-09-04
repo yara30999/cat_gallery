@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-
 import '../../../../app/functions.dart';
 import '../../../../domain/entities/cat_with_click_entity.dart';
 import '../../../../domain/usecase/get_breed_images_usecase.dart';
@@ -10,7 +9,7 @@ part 'specific_images_state.dart';
 
 class SpecificImagesCubit extends Cubit<SpecificImagesState> {
   final GetBreedImagesUsecase _getBreedImagesUsecase;
-  late List<CatWithClickEntity> items = [];
+  List<CatWithClickEntity> items = [];
 
   SpecificImagesCubit(this._getBreedImagesUsecase)
       : super(const SpecificImagesInitial([], isLoading: false)) {

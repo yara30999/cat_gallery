@@ -179,6 +179,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("لم يتم العثور على المسار"),
         "no_content":
             MessageLookupByLibrary.simpleMessage("تم بنجاح مع عدم وجود محتوى"),
+        "no_images_category":
+            MessageLookupByLibrary.simpleMessage("لا يوجد صور في هذا القسم."),
         "no_internet_connection_error": MessageLookupByLibrary.simpleMessage(
             "الرجاء التحقق من اتصال الانترنت الخاص بك"),
         "no_more_cat_images":

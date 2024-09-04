@@ -35,4 +35,21 @@ abstract class AppServiceClient {
     @Query('breed_ids') String breedId,
     @Query('page') int pageNum,
   );
+
+  @GET(
+      "v1/images/search?mime_types=jpg&limit=30&include_breeds=0&include_categories=1")
+  Future<List<CatWithClickResponse>> getNoCategoryImages(
+    @Query('sub_id') String uid,
+    @Query('page') int pageNum,
+    @Query('order') String order,
+  );
+
+  @GET(
+      "v1/images/search?mime_types=jpg&limit=30&include_breeds=0&include_categories=1")
+  Future<List<CatWithClickResponse>> getCategoryImages(
+    @Query('sub_id') String uid,
+    @Query('category_ids') String categoryId,
+    @Query('page') int pageNum,
+    @Query('order') String order,
+  );
 }

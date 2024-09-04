@@ -151,7 +151,97 @@ class _AppServiceClient implements AppServiceClient {
     )
         .compose(
           _dio.options,
-          'v1/images/search?order=ASC&limit=10&include_breeds=0&include_categories=1',
+          'v1/images/search?order=ASC&limit=20&include_breeds=0&include_categories=1',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<CatWithClickResponse> _value;
+    try {
+      _value = _result.data!
+          .map((dynamic i) =>
+              CatWithClickResponse.fromJson(i as Map<String, dynamic>))
+          .toList();
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<List<CatWithClickResponse>> getNoCategoryImages(
+    String uid,
+    int pageNum,
+    String order,
+  ) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'sub_id': uid,
+      r'page': pageNum,
+      r'order': order,
+    };
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<List<CatWithClickResponse>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          'v1/images/search?mime_types=jpg&limit=30&include_breeds=0&include_categories=1',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<CatWithClickResponse> _value;
+    try {
+      _value = _result.data!
+          .map((dynamic i) =>
+              CatWithClickResponse.fromJson(i as Map<String, dynamic>))
+          .toList();
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<List<CatWithClickResponse>> getCategoryImages(
+    String uid,
+    String categoryId,
+    int pageNum,
+    String order,
+  ) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'sub_id': uid,
+      r'category_ids': categoryId,
+      r'page': pageNum,
+      r'order': order,
+    };
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<List<CatWithClickResponse>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          'v1/images/search?mime_types=jpg&limit=30&include_breeds=0&include_categories=1',
           queryParameters: queryParameters,
           data: _data,
         )

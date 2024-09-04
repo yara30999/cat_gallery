@@ -26,4 +26,8 @@ abstract class Repository {
       BreedInfoRequest breedInfoRequest);
   Future<Either<Failure, List<CatWithClickEntity>>> getBreedImages(
       BreedImagesRequest breedImagesRequest);
+  Future<Either<Failure, List<CatWithClickEntity>>> getNoCategoryImages(
+      NoCategoryImagesRequest noCategoryImagesRequest);
+  Future<Either<Failure, List<CatWithClickEntity>>> getCategoryImages(
+      CategoryImagesRequest categoryImagesRequest);
 }

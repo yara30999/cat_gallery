@@ -25,6 +25,10 @@ abstract class RemoteDataSource {
   Future<SingleBreedResponse> getBreedInfo(BreedInfoRequest breedInfoRequest);
   Future<List<CatWithClickResponse>> getBreedImages(
       BreedImagesRequest breedImagesRequest);
+  Future<List<CatWithClickResponse>> getNoCategoryImages(
+      NoCategoryImagesRequest noCategoryImagesRequest);
+  Future<List<CatWithClickResponse>> getCategoryImages(
+      CategoryImagesRequest categoryImagesRequest);
 }
 
 class RemoteDataSourceImpl implements RemoteDataSource {
@@ -174,5 +178,24 @@ class RemoteDataSourceImpl implements RemoteDataSource {
       BreedImagesRequest breedImagesRequest) async {
     return await _appServiceClient.getBreedImages(breedImagesRequest.uid,
         breedImagesRequest.breedId, breedImagesRequest.pageNum);
+  }
+
+  @override
+  Future<List<CatWithClickResponse>> getNoCategoryImages(
+      NoCategoryImagesRequest noCategoryImagesRequest) async {
+    return await _appServiceClient.getNoCategoryImages(
+        noCategoryImagesRequest.uid,
+        noCategoryImagesRequest.pageNum,
+        noCategoryImagesRequest.order);
+  }
+
+  @override
+  Future<List<CatWithClickResponse>> getCategoryImages(
+      CategoryImagesRequest categoryImagesRequest) async {
+    return await _appServiceClient.getCategoryImages(
+        categoryImagesRequest.uid,
+        categoryImagesRequest.categoryId,
+        categoryImagesRequest.pageNum,
+        categoryImagesRequest.order);
   }
 }

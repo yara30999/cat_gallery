@@ -4,9 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import '../generated/l10n.dart';
 import '../presentation/01_login-register-forgotpass/view_model/auth_cubit/auth_cubit.dart';
-import '../presentation/02_home/view/01_main_breeds/view_model/cubit/cat_breeds_cubit.dart';
 import '../presentation/02_home/view_model/settings_cubit/settings_cubit.dart';
-import '../presentation/04_random_breed/view/widgets/my_custom_scroll_behavior.dart';
+import '../presentation/04_no_breed/view/widgets/my_custom_scroll_behavior.dart';
 import '../presentation/resources/routes_manager.dart';
 import '../presentation/resources/size_config.dart';
 import '../presentation/resources/theme_manager.dart';
@@ -24,10 +23,6 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (BuildContext context) => AuthCubit(instance(), instance(),
               instance(), instance(), instance(), instance()),
-        ),
-        BlocProvider(
-          create: (BuildContext context) =>
-              CatBreedsCubit(instance(), instance()),
         ),
       ],
       child: BlocBuilder<SettingsCubit, SettingsState>(

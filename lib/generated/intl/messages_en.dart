@@ -183,6 +183,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noRouteFound": MessageLookupByLibrary.simpleMessage("no_route_found"),
         "no_content":
             MessageLookupByLibrary.simpleMessage("success with not content"),
+        "no_images_category": MessageLookupByLibrary.simpleMessage(
+            "There is no images in this category section."),
         "no_internet_connection_error": MessageLookupByLibrary.simpleMessage(
             "Please check your internet connection"),
         "no_more_cat_images":

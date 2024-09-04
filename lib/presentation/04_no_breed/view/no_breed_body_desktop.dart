@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../domain/entities/category_item.dart';
+import '../../01_login-register-forgotpass/view_model/auth_cubit/auth_cubit.dart';
 import '../../02_home/view/widgets/persistenet_header.dart';
 import '../../resources/language_manager.dart';
 import '../../resources/styles_manager.dart';
 import '../../resources/values_manager.dart';
+import '../view_model/bloc/no_breed_bloc.dart';
+import 'bloc_builder/no_breed_bloc_consumer.dart';
 import 'widgets/category_item.dart';
-import 'widgets/random_breed_grid_builder.dart';
-import 'widgets/random_breed_header.dart';
+import 'widgets/no_breed_header.dart';
 
-class RandomBreedBodyDesktop extends StatelessWidget {
-  const RandomBreedBodyDesktop({
+class NoBreedBodyDesktop extends StatelessWidget {
+  const NoBreedBodyDesktop({
     super.key,
   });
 
@@ -41,7 +44,7 @@ class ImagesBody extends StatelessWidget {
           padding: const EdgeInsets.symmetric(
               horizontal: AppPadding.p60, vertical: 0),
           sliver: SliverToBoxAdapter(
-            child: RandomBreedHeader(
+            child: NoBreedHeader(
               headerStyle: Styles.style36Medium(),
             ),
           ),
@@ -51,7 +54,7 @@ class ImagesBody extends StatelessWidget {
             horizontal: AppPadding.p200,
             vertical: AppPadding.p20,
           ),
-          sliver: RandomBreedGridBuilder(),
+          sliver: NoBreedBlocConsumer(),
         ),
       ],
     );
@@ -67,6 +70,21 @@ class CategoryBody extends StatefulWidget {
 
 class _CategoryBodyState extends State<CategoryBody> {
   int activeIndex = 0;
+
+  void _onCategorySelection(int index) {
+    if (activeIndex != index) {
+      //save the category index to the bloc
+      BlocProvider.of<NoBreedBloc>(context).add(CategoryEvent(index));
+      setState(() {
+        activeIndex = index;
+      });
+      var uid = context.read<AuthCubit>().authObj!.uid;
+      //trigger the request here
+      BlocProvider.of<NoBreedBloc>(context)
+          .add(CategoryImagesEvent(uid: uid, pageNum: 0));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -89,11 +107,7 @@ class _CategoryBodyState extends State<CategoryBody> {
                   itemBuilder: (buildContext, index) {
                     return GestureDetector(
                       onTap: () {
-                        if (activeIndex != index) {
-                          setState(() {
-                            activeIndex = index;
-                          });
-                        }
+                        _onCategorySelection(index);
                       },
                       child: Align(
                         alignment: LocalizationUtils.currentLocalIsAr()

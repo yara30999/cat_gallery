@@ -3,11 +3,11 @@ import 'package:lottie/lottie.dart';
 import '../../../../resources/assets_manager.dart';
 import '../../../../resources/styles_manager.dart';
 
-class ErrorStateWidget extends StatelessWidget {
-  final String errorText;
-  const ErrorStateWidget({
+class EmptyStateWidget extends StatelessWidget {
+  final String text;
+  const EmptyStateWidget({
     super.key,
-    required this.errorText,
+    required this.text,
   });
 
   @override
@@ -17,10 +17,10 @@ class ErrorStateWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisSize: MainAxisSize.min,
       children: [
-        Lottie.asset(JsonAssets.error,
+        Lottie.asset(JsonAssets.empty3,
             fit: BoxFit.contain, width: double.infinity),
         Text(
-          errorText,
+          text,
           style: Styles.style18Medium(),
         ),
       ],

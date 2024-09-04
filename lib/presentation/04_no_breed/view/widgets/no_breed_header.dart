@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import '../../../../generated/l10n.dart';
 import 'sort_popup_menu.dart';
 
-class RandomBreedHeader extends StatelessWidget {
-  const RandomBreedHeader({
+class NoBreedHeader extends StatelessWidget {
+  const NoBreedHeader({
     super.key,
     required this.headerStyle,
   });

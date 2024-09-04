@@ -20,10 +20,8 @@ class SpecificImagesBlocConsumer extends StatelessWidget {
       builder: (context, state) {
         if (state is SpecificImagesFailure) {
           return SliverToBoxAdapter(
-            child: SizedBox(
-              child: ErrorStateWidget(
-                errorText: state.errMessage,
-              ),
+            child: ErrorStateWidget(
+              errorText: state.errMessage,
             ),
           );
         } else {

@@ -225,4 +225,44 @@ class RepositoryImpl implements Repository {
       return Left(DataSource.noInternetConnection.getFailure());
     }
   }
+
+  @override
+  Future<Either<Failure, List<CatWithClickEntity>>> getNoCategoryImages(
+      NoCategoryImagesRequest noCategoryImagesRequest) async {
+    if (await _networkInfo.isConnected) {
+      try {
+        final response = await _remoteDataSource
+            .getNoCategoryImages(noCategoryImagesRequest);
+        List<CatWithClickEntity> myEntity = [];
+        for (var res in response) {
+          myEntity.add(res.toDomain());
+        }
+        return Right(myEntity);
+      } catch (error) {
+        return Left(ErrorHandler.handle(error).failure);
+      }
+    } else {
+      return Left(DataSource.noInternetConnection.getFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<CatWithClickEntity>>> getCategoryImages(
+      CategoryImagesRequest categoryImagesRequest) async {
+    if (await _networkInfo.isConnected) {
+      try {
+        final response =
+            await _remoteDataSource.getCategoryImages(categoryImagesRequest);
+        List<CatWithClickEntity> myEntity = [];
+        for (var res in response) {
+          myEntity.add(res.toDomain());
+        }
+        return Right(myEntity);
+      } catch (error) {
+        return Left(ErrorHandler.handle(error).failure);
+      }
+    } else {
+      return Left(DataSource.noInternetConnection.getFailure());
+    }
+  }
 }

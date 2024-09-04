@@ -18,6 +18,8 @@ import '../domain/usecase/get_breed_images_usecase.dart';
 import '../domain/usecase/get_breed_info_usecase.dart';
 import '../domain/usecase/get_breeds_usecase.dart';
 import '../domain/usecase/get_cat_image_usecase.dart';
+import '../domain/usecase/get_category_images_usecase.dart';
+import '../domain/usecase/get_no_category_images_usecase.dart';
 import '../domain/usecase/google_sign_in_usecase.dart';
 import '../domain/usecase/login_usecase.dart';
 import '../domain/usecase/logout_usecase.dart';
@@ -110,5 +112,15 @@ Future<void> initAppModule() async {
   if (!GetIt.I.isRegistered<GetBreedImagesUsecase>()) {
     instance.registerFactory<GetBreedImagesUsecase>(
         () => GetBreedImagesUsecase(instance()));
+  }
+  // get no category images usecase
+  if (!GetIt.I.isRegistered<GetNoCategoryImagesUsecase>()) {
+    instance.registerFactory<GetNoCategoryImagesUsecase>(
+        () => GetNoCategoryImagesUsecase(instance()));
+  }
+  // get categroy images usecase
+  if (!GetIt.I.isRegistered<GetCategoryImagesUsecase>()) {
+    instance.registerFactory<GetCategoryImagesUsecase>(
+        () => GetCategoryImagesUsecase(instance()));
   }
 }

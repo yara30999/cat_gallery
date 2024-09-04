@@ -64,7 +64,7 @@ class CatImageWithClickOptions extends StatelessWidget {
           textColor: Theme.of(context).scaffoldBackgroundColor,
           backgroundColor: ColorManager.green3,
           count: catWithClickEntity.vote == null
-              ? 0
+              ? 0 //TODO not zero but the value that user has voted
               : catWithClickEntity.vote!.value,
           offset: const Offset(3, 10),
           child: ActionButton(
