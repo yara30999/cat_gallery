@@ -8,10 +8,13 @@ import '../../domain/entities/authentication.dart';
 import '../../presentation/resources/conistants_manager.dart';
 import '../network/app_api.dart';
 import '../network/requests.dart';
+import '../request_body/vote_body.dart';
 import '../responses/cat_with_click_response.dart';
+import '../responses/get_votes_response.dart';
 import '../responses/image_response.dart';
 import '../responses/breeds_response.dart';
 import '../responses/single_breed_response.dart';
+import '../responses/vote_single_image_response.dart';
 
 abstract class RemoteDataSource {
   Future<AuthenticationEntity> login(LoginRequest loginRequest);
@@ -29,6 +32,8 @@ abstract class RemoteDataSource {
       NoCategoryImagesRequest noCategoryImagesRequest);
   Future<List<CatWithClickResponse>> getCategoryImages(
       CategoryImagesRequest categoryImagesRequest);
+  Future<List<VotesResponse>> getVotes(UidPageNumRequest uidPageNumRequest);
+  Future<VoteSingleImageResponse> postVote(VoteBody voteBody);
 }
 
 class RemoteDataSourceImpl implements RemoteDataSource {
@@ -197,5 +202,17 @@ class RemoteDataSourceImpl implements RemoteDataSource {
         categoryImagesRequest.categoryId,
         categoryImagesRequest.pageNum,
         categoryImagesRequest.order);
+  }
+
+  @override
+  Future<List<VotesResponse>> getVotes(
+      UidPageNumRequest uidPageNumRequest) async {
+    return await _appServiceClient.getVotes(
+        uidPageNumRequest.uid, uidPageNumRequest.pageNum);
+  }
+
+  @override
+  Future<VoteSingleImageResponse> postVote(VoteBody voteBody) async {
+    return await _appServiceClient.postVote(voteBody);
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../resources/styles_manager.dart';
 import '../../../../resources/values_manager.dart';
-import 'widgets/votes_grid_builder.dart';
+import 'bloc_builders/votes_bloc_consumer.dart';
 import 'widgets/votes_header.dart';
 
 class VotesViewBodyDesktop extends StatelessWidget {
@@ -29,7 +29,7 @@ class VotesViewBodyDesktop extends StatelessWidget {
             horizontal: AppPadding.p340,
             vertical: AppPadding.p20,
           ),
-          sliver: VotesGridBuilder(),
+          sliver: VotesBlocConsumer(),
         ),
       ],
     );

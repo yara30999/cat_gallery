@@ -20,9 +20,11 @@ import '../domain/usecase/get_breeds_usecase.dart';
 import '../domain/usecase/get_cat_image_usecase.dart';
 import '../domain/usecase/get_category_images_usecase.dart';
 import '../domain/usecase/get_no_category_images_usecase.dart';
+import '../domain/usecase/get_votes_usecase.dart';
 import '../domain/usecase/google_sign_in_usecase.dart';
 import '../domain/usecase/login_usecase.dart';
 import '../domain/usecase/logout_usecase.dart';
+import '../domain/usecase/post_vote_usecase.dart';
 import '../domain/usecase/refresh_breeds_usecase.dart';
 import '../domain/usecase/register_usecase.dart';
 import 'app_prefs.dart';
@@ -122,5 +124,15 @@ Future<void> initAppModule() async {
   if (!GetIt.I.isRegistered<GetCategoryImagesUsecase>()) {
     instance.registerFactory<GetCategoryImagesUsecase>(
         () => GetCategoryImagesUsecase(instance()));
+  }
+  // get votes usecase
+  if (!GetIt.I.isRegistered<GetVotesUsecase>()) {
+    instance
+        .registerFactory<GetVotesUsecase>(() => GetVotesUsecase(instance()));
+  }
+  // post vote usecase
+  if (!GetIt.I.isRegistered<PostVoteUsecase>()) {
+    instance
+        .registerFactory<PostVoteUsecase>(() => PostVoteUsecase(instance()));
   }
 }

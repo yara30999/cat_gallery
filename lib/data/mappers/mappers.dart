@@ -5,9 +5,11 @@ import '../../domain/entities/cat_image_entity.dart';
 import '../../domain/entities/cat_with_click_entity.dart';
 import '../../presentation/resources/conistants_manager.dart';
 import '../responses/cat_with_click_response.dart';
+import '../responses/get_votes_response.dart';
 import '../responses/image_response.dart';
 import '../responses/breeds_response.dart';
 import '../responses/single_breed_response.dart';
+import '../responses/vote_single_image_response.dart';
 
 extension BreedResponseMapper on BreedResponse? {
   CatBreedCardEntity toDomain() {
@@ -124,5 +126,24 @@ extension CatWithClickResponseMapper on CatWithClickResponse? {
         createdAt: this?.createdAt,
         categories: categories,
         breedName: breedName);
+  }
+}
+
+extension GetVotesResponseMapper on VotesResponse? {
+  CatWithClickEntity toDomain() {
+    return CatWithClickEntity(
+        imageId: this!.image.id,
+        imageUrl: this!.image.url,
+        favorite: null,
+        vote: Vote(id: this!.id, value: this!.value),
+        createdAt: this!.createdAt,
+        categories: null,
+        breedName: null);
+  }
+}
+
+extension VoteSingleImageResponseMapper on VoteSingleImageResponse? {
+  Vote toDomain() {
+    return Vote(id: this!.id, value: this!.value);
   }
 }

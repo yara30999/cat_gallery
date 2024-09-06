@@ -6,17 +6,19 @@ import '../../../resources/values_manager.dart';
 
 class VoteSelectorButton extends StatefulWidget {
   final Vote? vote;
-  const VoteSelectorButton({
-    super.key,
-    required this.vote,
-  });
+  final GlobalKey<VoteSelectorButtonState> voteKey; // Pass the key here
+  const VoteSelectorButton({required this.vote, required this.voteKey})
+      : super(key: voteKey);
 
   @override
   VoteSelectorButtonState createState() => VoteSelectorButtonState();
 }
 
 class VoteSelectorButtonState extends State<VoteSelectorButton> {
-  late int _voteValue = 0;
+  late int _voteValue;
+
+  int get voteValue => _voteValue; // return vote value
+
   @override
   void initState() {
     super.initState();

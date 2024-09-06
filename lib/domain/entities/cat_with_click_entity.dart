@@ -16,6 +16,26 @@ class CatWithClickEntity {
     this.createdAt,
     this.breedName,
   });
+
+  CatWithClickEntity copyWith({
+    String? imageId,
+    String? imageUrl,
+    Favorite? favorite,
+    Vote? vote,
+    List<Category>? categories,
+    String? breedName,
+    DateTime? createdAt,
+  }) {
+    return CatWithClickEntity(
+      imageId: imageId ?? this.imageId,
+      imageUrl: imageUrl ?? this.imageUrl,
+      favorite: favorite ?? this.favorite,
+      vote: vote ?? this.vote,
+      categories: categories ?? this.categories,
+      breedName: breedName ?? this.breedName,
+      createdAt: createdAt ?? this.createdAt,
+    );
+  }
 }
 
 class Favorite {
@@ -23,6 +43,14 @@ class Favorite {
   const Favorite({
     required this.id,
   });
+
+  Favorite copyWith({
+    int? id,
+  }) {
+    return Favorite(
+      id: id ?? this.id,
+    );
+  }
 }
 
 class Vote {
@@ -32,6 +60,16 @@ class Vote {
     required this.id,
     required this.value,
   });
+
+  Vote copyWith({
+    int? id,
+    int? value,
+  }) {
+    return Vote(
+      id: id ?? this.id,
+      value: value ?? this.value,
+    );
+  }
 }
 
 class Category {
@@ -39,4 +77,14 @@ class Category {
   final String name;
 
   const Category({required this.id, required this.name});
+
+  Category copyWith({
+    int? id,
+    String? name,
+  }) {
+    return Category(
+      id: id ?? this.id,
+      name: name ?? this.name,
+    );
+  }
 }

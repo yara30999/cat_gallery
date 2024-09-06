@@ -13,6 +13,7 @@ import '../network/error_handler.dart';
 import '../network/failure.dart';
 import '../network/network_info.dart';
 import '../network/requests.dart';
+import '../request_body/vote_body.dart';
 
 class RepositoryImpl implements Repository {
   final RemoteDataSource _remoteDataSource;
@@ -258,6 +259,39 @@ class RepositoryImpl implements Repository {
           myEntity.add(res.toDomain());
         }
         return Right(myEntity);
+      } catch (error) {
+        return Left(ErrorHandler.handle(error).failure);
+      }
+    } else {
+      return Left(DataSource.noInternetConnection.getFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<CatWithClickEntity>>> getVotes(
+      UidPageNumRequest uidPageNumRequest) async {
+    if (await _networkInfo.isConnected) {
+      try {
+        final response = await _remoteDataSource.getVotes(uidPageNumRequest);
+        List<CatWithClickEntity> myEntity = [];
+        for (var res in response) {
+          myEntity.add(res.toDomain());
+        }
+        return Right(myEntity);
+      } catch (error) {
+        return Left(ErrorHandler.handle(error).failure);
+      }
+    } else {
+      return Left(DataSource.noInternetConnection.getFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, Vote>> postVote(VoteBody voteBody) async {
+    if (await _networkInfo.isConnected) {
+      try {
+        final response = await _remoteDataSource.postVote(voteBody);
+        return Right(response.toDomain());
       } catch (error) {
         return Left(ErrorHandler.handle(error).failure);
       }

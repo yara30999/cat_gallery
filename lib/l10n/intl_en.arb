@@ -168,5 +168,6 @@
   "go_back_to_login": "Go back to login",
   "reset_password_mail_sent": "Reset password mail has been sent successfully to your email, go check.",
   "no_more_cat_images": "No more cat images.",
-  "no_images_category": "There is no images in this category section."
+  "no_images_category": "There is no images in this category section.",
+  "no_votes_yet": "You haven't voted on any image yet."
 }

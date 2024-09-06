@@ -55,3 +55,10 @@ class CategoryImagesRequest {
 
   CategoryImagesRequest(this.uid, this.categoryId, this.pageNum, this.order);
 }
+
+class UidPageNumRequest {
+  String uid;
+  int pageNum;
+
+  UidPageNumRequest(this.uid, this.pageNum);
+}

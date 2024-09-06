@@ -185,6 +185,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "الرجاء التحقق من اتصال الانترنت الخاص بك"),
         "no_more_cat_images":
             MessageLookupByLibrary.simpleMessage("لا يوجد صور قطط أخرى."),
+        "no_votes_yet":
+            MessageLookupByLibrary.simpleMessage("لم تصوت على أي صورة بعد."),
         "no_worries": MessageLookupByLibrary.simpleMessage(
             "لا تقلق، سنرسل لك تعليمات إعادة التعيين."),
         "notAMember": MessageLookupByLibrary.simpleMessage("لست عضوا؟"),

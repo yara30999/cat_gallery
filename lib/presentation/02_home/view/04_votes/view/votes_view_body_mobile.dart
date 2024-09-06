@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../resources/styles_manager.dart';
 import '../../../../resources/values_manager.dart';
 import '../../../view_model/scroll_controllers_cubit/scroll_controllers_cubit.dart';
-import 'widgets/votes_grid_builder.dart';
+import 'bloc_builders/votes_bloc_consumer.dart';
 import 'widgets/votes_header.dart';
 
 class VotesViewBodyMobile extends StatelessWidget {
@@ -33,7 +33,7 @@ class VotesViewBodyMobile extends StatelessWidget {
             horizontal: AppPadding.p16,
             vertical: AppPadding.p20,
           ),
-          sliver: VotesGridBuilder(),
+          sliver: VotesBlocConsumer(),
         ),
       ],
     );

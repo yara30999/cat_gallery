@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import '../../data/network/failure.dart';
 import '../../data/network/requests.dart';
+import '../../data/request_body/vote_body.dart';
 import '../entities/authentication.dart';
 import '../entities/cat_breed_card.dart';
 import '../entities/cat_breed_entity.dart';
@@ -30,4 +31,7 @@ abstract class Repository {
       NoCategoryImagesRequest noCategoryImagesRequest);
   Future<Either<Failure, List<CatWithClickEntity>>> getCategoryImages(
       CategoryImagesRequest categoryImagesRequest);
+  Future<Either<Failure, List<CatWithClickEntity>>> getVotes(
+      UidPageNumRequest uidPageNumRequest);
+  Future<Either<Failure, Vote>> postVote(VoteBody voteBody);
 }

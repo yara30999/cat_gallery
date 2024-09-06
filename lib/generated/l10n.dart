@@ -1750,6 +1750,16 @@ class S {
       args: [],
     );
   }
+
+  /// `You haven't voted on any image yet.`
+  String get no_votes_yet {
+    return Intl.message(
+      'You haven\'t voted on any image yet.',
+      name: 'no_votes_yet',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

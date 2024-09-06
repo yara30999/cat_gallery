@@ -189,6 +189,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Please check your internet connection"),
         "no_more_cat_images":
             MessageLookupByLibrary.simpleMessage("No more cat images."),
+        "no_votes_yet": MessageLookupByLibrary.simpleMessage(
+            "You haven\'t voted on any image yet."),
         "no_worries": MessageLookupByLibrary.simpleMessage(
             "No worries, we will send you reset instructions."),
         "notAMember": MessageLookupByLibrary.simpleMessage("Not a member?"),

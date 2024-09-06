@@ -1,10 +1,13 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 import '../../presentation/resources/conistants_manager.dart';
+import '../request_body/vote_body.dart';
 import '../responses/cat_with_click_response.dart';
+import '../responses/get_votes_response.dart';
 import '../responses/image_response.dart';
 import '../responses/breeds_response.dart';
 import '../responses/single_breed_response.dart';
+import '../responses/vote_single_image_response.dart';
 part 'app_api.g.dart';
 
 @RestApi(baseUrl: AppConstants.baseUrl)
@@ -52,4 +55,13 @@ abstract class AppServiceClient {
     @Query('page') int pageNum,
     @Query('order') String order,
   );
+
+  @GET("v1/votes?limit=100&order=DESC")
+  Future<List<VotesResponse>> getVotes(
+    @Query('sub_id') String uid,
+    @Query('page') int pageNum,
+  );
+
+  @POST("v1/votes")
+  Future<VoteSingleImageResponse> postVote(@Body() VoteBody voteBody);
 }
