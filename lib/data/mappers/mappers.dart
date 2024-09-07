@@ -5,8 +5,11 @@ import '../../domain/entities/cat_image_entity.dart';
 import '../../domain/entities/cat_with_click_entity.dart';
 import '../../presentation/resources/conistants_manager.dart';
 import '../responses/cat_with_click_response.dart';
-import '../responses/get_votes_response.dart';
-import '../responses/image_response.dart';
+import '../responses/favourite_single_image_response.dart';
+import '../responses/get_favourites_response.dart';
+import '../responses/success_response.dart';
+import '../responses/votes_response.dart';
+import '../responses/cat_image_response.dart';
 import '../responses/breeds_response.dart';
 import '../responses/single_breed_response.dart';
 import '../responses/vote_single_image_response.dart';
@@ -79,9 +82,9 @@ extension SingleBreedResponseMapper on SingleBreedResponse? {
   }
 }
 
-extension FavouriteResponseMapper on FavouriteResponse? {
-  Favorite? toDomain() {
-    return Favorite(
+extension FavouriteResponseMapper on FavouritesResponse? {
+  Favourite? toDomain() {
+    return Favourite(
       id: this!.id,
     );
   }
@@ -145,5 +148,30 @@ extension GetVotesResponseMapper on VotesResponse? {
 extension VoteSingleImageResponseMapper on VoteSingleImageResponse? {
   Vote toDomain() {
     return Vote(id: this!.id, value: this!.value);
+  }
+}
+
+extension FavouritesResponseMapper on GetFavoritesResponse? {
+  CatWithClickEntity toDomain() {
+    return CatWithClickEntity(
+        imageId: this!.image.id,
+        imageUrl: this!.image.url,
+        favorite: Favourite(id: this!.id),
+        vote: null,
+        createdAt: this!.createdAt,
+        categories: null,
+        breedName: null);
+  }
+}
+
+extension FavoriteSingleImageResponseMapper on FavouriteSingleImageResponse? {
+  Favourite toDomain() {
+    return Favourite(id: this!.id);
+  }
+}
+
+extension SuccessResponseMapper on SuccessResponse? {
+  bool toDomain() {
+    return true;
   }
 }

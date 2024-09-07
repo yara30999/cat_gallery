@@ -13,7 +13,7 @@ class UploadsScreenGridBuilder extends StatelessWidget {
             imageId: '123456789',
             imageUrl:
                 "https://images.pexels.com/photos/326875/pexels-photo-326875.jpeg?cs=srgb&dl=adorable-animal-blur-326875.jpg&fm=jpg",
-            favorite: Favorite(id: 1234567555),
+            favorite: Favourite(id: 1234567555),
             vote: Vote(id: 252536945, value: 5),
             categories: null,
             createdAt: null),
@@ -29,7 +29,7 @@ class UploadsScreenGridBuilder extends StatelessWidget {
             imageId: '123456789',
             imageUrl:
                 "https://th.bing.com/th/id/OIP.XgYNEaDoZZteH9cOcEcutAHaE9?w=1920&h=1285&rs=1&pid=ImgDetMain",
-            favorite: Favorite(id: 1234567555),
+            favorite: Favourite(id: 1234567555),
             vote: Vote(id: 252536945, value: -4),
             categories: null,
             createdAt: null),
@@ -37,7 +37,7 @@ class UploadsScreenGridBuilder extends StatelessWidget {
             imageId: '123456789',
             imageUrl:
                 "https://i.pinimg.com/736x/e6/9b/6f/e69b6feb89a524682cf149d527026893--chats-tabby-tabby-cats.jpg",
-            favorite: Favorite(id: 1234567555),
+            favorite: Favourite(id: 1234567555),
             vote: null,
             categories: null,
             createdAt: null),

@@ -8,10 +8,14 @@ import '../../domain/entities/authentication.dart';
 import '../../presentation/resources/conistants_manager.dart';
 import '../network/app_api.dart';
 import '../network/requests.dart';
+import '../request_body/favourite_body.dart';
 import '../request_body/vote_body.dart';
 import '../responses/cat_with_click_response.dart';
-import '../responses/get_votes_response.dart';
-import '../responses/image_response.dart';
+import '../responses/favourite_single_image_response.dart';
+import '../responses/get_favourites_response.dart';
+import '../responses/success_response.dart';
+import '../responses/votes_response.dart';
+import '../responses/cat_image_response.dart';
 import '../responses/breeds_response.dart';
 import '../responses/single_breed_response.dart';
 import '../responses/vote_single_image_response.dart';
@@ -34,6 +38,12 @@ abstract class RemoteDataSource {
       CategoryImagesRequest categoryImagesRequest);
   Future<List<VotesResponse>> getVotes(UidPageNumRequest uidPageNumRequest);
   Future<VoteSingleImageResponse> postVote(VoteBody voteBody);
+  Future<List<GetFavoritesResponse>> getFavourites(
+      UidPageNumRequest uidPageNumRequest);
+  Future<FavouriteSingleImageResponse> postFavourite(
+      FavouriteBody favouriteBody);
+  Future<SuccessResponse> deleteFavourite(
+      DeleteFavouriteRequest deleteFavouriteRequest);
 }
 
 class RemoteDataSourceImpl implements RemoteDataSource {
@@ -214,5 +224,25 @@ class RemoteDataSourceImpl implements RemoteDataSource {
   @override
   Future<VoteSingleImageResponse> postVote(VoteBody voteBody) async {
     return await _appServiceClient.postVote(voteBody);
+  }
+
+  @override
+  Future<List<GetFavoritesResponse>> getFavourites(
+      UidPageNumRequest uidPageNumRequest) async {
+    return await _appServiceClient.getFavorites(
+        uidPageNumRequest.uid, uidPageNumRequest.pageNum);
+  }
+
+  @override
+  Future<FavouriteSingleImageResponse> postFavourite(
+      FavouriteBody favouriteBody) async {
+    return await _appServiceClient.postFavorite(favouriteBody);
+  }
+
+  @override
+  Future<SuccessResponse> deleteFavourite(
+      DeleteFavouriteRequest deleteFavouriteRequest) async {
+    return await _appServiceClient.deleteFavorite(
+        deleteFavouriteRequest.uid, deleteFavouriteRequest.favId);
   }
 }

@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import '../../data/network/failure.dart';
 import '../../data/network/requests.dart';
+import '../../data/request_body/favourite_body.dart';
 import '../../data/request_body/vote_body.dart';
 import '../entities/authentication.dart';
 import '../entities/cat_breed_card.dart';
@@ -34,4 +35,9 @@ abstract class Repository {
   Future<Either<Failure, List<CatWithClickEntity>>> getVotes(
       UidPageNumRequest uidPageNumRequest);
   Future<Either<Failure, Vote>> postVote(VoteBody voteBody);
+  Future<Either<Failure, List<CatWithClickEntity>>> getFavourites(
+      UidPageNumRequest uidPageNumRequest);
+  Future<Either<Failure, Favourite>> postFavourite(FavouriteBody favouriteBody);
+  Future<Either<Failure, bool>> deleteFavourite(
+      DeleteFavouriteRequest deleteFavouriteRequest);
 }

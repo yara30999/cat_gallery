@@ -62,3 +62,10 @@ class UidPageNumRequest {
 
   UidPageNumRequest(this.uid, this.pageNum);
 }
+
+class DeleteFavouriteRequest {
+  String uid;
+  String favId;
+
+  DeleteFavouriteRequest(this.uid, this.favId);
+}

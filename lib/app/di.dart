@@ -12,6 +12,7 @@ import '../data/repository/repository_impl.dart';
 import '../data/special_sevices/country_service.dart';
 import '../data/special_sevices/validation_service.dart';
 import '../domain/repository/repository.dart';
+import '../domain/usecase/delete_favourite_usecase.dart';
 import '../domain/usecase/facebook_sign_in_usecase.dart';
 import '../domain/usecase/forgot_password_usecase.dart';
 import '../domain/usecase/get_breed_images_usecase.dart';
@@ -19,11 +20,13 @@ import '../domain/usecase/get_breed_info_usecase.dart';
 import '../domain/usecase/get_breeds_usecase.dart';
 import '../domain/usecase/get_cat_image_usecase.dart';
 import '../domain/usecase/get_category_images_usecase.dart';
+import '../domain/usecase/get_favourites_usecase.dart';
 import '../domain/usecase/get_no_category_images_usecase.dart';
 import '../domain/usecase/get_votes_usecase.dart';
 import '../domain/usecase/google_sign_in_usecase.dart';
 import '../domain/usecase/login_usecase.dart';
 import '../domain/usecase/logout_usecase.dart';
+import '../domain/usecase/post_favourite_usecase.dart';
 import '../domain/usecase/post_vote_usecase.dart';
 import '../domain/usecase/refresh_breeds_usecase.dart';
 import '../domain/usecase/register_usecase.dart';
@@ -134,5 +137,20 @@ Future<void> initAppModule() async {
   if (!GetIt.I.isRegistered<PostVoteUsecase>()) {
     instance
         .registerFactory<PostVoteUsecase>(() => PostVoteUsecase(instance()));
+  }
+  // get favourites usecase
+  if (!GetIt.I.isRegistered<GetFavouritesUsecase>()) {
+    instance.registerFactory<GetFavouritesUsecase>(
+        () => GetFavouritesUsecase(instance()));
+  }
+  // post favourite usecase
+  if (!GetIt.I.isRegistered<PostFavouriteUsecase>()) {
+    instance.registerFactory<PostFavouriteUsecase>(
+        () => PostFavouriteUsecase(instance()));
+  }
+  // delete favourite usecase
+  if (!GetIt.I.isRegistered<DeleteFavouriteUsecase>()) {
+    instance.registerFactory<DeleteFavouriteUsecase>(
+        () => DeleteFavouriteUsecase(instance()));
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../resources/styles_manager.dart';
 import '../../../../resources/values_manager.dart';
-import 'widgets/favorites_grid_builder.dart';
+import 'bloc_builders/favourites_bloc_consumer.dart';
 import 'widgets/favorites_header.dart';
 
 class FavoritesViewBodyTablet extends StatelessWidget {
@@ -29,7 +29,7 @@ class FavoritesViewBodyTablet extends StatelessWidget {
             horizontal: AppPadding.p200,
             vertical: AppPadding.p20,
           ),
-          sliver: FavoritesGridBuilder(),
+          sliver: FavouritesBlocConsumer(),
         ),
       ],
     );

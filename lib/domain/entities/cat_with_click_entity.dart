@@ -1,7 +1,7 @@
 class CatWithClickEntity {
   final String imageId;
   final String imageUrl;
-  final Favorite? favorite;
+  final Favourite? favorite;
   final Vote? vote;
   final List<Category>? categories;
   final String? breedName;
@@ -20,7 +20,7 @@ class CatWithClickEntity {
   CatWithClickEntity copyWith({
     String? imageId,
     String? imageUrl,
-    Favorite? favorite,
+    Favourite? favorite,
     Vote? vote,
     List<Category>? categories,
     String? breedName,
@@ -38,16 +38,16 @@ class CatWithClickEntity {
   }
 }
 
-class Favorite {
+class Favourite {
   final int id;
-  const Favorite({
+  const Favourite({
     required this.id,
   });
 
-  Favorite copyWith({
+  Favourite copyWith({
     int? id,
   }) {
-    return Favorite(
+    return Favourite(
       id: id ?? this.id,
     );
   }

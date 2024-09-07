@@ -13,6 +13,7 @@ import '../network/error_handler.dart';
 import '../network/failure.dart';
 import '../network/network_info.dart';
 import '../network/requests.dart';
+import '../request_body/favourite_body.dart';
 import '../request_body/vote_body.dart';
 
 class RepositoryImpl implements Repository {
@@ -291,6 +292,57 @@ class RepositoryImpl implements Repository {
     if (await _networkInfo.isConnected) {
       try {
         final response = await _remoteDataSource.postVote(voteBody);
+        return Right(response.toDomain());
+      } catch (error) {
+        return Left(ErrorHandler.handle(error).failure);
+      }
+    } else {
+      return Left(DataSource.noInternetConnection.getFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<CatWithClickEntity>>> getFavourites(
+      UidPageNumRequest uidPageNumRequest) async {
+    if (await _networkInfo.isConnected) {
+      try {
+        final response =
+            await _remoteDataSource.getFavourites(uidPageNumRequest);
+        List<CatWithClickEntity> myEntity = [];
+        for (var res in response) {
+          myEntity.add(res.toDomain());
+        }
+        return Right(myEntity);
+      } catch (error) {
+        return Left(ErrorHandler.handle(error).failure);
+      }
+    } else {
+      return Left(DataSource.noInternetConnection.getFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, Favourite>> postFavourite(
+      FavouriteBody favouriteBody) async {
+    if (await _networkInfo.isConnected) {
+      try {
+        final response = await _remoteDataSource.postFavourite(favouriteBody);
+        return Right(response.toDomain());
+      } catch (error) {
+        return Left(ErrorHandler.handle(error).failure);
+      }
+    } else {
+      return Left(DataSource.noInternetConnection.getFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, bool>> deleteFavourite(
+      DeleteFavouriteRequest deleteFavouriteRequest) async {
+    if (await _networkInfo.isConnected) {
+      try {
+        final response =
+            await _remoteDataSource.deleteFavourite(deleteFavouriteRequest);
         return Right(response.toDomain());
       } catch (error) {
         return Left(ErrorHandler.handle(error).failure);

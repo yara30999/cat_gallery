@@ -29,7 +29,7 @@ List<CatWithClickEntity> generateDummyCatImagesList() {
     return CatWithClickEntity(
         imageId: '1111',
         imageUrl: '',
-        favorite: const Favorite(id: 1111),
+        favorite: const Favourite(id: 1111),
         vote: const Vote(id: 1, value: 3),
         createdAt: DateTime.now(),
         breedName: 'bla bla');

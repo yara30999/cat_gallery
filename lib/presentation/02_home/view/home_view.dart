@@ -4,6 +4,8 @@ import '../../../app/di.dart';
 import '../../resources/platform_manager.dart';
 import '../view_model/scroll_controllers_cubit/scroll_controllers_cubit.dart';
 import '01_main_breeds/view_model/cubit/cat_breeds_cubit.dart';
+import '02_favorites/view_model/add_del_favourite_cubit/like_unlike_cubit.dart';
+import '02_favorites/view_model/get_favourites_cubit/favourites_cubit.dart';
 import '04_votes/view_model/get_votes_cubit/votes_cubit.dart';
 import 'home_view_desktop.dart';
 import 'home_view_mobile.dart';
@@ -18,6 +20,12 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
+        BlocProvider(
+          create: (context) => FavouritesCubit(instance()),
+        ),
+        BlocProvider(
+          create: (context) => LikeUnlikeCubit(instance(), instance()),
+        ),
         BlocProvider(
           create: (context) => VotesCubit(instance()),
         ),

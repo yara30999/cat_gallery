@@ -1,10 +1,14 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 import '../../presentation/resources/conistants_manager.dart';
+import '../request_body/favourite_body.dart';
 import '../request_body/vote_body.dart';
 import '../responses/cat_with_click_response.dart';
-import '../responses/get_votes_response.dart';
-import '../responses/image_response.dart';
+import '../responses/favourite_single_image_response.dart';
+import '../responses/get_favourites_response.dart';
+import '../responses/success_response.dart';
+import '../responses/votes_response.dart';
+import '../responses/cat_image_response.dart';
 import '../responses/breeds_response.dart';
 import '../responses/single_breed_response.dart';
 import '../responses/vote_single_image_response.dart';
@@ -64,4 +68,20 @@ abstract class AppServiceClient {
 
   @POST("v1/votes")
   Future<VoteSingleImageResponse> postVote(@Body() VoteBody voteBody);
+
+  @GET("v1/favourites?limit=100&attach_image=1&order=DESC")
+  Future<List<GetFavoritesResponse>> getFavorites(
+    @Query('sub_id') String uid,
+    @Query('page') int pageNum,
+  );
+
+  @POST("v1/favourites")
+  Future<FavouriteSingleImageResponse> postFavorite(
+      @Body() FavouriteBody favoriteBody);
+
+  @DELETE("v1/favourites/{favourite_id}")
+  Future<SuccessResponse> deleteFavorite(
+    @Query('sub_id') String uid,
+    @Path('favourite_id') String favId,
+  );
 }

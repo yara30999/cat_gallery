@@ -3,6 +3,7 @@
 //     final getVotesResponse = getVotesResponseFromJson(jsonString);
 
 import 'dart:convert';
+import 'image_response.dart';
 
 List<VotesResponse> getVotesResponseFromJson(String str) =>
     List<VotesResponse>.from(
@@ -48,25 +49,5 @@ class VotesResponse {
         "value": value,
         "country_code": countryCode,
         "image": image.toJson(),
-      };
-}
-
-class ImageResponse {
-  final String id;
-  final String url;
-
-  ImageResponse({
-    required this.id,
-    required this.url,
-  });
-
-  factory ImageResponse.fromJson(Map<String, dynamic> json) => ImageResponse(
-        id: json["id"],
-        url: json["url"],
-      );
-
-  Map<String, dynamic> toJson() => {
-        "id": id,
-        "url": url,
       };
 }

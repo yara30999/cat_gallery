@@ -22,7 +22,7 @@ class CatWithClickResponse {
   final int height;
   final VoteResponse? vote;
   final DateTime? createdAt;
-  final FavouriteResponse? favourite;
+  final FavouritesResponse? favourite;
 
   CatWithClickResponse({
     this.categories,
@@ -56,7 +56,7 @@ class CatWithClickResponse {
             : DateTime.parse(json["created_at"]),
         favourite: json["favourite"] == null
             ? null
-            : FavouriteResponse.fromJson(json["favourite"]),
+            : FavouritesResponse.fromJson(json["favourite"]),
       );
 
   Map<String, dynamic> toJson() => {
@@ -97,15 +97,15 @@ class CategoryResponse {
       };
 }
 
-class FavouriteResponse {
+class FavouritesResponse {
   final int id;
 
-  FavouriteResponse({
+  FavouritesResponse({
     required this.id,
   });
 
-  factory FavouriteResponse.fromJson(Map<String, dynamic> json) =>
-      FavouriteResponse(
+  factory FavouritesResponse.fromJson(Map<String, dynamic> json) =>
+      FavouritesResponse(
         id: json["id"],
       );
 

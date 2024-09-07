@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../app/functions.dart';
+import '../../../../data/request_body/favourite_body.dart';
 import '../../../../domain/entities/cat_with_click_entity.dart';
+import '../../../01_login-register-forgotpass/view_model/auth_cubit/auth_cubit.dart';
 import '../../../resources/color_manager.dart';
 import '../../../resources/values_manager.dart';
+import '../02_favorites/view_model/add_del_favourite_cubit/like_unlike_cubit.dart';
+import '../02_favorites/view_model/get_favourites_cubit/favourites_cubit.dart';
 
 class FavoriteButton extends StatefulWidget {
-  final Favorite? favorite;
-  final VoidCallback onPressed;
+  final CatWithClickEntity catWithClickEntity;
   const FavoriteButton({
     super.key,
-    required this.onPressed,
-    required this.favorite,
+    required this.catWithClickEntity,
   });
 
   @override
@@ -34,7 +37,7 @@ class FavoriteButtonState extends State<FavoriteButton>
       CurvedAnimation(parent: _controller, curve: Curves.bounceInOut),
     );
 
-    isFavorite = widget.favorite == null ? false : true;
+    isFavorite = widget.catWithClickEntity.favorite == null ? false : true;
   }
 
   @override
@@ -43,18 +46,38 @@ class FavoriteButtonState extends State<FavoriteButton>
     super.dispose();
   }
 
-  void _toggleFavorite() {
+  void _toggleFavourite(BuildContext context, String uid) async {
     if (!isFavorite) {
+      //controller works only in like direction...
       _controller.forward().then((_) => _controller.reverse());
     }
     setState(() {
+      //toggle favourite button
       isFavorite = !isFavorite;
     });
-    widget.onPressed;
+    if (isFavorite == true) {
+      // like image.....
+      FavouriteBody body = FavouriteBody(
+        subId: uid,
+        imageId: widget.catWithClickEntity.imageId,
+      );
+      await BlocProvider.of<LikeUnlikeCubit>(context).like(favouriteBody: body);
+    } else {
+      // unlike image.....
+      var favId = widget.catWithClickEntity.favorite?.id ?? 0;
+      await BlocProvider.of<LikeUnlikeCubit>(context)
+          .unlike(uid: uid, favId: favId.toString());
+    }
+    if (context.mounted) {
+      //refresh the favourites screen
+      BlocProvider.of<FavouritesCubit>(context)
+          .getFavourites(uid: uid, pageNum: 0);
+    }
   }
 
   @override
   Widget build(BuildContext context) {
+    var uid = context.read<AuthCubit>().authObj!.uid;
     return AnimatedBuilder(
       animation: _animation,
       builder: (BuildContext context, Widget? child) {
@@ -69,7 +92,9 @@ class FavoriteButtonState extends State<FavoriteButton>
                 isLightTheme(context) ? ColorManager.black : ColorManager.white,
             icon: const Icon(Icons.favorite_border_outlined),
             selectedIcon: const Icon(Icons.favorite, color: ColorManager.red),
-            onPressed: _toggleFavorite,
+            onPressed: () {
+              _toggleFavourite(context, uid);
+            },
           ),
         );
       },
