@@ -6,7 +6,6 @@ import '../00_on_boarding/view/on_boarding_view.dart';
 import '../01_login-register-forgotpass/view/pages/forgot_pass_view.dart';
 import '../01_login-register-forgotpass/view/pages/login_view.dart';
 import '../01_login-register-forgotpass/view/pages/register_view.dart';
-import '../02_home/view/01_main_breeds/view_model/cubit/cat_breeds_cubit.dart';
 import '../02_home/view/02_favorites/view/favorites_view_body.dart';
 import '../02_home/view/01_main_breeds/view/main_breeds_body.dart';
 import '../02_home/view/home_view.dart';
@@ -131,10 +130,6 @@ class MainBreedsNavigator extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(
-          create: (BuildContext context) =>
-              CatBreedsCubit(instance(), instance()),
-        ),
         BlocProvider(
           create: (context) => SpecificBreedCubit(instance()),
         ),
