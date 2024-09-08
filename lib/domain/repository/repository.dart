@@ -40,4 +40,6 @@ abstract class Repository {
   Future<Either<Failure, Favourite>> postFavourite(FavouriteBody favouriteBody);
   Future<Either<Failure, bool>> deleteFavourite(
       DeleteFavouriteRequest deleteFavouriteRequest);
+  Future<Either<Failure, List<CatWithClickEntity>>> getUploads(
+      UidPageNumRequest uidPageNumRequest);
 }

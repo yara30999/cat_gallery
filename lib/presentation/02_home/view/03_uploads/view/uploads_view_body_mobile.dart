@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../resources/styles_manager.dart';
 import '../../../../resources/values_manager.dart';
 import '../../../view_model/scroll_controllers_cubit/scroll_controllers_cubit.dart';
-import 'widgets/uploads_grid_builder.dart';
+import 'bloc_builder/uploads_bloc_consumer.dart';
 import 'widgets/uploads_header.dart';
 
 class UploadsViewBodyMobile extends StatelessWidget {
@@ -33,7 +33,7 @@ class UploadsViewBodyMobile extends StatelessWidget {
             horizontal: AppPadding.p16,
             vertical: AppPadding.p20,
           ),
-          sliver: UploadsScreenGridBuilder(),
+          sliver: UploadsBlocConsumer(),
         ),
       ],
     );

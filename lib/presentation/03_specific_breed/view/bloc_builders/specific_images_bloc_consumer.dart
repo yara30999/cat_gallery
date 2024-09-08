@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import '../../../../app/functions.dart';
+import '../../../../generated/l10n.dart';
+import '../../../02_home/view/widgets/states_widgets/empty_state_widget.dart';
 import '../../../02_home/view/widgets/states_widgets/error_state_widget.dart';
 import '../../view_model/images/specific_images_cubit.dart';
 import '../widgets/specific_images_with_pagination_grid_builder.dart';
@@ -22,6 +24,12 @@ class SpecificImagesBlocConsumer extends StatelessWidget {
           return SliverToBoxAdapter(
             child: ErrorStateWidget(
               errorText: state.errMessage,
+            ),
+          );
+        } else if (state is SpecificImagesSuccessFirstPageEmpty) {
+          return SliverToBoxAdapter(
+            child: EmptyStateWidget(
+              text: S.current.no_votes_yet, //TODO change this text
             ),
           );
         } else {

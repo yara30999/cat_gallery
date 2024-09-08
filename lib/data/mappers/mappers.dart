@@ -7,6 +7,7 @@ import '../../presentation/resources/conistants_manager.dart';
 import '../responses/cat_with_click_response.dart';
 import '../responses/favourite_single_image_response.dart';
 import '../responses/get_favourites_response.dart';
+import '../responses/get_uploads_response.dart';
 import '../responses/success_response.dart';
 import '../responses/votes_response.dart';
 import '../responses/cat_image_response.dart';
@@ -173,5 +174,32 @@ extension FavoriteSingleImageResponseMapper on FavouriteSingleImageResponse? {
 extension SuccessResponseMapper on SuccessResponse? {
   bool toDomain() {
     return true;
+  }
+}
+
+extension GetUploadsResponseMapper on GetUploadsResponse? {
+  CatWithClickEntity toDomain() {
+    List<Category>? categories =
+        (this!.categories?.map((categoryRes) => categoryRes.toDomain()) ??
+                const Iterable.empty())
+            .cast<Category>()
+            .toList();
+
+    List<Category>? listOrNull = categories.isEmpty ? null : categories;
+
+    List<CatBreedCardEntity> breedsList =
+        (this!.breeds.map((breedsRes) => breedsRes.toDomain()))
+            .cast<CatBreedCardEntity>()
+            .toList();
+
+    String? breedName = breedsList.isEmpty ? null : breedsList.first.breedName;
+    return CatWithClickEntity(
+        imageId: this!.id,
+        imageUrl: this!.url,
+        favorite: null,
+        vote: null,
+        createdAt: this!.createdAt,
+        categories: listOrNull,
+        breedName: breedName);
   }
 }

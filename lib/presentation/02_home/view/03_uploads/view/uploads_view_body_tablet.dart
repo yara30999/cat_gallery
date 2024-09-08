@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../resources/styles_manager.dart';
 import '../../../../resources/values_manager.dart';
-import 'widgets/uploads_grid_builder.dart';
+import 'bloc_builder/uploads_bloc_consumer.dart';
 import 'widgets/uploads_header.dart';
 
 class UploadsViewBodyTablet extends StatelessWidget {
@@ -29,7 +29,7 @@ class UploadsViewBodyTablet extends StatelessWidget {
             horizontal: AppPadding.p200,
             vertical: AppPadding.p20,
           ),
-          sliver: UploadsScreenGridBuilder(),
+          sliver: UploadsBlocConsumer(),
         ),
       ],
     );

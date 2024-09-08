@@ -13,6 +13,7 @@ import '../request_body/vote_body.dart';
 import '../responses/cat_with_click_response.dart';
 import '../responses/favourite_single_image_response.dart';
 import '../responses/get_favourites_response.dart';
+import '../responses/get_uploads_response.dart';
 import '../responses/success_response.dart';
 import '../responses/votes_response.dart';
 import '../responses/cat_image_response.dart';
@@ -44,6 +45,8 @@ abstract class RemoteDataSource {
       FavouriteBody favouriteBody);
   Future<SuccessResponse> deleteFavourite(
       DeleteFavouriteRequest deleteFavouriteRequest);
+  Future<List<GetUploadsResponse>> getUploads(
+      UidPageNumRequest uidPageNumRequest);
 }
 
 class RemoteDataSourceImpl implements RemoteDataSource {
@@ -244,5 +247,12 @@ class RemoteDataSourceImpl implements RemoteDataSource {
       DeleteFavouriteRequest deleteFavouriteRequest) async {
     return await _appServiceClient.deleteFavorite(
         deleteFavouriteRequest.uid, deleteFavouriteRequest.favId);
+  }
+
+  @override
+  Future<List<GetUploadsResponse>> getUploads(
+      UidPageNumRequest uidPageNumRequest) async {
+    return await _appServiceClient.getUploads(
+        uidPageNumRequest.uid, uidPageNumRequest.pageNum);
   }
 }

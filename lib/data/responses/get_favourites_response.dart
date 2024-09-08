@@ -1,16 +1,16 @@
 // To parse this JSON data, do
 //
-//     final voteBody = voteBodyFromJson(jsonString);
+//     final getFavoritesResponsey = getFavoritesResponseyFromJson(jsonString);
 
 import 'dart:convert';
 
 import 'image_response.dart';
 
-List<GetFavoritesResponse> voteBodyFromJson(String str) =>
+List<GetFavoritesResponse> getFavoritesResponseyFromJson(String str) =>
     List<GetFavoritesResponse>.from(
         json.decode(str).map((x) => GetFavoritesResponse.fromJson(x)));
 
-String voteBodyToJson(List<GetFavoritesResponse> data) =>
+String getFavoritesResponseyToJson(List<GetFavoritesResponse> data) =>
     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class GetFavoritesResponse {

@@ -8,6 +8,7 @@ import '../01_login-register-forgotpass/view/pages/login_view.dart';
 import '../01_login-register-forgotpass/view/pages/register_view.dart';
 import '../02_home/view/02_favorites/view/favorites_view_body.dart';
 import '../02_home/view/01_main_breeds/view/main_breeds_body.dart';
+import '../02_home/view/03_uploads/view_model/get_uploads_cubit/uploads_cubit.dart';
 import '../02_home/view/home_view.dart';
 import '../02_home/view/03_uploads/view/uploads_view_body.dart';
 import '../02_home/view/04_votes/view/votes_view_body.dart';
@@ -169,10 +170,13 @@ class UploadsNavigator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Navigator(
-      initialRoute: Routes.uploadsRoute,
-      onGenerateRoute: (settings) =>
-          RouteGenerator.getUploadsNavigator(context, settings),
+    return BlocProvider(
+      create: (context) => UploadsCubit(instance()),
+      child: Navigator(
+        initialRoute: Routes.uploadsRoute,
+        onGenerateRoute: (settings) =>
+            RouteGenerator.getUploadsNavigator(context, settings),
+      ),
     );
   }
 }

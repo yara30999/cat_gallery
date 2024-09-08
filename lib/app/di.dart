@@ -22,6 +22,7 @@ import '../domain/usecase/get_cat_image_usecase.dart';
 import '../domain/usecase/get_category_images_usecase.dart';
 import '../domain/usecase/get_favourites_usecase.dart';
 import '../domain/usecase/get_no_category_images_usecase.dart';
+import '../domain/usecase/get_uploads_usecase.dart';
 import '../domain/usecase/get_votes_usecase.dart';
 import '../domain/usecase/google_sign_in_usecase.dart';
 import '../domain/usecase/login_usecase.dart';
@@ -152,5 +153,10 @@ Future<void> initAppModule() async {
   if (!GetIt.I.isRegistered<DeleteFavouriteUsecase>()) {
     instance.registerFactory<DeleteFavouriteUsecase>(
         () => DeleteFavouriteUsecase(instance()));
+  }
+  // get uploads usecase
+  if (!GetIt.I.isRegistered<GetUploadsUsecase>()) {
+    instance.registerFactory<GetUploadsUsecase>(
+        () => GetUploadsUsecase(instance()));
   }
 }

@@ -6,6 +6,7 @@ import '../request_body/vote_body.dart';
 import '../responses/cat_with_click_response.dart';
 import '../responses/favourite_single_image_response.dart';
 import '../responses/get_favourites_response.dart';
+import '../responses/get_uploads_response.dart';
 import '../responses/success_response.dart';
 import '../responses/votes_response.dart';
 import '../responses/cat_image_response.dart';
@@ -83,5 +84,11 @@ abstract class AppServiceClient {
   Future<SuccessResponse> deleteFavorite(
     @Query('sub_id') String uid,
     @Path('favourite_id') String favId,
+  );
+
+  @GET("v1/images/?limit=100&order=DESC&include_breeds=1&include_categories=1")
+  Future<List<GetUploadsResponse>> getUploads(
+    @Query('sub_id') String uid,
+    @Query('page') int pageNum,
   );
 }

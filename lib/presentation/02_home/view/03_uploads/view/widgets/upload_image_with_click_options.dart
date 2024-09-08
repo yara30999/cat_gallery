@@ -23,6 +23,8 @@ class UploadImageWithClickOptions extends StatelessWidget {
     Navigator.pushNamed(context, Routes.analysisRoute);
   }
 
+  void _deleteImageOnPress(BuildContext context) {}
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -58,7 +60,9 @@ class UploadImageWithClickOptions extends StatelessWidget {
         ActionButton(
           color: ColorManager.red,
           icon: Icons.delete_forever_sharp,
-          onPressed: () {},
+          onPressed: () {
+            _deleteImageOnPress(context);
+          },
         ),
       ],
     );
@@ -78,8 +82,7 @@ class UploadImageWithClickOptions extends StatelessWidget {
           ),
         ),
         Visibility(
-          visible:
-              catWithClickEntity.categories?.first.name == null ? false : true,
+          visible: catWithClickEntity.categories == null ? false : true,
           child: Text(
             S.current.upload_category(
                 catWithClickEntity.categories?.first.name ?? ''),

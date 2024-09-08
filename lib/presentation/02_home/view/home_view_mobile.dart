@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../domain/entities/bottom_nav_icon.dart';
 import '../../../generated/l10n.dart';
 import '../../resources/routes_manager.dart';
 import '../../resources/styles_manager.dart';
 import '../../resources/values_manager.dart';
-import '../view_model/scroll_controllers_cubit/scroll_controllers_cubit.dart';
 import 'widgets/custom_app_bar.dart';
 import 'widgets/custom_drawer.dart';
 
@@ -41,7 +39,7 @@ class _HomeViewMobileState extends State<HomeViewMobile> {
 
   @override
   void dispose() {
-    context.read<BottomScrollControllersCubit>().disposeControllers();
+    //context.read<BottomScrollControllersCubit>().disposeControllers();
     super.dispose();
   }
 

@@ -39,9 +39,13 @@ class SpecificImagesCubit extends Cubit<SpecificImagesState> {
       }
     }, (catBreedSuccess) async {
       if (pageNum == 0) {
-        items.clear();
-        items.addAll(catBreedSuccess);
-        emit(SpecificImagesSuccess(items, isLoading: false));
+        if (catBreedSuccess.isEmpty) {
+          emit(SpecificImagesSuccessFirstPageEmpty(items, isLoading: false));
+        } else {
+          items.clear();
+          items.addAll(catBreedSuccess);
+          emit(SpecificImagesSuccess(items, isLoading: false));
+        }
       } else {
         if (catBreedSuccess.isEmpty) {
           var errMessage = S.current.no_more_cat_images;

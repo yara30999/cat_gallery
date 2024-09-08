@@ -130,9 +130,13 @@ ThemeData getLightTheme() {
 
     //snak bar theme
     snackBarTheme: SnackBarThemeData(
+      behavior: SnackBarBehavior.floating, // Makes it floating with margins
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(AppSize.s15),
+      ),
       backgroundColor: ColorManager.brown1,
-      contentTextStyle:
-          Styles.style14Medium().copyWith(color: ColorManager.white),
+      elevation: AppSize.s5,
+      contentTextStyle: Styles.style14Medium(),
     ),
   );
 }
@@ -267,7 +271,12 @@ ThemeData getDarkTheme() {
 
     //snak bar theme
     snackBarTheme: SnackBarThemeData(
-      backgroundColor: ColorManager.brown5,
+      behavior: SnackBarBehavior.floating, // Makes it floating with margins
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(AppSize.s15),
+      ),
+      backgroundColor: ColorManager.brown1,
+      elevation: AppSize.s5,
       contentTextStyle:
           Styles.style14Medium().copyWith(color: ColorManager.black),
     ),

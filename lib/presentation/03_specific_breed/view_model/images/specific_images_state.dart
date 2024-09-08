@@ -26,6 +26,11 @@ class SpecificImagesSuccess extends SpecificImagesState {
   const SpecificImagesSuccess(super.imageItems, {required super.isLoading});
 }
 
+class SpecificImagesSuccessFirstPageEmpty extends SpecificImagesState {
+  const SpecificImagesSuccessFirstPageEmpty(super.imageItems,
+      {required super.isLoading});
+}
+
 ////////////////////////////////////////////////////////////////////////////
 
 class SpecificImagesPaginationLoading extends SpecificImagesState {
