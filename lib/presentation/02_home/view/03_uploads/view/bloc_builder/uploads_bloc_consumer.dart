@@ -20,7 +20,8 @@ class _UploadsBlocConsumerState extends State<UploadsBlocConsumer> {
   @override
   void initState() {
     var uid = BlocProvider.of<AuthCubit>(context).authObj!.uid;
-    BlocProvider.of<UploadsCubit>(context).getUploads(uid: uid, pageNum: 0);
+    BlocProvider.of<UploadsCubit>(context)
+        .getUploads(uid: uid, pageNum: 0, isFirstCall: true);
     super.initState();
   }
 

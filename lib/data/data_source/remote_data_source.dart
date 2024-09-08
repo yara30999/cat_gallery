@@ -47,6 +47,7 @@ abstract class RemoteDataSource {
       DeleteFavouriteRequest deleteFavouriteRequest);
   Future<List<GetUploadsResponse>> getUploads(
       UidPageNumRequest uidPageNumRequest);
+  Future<void> deleteUploadedImage(DeleteImageRequest deleteImageRequest);
 }
 
 class RemoteDataSourceImpl implements RemoteDataSource {
@@ -254,5 +255,12 @@ class RemoteDataSourceImpl implements RemoteDataSource {
       UidPageNumRequest uidPageNumRequest) async {
     return await _appServiceClient.getUploads(
         uidPageNumRequest.uid, uidPageNumRequest.pageNum);
+  }
+
+  @override
+  Future<void> deleteUploadedImage(
+      DeleteImageRequest deleteImageRequest) async {
+    return await _appServiceClient.deleteUploadedImage(
+        deleteImageRequest.uid, deleteImageRequest.imgId);
   }
 }

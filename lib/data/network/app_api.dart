@@ -91,4 +91,10 @@ abstract class AppServiceClient {
     @Query('sub_id') String uid,
     @Query('page') int pageNum,
   );
+
+  @DELETE("v1/images/{image_id}")
+  Future<void> deleteUploadedImage(
+    @Query('sub_id') String uid,
+    @Path('image_id') String imgId,
+  );
 }

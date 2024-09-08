@@ -69,3 +69,10 @@ class DeleteFavouriteRequest {
 
   DeleteFavouriteRequest(this.uid, this.favId);
 }
+
+class DeleteImageRequest {
+  String uid;
+  String imgId;
+
+  DeleteImageRequest(this.uid, this.imgId);
+}

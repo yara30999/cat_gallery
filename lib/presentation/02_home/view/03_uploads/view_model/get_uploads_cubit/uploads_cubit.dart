@@ -15,9 +15,12 @@ class UploadsCubit extends Cubit<UploadsState> {
     // Initialize catBreedsList in the constructor body
     items = generateDummyCatImagesList();
   }
-  Future<void> getUploads({required String uid, required int pageNum}) async {
+  Future<void> getUploads(
+      {required String uid,
+      required int pageNum,
+      required bool isFirstCall}) async {
     if (pageNum == 0) {
-      emit(UploadsLoading(items, isLoading: true));
+      emit(UploadsLoading(items, isLoading: isFirstCall));
     } else {
       emit(UploadsPaginationLoading(items, isLoading: false));
     }

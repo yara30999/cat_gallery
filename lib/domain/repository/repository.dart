@@ -42,4 +42,6 @@ abstract class Repository {
       DeleteFavouriteRequest deleteFavouriteRequest);
   Future<Either<Failure, List<CatWithClickEntity>>> getUploads(
       UidPageNumRequest uidPageNumRequest);
+  Future<Either<Failure, void>> deleteUploadedImage(
+      DeleteImageRequest deleteImageRequest);
 }
