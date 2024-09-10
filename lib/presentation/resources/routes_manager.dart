@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../app/di.dart';
 import '../../generated/l10n.dart';
+import '../../route_observer.dart';
 import '../00_on_boarding/view/on_boarding_view.dart';
 import '../01_login-register-forgotpass/view/pages/forgot_pass_view.dart';
 import '../01_login-register-forgotpass/view/pages/login_view.dart';
@@ -181,6 +182,7 @@ class UploadsNavigator extends StatelessWidget {
         ),
       ],
       child: Navigator(
+        observers: <NavigatorObserver>[MyRouteObservers.uploadsViewObserver],
         initialRoute: Routes.uploadsRoute,
         onGenerateRoute: (settings) =>
             RouteGenerator.getUploadsNavigator(context, settings),
