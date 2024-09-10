@@ -90,17 +90,15 @@ class _HomeViewMobileState extends State<HomeViewMobile> {
           _scrollControllerListener(scrollNotification);
           return true;
         },
-        child:
-            // IndexedStack(
-            //   index: _currentPage,
-            //   children: const
-            [
-          const MainBreedsNavigator(),
-          const FavoritesNavigator(),
-          const UploadsNavigator(),
-          const VotesNavigator(),
-        ][_currentPage],
-        //),
+        child: IndexedStack(
+          index: _currentPage,
+          children: const [
+            MainBreedsNavigator(),
+            FavoritesNavigator(),
+            UploadsNavigator(),
+            VotesNavigator(),
+          ],
+        ),
       ),
       bottomNavigationBar: AnimatedContainer(
         duration: const Duration(milliseconds: 400),
