@@ -14,25 +14,42 @@ class UploadImgButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Theme.of(context).disabledColor, // Text color
-        ),
-        onPressed: () {
-          _uploadImgButtonOnPress(context);
-        },
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const Icon(Icons.file_upload_outlined),
-            const SizedBox(
-              width: AppSize.s15,
+    return BlocBuilder<UploadImageCubit, UploadImageState>(
+      builder: (context, state) {
+        if (state is UploadImageLoading) {
+          return ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Theme.of(context).disabledColor, // Text color
             ),
-            Text(
-              S.current.upload,
+            onPressed: null,
+            child: Text(
+              S.current.loading,
               style: Styles.style16Medium(),
             ),
-          ],
-        ));
+          );
+        } else {
+          return ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Theme.of(context).disabledColor, // Text color
+              ),
+              onPressed: () {
+                _uploadImgButtonOnPress(context);
+              },
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const Icon(Icons.file_upload_outlined),
+                  const SizedBox(
+                    width: AppSize.s15,
+                  ),
+                  Text(
+                    S.current.upload,
+                    style: Styles.style16Medium(),
+                  ),
+                ],
+              ));
+        }
+      },
+    );
   }
 }
