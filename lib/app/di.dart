@@ -32,6 +32,7 @@ import '../domain/usecase/post_favourite_usecase.dart';
 import '../domain/usecase/post_vote_usecase.dart';
 import '../domain/usecase/refresh_breeds_usecase.dart';
 import '../domain/usecase/register_usecase.dart';
+import '../domain/usecase/upload_image_usecase.dart';
 import 'app_prefs.dart';
 
 final instance = GetIt.instance;
@@ -164,5 +165,10 @@ Future<void> initAppModule() async {
   if (!GetIt.I.isRegistered<DeleteUploadedImageUsecase>()) {
     instance.registerFactory<DeleteUploadedImageUsecase>(
         () => DeleteUploadedImageUsecase(instance()));
+  }
+  //upload image usecase
+  if (!GetIt.I.isRegistered<UploadImageUsecase>()) {
+    instance.registerFactory<UploadImageUsecase>(
+        () => UploadImageUsecase(instance()));
   }
 }

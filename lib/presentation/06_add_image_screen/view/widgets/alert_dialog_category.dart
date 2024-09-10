@@ -15,7 +15,7 @@ class CategoryAlertDialog extends StatelessWidget {
 
   void _categoryOnPress(
       BuildContext context, CategoryItemEntity categoryItemEntity) {
-    Navigator.of(context).pop(categoryItemEntity.name);
+    Navigator.of(context).pop(categoryItemEntity);
   }
 
   void _noCategoryOnPress(

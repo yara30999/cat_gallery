@@ -44,4 +44,6 @@ abstract class Repository {
       UidPageNumRequest uidPageNumRequest);
   Future<Either<Failure, void>> deleteUploadedImage(
       DeleteImageRequest deleteImageRequest);
+  Future<Either<Failure, void>> uploadedImage(
+      UploadImageRequest uploadImageRequest);
 }

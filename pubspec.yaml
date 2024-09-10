@@ -63,6 +63,7 @@ dependencies:
   dio: ^5.6.0
   internet_connection_checker: ^2.0.0
   pretty_dio_logger: ^1.4.0
+  http_parser:
   retrofit: ^4.2.0
   retrofit_generator: ^8.2.0
   shared_preferences: ^2.3.2
@@ -77,7 +78,6 @@ dependencies:
   lottie: ^3.1.2
   visibility_detector: ^0.4.0+2
   badges: ^3.1.2
-
 
 dev_dependencies:
   flutter_test:
@@ -147,7 +147,7 @@ flutter:
     - assets/json/cat_error.json
     - assets/json/cat_loading.json
     - assets/json/cat_loading_2.json
-    - assets/json/cat_success.json 
+    - assets/json/cat_success.json
     - assets/json/on_boarding.json
     - assets/svg/0_all.svg
     - assets/svg/1_hats.svg

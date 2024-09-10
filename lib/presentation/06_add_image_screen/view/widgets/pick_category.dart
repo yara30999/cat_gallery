@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../domain/entities/category_item.dart';
 import '../../../../generated/l10n.dart';
 import '../../../resources/color_manager.dart';
 import '../../../resources/styles_manager.dart';
 import '../../../resources/values_manager.dart';
+import '../../view_model/cubit/upload_image_cubit.dart';
 import 'alert_dialog_category.dart';
 
 class PickCategory extends StatefulWidget {
@@ -17,7 +19,7 @@ class _PickCategoryState extends State<PickCategory> {
   String? _selectedCategory;
 
   void _openCategoryPicker(BuildContext context) async {
-    final category = await showDialog<String>(
+    final categoryItemEntity = await showDialog<CategoryItemEntity>(
       context: context,
       builder: (BuildContext context) {
         return CategoryAlertDialog(
@@ -27,8 +29,12 @@ class _PickCategoryState extends State<PickCategory> {
     );
 
     setState(() {
-      _selectedCategory = category;
+      _selectedCategory = categoryItemEntity?.name;
     });
+    if (context.mounted) {
+      BlocProvider.of<UploadImageCubit>(context).categoryId =
+          categoryItemEntity?.index;
+    }
   }
 
   @override

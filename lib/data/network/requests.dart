@@ -1,3 +1,5 @@
+import 'dart:io';
+
 class LoginRequest {
   String email;
   String password;
@@ -75,4 +77,13 @@ class DeleteImageRequest {
   String imgId;
 
   DeleteImageRequest(this.uid, this.imgId);
+}
+
+class UploadImageRequest {
+  File imgFile;
+  String uid;
+  String? breedId;
+  int? categoryId;
+
+  UploadImageRequest(this.imgFile, this.uid, [this.breedId, this.categoryId]);
 }

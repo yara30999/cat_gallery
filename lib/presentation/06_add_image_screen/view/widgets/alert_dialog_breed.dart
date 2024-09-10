@@ -14,7 +14,7 @@ class BreedAlertDialog extends StatelessWidget {
 
   void _breedOnPress(
       BuildContext context, CatBreedCardEntity categoryItemEntity) {
-    Navigator.of(context).pop(categoryItemEntity.breedName);
+    Navigator.of(context).pop(categoryItemEntity);
   }
 
   void _noBreedOnPress(

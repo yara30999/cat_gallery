@@ -9,6 +9,7 @@ import '../responses/favourite_single_image_response.dart';
 import '../responses/get_favourites_response.dart';
 import '../responses/get_uploads_response.dart';
 import '../responses/success_response.dart';
+import '../responses/upload_image_response.dart';
 import '../responses/votes_response.dart';
 import '../responses/cat_image_response.dart';
 import '../responses/breeds_response.dart';
@@ -202,4 +203,8 @@ extension GetUploadsResponseMapper on GetUploadsResponse? {
         categories: listOrNull,
         breedName: breedName);
   }
+}
+
+extension UploadImageResponseMapper on UploadImageResponse? {
+  void toDomain() {}
 }

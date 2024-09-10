@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:dio/dio.dart';
+import 'package:http_parser/http_parser.dart';
 import 'package:retrofit/retrofit.dart';
 import '../../presentation/resources/conistants_manager.dart';
 import '../request_body/favourite_body.dart';
@@ -8,6 +11,7 @@ import '../responses/favourite_single_image_response.dart';
 import '../responses/get_favourites_response.dart';
 import '../responses/get_uploads_response.dart';
 import '../responses/success_response.dart';
+import '../responses/upload_image_response.dart';
 import '../responses/votes_response.dart';
 import '../responses/cat_image_response.dart';
 import '../responses/breeds_response.dart';
@@ -96,5 +100,14 @@ abstract class AppServiceClient {
   Future<void> deleteUploadedImage(
     @Query('sub_id') String uid,
     @Path('image_id') String imgId,
+  );
+
+  @MultiPart()
+  @POST("v1/images/upload")
+  Future<UploadImageResponse> uploadImage(
+    @Part(name: "file", contentType: "image/png") File imgFile,
+    @Part(name: "sub_id") String uid,
+    @Part(name: "breed_ids") String? breedId,
+    @Part(name: "category_ids") int? categoryId,
   );
 }

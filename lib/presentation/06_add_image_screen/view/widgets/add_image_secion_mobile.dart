@@ -2,6 +2,7 @@ import 'dart:io';
 import 'dart:ui';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dropzone/flutter_dropzone.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:async';
@@ -9,6 +10,7 @@ import 'package:flutter/foundation.dart';
 import '../../../02_home/view/widgets/images_widgets/cat_network_image.dart';
 import '../../../resources/color_manager.dart';
 import '../../../resources/values_manager.dart';
+import '../../view_model/cubit/upload_image_cubit.dart';
 import 'camera_gallery_buttons.dart';
 import 'dotted_img_placeholder.dart';
 import 'pick_breed.dart';
@@ -28,6 +30,7 @@ class _AddImageSectionMobileState extends State<AddImageSectionMobile> {
   bool isHighlighted = false;
 
   File? _imgFile;
+
   Widget? _image;
 
   Future pickImage(ImageSource source) async {
@@ -49,8 +52,14 @@ class _AddImageSectionMobileState extends State<AddImageSectionMobile> {
         debugPrint('no image yara picked');
       }
     });
+    if (pickedFile != null) {
+      if (mounted) {
+        BlocProvider.of<UploadImageCubit>(context).imgFile = _imgFile;
+      }
+    }
   }
 
+  //this function for web only
   Future<void> handleFileDrop(
       dynamic event, DropzoneViewController controller) async {
     //here i have imgData

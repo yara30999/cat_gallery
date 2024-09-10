@@ -6,6 +6,7 @@ import '../../../02_home/view/01_main_breeds/view_model/cubit/cat_breeds_cubit.d
 import '../../../resources/color_manager.dart';
 import '../../../resources/styles_manager.dart';
 import '../../../resources/values_manager.dart';
+import '../../view_model/cubit/upload_image_cubit.dart';
 import 'alert_dialog_breed.dart';
 
 class PickBreed extends StatefulWidget {
@@ -20,7 +21,7 @@ class _PickBreedState extends State<PickBreed> {
   late List<CatBreedCardEntity> breeds;
 
   void _openBreedPicker(BuildContext context) async {
-    final breed = await showDialog<String>(
+    final catBreedCardEntity = await showDialog<CatBreedCardEntity>(
       context: context,
       builder: (BuildContext context) {
         return BreedAlertDialog(
@@ -30,8 +31,12 @@ class _PickBreedState extends State<PickBreed> {
     );
 
     setState(() {
-      _selectedBreed = breed;
+      _selectedBreed = catBreedCardEntity?.breedName;
     });
+    if (context.mounted) {
+      BlocProvider.of<UploadImageCubit>(context).breedId =
+          catBreedCardEntity?.breedId;
+    }
   }
 
   @override
