@@ -10,6 +10,7 @@ import '../responses/cat_with_click_response.dart';
 import '../responses/favourite_single_image_response.dart';
 import '../responses/get_favourites_response.dart';
 import '../responses/get_uploads_response.dart';
+import '../responses/image_analysis_response.dart';
 import '../responses/success_response.dart';
 import '../responses/upload_image_response.dart';
 import '../responses/votes_response.dart';
@@ -109,5 +110,11 @@ abstract class AppServiceClient {
     @Part(name: "sub_id") String uid,
     @Part(name: "breed_ids") String? breedId,
     @Part(name: "category_ids") int? categoryId,
+  );
+
+  @GET("v1/images/{imgid}/analysis")
+  Future<List<ImageAnalysisResponse>> getImageAnalysis(
+    @Query('sub_id') String uid,
+    @Path('imgid') String imgid,
   );
 }

@@ -3,11 +3,13 @@ import '../../domain/entities/cat_breed_card.dart';
 import '../../domain/entities/cat_breed_entity.dart' as cat_breed;
 import '../../domain/entities/cat_image_entity.dart';
 import '../../domain/entities/cat_with_click_entity.dart';
+import '../../domain/entities/image_analysis_entity.dart';
 import '../../presentation/resources/conistants_manager.dart';
 import '../responses/cat_with_click_response.dart';
 import '../responses/favourite_single_image_response.dart';
 import '../responses/get_favourites_response.dart';
 import '../responses/get_uploads_response.dart';
+import '../responses/image_analysis_response.dart';
 import '../responses/success_response.dart';
 import '../responses/upload_image_response.dart';
 import '../responses/votes_response.dart';
@@ -207,4 +209,27 @@ extension GetUploadsResponseMapper on GetUploadsResponse? {
 
 extension UploadImageResponseMapper on UploadImageResponse? {
   void toDomain() {}
+}
+
+extension LabelResponseMapper on LabelResponse? {
+  Label toDomain() {
+    double value = this!.confidence;
+    double roundedValue = double.parse(value.toStringAsFixed(5));
+    return Label(
+      name: this!.name,
+      confidence: roundedValue,
+    );
+  }
+}
+
+extension ImageAnalysisResponseMapper on ImageAnalysisResponse? {
+  ImageAnalysisEntity toDomain() {
+    List<Label> labels = (this!.labels.map((labelsRes) => labelsRes.toDomain()))
+        .cast<Label>()
+        .toList();
+    return ImageAnalysisEntity(
+      imageId: this!.imageId,
+      labels: labels,
+    );
+  }
 }

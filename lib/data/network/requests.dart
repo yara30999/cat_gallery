@@ -87,3 +87,10 @@ class UploadImageRequest {
 
   UploadImageRequest(this.imgFile, this.uid, [this.breedId, this.categoryId]);
 }
+
+class GetImageAnalysisRequest {
+  String uid;
+  String imgId;
+
+  GetImageAnalysisRequest(this.uid, this.imgId);
+}

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../app/di.dart';
 import '../../../../domain/entities/cat_with_click_entity.dart';
 import '../../../01_login-register-forgotpass/view_model/auth_cubit/auth_cubit.dart';
+import '../../../05_analysis_screen/view_model/cubit/analysis_cubit.dart';
 import '../../../resources/color_manager.dart';
 import '../../../resources/language_manager.dart';
 import '../../../resources/platform_manager.dart';
@@ -55,7 +56,11 @@ class _CatImageWithClickOptionsState extends State<CatImageWithClickOptions> {
     });
   }
 
-  void _analysisButtonOnPress(BuildContext context) {
+  void _analysisButtonOnPress(BuildContext context, String uid) {
+    BlocProvider.of<AnalysisCubit>(context).imgUrl =
+        catWithClickEntityUpdated.imageUrl;
+    BlocProvider.of<AnalysisCubit>(context)
+        .getImageAnalysis(uid: uid, imgId: catWithClickEntityUpdated.imageId);
     Navigator.pushNamed(context, Routes.analysisRoute);
   }
 
@@ -115,7 +120,7 @@ class _CatImageWithClickOptionsState extends State<CatImageWithClickOptions> {
         ActionButton(
           icon: Icons.science_outlined,
           onPressed: () {
-            _analysisButtonOnPress(context);
+            _analysisButtonOnPress(context, uid);
           },
         ),
         const Spacer(),

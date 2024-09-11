@@ -14,6 +14,7 @@ import '../responses/cat_with_click_response.dart';
 import '../responses/favourite_single_image_response.dart';
 import '../responses/get_favourites_response.dart';
 import '../responses/get_uploads_response.dart';
+import '../responses/image_analysis_response.dart';
 import '../responses/success_response.dart';
 import '../responses/upload_image_response.dart';
 import '../responses/votes_response.dart';
@@ -51,6 +52,8 @@ abstract class RemoteDataSource {
   Future<void> deleteUploadedImage(DeleteImageRequest deleteImageRequest);
   Future<UploadImageResponse> uploadImage(
       UploadImageRequest uploadImageRequest);
+  Future<List<ImageAnalysisResponse>> getImageAnalysis(
+      GetImageAnalysisRequest getImageAnalysisRequest);
 }
 
 class RemoteDataSourceImpl implements RemoteDataSource {
@@ -275,5 +278,12 @@ class RemoteDataSourceImpl implements RemoteDataSource {
         uploadImageRequest.uid,
         uploadImageRequest.breedId,
         uploadImageRequest.categoryId);
+  }
+
+  @override
+  Future<List<ImageAnalysisResponse>> getImageAnalysis(
+      GetImageAnalysisRequest getImageAnalysisRequest) async {
+    return await _appServiceClient.getImageAnalysis(
+        getImageAnalysisRequest.uid, getImageAnalysisRequest.imgId);
   }
 }

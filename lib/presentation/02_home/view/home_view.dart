@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../app/di.dart';
+import '../../05_analysis_screen/view_model/cubit/analysis_cubit.dart';
 import '../../resources/platform_manager.dart';
 import '../view_model/scroll_controllers_cubit/scroll_controllers_cubit.dart';
 import '01_main_breeds/view_model/cubit/cat_breeds_cubit.dart';
@@ -28,6 +29,9 @@ class HomeView extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => VotesCubit(instance()),
+        ),
+        BlocProvider(
+          create: (context) => AnalysisCubit(instance()),
         ),
         BlocProvider(
           create: (context) => CatBreedsCubit(instance(), instance()),

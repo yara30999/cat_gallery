@@ -111,7 +111,7 @@ class _AnalysisBarGraphState extends State<AnalysisBarGraph> {
           borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(AppSize.s12),
               topRight: Radius.circular(AppSize.s12)),
-          width: widget.barWidth ?? AppSize.s20,
+          width: widget.barWidth ?? AppSize.s18,
           backDrawRodData: BackgroundBarChartRodData(
             show: true,
             fromY: 0,

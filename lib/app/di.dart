@@ -22,6 +22,7 @@ import '../domain/usecase/get_breeds_usecase.dart';
 import '../domain/usecase/get_cat_image_usecase.dart';
 import '../domain/usecase/get_category_images_usecase.dart';
 import '../domain/usecase/get_favourites_usecase.dart';
+import '../domain/usecase/get_image_analysis_usecase.dart';
 import '../domain/usecase/get_no_category_images_usecase.dart';
 import '../domain/usecase/get_uploads_usecase.dart';
 import '../domain/usecase/get_votes_usecase.dart';
@@ -170,5 +171,10 @@ Future<void> initAppModule() async {
   if (!GetIt.I.isRegistered<UploadImageUsecase>()) {
     instance.registerFactory<UploadImageUsecase>(
         () => UploadImageUsecase(instance()));
+  }
+  //get image analysis usecase
+  if (!GetIt.I.isRegistered<GetImageAnalysisUsecase>()) {
+    instance.registerFactory<GetImageAnalysisUsecase>(
+        () => GetImageAnalysisUsecase(instance()));
   }
 }

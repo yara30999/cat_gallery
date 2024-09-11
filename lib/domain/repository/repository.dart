@@ -8,6 +8,7 @@ import '../entities/cat_breed_card.dart';
 import '../entities/cat_breed_entity.dart';
 import '../entities/cat_image_entity.dart';
 import '../entities/cat_with_click_entity.dart';
+import '../entities/image_analysis_entity.dart';
 
 abstract class Repository {
   Future<Either<Failure, AuthenticationEntity>> login(
@@ -46,4 +47,6 @@ abstract class Repository {
       DeleteImageRequest deleteImageRequest);
   Future<Either<Failure, void>> uploadedImage(
       UploadImageRequest uploadImageRequest);
+  Future<Either<Failure, ImageAnalysisEntity>> getImageAnalysis(
+      GetImageAnalysisRequest getImageAnalysisRequest);
 }

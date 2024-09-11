@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../../domain/entities/cat_with_click_entity.dart';
 import '../../../../../../generated/l10n.dart';
 import '../../../../../01_login-register-forgotpass/view_model/auth_cubit/auth_cubit.dart';
+import '../../../../../05_analysis_screen/view_model/cubit/analysis_cubit.dart';
 import '../../../../../resources/color_manager.dart';
 import '../../../../../resources/platform_manager.dart';
 import '../../../../../resources/routes_manager.dart';
@@ -23,7 +24,11 @@ class UploadImageWithClickOptions extends StatelessWidget {
     required this.catWithClickEntity,
   });
 
-  void _analysisButtonOnPress(BuildContext context) {
+  void _analysisButtonOnPress(BuildContext context, String uid) {
+    BlocProvider.of<AnalysisCubit>(context).imgUrl =
+        catWithClickEntity.imageUrl;
+    BlocProvider.of<AnalysisCubit>(context)
+        .getImageAnalysis(uid: uid, imgId: catWithClickEntity.imageId);
     Navigator.pushNamed(context, Routes.analysisRoute);
   }
 
@@ -67,7 +72,7 @@ class UploadImageWithClickOptions extends StatelessWidget {
         ActionButton(
           icon: Icons.science_outlined,
           onPressed: () {
-            _analysisButtonOnPress(context);
+            _analysisButtonOnPress(context, uid);
           },
         ),
         _buildUploadedImageText(context),

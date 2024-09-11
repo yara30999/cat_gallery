@@ -5,6 +5,7 @@ import '../../domain/entities/cat_breed_card.dart';
 import '../../domain/entities/cat_breed_entity.dart';
 import '../../domain/entities/cat_image_entity.dart';
 import '../../domain/entities/cat_with_click_entity.dart';
+import '../../domain/entities/image_analysis_entity.dart';
 import '../../domain/repository/repository.dart';
 import '../data_source/local_data_source.dart';
 import '../data_source/remote_data_source.dart';
@@ -395,6 +396,23 @@ class RepositoryImpl implements Repository {
         final response =
             await _remoteDataSource.uploadImage(uploadImageRequest);
         return Right(response.toDomain());
+      } catch (error) {
+        return Left(ErrorHandler.handle(error).failure);
+      }
+    } else {
+      return Left(DataSource.noInternetConnection.getFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, ImageAnalysisEntity>> getImageAnalysis(
+      GetImageAnalysisRequest getImageAnalysisRequest) async {
+    if (await _networkInfo.isConnected) {
+      try {
+        final response =
+            await _remoteDataSource.getImageAnalysis(getImageAnalysisRequest);
+        ImageAnalysisEntity res = response[0].toDomain();
+        return Right(res);
       } catch (error) {
         return Left(ErrorHandler.handle(error).failure);
       }

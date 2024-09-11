@@ -36,6 +36,7 @@ class JsonAssets {
   static const String empty2 = "$jsonPath/cat_empty_2.json";
   static const String empty3 = "$jsonPath/cat_empty_3.json";
   static const String success = "$jsonPath/cat_success.json";
+  static const String analysis = "$jsonPath/cat_analysis.json";
   static const String onBoarding = "$jsonPath/on_boarding.json";
 }
 
