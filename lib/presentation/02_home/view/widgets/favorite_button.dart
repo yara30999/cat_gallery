@@ -7,7 +7,6 @@ import '../../../01_login-register-forgotpass/view_model/auth_cubit/auth_cubit.d
 import '../../../resources/color_manager.dart';
 import '../../../resources/values_manager.dart';
 import '../02_favorites/view_model/add_del_favourite_cubit/like_unlike_cubit.dart';
-import '../02_favorites/view_model/get_favourites_cubit/favourites_cubit.dart';
 
 class FavoriteButton extends StatefulWidget {
   final CatWithClickEntity catWithClickEntity;
@@ -67,11 +66,6 @@ class FavoriteButtonState extends State<FavoriteButton>
       var favId = widget.catWithClickEntity.favorite?.id ?? 0;
       await BlocProvider.of<LikeUnlikeCubit>(context)
           .unlike(uid: uid, favId: favId.toString());
-    }
-    if (context.mounted) {
-      //refresh the favourites screen
-      BlocProvider.of<FavouritesCubit>(context)
-          .getFavourites(uid: uid, pageNum: 0);
     }
   }
 

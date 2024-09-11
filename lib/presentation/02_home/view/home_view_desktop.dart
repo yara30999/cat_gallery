@@ -8,6 +8,8 @@ import '../../resources/color_manager.dart';
 import '../../resources/routes_manager.dart';
 import '../../resources/styles_manager.dart';
 import '../../resources/values_manager.dart';
+import '02_favorites/view_model/get_favourites_cubit/favourites_cubit.dart';
+import '04_votes/view_model/get_votes_cubit/votes_cubit.dart';
 import 'widgets/app_developer.dart';
 import 'widgets/drawer_item.dart';
 import 'widgets/language_button.dart';
@@ -35,16 +37,29 @@ class _HomeViewDesktopState extends State<HomeViewDesktop> {
         DrawerItemEntity(
             title: S.current.Votes, icon: Icons.how_to_vote_outlined),
       ];
-  void onTabTapped(int index) {
+  void onTabTapped(int index, String uid) {
     if (_currentPage != index) {
       setState(() {
         _currentPage = index;
       });
     }
+
+    switch (_currentPage) {
+      case 1:
+        // The user is viewing FavoritesNavigator
+        BlocProvider.of<FavouritesCubit>(context)
+            .getFavourites(uid: uid, pageNum: 0);
+        break;
+      case 3:
+        // The user is viewing VotesNavigator
+        BlocProvider.of<VotesCubit>(context).getVotes(uid: uid, pageNum: 0);
+        break;
+    }
   }
 
   @override
   Widget build(BuildContext context) {
+    var uid = context.read<AuthCubit>().authObj!.uid;
     return Scaffold(
       //extendBody: true,
       body: SafeArea(
@@ -97,7 +112,7 @@ class _HomeViewDesktopState extends State<HomeViewDesktop> {
                             child: InkWell(
                               mouseCursor: SystemMouseCursors.click,
                               onTap: () {
-                                onTabTapped(index);
+                                onTabTapped(index, uid);
                               },
                               child: DrawerItem(
                                 drawerItemEntity: items[index],

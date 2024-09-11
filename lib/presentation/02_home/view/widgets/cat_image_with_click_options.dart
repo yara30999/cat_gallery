@@ -9,7 +9,6 @@ import '../../../resources/platform_manager.dart';
 import '../../../resources/routes_manager.dart';
 import '../02_favorites/view_model/add_del_favourite_cubit/like_unlike_cubit.dart';
 import '../04_votes/view_model/add_vote_cubit/post_vote_cubit.dart';
-import '../04_votes/view_model/get_votes_cubit/votes_cubit.dart';
 import 'images_widgets/cat_cashed_image.dart';
 import 'images_widgets/cat_network_image.dart';
 import 'images_widgets/cat_pinch_zoom_image.dart';
@@ -54,13 +53,6 @@ class _CatImageWithClickOptionsState extends State<CatImageWithClickOptions> {
       catWithClickEntityUpdated =
           catWithClickEntityUpdated.copyWith(vote: vote);
     });
-    if (context.mounted) {
-      if (vote != null) {
-        //not calling when we haven't vote or dismiss our dialog then (vote==null)
-        //refresh our votes page after voting (only when voting success)
-        BlocProvider.of<VotesCubit>(context).getVotes(uid: uid, pageNum: 0);
-      }
-    }
   }
 
   void _analysisButtonOnPress(BuildContext context) {
