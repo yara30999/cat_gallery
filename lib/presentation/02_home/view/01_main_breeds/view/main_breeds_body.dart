@@ -4,6 +4,7 @@ import '../../../../01_login-register-forgotpass/view_model/auth_cubit/auth_cubi
 import '../../../../resources/color_manager.dart';
 import '../../../../resources/conistants_manager.dart';
 import '../../../../resources/platform_manager.dart';
+import '../../../view_model/settings_cubit/settings_cubit.dart';
 import '../view_model/cubit/cat_breeds_cubit.dart';
 import 'main_breed_body_desktop.dart';
 import 'main_breed_body_mobile.dart';
@@ -28,15 +29,23 @@ class MainBreedsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RefreshIndicator(
-      color: ColorManager.white,
-      onRefresh: () {
-        return _refreshBreedsData(context);
+    return BlocListener<SettingsCubit, SettingsState>(
+      listener: (context, state) {
+        if (state is LocaleSuccess) {
+          BlocProvider.of<CatBreedsCubit>(context).refreshBreeds(
+              uid: BlocProvider.of<AuthCubit>(context).authObj!.uid);
+        }
       },
-      child: MiniAdaptiveLayout(
-        mobileLayout: (context) => const MainBreedsBodyMobile(),
-        tabletLayout: (context) => const MainBreedsBodyTablet(),
-        desktopLayout: (context) => const MainBreedsBodyDesktop(),
+      child: RefreshIndicator(
+        color: ColorManager.white,
+        onRefresh: () {
+          return _refreshBreedsData(context);
+        },
+        child: MiniAdaptiveLayout(
+          mobileLayout: (context) => const MainBreedsBodyMobile(),
+          tabletLayout: (context) => const MainBreedsBodyTablet(),
+          desktopLayout: (context) => const MainBreedsBodyDesktop(),
+        ),
       ),
     );
   }

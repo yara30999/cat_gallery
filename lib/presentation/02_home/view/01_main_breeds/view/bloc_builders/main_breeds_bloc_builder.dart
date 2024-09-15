@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skeletonizer/skeletonizer.dart';
-import 'main_breeds_grid_builder.dart';
+import '../widgets/main_breeds_grid_builder.dart';
 import '../../../../../01_login-register-forgotpass/view_model/auth_cubit/auth_cubit.dart';
 import '../../../../../resources/values_manager.dart';
 import '../../../widgets/states_widgets/error_state_widget.dart';

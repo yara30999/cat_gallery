@@ -13,8 +13,7 @@ class SpecificBreedCubit extends Cubit<SpecificBreedState> {
   String? breedId;
   CatBreedEntity? catBreedInfo;
 
-  Future<void> getBreedInfo(
-      {required String uid, required String? breedId}) async {
+  Future<void> getBreedInfo({required String uid}) async {
     emit(SpecificBreedLoading());
     var result = await _getBreedInfoUsecase
         .execute(GetBreedInfoUseCaseInput(uid, breedId!));

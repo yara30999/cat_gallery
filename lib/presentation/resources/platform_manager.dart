@@ -1,10 +1,26 @@
-import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'conistants_manager.dart';
 
+// bool isDesktop() {
+//   return Platform.isMacOS || Platform.isWindows || Platform.isLinux;
+// }
 bool isDesktop() {
-  return Platform.isMacOS || Platform.isWindows || Platform.isLinux;
+  if (kIsWeb) {
+    return false;
+  } else {
+    switch (defaultTargetPlatform) {
+      case TargetPlatform.android:
+      case TargetPlatform.iOS:
+        return false;
+      case TargetPlatform.macOS:
+      case TargetPlatform.windows:
+      case TargetPlatform.linux:
+        return true;
+      default:
+        return false;
+    }
+  }
 }
 
 bool isWebOrDesktopApp() {

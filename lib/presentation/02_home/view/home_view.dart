@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../app/di.dart';
+import '../../../app/functions.dart';
 import '../../05_analysis_screen/view_model/cubit/analysis_cubit.dart';
 import '../../resources/platform_manager.dart';
+import '../view_model/download_cubit/download_image_cubit.dart';
 import '../view_model/scroll_controllers_cubit/scroll_controllers_cubit.dart';
+import '../view_model/share_cubit/share_image_cubit.dart';
 import '01_main_breeds/view_model/cubit/cat_breeds_cubit.dart';
 import '02_favorites/view_model/add_del_favourite_cubit/like_unlike_cubit.dart';
 import '02_favorites/view_model/get_favourites_cubit/favourites_cubit.dart';
@@ -35,15 +38,28 @@ class HomeView extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => CatBreedsCubit(instance(), instance()),
-        )
-      ],
-      child: AdaptiveLayout(
-        mobileLayout: (context) => BlocProvider(
-          create: (context) => BottomScrollControllersCubit(),
-          child: const HomeViewMobile(),
         ),
-        tabletLayout: (context) => const HomeViewTablet(),
-        desktopLayout: (context) => const HomeViewDesktop(),
+        BlocProvider(
+          create: (context) => DownloadImageCubit(instance()),
+        ),
+        BlocProvider(
+          create: (context) => ShareImageCubit(instance()),
+        ),
+      ],
+      child: BlocListener<ShareImageCubit, ShareImageState>(
+        listener: (context, state) {
+          if (state is ShareImageFailure) {
+            showSnakBar(context, state.errMessage);
+          }
+        },
+        child: AdaptiveLayout(
+          mobileLayout: (context) => BlocProvider(
+            create: (context) => BottomScrollControllersCubit(),
+            child: const HomeViewMobile(),
+          ),
+          tabletLayout: (context) => const HomeViewTablet(),
+          desktopLayout: (context) => const HomeViewDesktop(),
+        ),
       ),
     );
   }

@@ -107,7 +107,7 @@
   "go_back": "Go Back",
   "mr": "Mr. ",
   "mrs": "Mrs. ",
-  "app_developer": "App developer: \nEng. Yara Nasser Elniny\n yaranasserelniny@gmail.com \n 01093017989",
+  "app_developer": "App developer: \nEng. Yara Nasser Elniny\n yaranasserelniny@gmail.com",
   "Theme": "Theme:",
   "System": "System",
   "Light": "Light",
@@ -169,5 +169,9 @@
   "reset_password_mail_sent": "Reset password mail has been sent successfully to your email, go check.",
   "no_more_cat_images": "No more cat images.",
   "no_images_category": "There is no images in this category section.",
-  "no_votes_yet": "You haven't voted on any image yet."
+  "no_votes_yet": "You haven't voted on any image yet.",
+  "no_favourites_yet": "You haven't liked any image yet.",
+  "no_uploads_yet": "You haven't uploaded any image yet.",
+  "no_breed_images": "There are no images availabel for this breed.",
+  "no_image_to_upload": "You haven't selected any cat image to upload."
 }

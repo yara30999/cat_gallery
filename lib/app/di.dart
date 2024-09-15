@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:translator/translator.dart';
 import '../data/data_source/local_data_source.dart';
 import '../data/data_source/remote_data_source.dart';
 import '../data/network/app_api.dart';
@@ -14,6 +15,7 @@ import '../data/special_sevices/validation_service.dart';
 import '../domain/repository/repository.dart';
 import '../domain/usecase/delete_favourite_usecase.dart';
 import '../domain/usecase/delete_uploaded_image_usecase.dart';
+import '../domain/usecase/download_image_usecase.dart';
 import '../domain/usecase/facebook_sign_in_usecase.dart';
 import '../domain/usecase/forgot_password_usecase.dart';
 import '../domain/usecase/get_breed_images_usecase.dart';
@@ -33,6 +35,7 @@ import '../domain/usecase/post_favourite_usecase.dart';
 import '../domain/usecase/post_vote_usecase.dart';
 import '../domain/usecase/refresh_breeds_usecase.dart';
 import '../domain/usecase/register_usecase.dart';
+import '../domain/usecase/share_image_usecase.dart';
 import '../domain/usecase/upload_image_usecase.dart';
 import 'app_prefs.dart';
 
@@ -66,8 +69,9 @@ Future<void> initAppModule() async {
   // local data source
   instance.registerLazySingleton<LocalDataSource>(() => LocalDataSourceImpl());
   // repository
-  instance.registerLazySingleton<Repository>(
-      () => RepositoryImpl(instance(), instance(), instance(), instance()));
+  final googleTranslator = GoogleTranslator();
+  instance.registerLazySingleton<Repository>(() => RepositoryImpl(
+      instance(), instance(), instance(), instance(), googleTranslator));
   // login usecase
   if (!GetIt.I.isRegistered<LoginUseCase>()) {
     instance.registerFactory<LoginUseCase>(() => LoginUseCase(instance()));
@@ -176,5 +180,15 @@ Future<void> initAppModule() async {
   if (!GetIt.I.isRegistered<GetImageAnalysisUsecase>()) {
     instance.registerFactory<GetImageAnalysisUsecase>(
         () => GetImageAnalysisUsecase(instance()));
+  }
+  //download image usecase
+  if (!GetIt.I.isRegistered<DownloadImageUsecase>()) {
+    instance.registerFactory<DownloadImageUsecase>(
+        () => DownloadImageUsecase(instance()));
+  }
+  //download image usecase
+  if (!GetIt.I.isRegistered<ShareImageUsecase>()) {
+    instance.registerFactory<ShareImageUsecase>(
+        () => ShareImageUsecase(instance()));
   }
 }

@@ -1131,10 +1131,10 @@ class S {
     );
   }
 
-  /// `App developer: \nEng. Yara Nasser Elniny\n yaranasserelniny@gmail.com \n 01093017989`
+  /// `App developer: \nEng. Yara Nasser Elniny\n yaranasserelniny@gmail.com`
   String get app_developer {
     return Intl.message(
-      'App developer: \nEng. Yara Nasser Elniny\n yaranasserelniny@gmail.com \n 01093017989',
+      'App developer: \nEng. Yara Nasser Elniny\n yaranasserelniny@gmail.com',
       name: 'app_developer',
       desc: '',
       args: [],
@@ -1756,6 +1756,46 @@ class S {
     return Intl.message(
       'You haven\'t voted on any image yet.',
       name: 'no_votes_yet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You haven't liked any image yet.`
+  String get no_favourites_yet {
+    return Intl.message(
+      'You haven\'t liked any image yet.',
+      name: 'no_favourites_yet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You haven't uploaded any image yet.`
+  String get no_uploads_yet {
+    return Intl.message(
+      'You haven\'t uploaded any image yet.',
+      name: 'no_uploads_yet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `There are no images availabel for this breed.`
+  String get no_breed_images {
+    return Intl.message(
+      'There are no images availabel for this breed.',
+      name: 'no_breed_images',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You haven't selected any cat image to upload.`
+  String get no_image_to_upload {
+    return Intl.message(
+      'You haven\'t selected any cat image to upload.',
+      name: 'no_image_to_upload',
       desc: '',
       args: [],
     );

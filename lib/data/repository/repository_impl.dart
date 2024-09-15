@@ -1,4 +1,7 @@
 import 'package:dartz/dartz.dart';
+import 'package:flutter/foundation.dart';
+import 'package:share_plus/share_plus.dart';
+import 'package:translator/translator.dart';
 import '../../app/app_prefs.dart';
 import '../../domain/entities/authentication.dart';
 import '../../domain/entities/cat_breed_card.dart';
@@ -7,6 +10,7 @@ import '../../domain/entities/cat_image_entity.dart';
 import '../../domain/entities/cat_with_click_entity.dart';
 import '../../domain/entities/image_analysis_entity.dart';
 import '../../domain/repository/repository.dart';
+import '../../presentation/resources/language_manager.dart';
 import '../data_source/local_data_source.dart';
 import '../data_source/remote_data_source.dart';
 import '../mappers/mappers.dart';
@@ -16,14 +20,17 @@ import '../network/network_info.dart';
 import '../network/requests.dart';
 import '../request_body/favourite_body.dart';
 import '../request_body/vote_body.dart';
+import '../responses/breeds_response.dart';
+import '../responses/cat_with_click_response.dart';
 
 class RepositoryImpl implements Repository {
   final RemoteDataSource _remoteDataSource;
   final LocalDataSource _localDataSource;
   final NetworkInfo _networkInfo;
   final AppPreferences _appPreferences;
+  final GoogleTranslator _googleTranslator;
   RepositoryImpl(this._remoteDataSource, this._networkInfo,
-      this._localDataSource, this._appPreferences);
+      this._localDataSource, this._appPreferences, this._googleTranslator);
 
   @override
   Future<Either<Failure, AuthenticationEntity>> login(
@@ -140,8 +147,14 @@ class RepositoryImpl implements Repository {
     if (await _networkInfo.isConnected) {
       try {
         final response = await _remoteDataSource.getBreeds(uid);
+        var language = await _appPreferences.getAppLanguage();
         List<CatBreedCardEntity> myEntity = [];
         for (var res in response) {
+          if (language != LanguageType.english.getCode()) {
+            var nameTranslation = await _googleTranslator.translate(res.name,
+                from: 'en', to: language);
+            res = res.copyWith(name: nameTranslation.text);
+          }
           myEntity.add(res.toDomain());
         }
         //save to cache for first time
@@ -164,8 +177,14 @@ class RepositoryImpl implements Repository {
     if (await _networkInfo.isConnected) {
       try {
         final response = await _remoteDataSource.getBreeds(uid);
+        var language = await _appPreferences.getAppLanguage();
         List<CatBreedCardEntity> myEntity = [];
         for (var res in response) {
+          if (language != LanguageType.english.getCode()) {
+            var nameTranslation = await _googleTranslator.translate(res.name,
+                from: 'en', to: language);
+            res = res.copyWith(name: nameTranslation.text);
+          }
           myEntity.add(res.toDomain());
         }
         //save the refreshed data to the cache
@@ -199,7 +218,23 @@ class RepositoryImpl implements Repository {
       BreedInfoRequest breedInfoRequest) async {
     if (await _networkInfo.isConnected) {
       try {
-        final response = await _remoteDataSource.getBreedInfo(breedInfoRequest);
+        var response = await _remoteDataSource.getBreedInfo(breedInfoRequest);
+        var language = await _appPreferences.getAppLanguage();
+        if (language != LanguageType.english.getCode()) {
+          var nameTranslation = await _googleTranslator.translate(response.name,
+              from: 'en', to: language);
+          var temperamentTranslation = await _googleTranslator
+              .translate(response.temperament, from: 'en', to: language);
+          var originTranslation = await _googleTranslator
+              .translate(response.origin, from: 'en', to: language);
+          var descriptionTranslation = await _googleTranslator
+              .translate(response.description, from: 'en', to: language);
+          response = response.copyWith(
+              name: nameTranslation.text,
+              temperament: temperamentTranslation.text,
+              origin: originTranslation.text,
+              description: descriptionTranslation.text);
+        }
         return Right(response.toDomain());
       } catch (error) {
         return Left(ErrorHandler.handle(error).failure);
@@ -359,8 +394,30 @@ class RepositoryImpl implements Repository {
     if (await _networkInfo.isConnected) {
       try {
         final response = await _remoteDataSource.getUploads(uidPageNumRequest);
+        var language = await _appPreferences.getAppLanguage();
         List<CatWithClickEntity> myEntity = [];
         for (var res in response) {
+          if (language != LanguageType.english.getCode()) {
+            if (res.breeds.isNotEmpty) {
+              var nameTranslation = await _googleTranslator
+                  .translate(res.breeds.first.name, from: 'en', to: language);
+              List<BreedResponse> modifiedBreeds = res.breeds.map((breed) {
+                return breed.copyWith(name: nameTranslation.text);
+              }).toList();
+              res = res.copyWith(breeds: modifiedBreeds);
+            }
+            if (res.categories!.isNotEmpty) {
+              var nameTranslation = await _googleTranslator.translate(
+                  res.categories!.first.name,
+                  from: 'en',
+                  to: language);
+              List<CategoryResponse>? modifiedCategories =
+                  res.categories!.map((category) {
+                return category.copyWith(name: nameTranslation.text);
+              }).toList();
+              res = res.copyWith(categories: modifiedCategories);
+            }
+          }
           myEntity.add(res.toDomain());
         }
         return Right(myEntity);
@@ -412,7 +469,52 @@ class RepositoryImpl implements Repository {
         final response =
             await _remoteDataSource.getImageAnalysis(getImageAnalysisRequest);
         ImageAnalysisEntity res = response[0].toDomain();
+        var language = await _appPreferences.getAppLanguage();
+        if (language != LanguageType.english.getCode()) {
+          List<Label> updatedLabels = [];
+          for (var i = 0; i < res.labels.length; i++) {
+            var labelTranslation = await _googleTranslator
+                .translate(res.labels[i].name, from: 'en', to: language);
+            updatedLabels
+                .add(res.labels[i].copyWith(name: labelTranslation.text));
+          }
+          res = res.copyWith(labels: updatedLabels);
+        }
         return Right(res);
+      } catch (error) {
+        return Left(ErrorHandler.handle(error).failure);
+      }
+    } else {
+      return Left(DataSource.noInternetConnection.getFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, bool>> downloadImage(
+      CatWithClickEntity catWithClickEntity) async {
+    if (await _networkInfo.isConnected) {
+      try {
+        if (kIsWeb) {
+          await _remoteDataSource.downloadImageWeb(catWithClickEntity);
+        } else {
+          await _remoteDataSource.downloadImageAndroidIOS(catWithClickEntity);
+        }
+        return const Right(true);
+      } catch (error) {
+        return Left(ErrorHandler.handle(error).failure);
+      }
+    } else {
+      return Left(DataSource.noInternetConnection.getFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, ShareResult>> share(
+      CatWithClickEntity catWithClickEntity) async {
+    if (await _networkInfo.isConnected) {
+      try {
+        var result = await _remoteDataSource.shareImage(catWithClickEntity);
+        return Right(result);
       } catch (error) {
         return Left(ErrorHandler.handle(error).failure);
       }

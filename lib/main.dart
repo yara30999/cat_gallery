@@ -14,10 +14,15 @@ import 'app/di.dart';
 import 'presentation/02_home/view_model/settings_cubit/settings_cubit.dart';
 import 'presentation/resources/conistants_manager.dart';
 import 'simple_observer.dart';
+import 'package:flutter/services.dart';
 
 void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
   Bloc.observer = SimpleObserver();
   await Hive.initFlutter();
   Hive.registerAdapter(CatBreedCardEntityAdapter());

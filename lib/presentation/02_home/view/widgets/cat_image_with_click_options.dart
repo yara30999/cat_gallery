@@ -8,6 +8,8 @@ import '../../../resources/color_manager.dart';
 import '../../../resources/language_manager.dart';
 import '../../../resources/platform_manager.dart';
 import '../../../resources/routes_manager.dart';
+import '../../view_model/download_cubit/download_image_cubit.dart';
+import '../../view_model/share_cubit/share_image_cubit.dart';
 import '../02_favorites/view_model/add_del_favourite_cubit/like_unlike_cubit.dart';
 import '../04_votes/view_model/add_vote_cubit/post_vote_cubit.dart';
 import 'images_widgets/cat_cashed_image.dart';
@@ -59,9 +61,21 @@ class _CatImageWithClickOptionsState extends State<CatImageWithClickOptions> {
   void _analysisButtonOnPress(BuildContext context, String uid) {
     BlocProvider.of<AnalysisCubit>(context).imgUrl =
         catWithClickEntityUpdated.imageUrl;
-    BlocProvider.of<AnalysisCubit>(context)
-        .getImageAnalysis(uid: uid, imgId: catWithClickEntityUpdated.imageId);
+    BlocProvider.of<AnalysisCubit>(context).uid = uid;
+    BlocProvider.of<AnalysisCubit>(context).imgId =
+        catWithClickEntityUpdated.imageId;
+    BlocProvider.of<AnalysisCubit>(context).getImageAnalysis();
     Navigator.pushNamed(context, Routes.analysisRoute);
+  }
+
+  void _download() {
+    BlocProvider.of<DownloadImageCubit>(context)
+        .download(catWithClickEntity: catWithClickEntityUpdated);
+  }
+
+  void _share() async {
+    BlocProvider.of<ShareImageCubit>(context)
+        .share(catWithClickEntity: catWithClickEntityUpdated);
   }
 
   @override
@@ -124,10 +138,20 @@ class _CatImageWithClickOptionsState extends State<CatImageWithClickOptions> {
           },
         ),
         const Spacer(),
-        ActionButton(
-          icon: Icons.save_alt,
-          onPressed: () {},
-        ),
+        if (!isDesktop())
+          ActionButton(
+            icon: Icons.save_alt,
+            onPressed: () {
+              _download();
+            },
+          ),
+        if (!isWebOrDesktopApp())
+          ActionButton(
+            icon: Icons.share,
+            onPressed: () {
+              _share();
+            },
+          ),
       ],
     );
   }

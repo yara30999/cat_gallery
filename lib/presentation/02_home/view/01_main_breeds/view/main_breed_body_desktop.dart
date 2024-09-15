@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../resources/styles_manager.dart';
 import '../../../../resources/values_manager.dart';
-import 'widgets/main_breeds_bloc_builder.dart';
+import 'bloc_builders/main_breeds_bloc_builder.dart';
 import 'widgets/main_breeds_header.dart';
 
 class MainBreedsBodyDesktop extends StatelessWidget {

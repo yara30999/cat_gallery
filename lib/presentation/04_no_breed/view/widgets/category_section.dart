@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../domain/entities/category_item.dart';
 import '../../../01_login-register-forgotpass/view_model/auth_cubit/auth_cubit.dart';
+import '../../../02_home/view_model/settings_cubit/settings_cubit.dart';
 import '../../view_model/bloc/no_breed_bloc.dart';
 import 'my_custom_scroll_behavior.dart';
 import '../../../resources/language_manager.dart';
@@ -57,9 +58,13 @@ class _CategorySectionState extends State<CategorySection> {
                       left: LocalizationUtils.currentLocalIsAr()
                           ? AppPadding.p10
                           : 0.0),
-                  child: CategoryItem(
-                    isActive: activeIndex == index,
-                    categoryItemEntity: CategoryItemEntity.items[index],
+                  child: BlocBuilder<SettingsCubit, SettingsState>(
+                    builder: (context, state) {
+                      return CategoryItem(
+                        isActive: activeIndex == index,
+                        categoryItemEntity: CategoryItemEntity.items[index],
+                      );
+                    },
                   ),
                 ),
               );

@@ -7,6 +7,7 @@ import 'package:flutter_dropzone/flutter_dropzone.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:async';
 import 'package:flutter/foundation.dart';
+import '../../../02_home/view/01_main_breeds/view_model/cubit/cat_breeds_cubit.dart';
 import '../../../02_home/view/widgets/images_widgets/cat_network_image.dart';
 import '../../../resources/color_manager.dart';
 import '../../../resources/values_manager.dart';
@@ -102,7 +103,18 @@ class _AddImageSectionTabletState extends State<AddImageSectionTablet> {
         const SizedBox(
           height: AppSize.s20,
         ),
-        const PickBreed(),
+        BlocBuilder<CatBreedsCubit, CatBreedsState>(
+          builder: (context, state) {
+            if (state is CatBreedsSuccess) {
+              return PickBreed(
+                breeds: BlocProvider.of<CatBreedsCubit>(context).catBreedsList,
+              );
+            }
+            return PickBreed(
+              breeds: BlocProvider.of<CatBreedsCubit>(context).catBreedsList,
+            );
+          },
+        ),
         const SizedBox(
           height: AppSize.s20,
         ),

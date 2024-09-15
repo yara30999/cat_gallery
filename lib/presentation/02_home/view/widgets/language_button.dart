@@ -13,6 +13,10 @@ class LanguageButton extends StatelessWidget {
     super.key,
   });
 
+  void _onLocaleChange(BuildContext context, Locale? locale) {
+    BlocProvider.of<SettingsCubit>(context).setLocale(locale!);
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<SettingsCubit, SettingsState>(
@@ -37,8 +41,7 @@ class LanguageButton extends StatelessWidget {
                       groupValue:
                           BlocProvider.of<SettingsCubit>(context).currentLocale,
                       onChanged: (value) {
-                        BlocProvider.of<SettingsCubit>(context)
-                            .setLocale(value!);
+                        _onLocaleChange(context, value);
                       },
                     ),
                     FittedBox(
@@ -61,8 +64,7 @@ class LanguageButton extends StatelessWidget {
                       groupValue:
                           BlocProvider.of<SettingsCubit>(context).currentLocale,
                       onChanged: (value) {
-                        BlocProvider.of<SettingsCubit>(context)
-                            .setLocale(value!);
+                        _onLocaleChange(context, value);
                       },
                     ),
                     FittedBox(

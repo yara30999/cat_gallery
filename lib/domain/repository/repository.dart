@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:share_plus/share_plus.dart';
 import '../../data/network/failure.dart';
 import '../../data/network/requests.dart';
 import '../../data/request_body/favourite_body.dart';
@@ -49,4 +50,8 @@ abstract class Repository {
       UploadImageRequest uploadImageRequest);
   Future<Either<Failure, ImageAnalysisEntity>> getImageAnalysis(
       GetImageAnalysisRequest getImageAnalysisRequest);
+  Future<Either<Failure, bool>> downloadImage(
+      CatWithClickEntity catWithClickEntity);
+  Future<Either<Failure, ShareResult>> share(
+      CatWithClickEntity catWithClickEntity);
 }

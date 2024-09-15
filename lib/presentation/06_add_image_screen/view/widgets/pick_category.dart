@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../domain/entities/category_item.dart';
 import '../../../../generated/l10n.dart';
+import '../../../02_home/view_model/settings_cubit/settings_cubit.dart';
 import '../../../resources/color_manager.dart';
 import '../../../resources/styles_manager.dart';
 import '../../../resources/values_manager.dart';
@@ -42,23 +43,33 @@ class _PickCategoryState extends State<PickCategory> {
     return Wrap(
       spacing: AppSize.s14,
       children: [
-        Text(
-          S.current.Optional,
-          style: Styles.style16Medium().copyWith(color: ColorManager.red),
+        BlocBuilder<SettingsCubit, SettingsState>(
+          builder: (context, state) {
+            return Text(
+              S.current.Optional,
+              style: Styles.style16Medium().copyWith(color: ColorManager.red),
+            );
+          },
         ),
         InkWell(
           mouseCursor: SystemMouseCursors.click,
           onTap: () => _openCategoryPicker(context),
-          child: Text(
-            S.current.selected_category(_selectedCategory ?? S.current.nothing),
-            style: Styles.style16Medium().copyWith(
-              color: _selectedCategory == null
-                  ? ColorManager.blue
-                  : ColorManager.green1,
-              decoration:
-                  _selectedCategory == null ? TextDecoration.underline : null,
-              decorationColor: ColorManager.blue,
-            ),
+          child: BlocBuilder<SettingsCubit, SettingsState>(
+            builder: (context, state) {
+              return Text(
+                S.current
+                    .selected_category(_selectedCategory ?? S.current.nothing),
+                style: Styles.style16Medium().copyWith(
+                  color: _selectedCategory == null
+                      ? ColorManager.blue
+                      : ColorManager.green1,
+                  decoration: _selectedCategory == null
+                      ? TextDecoration.underline
+                      : null,
+                  decorationColor: ColorManager.blue,
+                ),
+              );
+            },
           ),
         ),
       ],

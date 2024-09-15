@@ -9,6 +9,9 @@ part 'analysis_state.dart';
 class AnalysisCubit extends Cubit<AnalysisState> {
   final GetImageAnalysisUsecase _getImageAnalysisUsecase;
   String imgUrl = '';
+  String uid = '';
+  String imgId = '';
+
   late ImageAnalysisEntity analysisData;
   AnalysisCubit(this._getImageAnalysisUsecase)
       : super(const AnalysisInitial(null)) {
@@ -16,8 +19,7 @@ class AnalysisCubit extends Cubit<AnalysisState> {
     analysisData = generateDummyImageAnalysisData();
   }
 
-  Future<void> getImageAnalysis(
-      {required String uid, required String imgId}) async {
+  Future<void> getImageAnalysis() async {
     emit(AnalysisLoading(analysisData));
     var result = await _getImageAnalysisUsecase
         .execute(ImageAnalysisUseCaseInput(uid, imgId));

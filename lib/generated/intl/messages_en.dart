@@ -75,7 +75,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "appTitle":
             MessageLookupByLibrary.simpleMessage("Flutter cat information app"),
         "app_developer": MessageLookupByLibrary.simpleMessage(
-            "App developer: \nEng. Yara Nasser Elniny\n yaranasserelniny@gmail.com \n 01093017989"),
+            "App developer: \nEng. Yara Nasser Elniny\n yaranasserelniny@gmail.com"),
         "asc": MessageLookupByLibrary.simpleMessage("ascending"),
         "bad_request_error": MessageLookupByLibrary.simpleMessage(
             "bad request. try again later"),
@@ -181,14 +181,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "mrs": MessageLookupByLibrary.simpleMessage("Mrs. "),
         "ninty_percent": MessageLookupByLibrary.simpleMessage("90%"),
         "noRouteFound": MessageLookupByLibrary.simpleMessage("no_route_found"),
+        "no_breed_images": MessageLookupByLibrary.simpleMessage(
+            "There are no images availabel for this breed."),
         "no_content":
             MessageLookupByLibrary.simpleMessage("success with not content"),
+        "no_favourites_yet": MessageLookupByLibrary.simpleMessage(
+            "You haven\'t liked any image yet."),
+        "no_image_to_upload": MessageLookupByLibrary.simpleMessage(
+            "You haven\'t selected any cat image to upload."),
         "no_images_category": MessageLookupByLibrary.simpleMessage(
             "There is no images in this category section."),
         "no_internet_connection_error": MessageLookupByLibrary.simpleMessage(
             "Please check your internet connection"),
         "no_more_cat_images":
             MessageLookupByLibrary.simpleMessage("No more cat images."),
+        "no_uploads_yet": MessageLookupByLibrary.simpleMessage(
+            "You haven\'t uploaded any image yet."),
         "no_votes_yet": MessageLookupByLibrary.simpleMessage(
             "You haven\'t voted on any image yet."),
         "no_worries": MessageLookupByLibrary.simpleMessage(

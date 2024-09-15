@@ -1,10 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dio/dio.dart';
+import 'package:file_downloader_flutter/file_downloader_flutter.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:image_downloader_web/image_downloader_web.dart';
+import 'package:share_plus/share_plus.dart';
 import '../../app/extensions.dart';
 import '../../domain/entities/authentication.dart';
+import '../../domain/entities/cat_with_click_entity.dart';
 import '../../presentation/resources/conistants_manager.dart';
 import '../network/app_api.dart';
 import '../network/requests.dart';
@@ -54,6 +59,9 @@ abstract class RemoteDataSource {
       UploadImageRequest uploadImageRequest);
   Future<List<ImageAnalysisResponse>> getImageAnalysis(
       GetImageAnalysisRequest getImageAnalysisRequest);
+  Future<bool> downloadImageWeb(CatWithClickEntity catWithClickEntity);
+  Future<bool> downloadImageAndroidIOS(CatWithClickEntity catWithClickEntity);
+  Future<ShareResult> shareImage(CatWithClickEntity catWithClickEntity);
 }
 
 class RemoteDataSourceImpl implements RemoteDataSource {
@@ -285,5 +293,38 @@ class RemoteDataSourceImpl implements RemoteDataSource {
       GetImageAnalysisRequest getImageAnalysisRequest) async {
     return await _appServiceClient.getImageAnalysis(
         getImageAnalysisRequest.uid, getImageAnalysisRequest.imgId);
+  }
+
+  @override
+  Future<bool> downloadImageWeb(CatWithClickEntity catWithClickEntity) async {
+    await WebImageDownloader.downloadImageFromWeb(catWithClickEntity.imageUrl,
+        name: catWithClickEntity.imageId, imageType: ImageType.jpeg);
+    return true;
+  }
+
+  @override
+  Future<bool> downloadImageAndroidIOS(
+      CatWithClickEntity catWithClickEntity) async {
+    await FileDownloaderFlutter().urlFileSaver(
+        url: catWithClickEntity.imageUrl, fileName: catWithClickEntity.imageId);
+    return true;
+  }
+
+  @override
+  Future<ShareResult> shareImage(CatWithClickEntity catWithClickEntity) async {
+    final response = await Dio().get(
+      catWithClickEntity.imageUrl,
+      options: Options(
+        responseType: ResponseType.bytes, // Get raw bytes
+      ),
+    );
+
+    return await Share.shareXFiles([
+      XFile.fromData(
+        Uint8List.fromList(response.data),
+        name: catWithClickEntity.imageId,
+        mimeType: 'image/png',
+      ),
+    ], subject: 'from catGallery app');
   }
 }

@@ -72,7 +72,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "appTitle": MessageLookupByLibrary.simpleMessage(
             "تطبيق معلومات القطط باستخدام فلاتر"),
         "app_developer": MessageLookupByLibrary.simpleMessage(
-            "مطور التطبيق: \nم. يارا ناصر الدين النني\n yaranasserelniny@gmail.com \n 01093017989"),
+            "مطور التطبيق: \nم. يارا ناصر الدين النني\n yaranasserelniny@gmail.com"),
         "asc": MessageLookupByLibrary.simpleMessage("تصاعدي"),
         "bad_request_error": MessageLookupByLibrary.simpleMessage(
             "طلب غير صالح. حاول مرة أخرى لاحقًا"),
@@ -177,14 +177,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "ninty_percent": MessageLookupByLibrary.simpleMessage("٩٠٪"),
         "noRouteFound":
             MessageLookupByLibrary.simpleMessage("لم يتم العثور على المسار"),
+        "no_breed_images": MessageLookupByLibrary.simpleMessage(
+            "لا يوجد صور متاحه لهذه الفصيله."),
         "no_content":
             MessageLookupByLibrary.simpleMessage("تم بنجاح مع عدم وجود محتوى"),
+        "no_favourites_yet":
+            MessageLookupByLibrary.simpleMessage("لم تعجب بأي صورة بعد."),
+        "no_image_to_upload": MessageLookupByLibrary.simpleMessage(
+            "لم تقم بإختيار أي صوره لرفعها."),
         "no_images_category":
             MessageLookupByLibrary.simpleMessage("لا يوجد صور في هذا القسم."),
         "no_internet_connection_error": MessageLookupByLibrary.simpleMessage(
             "الرجاء التحقق من اتصال الانترنت الخاص بك"),
         "no_more_cat_images":
             MessageLookupByLibrary.simpleMessage("لا يوجد صور قطط أخرى."),
+        "no_uploads_yet":
+            MessageLookupByLibrary.simpleMessage("لم تقم برفع أي صورة بعد."),
         "no_votes_yet":
             MessageLookupByLibrary.simpleMessage("لم تصوت على أي صورة بعد."),
         "no_worries": MessageLookupByLibrary.simpleMessage(

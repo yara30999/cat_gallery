@@ -38,6 +38,23 @@ class GetUploadsResponse {
     required this.breedIds,
   });
 
+  GetUploadsResponse copyWith({
+    List<BreedResponse>? breeds,
+    List<CategoryResponse>? categories,
+  }) =>
+      GetUploadsResponse(
+        breeds: breeds ?? this.breeds,
+        categories: categories ?? this.categories,
+        id: id,
+        url: url,
+        width: width,
+        height: height,
+        subId: subId,
+        createdAt: createdAt,
+        originalFilename: originalFilename,
+        breedIds: breedIds,
+      );
+
   factory GetUploadsResponse.fromJson(Map<String, dynamic> json) =>
       GetUploadsResponse(
         breeds: List<BreedResponse>.from(

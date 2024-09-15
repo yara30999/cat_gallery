@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 class AppConstants {
-  static const int splashDelay = 3;
-  static const int onboardingDelay = 5;
+  static const int splashDelay = 2;
+  static const int onboardingDelay = 3;
   static const int refreshDelay = 2;
   static const String baseUrl = "https://api.thecatapi.com/";
+  //it is a free xApiKey from https://thecatapi.com/
   static const String xApiKey =
       "live_fRl8P1uYl7wNnQ1DQvv8mIp2OQohecbeIr2ytN0dS2Zoq8u8TWUuJxSaY3lQ5IIG";
   static const String token = "SEND TOKEN HERE";

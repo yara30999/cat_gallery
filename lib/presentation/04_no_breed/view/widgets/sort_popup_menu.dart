@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../app/extensions.dart';
 import '../../../01_login-register-forgotpass/view_model/auth_cubit/auth_cubit.dart';
+import '../../../02_home/view_model/settings_cubit/settings_cubit.dart';
 import '../../view_model/bloc/no_breed_bloc.dart';
 
 class SortPopupMenu extends StatefulWidget {
@@ -33,8 +34,12 @@ class SortPopupMenuState extends State<SortPopupMenu> {
     sortItems = SortingItem.values.map((SortingItem sortingItem) {
       return PopupMenuItem<SortingItem>(
         value: sortingItem,
-        child: Text(
-          sortingItem.displayValue,
+        child: BlocBuilder<SettingsCubit, SettingsState>(
+          builder: (context, state) {
+            return Text(
+              sortingItem.displayValue,
+            );
+          },
         ),
       );
     }).toList();
@@ -56,13 +61,20 @@ class SortPopupMenuState extends State<SortPopupMenu> {
 
   @override
   Widget build(BuildContext context) {
-    return PopupMenuButton<SortingItem>(
-      icon: const Icon(Icons.filter_alt_outlined),
-      initialValue: selectedSortingItem,
-      itemBuilder: (BuildContext context) => sortItems,
-      onSelected: (SortingItem value) {
-        _onSortItemSelection(value);
+    return BlocListener<SettingsCubit, SettingsState>(
+      listener: (context, state) {
+        if (state is LocaleSuccess) {
+          _updateSortItems();
+        }
       },
+      child: PopupMenuButton<SortingItem>(
+        icon: const Icon(Icons.filter_alt_outlined),
+        initialValue: selectedSortingItem,
+        itemBuilder: (BuildContext context) => sortItems,
+        onSelected: (SortingItem value) {
+          _onSortItemSelection(value);
+        },
+      ),
     );
   }
 }

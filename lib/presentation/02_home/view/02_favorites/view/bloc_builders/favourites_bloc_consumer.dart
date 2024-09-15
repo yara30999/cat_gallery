@@ -43,7 +43,7 @@ class _FavouritesBlocConsumerState extends State<FavouritesBlocConsumer> {
         } else if (state is FavouritesSuccessFirstPageEmpty) {
           return SliverToBoxAdapter(
             child: EmptyStateWidget(
-              text: S.current.no_votes_yet, //TODO change this text
+              text: S.current.no_favourites_yet,
             ),
           );
         } else {

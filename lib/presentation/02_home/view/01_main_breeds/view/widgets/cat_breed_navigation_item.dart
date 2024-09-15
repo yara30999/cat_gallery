@@ -25,10 +25,10 @@ class CatBreedNavigationItem extends StatelessWidget {
     var breedID = catBreedCard.breedId;
     var breedName = catBreedCard.breedName;
     //pass data
-    context.read<SpecificBreedCubit>().breedName = breedName;
-    context.read<SpecificBreedCubit>().breedId = breedID;
+    BlocProvider.of<SpecificBreedCubit>(context).breedName = breedName;
+    BlocProvider.of<SpecificBreedCubit>(context).breedId = breedID;
     // and trigger request...
-    context.read<SpecificBreedCubit>().getBreedInfo(uid: uid, breedId: breedID);
+    context.read<SpecificBreedCubit>().getBreedInfo(uid: uid);
     context
         .read<SpecificImagesCubit>()
         .getBreedImages(uid: uid, breedId: breedID, pageNum: 0);

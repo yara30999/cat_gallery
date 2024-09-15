@@ -27,8 +27,9 @@ class UploadImageWithClickOptions extends StatelessWidget {
   void _analysisButtonOnPress(BuildContext context, String uid) {
     BlocProvider.of<AnalysisCubit>(context).imgUrl =
         catWithClickEntity.imageUrl;
-    BlocProvider.of<AnalysisCubit>(context)
-        .getImageAnalysis(uid: uid, imgId: catWithClickEntity.imageId);
+    BlocProvider.of<AnalysisCubit>(context).uid = uid;
+    BlocProvider.of<AnalysisCubit>(context).imgId = catWithClickEntity.imageId;
+    BlocProvider.of<AnalysisCubit>(context).getImageAnalysis();
     Navigator.pushNamed(context, Routes.analysisRoute);
   }
 

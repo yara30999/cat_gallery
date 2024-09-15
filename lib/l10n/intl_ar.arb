@@ -107,7 +107,7 @@
   "go_back": "رجوع",
   "mr": "السيد ",
   "mrs": "السيدة ",
-  "app_developer": "مطور التطبيق: \nم. يارا ناصر الدين النني\n yaranasserelniny@gmail.com \n 01093017989",
+  "app_developer": "مطور التطبيق: \nم. يارا ناصر الدين النني\n yaranasserelniny@gmail.com",
   "Theme": "السمة:",
   "System": "النظام",
   "Light": "فاتح",
@@ -169,5 +169,9 @@
   "reset_password_mail_sent": "تم إرسال بريد إعادة تعيين كلمة المرور بنجاح إلى بريدك الإلكتروني، تحقق منه.",
   "no_more_cat_images": "لا يوجد صور قطط أخرى.",
   "no_images_category": "لا يوجد صور في هذا القسم.",
-  "no_votes_yet": "لم تصوت على أي صورة بعد."
+  "no_votes_yet": "لم تصوت على أي صورة بعد.",
+  "no_favourites_yet": "لم تعجب بأي صورة بعد.",
+  "no_uploads_yet": "لم تقم برفع أي صورة بعد.",
+  "no_breed_images": "لا يوجد صور متاحه لهذه الفصيله.",
+  "no_image_to_upload": "لم تقم بإختيار أي صوره لرفعها."
 }

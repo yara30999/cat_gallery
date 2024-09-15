@@ -28,15 +28,19 @@ class UploadImageWithClickOptionsAndDate extends StatelessWidget {
                 right: AppPadding.p10,
                 top: 5,
               ),
-              child: Text(
-                GetTimeAgo.parse(
-                  catWithClickEntity.createdAt ?? DateTime.now(),
-                  pattern: "dd-MM-yyyy hh:mm aa",
-                  locale: BlocProvider.of<SettingsCubit>(context)
-                      .currentLocale
-                      .languageCode,
-                ),
-                style: Styles.style16Light(),
+              child: BlocBuilder<SettingsCubit, SettingsState>(
+                builder: (context, state) {
+                  return Text(
+                    GetTimeAgo.parse(
+                      catWithClickEntity.createdAt ?? DateTime.now(),
+                      pattern: "dd-MM-yyyy hh:mm aa",
+                      locale: BlocProvider.of<SettingsCubit>(context)
+                          .currentLocale
+                          .languageCode,
+                    ),
+                    style: Styles.style16Light(),
+                  );
+                },
               ),
             ),
           ],

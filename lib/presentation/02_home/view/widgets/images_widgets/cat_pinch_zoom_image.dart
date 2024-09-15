@@ -59,11 +59,11 @@ class _CatPinchZoomImageState extends State<CatPinchZoomImage>
     final width = MediaQuery.sizeOf(context).width;
     entry = OverlayEntry(
       builder: (context) {
-        final double opacity = ((scale - 1) / (maxScale - 1)).clamp(0.3, 1);
+        //final double opacity = ((scale - 1) / (maxScale - 1)).clamp(0.6, 1);
         return Stack(children: [
           Positioned.fill(
             child: Opacity(
-              opacity: opacity,
+              opacity: 1,
               child: Container(
                 color: ColorManager.black,
               ),

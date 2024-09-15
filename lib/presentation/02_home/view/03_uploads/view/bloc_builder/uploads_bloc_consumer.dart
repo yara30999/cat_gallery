@@ -43,7 +43,7 @@ class _UploadsBlocConsumerState extends State<UploadsBlocConsumer> {
         } else if (state is UploadsSuccessFirstPageEmpty) {
           return SliverToBoxAdapter(
             child: EmptyStateWidget(
-              text: S.current.no_votes_yet, //TODO change this text
+              text: S.current.no_uploads_yet,
             ),
           );
         } else {

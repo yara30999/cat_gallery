@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../domain/entities/category_item.dart';
 import '../../01_login-register-forgotpass/view_model/auth_cubit/auth_cubit.dart';
 import '../../02_home/view/widgets/persistenet_header.dart';
+import '../../02_home/view_model/settings_cubit/settings_cubit.dart';
 import '../../resources/language_manager.dart';
 import '../../resources/styles_manager.dart';
 import '../../resources/values_manager.dart';
@@ -115,9 +116,14 @@ class _CategoryBodyState extends State<CategoryBody> {
                             : Alignment.centerLeft,
                         child: SizedBox(
                           height: AppSize.s50,
-                          child: CategoryItem(
-                            isActive: activeIndex == index,
-                            categoryItemEntity: CategoryItemEntity.items[index],
+                          child: BlocBuilder<SettingsCubit, SettingsState>(
+                            builder: (context, state) {
+                              return CategoryItem(
+                                isActive: activeIndex == index,
+                                categoryItemEntity:
+                                    CategoryItemEntity.items[index],
+                              );
+                            },
                           ),
                         ),
                       ),

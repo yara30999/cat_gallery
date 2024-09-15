@@ -85,6 +85,14 @@ class CategoryResponse {
     required this.name,
   });
 
+  CategoryResponse copyWith({
+    String? name,
+  }) =>
+      CategoryResponse(
+        id: id,
+        name: name ?? this.name,
+      );
+
   factory CategoryResponse.fromJson(Map<String, dynamic> json) =>
       CategoryResponse(
         id: json["id"],

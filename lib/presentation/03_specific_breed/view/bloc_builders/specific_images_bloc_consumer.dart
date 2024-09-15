@@ -29,7 +29,7 @@ class SpecificImagesBlocConsumer extends StatelessWidget {
         } else if (state is SpecificImagesSuccessFirstPageEmpty) {
           return SliverToBoxAdapter(
             child: EmptyStateWidget(
-              text: S.current.no_votes_yet, //TODO change this text
+              text: S.current.no_breed_images,
             ),
           );
         } else {
