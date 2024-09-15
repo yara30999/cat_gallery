@@ -4,6 +4,7 @@ class AppConstants {
   static const int splashDelay = 2;
   static const int onboardingDelay = 3;
   static const int refreshDelay = 2;
+  static const int waitDelay = 2;
   static const String baseUrl = "https://api.thecatapi.com/";
   //it is a free xApiKey from https://thecatapi.com/
   static const String xApiKey =

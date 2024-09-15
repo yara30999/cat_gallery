@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../generated/l10n.dart';
-import '../../../02_home/view_model/settings_cubit/settings_cubit.dart';
+import '../../../02_home_screen/view_model/settings_cubit/settings_cubit.dart';
 
 class AnalysisHeader extends StatelessWidget {
   const AnalysisHeader(

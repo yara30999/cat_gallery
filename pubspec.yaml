@@ -82,6 +82,7 @@ dependencies:
   image_downloader_web: ^2.0.6
   share_plus: ^10.0.2
   translator: ^1.0.0
+  animated_icon_button: ^1.0.2
 
 dev_dependencies:
   flutter_test:

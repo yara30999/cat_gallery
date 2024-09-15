@@ -7,22 +7,24 @@ import '../00_on_boarding/view/on_boarding_view.dart';
 import '../01_login-register-forgotpass/view/pages/forgot_pass_view.dart';
 import '../01_login-register-forgotpass/view/pages/login_view.dart';
 import '../01_login-register-forgotpass/view/pages/register_view.dart';
-import '../02_home/view/02_favorites/view/favorites_view_body.dart';
-import '../02_home/view/01_main_breeds/view/main_breeds_body.dart';
-import '../02_home/view/03_uploads/view_model/delete_cubit/delete_image_cubit.dart';
-import '../02_home/view/03_uploads/view_model/get_uploads_cubit/uploads_cubit.dart';
-import '../02_home/view/home_view.dart';
-import '../02_home/view/03_uploads/view/uploads_view_body.dart';
-import '../02_home/view/04_votes/view/votes_view_body.dart';
-import '../03_specific_breed/view/specific_breed_body.dart';
-import '../03_specific_breed/view_model/breed/specific_breed_cubit.dart';
-import '../03_specific_breed/view_model/images/specific_images_cubit.dart';
-import '../04_no_breed/view/no_breed_body.dart';
+import '../02_home_screen/view/02_favorites/view/favorites_view_body.dart';
+import '../02_home_screen/view/01_main_breeds/view/main_breeds_body.dart';
+import '../02_home_screen/view/03_uploads/view_model/delete_cubit/delete_image_cubit.dart';
+import '../02_home_screen/view/03_uploads/view_model/get_uploads_cubit/uploads_cubit.dart';
+import '../02_home_screen/view/home_view.dart';
+import '../02_home_screen/view/03_uploads/view/uploads_view_body.dart';
+import '../02_home_screen/view/04_votes/view/votes_view_body.dart';
+import '../03_specific_breed_screen/view/specific_breed_body.dart';
+import '../03_specific_breed_screen/view_model/breed/specific_breed_cubit.dart';
+import '../03_specific_breed_screen/view_model/images/specific_images_cubit.dart';
+import '../04_no_breed_screen/view/no_breed_body.dart';
 import '../05_analysis_screen/view/analysis_body.dart';
 import '../06_add_image_screen/view/add_image_body.dart';
+import '../07_select_language_screen/view/select_language_view.dart';
 
 class Routes {
   static const String onBoardingRoute = "/";
+  static const String selectLanguageRoute = "/select_language_route";
   static const String loginRoute = "/login_route";
   static const String registerRoute = "/register_route";
   static const String forgotPasswordRoute = "/forgot_password_route";
@@ -43,6 +45,8 @@ class RouteGenerator {
     switch (settings.name) {
       case Routes.onBoardingRoute:
         return MaterialPageRoute(builder: (_) => const OnBoardingView());
+      case Routes.selectLanguageRoute:
+        return MaterialPageRoute(builder: (_) => const SelectLanguageView());
       case Routes.loginRoute:
         return MaterialPageRoute(builder: (_) => const LoginView());
       case Routes.registerRoute:

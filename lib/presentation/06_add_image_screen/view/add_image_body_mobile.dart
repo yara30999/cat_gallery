@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../01_login-register-forgotpass/view_model/auth_cubit/auth_cubit.dart';
-import '../../02_home/view/widgets/persistenet_header.dart';
-import '../../02_home/view_model/scroll_controllers_cubit/scroll_controllers_cubit.dart';
+import '../../02_home_screen/view/widgets/persistenet_header.dart';
+import '../../02_home_screen/view_model/scroll_controllers_cubit/scroll_controllers_cubit.dart';
 import '../../resources/styles_manager.dart';
 import '../../resources/values_manager.dart';
 import '../view_model/cubit/upload_image_cubit.dart';

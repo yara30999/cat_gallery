@@ -4,7 +4,7 @@ import '../../../app/di.dart';
 import '../../../app/functions.dart';
 import '../../../route_observer.dart';
 import '../../01_login-register-forgotpass/view_model/auth_cubit/auth_cubit.dart';
-import '../../02_home/view/03_uploads/view_model/get_uploads_cubit/uploads_cubit.dart';
+import '../../02_home_screen/view/03_uploads/view_model/get_uploads_cubit/uploads_cubit.dart';
 import '../../resources/platform_manager.dart';
 import '../view_model/cubit/upload_image_cubit.dart';
 import 'add_image_body_desktop.dart';
@@ -36,7 +36,7 @@ class _AddImageBodyState extends State<AddImageBody> with RouteAware {
   void didPop() {
     var uid = BlocProvider.of<AuthCubit>(context).authObj!.uid;
     BlocProvider.of<UploadsCubit>(context)
-        .getUploads(uid: uid, pageNum: 0, isFirstCall: false);
+        .getUploads(uid: uid, pageNum: 0, isFirstCall: true);
   }
 
   @override

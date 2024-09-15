@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../02_home/view/widgets/persistenet_header.dart';
+import '../../02_home_screen/view/widgets/persistenet_header.dart';
 import '../../resources/styles_manager.dart';
 import '../../resources/values_manager.dart';
 import 'widgets/analysis_header.dart';

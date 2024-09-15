@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../../app/functions.dart';
-import '../../../02_home/view/widgets/states_widgets/analysis_state_widget.dart';
-import '../../../02_home/view/widgets/states_widgets/error_state_widget.dart';
+import '../../../02_home_screen/view/widgets/states_widgets/analysis_state_widget.dart';
+import '../../../02_home_screen/view/widgets/states_widgets/error_state_widget.dart';
 import '../../../resources/styles_manager.dart';
 import '../../view_model/cubit/analysis_cubit.dart';
 import '../widgets/analysis_bar_graph.dart';

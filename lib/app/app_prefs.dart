@@ -65,7 +65,7 @@ class AppPreferencesImpl implements AppPreferences {
       return themeName;
     } else {
       // return default theme
-      return ThemeMode.system.getName();
+      return ThemeMode.light.getName();
     }
   }
 

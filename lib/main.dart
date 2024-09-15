@@ -11,7 +11,7 @@ import 'domain/entities/cat_breed_card.dart';
 import 'firebase_options.dart';
 import 'app/app.dart';
 import 'app/di.dart';
-import 'presentation/02_home/view_model/settings_cubit/settings_cubit.dart';
+import 'presentation/02_home_screen/view_model/settings_cubit/settings_cubit.dart';
 import 'presentation/resources/conistants_manager.dart';
 import 'simple_observer.dart';
 import 'package:flutter/services.dart';
