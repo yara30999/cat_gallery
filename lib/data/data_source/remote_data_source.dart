@@ -11,6 +11,7 @@ import '../../app/extensions.dart';
 import '../../domain/entities/authentication.dart';
 import '../../domain/entities/cat_with_click_entity.dart';
 import '../../presentation/resources/conistants_manager.dart';
+import '../../presentation/resources/platform_manager.dart';
 import '../network/app_api.dart';
 import '../network/requests.dart';
 import '../request_body/favourite_body.dart';
@@ -71,6 +72,7 @@ class RemoteDataSourceImpl implements RemoteDataSource {
   RemoteDataSourceImpl(this._appServiceClient, this._firebaseAuth);
   CollectionReference users = FirebaseFirestore.instance.collection('users');
   final GoogleSignIn _googleSignIn = GoogleSignIn();
+  final FacebookAuth _facebookAuth = FacebookAuth.instance;
 
   @override
   Future<AuthenticationEntity> login(LoginRequest loginRequest) async {
@@ -154,7 +156,7 @@ class RemoteDataSourceImpl implements RemoteDataSource {
       userCredential = await _firebaseAuth.signInWithPopup(facebookProvider);
     } else {
       // Trigger the sign-in flow
-      final LoginResult loginResult = await FacebookAuth.instance.login();
+      final LoginResult loginResult = await _facebookAuth.login();
       if (loginResult.accessToken == null) {
         throw StateError(AppConstants.facebook);
       }
@@ -180,6 +182,13 @@ class RemoteDataSourceImpl implements RemoteDataSource {
       // If a user is signed in via google
       await _googleSignIn.disconnect();
     }
+    if (!isWebOrDesktopApp()) {
+      var facebookAccessToken = await _facebookAuth.accessToken;
+      if (facebookAccessToken != null) {
+        _facebookAuth.login();
+      }
+    }
+
     await _firebaseAuth.signOut();
   }
 
