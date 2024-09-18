@@ -6,8 +6,7 @@ import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'domain/entities/authentication.dart';
-import 'domain/entities/cat_breed_card.dart';
+import 'app/functions.dart';
 import 'firebase_options.dart';
 import 'app/app.dart';
 import 'app/di.dart';
@@ -25,10 +24,8 @@ void main() async {
   ]);
   Bloc.observer = SimpleObserver();
   await Hive.initFlutter();
-  Hive.registerAdapter(CatBreedCardEntityAdapter());
-  Hive.registerAdapter(AuthenticationEntityAdapter());
-  await Hive.openBox<CatBreedCardEntity>(AppConstants.kBreedsBox);
-  await Hive.openBox<AuthenticationEntity>(AppConstants.kUserDataBox);
+  hiveAdapters();
+  await hiveBoxes();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );

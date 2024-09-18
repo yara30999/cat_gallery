@@ -18,22 +18,33 @@ class PersistentHeader extends StatelessWidget {
           maxHeight: AppSize.s40,
           child: Material(
             color: Theme.of(context).scaffoldBackgroundColor,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: Text(
-                    S.current.go_back,
-                    style: Styles.style18Medium()
-                        .copyWith(color: Theme.of(context).primaryColorLight),
-                  ),
-                ),
-              ],
-            ),
+            child: const GoBack(),
           )),
+    );
+  }
+}
+
+class GoBack extends StatelessWidget {
+  const GoBack({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        TextButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Text(
+            S.current.go_back,
+            style: Styles.style18Medium()
+                .copyWith(color: Theme.of(context).primaryColorLight),
+          ),
+        ),
+      ],
     );
   }
 }

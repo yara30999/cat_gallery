@@ -1,11 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import '../domain/entities/authentication.dart';
 import '../domain/entities/cat_breed_card.dart';
 import '../domain/entities/cat_with_click_entity.dart';
 import '../domain/entities/image_analysis_entity.dart';
+import '../presentation/resources/conistants_manager.dart';
 import '../presentation/resources/values_manager.dart';
 
 bool isLightTheme(BuildContext context) {
   return Theme.of(context).brightness == Brightness.light;
+}
+
+Future<void> hiveBoxes() async {
+  await Hive.openBox<CatBreedCardEntity>(AppConstants.kBreedsBox);
+  await Hive.openBox<AuthenticationEntity>(AppConstants.kUserDataBox);
+}
+
+void hiveAdapters() {
+  Hive.registerAdapter(CatBreedCardEntityAdapter());
+  Hive.registerAdapter(AuthenticationEntityAdapter());
 }
 
 void showSnakBar(BuildContext context, String msg) {

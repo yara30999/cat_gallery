@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../02_home_screen/view/widgets/persistenet_header.dart';
-import '../../resources/language_manager.dart';
-import '../../resources/styles_manager.dart';
 import '../../resources/values_manager.dart';
 import 'bloc_builder/no_breed_bloc_consumer.dart';
-import 'widgets/category_section.dart';
-import 'widgets/no_breed_header.dart';
+import 'widgets/no_breed_header_persistent_tablet.dart';
 
 class NoBreedBodyTablet extends StatelessWidget {
   const NoBreedBodyTablet({
@@ -14,29 +10,10 @@ class NoBreedBodyTablet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
+    return const CustomScrollView(
       slivers: [
-        const PersistentHeader(),
+        NoBreedHeaderPersistentTablet(),
         SliverPadding(
-          padding: const EdgeInsets.symmetric(
-              horizontal: AppPadding.p60, vertical: 0),
-          sliver: SliverToBoxAdapter(
-            child: NoBreedHeader(
-              headerStyle: Styles.style22Medium(),
-            ),
-          ),
-        ),
-        SliverPadding(
-          padding: EdgeInsets.only(
-              right:
-                  LocalizationUtils.currentLocalIsAr() ? AppPadding.p20 : 0.0,
-              left:
-                  LocalizationUtils.currentLocalIsAr() ? 0.0 : AppPadding.p20),
-          sliver: const SliverToBoxAdapter(
-            child: CategorySection(),
-          ),
-        ),
-        const SliverPadding(
           padding: EdgeInsets.symmetric(
             horizontal: AppPadding.p200,
             vertical: AppPadding.p20,
