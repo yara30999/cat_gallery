@@ -87,7 +87,11 @@ class _RegisterFormState extends State<RegisterForm> {
     genderItems = Gender.values.map((Gender gender) {
       return DropdownMenuItem<Gender>(
         value: gender,
-        child: Text(gender.displayValue),
+        child: BlocBuilder<SettingsCubit, SettingsState>(
+          builder: (context, state) {
+            return Text(gender.displayValue);
+          },
+        ),
       );
     }).toList();
   }
@@ -236,31 +240,38 @@ class _RegisterFormState extends State<RegisterForm> {
                     const SizedBox(
                       height: AppSize.s10,
                     ),
-                    DropdownButtonFormField<Gender>(
-                      style: Styles.style18Medium()
-                          .copyWith(color: Theme.of(context).primaryColorDark),
-                      value: selectedGender,
-                      icon: Icon(
-                        Icons.keyboard_arrow_down,
-                        color: Theme.of(context).primaryColorDark,
-                      ),
-                      decoration: InputDecoration(
-                        contentPadding:
-                            const EdgeInsets.symmetric(horizontal: AppSize.s20),
-                        labelText: S.current.selectGender,
-                      ),
-                      items: genderItems,
-                      onChanged: (Gender? newValue) {
-                        if (newValue != null) {
-                          setState(() {
-                            selectedGender = newValue;
-                          });
+                    BlocListener<SettingsCubit, SettingsState>(
+                      listener: (context, state) {
+                        if (state is LocaleSuccess) {
+                          _buildGenderItems();
                         }
                       },
-                      validator: (Gender? gender) {
-                        return _validationService
-                            .validateGenderSelection(gender);
-                      },
+                      child: DropdownButtonFormField<Gender>(
+                        style: Styles.style18Medium().copyWith(
+                            color: Theme.of(context).primaryColorDark),
+                        value: selectedGender,
+                        icon: Icon(
+                          Icons.keyboard_arrow_down,
+                          color: Theme.of(context).primaryColorDark,
+                        ),
+                        decoration: InputDecoration(
+                          contentPadding: const EdgeInsets.symmetric(
+                              horizontal: AppSize.s20),
+                          labelText: S.current.selectGender,
+                        ),
+                        items: genderItems,
+                        onChanged: (Gender? newValue) {
+                          if (newValue != null) {
+                            setState(() {
+                              selectedGender = newValue;
+                            });
+                          }
+                        },
+                        validator: (Gender? gender) {
+                          return _validationService
+                              .validateGenderSelection(gender);
+                        },
+                      ),
                     ),
                     const SizedBox(
                       height: AppSize.s20,
