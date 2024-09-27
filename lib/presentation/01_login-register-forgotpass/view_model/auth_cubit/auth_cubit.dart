@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:meta/meta.dart';
 import '../../../../app/di.dart';
 import '../../../../data/data_source/local_data_source.dart';
@@ -29,13 +28,16 @@ class AuthCubit extends Cubit<AuthState> {
       this._forgotPasswordUsecase)
       : super(AuthInitial()) {
     // Initialize authObj in the constructor body
-    authObj = _localDataSource.fetchUserData();
+    //it can be actual user data or dummy data if the user data is null
+    _authObj = _localDataSource.fetchUserData();
   }
 
-  var auth = FirebaseAuth.instance;
   bool modalProgressLoading = false;
-  AuthenticationEntity? authObj;
-  String? errMessage;
+  AuthenticationEntity? _authObj;
+  String? _errMessage;
+
+  AuthenticationEntity? get authObj => _authObj;
+  String? get errMessage => _errMessage;
 
   Future<void> loginUser(
       {required String email, required String password}) async {
@@ -43,10 +45,10 @@ class AuthCubit extends Cubit<AuthState> {
     var result =
         await _loginUseCase.execute(LoginUseCaseInput(email, password));
     result.fold((failure) {
-      errMessage = '${failure.message.toString()} ${failure.code.toString()}';
+      _errMessage = '${failure.message.toString()} ${failure.code.toString()}';
       emit(LoginFailure());
     }, (authenticationEntity) {
-      authObj = authenticationEntity;
+      _authObj = authenticationEntity;
       emit(LoginSuccess());
     });
   }
@@ -68,10 +70,10 @@ class AuthCubit extends Cubit<AuthState> {
       gender,
     ));
     result.fold((failure) {
-      errMessage = '${failure.message.toString()} ${failure.code.toString()}';
+      _errMessage = '${failure.message.toString()} ${failure.code.toString()}';
       emit(RegisterFailure());
     }, (authenticationEntity) {
-      authObj = authenticationEntity;
+      _authObj = authenticationEntity;
       emit(RegisterSuccess());
     });
   }
@@ -80,10 +82,10 @@ class AuthCubit extends Cubit<AuthState> {
     emit(GoogleLoading());
     var result = await _googleSignInUseCase.execute();
     result.fold((failure) {
-      errMessage = '${failure.message.toString()} ${failure.code.toString()}';
+      _errMessage = '${failure.message.toString()} ${failure.code.toString()}';
       emit(GoogleFailure());
     }, (authenticationEntity) {
-      authObj = authenticationEntity;
+      _authObj = authenticationEntity;
 /*
       // gives me only uid,name,email.
       print('yara name ${authObj!.name}');
@@ -101,10 +103,10 @@ class AuthCubit extends Cubit<AuthState> {
     emit(FacebookLoading());
     var result = await _facebookSignInUseCase.execute();
     result.fold((failure) {
-      errMessage = '${failure.message.toString()} ${failure.code.toString()}';
+      _errMessage = '${failure.message.toString()} ${failure.code.toString()}';
       emit(FacebookFailure());
     }, (authenticationEntity) {
-      authObj = authenticationEntity;
+      _authObj = authenticationEntity;
 /*
       // gives me only uid,name,email.
       print('yara name ${authObj!.name}');
@@ -126,7 +128,7 @@ class AuthCubit extends Cubit<AuthState> {
           errMessage:
               '${failure.message.toString()} ${failure.code.toString()}'));
     }, (boolSuccess) {
-      authObj = null;
+      _authObj = null;
       emit(LogoutSuccess());
     });
   }
