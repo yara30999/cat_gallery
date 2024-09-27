@@ -18,11 +18,11 @@ class NoBreedBloc extends Bloc<NoBreedEvent, NoBreedState> {
   final GetCategoryImagesUsecase _getCategoryImagesUsecase;
   int _categoryId = 0; //initial val
   String _sorting = SortingItem.random.apiValue; //initial val
-  List<CatWithClickEntity> items = [];
+  List<CatWithClickEntity> _items = [];
   NoBreedBloc(this._getNoCategoryImagesUsecase, this._getCategoryImagesUsecase)
       : super(const NoBreedInitial([], isLoading: false)) {
     // Initialize catBreedsList in the constructor body
-    items = generateDummyCatImagesList();
+    _items = generateDummyCatImagesList();
 
     on<NoBreedEvent>((event, emit) async {
       if (event is CategoryEvent) {
@@ -35,9 +35,9 @@ class NoBreedBloc extends Bloc<NoBreedEvent, NoBreedState> {
 
       if (event is CategoryImagesEvent) {
         if (event.pageNum == 0) {
-          emit(NoBreedLoading(items, isLoading: true));
+          emit(NoBreedLoading(_items, isLoading: true));
         } else {
-          emit(NoBreedPaginationLoading(items, isLoading: false));
+          emit(NoBreedPaginationLoading(_items, isLoading: false));
         }
 
         Either<Failure, List<CatWithClickEntity>> result;
@@ -54,27 +54,28 @@ class NoBreedBloc extends Bloc<NoBreedEvent, NoBreedState> {
           var errMessage =
               '${failure.message.toString()} ${failure.code.toString()}';
           if (event.pageNum == 0) {
-            emit(NoBreedFailure(items, errMessage, isLoading: false));
+            emit(NoBreedFailure(_items, errMessage, isLoading: false));
           } else {
-            emit(NoBreedPaginationFailure(items, errMessage, isLoading: false));
+            emit(
+                NoBreedPaginationFailure(_items, errMessage, isLoading: false));
           }
         }, (catImagesSuccess) async {
           if (event.pageNum == 0) {
             if (catImagesSuccess.isEmpty) {
-              emit(NoBreedSuccessFirstPageEmpty(items, isLoading: false));
+              emit(NoBreedSuccessFirstPageEmpty(_items, isLoading: false));
             } else {
-              items.clear();
-              items.addAll(catImagesSuccess);
-              emit(NoBreedSuccess(items, isLoading: false));
+              _items.clear();
+              _items.addAll(catImagesSuccess);
+              emit(NoBreedSuccess(_items, isLoading: false));
             }
           } else {
             if (catImagesSuccess.isEmpty) {
               var errMessage = S.current.no_more_cat_images;
-              emit(NoBreedPaginationFailure(items, errMessage,
+              emit(NoBreedPaginationFailure(_items, errMessage,
                   isLoading: false));
             } else {
-              items.addAll(catImagesSuccess);
-              emit(NoBreedPaginationSuccess(items, isLoading: false));
+              _items.addAll(catImagesSuccess);
+              emit(NoBreedPaginationSuccess(_items, isLoading: false));
             }
           }
         });

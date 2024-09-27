@@ -9,20 +9,20 @@ part 'uploads_state.dart';
 
 class UploadsCubit extends Cubit<UploadsState> {
   final GetUploadsUsecase _getUploadsUsecase;
-  List<CatWithClickEntity> items = [];
+  List<CatWithClickEntity> _items = [];
   UploadsCubit(this._getUploadsUsecase)
       : super(const UploadsInitial([], isLoading: false)) {
     // Initialize catBreedsList in the constructor body
-    items = generateDummyCatImagesList();
+    _items = generateDummyCatImagesList();
   }
   Future<void> getUploads(
       {required String uid,
       required int pageNum,
       required bool isFirstCall}) async {
     if (pageNum == 0) {
-      emit(UploadsLoading(items, isLoading: isFirstCall));
+      emit(UploadsLoading(_items, isLoading: isFirstCall));
     } else {
-      emit(UploadsPaginationLoading(items, isLoading: false));
+      emit(UploadsPaginationLoading(_items, isLoading: false));
     }
 
     var result =
@@ -32,26 +32,26 @@ class UploadsCubit extends Cubit<UploadsState> {
       var errMessage =
           '${failure.message.toString()} ${failure.code.toString()}';
       if (pageNum == 0) {
-        emit(UploadsFailure(items, errMessage, isLoading: false));
+        emit(UploadsFailure(_items, errMessage, isLoading: false));
       } else {
-        emit(UploadsPaginationFailure(items, errMessage, isLoading: false));
+        emit(UploadsPaginationFailure(_items, errMessage, isLoading: false));
       }
     }, (catImagesSuccess) {
       if (pageNum == 0) {
         if (catImagesSuccess.isEmpty) {
-          emit(UploadsSuccessFirstPageEmpty(items, isLoading: false));
+          emit(UploadsSuccessFirstPageEmpty(_items, isLoading: false));
         } else {
-          items.clear();
-          items.addAll(catImagesSuccess);
-          emit(UploadsSuccess(items, isLoading: false));
+          _items.clear();
+          _items.addAll(catImagesSuccess);
+          emit(UploadsSuccess(_items, isLoading: false));
         }
       } else {
         if (catImagesSuccess.isEmpty) {
           var errMessage = S.current.no_more_cat_images;
-          emit(UploadsPaginationFailure(items, errMessage, isLoading: false));
+          emit(UploadsPaginationFailure(_items, errMessage, isLoading: false));
         } else {
-          items.addAll(catImagesSuccess);
-          emit(UploadsPaginationSuccess(items, isLoading: false));
+          _items.addAll(catImagesSuccess);
+          emit(UploadsPaginationSuccess(_items, isLoading: false));
         }
       }
     });

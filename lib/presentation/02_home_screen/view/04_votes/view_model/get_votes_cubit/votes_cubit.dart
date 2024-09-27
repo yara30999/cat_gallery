@@ -9,19 +9,19 @@ part 'votes_state.dart';
 
 class VotesCubit extends Cubit<VotesState> {
   final GetVotesUsecase _getVotesUsecase;
-  List<CatWithClickEntity> items = [];
+  List<CatWithClickEntity> _items = [];
   VotesCubit(
     this._getVotesUsecase,
   ) : super(const VotesInitial([], isLoading: false)) {
     // Initialize catBreedsList in the constructor body
-    items = generateDummyCatImagesList();
+    _items = generateDummyCatImagesList();
   }
 
   Future<void> getVotes({required String uid, required int pageNum}) async {
     if (pageNum == 0) {
-      emit(VotesLoading(items, isLoading: true));
+      emit(VotesLoading(_items, isLoading: true));
     } else {
-      emit(VotesPaginationLoading(items, isLoading: false));
+      emit(VotesPaginationLoading(_items, isLoading: false));
     }
 
     var result =
@@ -31,26 +31,26 @@ class VotesCubit extends Cubit<VotesState> {
       var errMessage =
           '${failure.message.toString()} ${failure.code.toString()}';
       if (pageNum == 0) {
-        emit(VotesFailure(items, errMessage, isLoading: false));
+        emit(VotesFailure(_items, errMessage, isLoading: false));
       } else {
-        emit(VotesPaginationFailure(items, errMessage, isLoading: false));
+        emit(VotesPaginationFailure(_items, errMessage, isLoading: false));
       }
     }, (catImagesSuccess) {
       if (pageNum == 0) {
         if (catImagesSuccess.isEmpty) {
-          emit(VotesSuccessFirstPageEmpty(items, isLoading: false));
+          emit(VotesSuccessFirstPageEmpty(_items, isLoading: false));
         } else {
-          items.clear();
-          items.addAll(catImagesSuccess);
-          emit(VotesSuccess(items, isLoading: false));
+          _items.clear();
+          _items.addAll(catImagesSuccess);
+          emit(VotesSuccess(_items, isLoading: false));
         }
       } else {
         if (catImagesSuccess.isEmpty) {
           var errMessage = S.current.no_more_cat_images;
-          emit(VotesPaginationFailure(items, errMessage, isLoading: false));
+          emit(VotesPaginationFailure(_items, errMessage, isLoading: false));
         } else {
-          items.addAll(catImagesSuccess);
-          emit(VotesPaginationSuccess(items, isLoading: false));
+          _items.addAll(catImagesSuccess);
+          emit(VotesPaginationSuccess(_items, isLoading: false));
         }
       }
     });
