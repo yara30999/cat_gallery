@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../../domain/entities/cat_breed_card.dart';
@@ -5,12 +6,10 @@ import '../../../../../01_login-register-forgotpass/view_model/auth_cubit/auth_c
 import '../../../../../03_specific_breed_screen/view_model/breed/specific_breed_cubit.dart';
 import '../../../../../03_specific_breed_screen/view_model/images/specific_images_cubit.dart';
 import '../../../../../resources/color_manager.dart';
-import '../../../../../resources/platform_manager.dart';
 import '../../../../../resources/routes_manager.dart';
 import '../../../../../resources/styles_manager.dart';
 import '../../../../../resources/values_manager.dart';
-import '../../../widgets/images_widgets/cat_cashed_image.dart';
-import '../../../widgets/images_widgets/cat_network_image.dart';
+import '../../../widgets/images_widgets/image_factory_method.dart';
 
 class CatBreedNavigationItem extends StatelessWidget {
   final CatBreedCardEntity catBreedCard;
@@ -49,13 +48,8 @@ class CatBreedNavigationItem extends StatelessWidget {
         color: Theme.of(context).disabledColor,
         child: Column(
           children: [
-            PlatformWidget(
-                androidIos: (context) =>
-                    CatCashedImage(imgUrl: catBreedCard.referenceImgurl),
-                web: (context) =>
-                    CatNetworkImage(imgUrl: catBreedCard.referenceImgurl),
-                desktop: (context) =>
-                    CatCashedImage(imgUrl: catBreedCard.referenceImgurl)),
+            CatPhoto(defaultTargetPlatform, withPinchZoom: false)
+                .build(catBreedCard.referenceImgurl),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(catBreedCard.breedName,

@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../../domain/entities/cat_with_click_entity.dart';
@@ -5,14 +6,11 @@ import '../../../../../../generated/l10n.dart';
 import '../../../../../01_login-register-forgotpass/view_model/auth_cubit/auth_cubit.dart';
 import '../../../../../05_analysis_screen/view_model/cubit/analysis_cubit.dart';
 import '../../../../../resources/color_manager.dart';
-import '../../../../../resources/platform_manager.dart';
 import '../../../../../resources/routes_manager.dart';
 import '../../../../../resources/styles_manager.dart';
 import '../../../../../resources/values_manager.dart';
 import '../../../widgets/action_button.dart';
-import '../../../widgets/images_widgets/cat_cashed_image.dart';
-import '../../../widgets/images_widgets/cat_network_image.dart';
-import '../../../widgets/images_widgets/cat_pinch_zoom_image.dart';
+import '../../../widgets/images_widgets/image_factory_method.dart';
 import '../../view_model/delete_cubit/delete_image_cubit.dart';
 import '../../view_model/get_uploads_cubit/uploads_cubit.dart';
 
@@ -51,14 +49,7 @@ class UploadImageWithClickOptions extends StatelessWidget {
       elevation: AppSize.s8,
       child: Column(
         children: [
-          PlatformWidget(
-              androidIos: (context) => CatPinchZoomImage(
-                    imgUrl: catWithClickEntity.imageUrl,
-                  ),
-              web: (context) =>
-                  CatNetworkImage(imgUrl: catWithClickEntity.imageUrl),
-              desktop: (context) =>
-                  CatCashedImage(imgUrl: catWithClickEntity.imageUrl)),
+          CatPhoto(defaultTargetPlatform).build(catWithClickEntity.imageUrl),
           _buildActionRow(context),
         ],
       ),

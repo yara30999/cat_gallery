@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../app/di.dart';
@@ -12,12 +13,10 @@ import '../../view_model/download_cubit/download_image_cubit.dart';
 import '../../view_model/share_cubit/share_image_cubit.dart';
 import '../02_favorites/view_model/add_del_favourite_cubit/like_unlike_cubit.dart';
 import '../04_votes/view_model/add_vote_cubit/post_vote_cubit.dart';
-import 'images_widgets/cat_cashed_image.dart';
-import 'images_widgets/cat_network_image.dart';
-import 'images_widgets/cat_pinch_zoom_image.dart';
 import '../../../resources/values_manager.dart';
 import 'action_button.dart';
 import 'favorite_button.dart';
+import 'images_widgets/image_factory_method.dart';
 import 'vote_dialog.dart';
 
 class CatImageWithClickOptions extends StatefulWidget {
@@ -84,14 +83,8 @@ class _CatImageWithClickOptionsState extends State<CatImageWithClickOptions> {
       elevation: AppSize.s8,
       child: Column(
         children: [
-          PlatformWidget(
-              androidIos: (context) => CatPinchZoomImage(
-                    imgUrl: catWithClickEntityUpdated.imageUrl,
-                  ),
-              web: (context) =>
-                  CatNetworkImage(imgUrl: catWithClickEntityUpdated.imageUrl),
-              desktop: (context) =>
-                  CatCashedImage(imgUrl: catWithClickEntityUpdated.imageUrl)),
+          CatPhoto(defaultTargetPlatform)
+              .build(catWithClickEntityUpdated.imageUrl),
           _buildActionRow(context),
         ],
       ),

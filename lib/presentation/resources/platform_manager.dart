@@ -41,36 +41,6 @@ bool isWebOrDesktopApp() {
   }
 }
 
-class PlatformWidget extends StatelessWidget {
-  const PlatformWidget(
-      {super.key,
-      required this.androidIos,
-      required this.web,
-      required this.desktop});
-  final WidgetBuilder androidIos;
-  final WidgetBuilder web;
-  final WidgetBuilder desktop;
-
-  @override
-  Widget build(BuildContext context) {
-    if (kIsWeb) {
-      return web(context);
-    } else {
-      switch (defaultTargetPlatform) {
-        case TargetPlatform.android:
-        case TargetPlatform.iOS:
-          return androidIos(context);
-        case TargetPlatform.macOS:
-        case TargetPlatform.windows:
-        case TargetPlatform.linux:
-          return desktop(context);
-        default:
-          return androidIos(context);
-      }
-    }
-  }
-}
-
 class AdaptiveLayout extends StatelessWidget {
   const AdaptiveLayout(
       {super.key,

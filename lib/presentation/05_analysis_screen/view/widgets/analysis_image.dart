@@ -1,9 +1,7 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../02_home_screen/view/widgets/images_widgets/cat_cashed_image.dart';
-import '../../../02_home_screen/view/widgets/images_widgets/cat_network_image.dart';
-import '../../../02_home_screen/view/widgets/images_widgets/cat_pinch_zoom_image.dart';
-import '../../../resources/platform_manager.dart';
+import '../../../02_home_screen/view/widgets/images_widgets/image_factory_method.dart';
 import '../../../resources/values_manager.dart';
 import '../../view_model/cubit/analysis_cubit.dart';
 
@@ -21,12 +19,7 @@ class AnalysisImage extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(AppSize.s20),
       ),
-      child: PlatformWidget(
-          androidIos: (context) => CatPinchZoomImage(
-                imgUrl: imgUrl,
-              ),
-          web: (context) => CatNetworkImage(imgUrl: imgUrl),
-          desktop: (context) => CatCashedImage(imgUrl: imgUrl)),
+      child: CatPhoto(defaultTargetPlatform).build(imgUrl),
     );
   }
 }
