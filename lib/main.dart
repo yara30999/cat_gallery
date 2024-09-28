@@ -54,7 +54,7 @@ void main() async {
                   .then((value) => {FlutterNativeSplash.remove()});
             }
           },
-          child: const MyApp(),
+          child: MyApp(),
         ),
       ),
     ),

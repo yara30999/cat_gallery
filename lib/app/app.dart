@@ -12,7 +12,25 @@ import '../presentation/resources/theme_manager.dart';
 import 'di.dart';
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  // singleton for create only one instace of MyApp for the entire application.
+  const MyApp._internal();
+  static const MyApp _myAppInstance = MyApp._internal();
+
+  factory MyApp() => _myAppInstance;
+
+  //static MyApp get myAppInstance => _myAppInstance;
+
+  // // //lazy initialization using static getter
+  // static MyApp? _myAppInstance;
+  // static MyApp get myAppInstance {
+  //   _myAppInstance ??= const MyApp._internal();
+  //   return _myAppInstance!;
+  // }
+  // // //lazy initialization using factory
+  // // factory MyApp() {
+  // //   _myAppInstance ??= const MyApp._internal();
+  // //   return _myAppInstance!;
+  // // }
 
   @override
   Widget build(BuildContext context) {
