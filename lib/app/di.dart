@@ -55,7 +55,7 @@ Future<void> initAppModule() async {
       () => AppPreferencesImpl(instance()));
   // network info
   instance.registerLazySingleton<NetworkInfo>(
-      () => NetworkInfoImpl(InternetConnectionChecker()));
+      () => NetworkInfoImpl(InternetConnectionChecker.instance));
   // dio factory
   instance.registerLazySingleton<DioFactory>(() => DioFactory(instance()));
   Dio dio = await instance<DioFactory>().getDio();
