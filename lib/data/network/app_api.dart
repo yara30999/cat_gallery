@@ -1,7 +1,5 @@
 import 'dart:io';
-
 import 'package:dio/dio.dart';
-import 'package:http_parser/http_parser.dart';
 import 'package:retrofit/retrofit.dart';
 import '../../presentation/resources/conistants_manager.dart';
 import '../request_body/favourite_body.dart';

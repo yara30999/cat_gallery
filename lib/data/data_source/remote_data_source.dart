@@ -71,7 +71,7 @@ class RemoteDataSourceImpl implements RemoteDataSource {
 
   RemoteDataSourceImpl(this._appServiceClient, this._firebaseAuth);
   CollectionReference users = FirebaseFirestore.instance.collection('users');
-  final GoogleSignIn _googleSignIn = GoogleSignIn();
+  final GoogleSignIn _googleSignIn = GoogleSignIn.instance;
   final FacebookAuth _facebookAuth = FacebookAuth.instance;
 
   @override
@@ -124,16 +124,12 @@ class RemoteDataSourceImpl implements RemoteDataSource {
       userCredential = await _firebaseAuth.signInWithPopup(googleProvider);
     } else {
       // Trigger the authentication flow
-      final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
-      if (googleUser == null) {
-        throw StateError(AppConstants.google);
-      }
+      final GoogleSignInAccount googleUser = await _googleSignIn.authenticate();
       // Obtain the auth details from the request
-      final GoogleSignInAuthentication googleAuth =
-          await googleUser.authentication;
+      final GoogleSignInAuthentication googleAuth = googleUser.authentication;
       // Create a new credential
       final credential = GoogleAuthProvider.credential(
-        accessToken: googleAuth.accessToken,
+        accessToken: googleAuth.idToken,
         idToken: googleAuth.idToken,
       );
       // Once signed in, return the UserCredential
@@ -178,9 +174,12 @@ class RemoteDataSourceImpl implements RemoteDataSource {
 
   @override
   Future<void> logout() async {
-    if (_googleSignIn.currentUser != null) {
-      // If a user is signed in via google
+    try {
+      // Attempt to disconnect if Google Sign-In is used
       await _googleSignIn.disconnect();
+    } catch (e) {
+      // If disconnect fails (e.g., no user was signed in), ignore or log the error
+      debugPrint('Google disconnect failed: $e');
     }
     if (!isWebOrDesktopApp()) {
       var facebookAccessToken = await _facebookAuth.accessToken;
@@ -328,12 +327,17 @@ class RemoteDataSourceImpl implements RemoteDataSource {
       ),
     );
 
-    return await Share.shareXFiles([
-      XFile.fromData(
-        Uint8List.fromList(response.data),
-        name: catWithClickEntity.imageId,
-        mimeType: 'image/png',
+    return await SharePlus.instance.share(
+      ShareParams(
+        files: [
+          XFile.fromData(
+            Uint8List.fromList(response.data),
+            name: catWithClickEntity.imageId,
+            mimeType: 'image/png',
+          ),
+        ],
+        subject: 'from catGallery app',
       ),
-    ], subject: 'from catGallery app');
+    );
   }
 }

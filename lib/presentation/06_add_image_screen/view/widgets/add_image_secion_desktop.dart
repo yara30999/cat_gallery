@@ -132,10 +132,12 @@ class _AddImageSectionDesktopState extends State<AddImageSectionDesktop> {
 
   Widget buildDottedBorderImage(BuildContext context) {
     return DottedBorder(
-      padding: const EdgeInsets.all(AppPadding.p10),
-      color: Theme.of(context).primaryColorDark,
-      strokeWidth: 2,
-      dashPattern: const [14, 6],
+      options: RectDottedBorderOptions(
+        padding: const EdgeInsets.all(AppPadding.p10),
+        color: Theme.of(context).primaryColorDark,
+        strokeWidth: 2,
+        dashPattern: const [14, 6],
+      ),
       child: Container(
         constraints: BoxConstraints.fromViewConstraints(ViewConstraints(
             minHeight: AppSize.s100,
@@ -170,7 +172,7 @@ class _AddImageSectionDesktopState extends State<AddImageSectionDesktop> {
         onLeave: () {
           setState(() => isHighlighted = false);
         },
-        onDrop: (event) async {
+        onDropFile: (event) async {
           await handleFileDrop(event, dropzoneController);
         },
       ),

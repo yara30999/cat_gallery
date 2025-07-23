@@ -20,27 +20,31 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
-  static String m0(breedName) => "صور القط ${breedName}";
+  static String m0(String breedName) => "صور القط ${breedName}";
 
-  static String m1(lifeSpan) => "يتراوح عمرها النموذجي من ${lifeSpan} سنوات.";
+  static String m1(String lifeSpan) =>
+      "يتراوح عمرها النموذجي من ${lifeSpan} سنوات.";
 
-  static String m2(origin) => "تنحدر السلالة من ${origin}.";
+  static String m2(String origin) => "تنحدر السلالة من ${origin}.";
 
-  static String m3(temperament) => "تتمتع هذه القطط بمزاج ${temperament}.";
+  static String m3(String temperament) =>
+      "تتمتع هذه القطط بمزاج ${temperament}.";
 
-  static String m4(catBreed, weightImperial, weightMetric) =>
+  static String m4(
+          String catBreed, String weightImperial, String weightMetric) =>
       "القط ${catBreed} لديه نطاق وزن من ${weightImperial} أرطال (${weightMetric} كجم).";
 
-  static String m5(breedName) => "الفصيلة المختاره: ${breedName}";
+  static String m5(String breedName) => "الفصيلة المختاره: ${breedName}";
 
-  static String m6(categoryName) => "الفئة المختاره: ${categoryName}";
+  static String m6(String categoryName) => "الفئة المختاره: ${categoryName}";
 
-  static String m7(breedName) => "سلالة: ${breedName}";
+  static String m7(String breedName) => "سلالة: ${breedName}";
 
-  static String m8(categoryName) => "فئة: ${categoryName}";
+  static String m8(String categoryName) => "فئة: ${categoryName}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+  static Map<String, Function> _notInlinedMessages(dynamic _) =>
+      <String, Function>{
         "Arabic": MessageLookupByLibrary.simpleMessage("عربي"),
         "Browse_random_images_of_all_breeds":
             MessageLookupByLibrary.simpleMessage(

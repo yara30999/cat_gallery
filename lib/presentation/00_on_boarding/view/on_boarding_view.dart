@@ -21,12 +21,12 @@ class _OnBoardingViewState extends State<OnBoardingView> {
   Timer? _timer;
   final AppPreferences _appPreferences = instance();
 
-  _startDelay() {
+  void _startDelay() {
     _timer =
         Timer(const Duration(seconds: AppConstants.onboardingDelay), _goNext);
   }
 
-  _goNext() async {
+  Future<void> _goNext() async {
     _appPreferences.isUserLoggedIn().then((isUserLoggedIn) => {
           if (isUserLoggedIn)
             {

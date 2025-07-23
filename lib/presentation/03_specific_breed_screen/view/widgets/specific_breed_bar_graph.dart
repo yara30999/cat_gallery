@@ -191,7 +191,7 @@ class SpecificBreedBarGraphState extends State<SpecificBreedBarGraph> {
         ? Text(myMeasurementData.labels[index], style: widget.labelsStyle)
         : Text('', style: widget.labelsStyle);
     return SideTitleWidget(
-      axisSide: meta.axisSide,
+      meta: meta,
       space: 60,
       angle: LocalizationUtils.currentLocalIsAr()
           ? 90 * (pi / 180)
@@ -214,7 +214,7 @@ class SpecificBreedBarGraphState extends State<SpecificBreedBarGraph> {
         ? Text(yAxisLabels[index], style: widget.labelsStyle)
         : Text('', style: widget.labelsStyle);
     return SideTitleWidget(
-      axisSide: meta.axisSide,
+      meta: meta,
       space: 8,
       angle: -90 * (pi / 180),
       child: text,
@@ -235,7 +235,7 @@ class SpecificBreedBarGraphState extends State<SpecificBreedBarGraph> {
         ? Text(yAxisLabels[index], style: widget.labelsStyle)
         : Text('', style: widget.labelsStyle);
     return SideTitleWidget(
-      axisSide: meta.axisSide,
+      meta: meta,
       space: 8,
       angle: 90 * (pi / 180),
       child: text,

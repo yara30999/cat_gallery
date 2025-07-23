@@ -128,7 +128,7 @@ class _AnalysisBarGraphState extends State<AnalysisBarGraph> {
         touchCallback:
             (FlTouchEvent flTouchEvent, BarTouchResponse? barTouchResponse) {},
         touchTooltipData: BarTouchTooltipData(
-          tooltipRoundedRadius: AppSize.s18,
+          tooltipBorderRadius: BorderRadius.circular(AppSize.s8),
           maxContentWidth: AppSize.s200,
           getTooltipColor: (group) {
             return ColorManager.pink3;
@@ -250,7 +250,7 @@ class _AnalysisBarGraphState extends State<AnalysisBarGraph> {
         break;
     }
     return SideTitleWidget(
-      axisSide: meta.axisSide,
+      meta: meta,
       space: 60,
       angle: LocalizationUtils.currentLocalIsAr()
           ? 90 * (pi / 180)
@@ -300,7 +300,7 @@ class _AnalysisBarGraphState extends State<AnalysisBarGraph> {
         break;
     }
     return SideTitleWidget(
-      axisSide: meta.axisSide,
+      meta: meta,
       space: 20,
       child: text,
     );

@@ -15,7 +15,7 @@ ThemeData getLightTheme() {
     scaffoldBackgroundColor: ColorManager.white,
     unselectedWidgetColor: ColorManager.grey2,
     // cardview theme
-    cardTheme: const CardTheme(
+    cardTheme: const CardThemeData(
         color: ColorManager.white,
         shadowColor: ColorManager.brown1,
         surfaceTintColor: ColorManager.pink1,
@@ -154,7 +154,7 @@ ThemeData getDarkTheme() {
     unselectedWidgetColor: ColorManager.grey3,
 
     // cardview theme
-    cardTheme: const CardTheme(
+    cardTheme: const CardThemeData(
         color: ColorManager.grey1,
         shadowColor: ColorManager.grey5,
         surfaceTintColor: ColorManager.black,
